@@ -1,0 +1,525 @@
+{
+  "website-development": {
+    "slug": "website-development",
+    "title": "Website Development Services",
+    "h1": "Enterprise Next.js & Full-Stack Website Development Services",
+    "badge": "Core Web Vitals 100/100 Guaranteed",
+    "heroSubtitle": "We engineer ultra-fast, server-rendered Next.js websites built for dominant organic search rankings and maximum sales conversion. Zero bloat, institutional-grade security, and custom architecture tailored to your business model.",
+    "metaTitle": "Website Development Services | High-Performance Next.js Web Engineering | AFWAN TECH",
+    "metaDescription": "Leading Next.js website development company. We build lightning-fast, SEO-optimized, mobile-first websites with sub-second page loads, custom APIs, and guaranteed Core Web Vitals.",
+    "keywords": ["website development services", "Next.js web development", "react website agency", "custom web development company", "fast SEO websites"],
+    "stats": [
+      { "value": "< 0.8s", "label": "Avg. Load Time", "sub": "Google PageSpeed 98+" },
+      { "value": "100%", "label": "Core Web Vitals", "sub": "Zero Cumulative Layout Shift" },
+      { "value": "3.8x", "label": "Higher Conversion", "sub": "Compared to WordPress sites" },
+      { "value": "500+", "label": "Websites Deployed", "sub": "Across 40+ countries" }
+    ],
+    "detailedOverview": [
+      "Modern digital businesses cannot afford sluggish, monolithic websites. In an algorithmic landscape dictated by Google's Core Web Vitals and user attention spans measured in milliseconds, standard off-the-shelf templates and bloated page builders fail. AFWAN TECH engineers high-performance web systems using Next.js 15, React 19, TypeScript, and server-side rendering (SSR/SSG/ISR). Every line of code is meticulously optimized to eliminate render-blocking scripts, minimize DOM depth, and achieve instantaneous Time to First Byte (TTFB).",
+      "Our web development framework couples clean front-end architecture with secure, decoupled backend APIs. Whether your stack requires a lightweight PHP REST API, Node.js microservices, or headless CMS integrations, we provide an enterprise-grade foundation. From dynamic programmatic landing pages spanning 500+ locations to conversion-optimized B2B funnel pages, your web ecosystem becomes an indefatigable revenue-generating asset."
+    ],
+    "deliverablesRoadmap": [
+      {
+        "phase": "Phase 01",
+        "duration": "Days 1 - 5",
+        "title": "Architecture & UX Wireframing",
+        "items": [
+          "Information architecture and programmatic URL routing strategy",
+          "High-fidelity Figma wireframes with conversion-focused UX patterns",
+          "Interactive prototype testing on mobile, tablet, and desktop breakpoints",
+          "Technical requirement specification and API schema design"
+        ]
+      },
+      {
+        "phase": "Phase 02",
+        "duration": "Days 6 - 15",
+        "title": "Next.js Frontend & Core Engineering",
+        "items": [
+          "Next.js App Router setup with dynamic route handlers and metadata APIs",
+          "Tailwind CSS custom design system with dark/light mode tokenization",
+          "Modular component library with accessible ARIA standards",
+          "Micro-animations and layout transitions powered by Framer Motion"
+        ]
+      },
+      {
+        "phase": "Phase 03",
+        "duration": "Days 16 - 22",
+        "title": "Backend Integration & API Connectors",
+        "items": [
+          "Decoupled PHP / Node backend endpoint connection for lead capture",
+          "Cookieless web analytics telemetry integration with real-time tracking",
+          "Automated transactional email notifications and CRM webhooks",
+          "Security headers (HSTS, CSP, X-Frame-Options) and rate-limiting"
+        ]
+      },
+      {
+        "phase": "Phase 04",
+        "duration": "Days 23 - 28",
+        "title": "Lighthouse Audits, SEO & Global Deployment",
+        "items": [
+          "Lighthouse Core Web Vitals optimization achieving 95-100 scores",
+          "Structured JSON-LD schema (Organization, WebSite, LocalBusiness, FAQ)",
+          "Dynamic XML sitemaps, robots.txt, and automated canonical generation",
+          "Edge network deployment on Vercel/Cloudflare with multi-region CDN caching"
+        ]
+      }
+    ],
+    "keyFeatures": [
+      {
+        "title": "Sub-Second Page Loads",
+        "desc": "Built with Server-Side Rendering (SSR) and Edge Caching, ensuring pages render in under 800 milliseconds worldwide.",
+        "iconName": "Zap"
+      },
+      {
+        "title": "Programmatic SEO Architecture",
+        "desc": "Dynamically scale to hundreds of location-specific and service-specific pages with zero code duplication.",
+        "iconName": "Globe"
+      },
+      {
+        "title": "Headless CMS & API Decoupling",
+        "desc": "Manage content effortlessly while keeping your presentation layer decoupled and impervious to typical CMS vulnerabilities.",
+        "iconName": "Layers"
+      },
+      {
+        "title": "Flawless Mobile Responsiveness",
+        "desc": "Adaptive fluid typography and responsive grid mechanics tested across 20+ real device viewports.",
+        "iconName": "Smartphone"
+      },
+      {
+        "title": "Institutional-Grade Security",
+        "desc": "Zero database vulnerabilities on the static edge, enterprise CSP headers, and input sanitization.",
+        "iconName": "Shield"
+      },
+      {
+        "title": "Built-In Privacy Analytics",
+        "desc": "Lightweight, GDPR-compliant analytics that tracks visitor journeys without invasive third-party cookies.",
+        "iconName": "BarChart3"
+      }
+    ],
+    "techStack": [
+      { "category": "Frontend Framework", "tools": "Next.js 15, React 19, TypeScript, Vanilla CSS, Tailwind CSS" },
+      { "category": "Animations & UI", "tools": "Framer Motion, Lucide Icons, Radix Primitives" },
+      { "category": "Backend & API", "tools": "PHP 8.2+ REST Endpoints, Node.js, Next.js Server Actions" },
+      { "category": "Database & Storage", "tools": "MySQL, SQLite, PostgreSQL, JSON Flat Files" },
+      { "category": "Infrastructure & CDN", "tools": "Cloudflare Edge, Vercel Enterprise, AWS S3, Apache/Nginx" },
+      { "category": "SEO & Telemetry", "tools": "Schema.org JSON-LD, Cookieless Telemetry, Google Search Console" }
+    ],
+    "comparisonMatrix": [
+      { "feature": "Underlying Technology", "afwanTech": "Next.js 15 React Edge Architecture", "regularAgency": "Bloated WordPress / Elementor / Wix" },
+      { "feature": "Google PageSpeed Score", "afwanTech": "95 - 100 on Mobile & Desktop", "regularAgency": "30 - 65 with heavy plugin drag" },
+      { "feature": "Scalability & Speed", "afwanTech": "Edge-cached instant delivery globally", "regularAgency": "Frequent database locks and slow server TTFB" },
+      { "feature": "SEO Foundation", "afwanTech": "Deep JSON-LD Schema + Dynamic SSR Sitemaps", "regularAgency": "Generic Yoast plugin defaults" },
+      { "feature": "Code Ownership", "afwanTech": "100% full source code ownership transferred", "regularAgency": "Proprietary lock-in or recurring builder licenses" },
+      { "feature": "Maintenance Overhead", "afwanTech": "Near-zero plugin breaking updates", "regularAgency": "Constant vulnerability patches & plugin crashes" }
+    ],
+    "industryApplications": [
+      { "industry": "B2B SaaS & Tech", "title": "Lead-Gen Engines", "impact": "Feature showcases, interactive pricing calculators, and product demo funnels." },
+      { "industry": "Healthcare & Clinics", "title": "HIPAA-Compliant Portals", "impact": "Fast doctor directories, appointment booking, and patient confidence builders." },
+      { "industry": "Real Estate & Architecture", "title": "Visual Showcase Systems", "impact": "Interactive floor plans, high-res galleries with next-gen WebP/AVIF compression." },
+      { "industry": "Legal & Corporate Services", "title": "Authority Portals", "impact": "Practice area guides, lawyer profiles, and institutional brand positioning." }
+    ],
+    "faqs": [
+      {
+        "question": "Why do you build websites with Next.js instead of WordPress?",
+        "answer": "WordPress relies on bloated database queries, heavy PHP runtimes, and dozens of third-party plugins that degrade page speed and create critical security vulnerabilities. Next.js produces pre-rendered static HTML and edge-cached JavaScript, providing sub-second load times, superior Google Core Web Vitals, impervious security, and significantly higher conversion rates."
+      },
+      {
+        "question": "How long does a custom Next.js website development project take?",
+        "answer": "A standard high-performance corporate or service website typically takes between 2 to 4 weeks from UX wireframing to production deployment. Complex web applications with bespoke backend workflows or multi-location programmatic routing take 4 to 6 weeks."
+      },
+      {
+        "question": "Do I own 100% of the website source code and assets?",
+        "answer": "Yes, absolutely. Upon final project sign-off and payment, you receive complete, unrestricted ownership of all Git repositories, source code, design assets, and production build scripts. There are zero proprietary lock-ins."
+      },
+      {
+        "question": "Will my website be fully mobile responsive and touch-optimized?",
+        "answer": "Every layout is built mobile-first. We rigorously audit and optimize touch targets, typography scaling, fluid spacing, and navigation gestures across all major screen sizes from 320px smartphones up to 4K ultra-wide monitors."
+      },
+      {
+        "question": "How does Next.js website development help our Google search rankings?",
+        "answer": "Google rewards websites that deliver instant page loads and zero layout shifts (Core Web Vitals). Furthermore, Next.js Server-Side Rendering guarantees that search engine bots receive fully rendered, rich HTML containing semantic tags and structured JSON-LD schema on the very first crawl pass."
+      },
+      {
+        "question": "Can I edit the text and images on my website without knowing how to code?",
+        "answer": "Yes. We configure structured JSON data files or connect modern Headless CMS solutions (such as Sanity, Strapi, or Decoupled Markdown) allowing your non-technical team members to edit text, testimonials, pricing, and case studies effortlessly."
+      },
+      {
+        "question": "What happens after the website goes live? Do you provide maintenance?",
+        "answer": "All projects include 30 days of complimentary post-launch monitoring, warranty support, and performance tuning. We also offer proactive monthly retainer packages covering security updates, edge CDN management, content additions, and CRO optimizations."
+      },
+      {
+        "question": "Can you migrate our existing WordPress or PHP website to Next.js without losing SEO rankings?",
+        "answer": "Yes. We perform a complete URL inventory and implement strict 1-to-1 301 redirects, preserving all accumulated organic backlinks and search equity while massively elevating your Core Web Vitals."
+      }
+    ]
+  },
+  "custom-web-development": {
+    "slug": "custom-web-development",
+    "title": "Custom Web Development",
+    "h1": "Bespoke Full-Stack Web Application Development",
+    "badge": "Scalable Cloud Architecture",
+    "heroSubtitle": "When off-the-shelf software falls short, we engineer tailor-made web applications, enterprise portals, internal tooling, and microservices built to scale with zero computational bottlenecks.",
+    "metaTitle": "Custom Web Development Company | Scalable Web Apps | AFWAN TECH",
+    "metaDescription": "Bespoke full-stack web applications engineered for performance, security, and high-concurrency workloads. Custom APIs, databases, portals, and cloud integrations.",
+    "keywords": ["custom web development", "full stack web apps", "react nextjs developer", "enterprise web application", "custom portals"],
+    "stats": [
+      { "value": "99.99%", "label": "Uptime SLA", "sub": "High-availability clustering" },
+      { "value": "100k+", "label": "Concurrent Users", "sub": "Benchmarked load handling" },
+      { "value": "10x", "label": "Process Speedup", "sub": "Automated business logic" },
+      { "value": "REST / GraphQL", "label": "API Architecture", "sub": "Clean decoupled design" }
+    ],
+    "detailedOverview": [
+      "Custom web development is the backbone of differentiated digital enterprises. When your business model demands bespoke pricing matrices, real-time client dashboards, automated lead dispatch engines, or proprietary algorithms, generic SaaS templates become restrictive bottlenecks.",
+      "AFWAN TECH engineers robust web applications from first principles. We combine modern front-end reactivity with clean, resilient backend services built in PHP, Node.js, and SQL databases. Every application architecture adheres to strict security standards, automated testing, and horizontal scaling capabilities."
+    ],
+    "deliverablesRoadmap": [
+      { "phase": "Sprint 1", "duration": "Week 1", "title": "System Architecture & Database Schema", "items": ["Entity-relationship diagrams (ERD) & database indexing plan", "API endpoint contract definition (OpenAPI / Swagger)", "Role-based access control (RBAC) permission design"] },
+      { "phase": "Sprint 2", "duration": "Weeks 2 - 3", "title": "Backend Logic & Authentication Engines", "items": ["JWT / Session security authentication with MFA support", "Core business logic algorithms and data sanitization pipelines", "Third-party webhook listeners and payment gateway handlers"] },
+      { "phase": "Sprint 3", "duration": "Weeks 4 - 5", "title": "Interactive Client Portal & Dashboard", "items": ["Data visualization charts, filterable tables, and CSV exports", "Real-time state synchronization and reactive form validation", "Granular user settings, audit logs, and notification feeds"] },
+      { "phase": "Sprint 4", "duration": "Week 6", "title": "Load Testing & Production Hardening", "items": ["Concurrent load simulation testing up to 50k requests/min", "Automated SQL injection and penetration security audits", "Production deployment on containerized cloud infrastructure"] }
+    ],
+    "keyFeatures": [
+      { "title": "Tailored Business Logic", "desc": "Custom algorithms programmed specifically to match your operational workflows and rules.", "iconName": "Code" },
+      { "title": "Role-Based Access Control", "desc": "Granular permissions for Superadmins, Managers, Staff, and Clients with immutable audit logging.", "iconName": "Shield" },
+      { "title": "High-Throughput APIs", "desc": "Optimized RESTful and GraphQL endpoints with sub-50ms query response times.", "iconName": "Zap" },
+      { "title": "Real-Time Telemetry", "desc": "Custom event tracking, visitor logs, and conversion analytics baked directly into your admin suite.", "iconName": "BarChart3" }
+    ],
+    "techStack": [
+      { "category": "Frontend Framework", "tools": "Next.js, React, TypeScript, TanStack Table, Chart.js" },
+      { "category": "Backend Runtime", "tools": "PHP 8.2+, Node.js, Express, Next.js Server Actions" },
+      { "category": "Database Layer", "tools": "PostgreSQL, MySQL, Redis Caching Layer" },
+      { "category": "Deployment & DevOps", "tools": "Docker Containers, AWS, DigitalOcean, GitHub Actions CI/CD" }
+    ],
+    "comparisonMatrix": [
+      { "feature": "Workflow Fit", "afwanTech": "100% customized to your proprietary processes", "regularAgency": "Forces business into rigid generic software templates" },
+      { "feature": "Monthly Licensing", "afwanTech": "Zero recurring software license fees", "regularAgency": "Exponential per-seat SaaS subscription costs" },
+      { "feature": "Security & Auditing", "afwanTech": "Encrypted credentials, isolated databases, zero bloat", "regularAgency": "Vulnerable third-party marketplace plugins" }
+    ],
+    "industryApplications": [
+      { "industry": "Logistics & Supply Chain", "title": "Fleet & Order Tracking", "impact": "Real-time shipment milestones, driver dispatch, and automated client SMS alerts." },
+      { "industry": "Financial Services", "title": "Loan & Credit Assessment", "impact": "Document verification, risk scoring matrices, and client ledger management." },
+      { "industry": "Education & EdTech", "title": "Student Learning Portals", "impact": "Course curriculum progression, quiz evaluations, and automated certification." }
+    ],
+    "faqs": [
+      { "question": "What is the difference between a website and a custom web application?", "answer": "A traditional website is primarily informational and geared towards marketing. A custom web application involves complex two-way interactivity, user accounts, authenticated databases, calculated business logic, and automated workflows." },
+      { "question": "Can you integrate our custom web app with our existing CRM or ERP?", "answer": "Yes. We regularly build two-way API integrations with Salesforce, HubSpot, Zoho, SAP, QuickBooks, Stripe, Razorpay, and proprietary legacy databases." },
+      { "question": "How do you guarantee data security and compliance?", "answer": "We enforce AES-256 encryption at rest, TLS 1.3 in transit, strict parameterized SQL queries to prevent SQL injections, CSRF tokens, and comprehensive role-based access control." },
+      { "question": "Will we receive technical documentation and API specifications?", "answer": "Yes. Every custom build includes complete technical architecture documentation, OpenAPI schemas, and an interactive admin onboarding guide." }
+    ]
+  },
+  "ecommerce-development": {
+    "slug": "ecommerce-development",
+    "title": "E-Commerce Development Services",
+    "h1": "High-Converting Headless & Custom E-Commerce Engines",
+    "badge": "Sub-Second Checkout Flow",
+    "heroSubtitle": "We architect high-velocity online shopping experiences designed for aggressive revenue scaling, low cart abandonment, and seamless inventory management across global currencies.",
+    "metaTitle": "E-Commerce Development Services | Custom & Headless Stores | AFWAN TECH",
+    "metaDescription": "Next-gen e-commerce website development. We build lightning-fast online stores with instant search, seamless 1-click checkouts, multi-currency support, and high ROAS conversion rates.",
+    "keywords": ["ecommerce development services", "headless ecommerce", "shopify development", "custom online store", "high conversion ecommerce"],
+    "stats": [
+      { "value": "+42%", "label": "Conversion Lift", "sub": "Frictionless checkout UX" },
+      { "value": "< 1.2s", "label": "Catalog Speed", "sub": "Instant product filtering" },
+      { "value": "99.9%", "label": "Payment Reliability", "sub": "Zero dropped transactions" },
+      { "value": "Multi-Cur.", "label": "Global Ready", "sub": "Geo-detected pricing" }
+    ],
+    "detailedOverview": [
+      "In modern e-commerce, every 100 milliseconds of latency directly correlates with a 7% loss in sales conversions. Monolithic stores burdened with dozens of unoptimized apps and slow database queries leak revenue at every click. AFWAN TECH builds headless and high-performance e-commerce stores that decouple the high-speed Next.js frontend from your commerce and inventory backend.",
+      "From instant faceted search to frictionless 1-page checkout flows, our stores are engineered to turn first-time visitors into repeat buyers. We integrate global payment gateways (Stripe, Razorpay, PayPal, Apple Pay, Google Pay), automated tax calculation, and synchronized warehouse fulfillment."
+    ],
+    "deliverablesRoadmap": [
+      { "phase": "Stage 1", "duration": "Week 1", "title": "Store Strategy & Product Architecture", "items": ["SKU hierarchy, variant modeling, and catalog taxonomy", "Buyer journey mapping and checkout friction reduction plan", "Payment gateway and shipping partner API evaluations"] },
+      { "phase": "Stage 2", "duration": "Weeks 2 - 3", "title": "Frontend Storefront & Product UX", "items": ["Sub-second product pages with rich media galleries and reviews", "Instant client-side filter and facet search without page reload", "Persistent slide-out mini cart with upsell and cross-sell modules"] },
+      { "phase": "Stage 3", "duration": "Week 4", "title": "Checkout Optimization & Integrations", "items": ["1-step mobile-optimized checkout with auto-address fill", "Payment gateway tokenization and fraud detection integration", "Automated email & WhatsApp abandoned cart recovery sequences"] },
+      { "phase": "Stage 4", "duration": "Week 5", "title": "Stress Testing & Go-Live", "items": ["Flash sale traffic stress test simulation up to 10k orders/hour", "Order fulfillment and inventory webhook synchronization", "Google Merchant Center feed setup and Schema Product markup"] }
+    ],
+    "keyFeatures": [
+      { "title": "Instant Product Filtering", "desc": "Customers can sort by size, color, price, and attributes with zero lag or page refreshes.", "iconName": "Zap" },
+      { "title": "1-Click Accelerated Checkout", "desc": "Support for Apple Pay, Google Pay, UPI, and saved credentials to minimize cart drop-offs.", "iconName": "ShoppingCart" },
+      { "title": "Automated Cart Recovery", "desc": "Integrated email and WhatsApp notifications that recover up to 25% of abandoned carts.", "iconName": "TrendingUp" },
+      { "title": "Multi-Currency & Regional Tax", "desc": "Automatic visitor location detection displaying local currencies and compliant VAT/GST calculations.", "iconName": "Globe" }
+    ],
+    "techStack": [
+      { "category": "Storefront", "tools": "Next.js 15, React 19, Tailwind CSS, Zustand State" },
+      { "category": "Commerce Engines", "tools": "Shopify Storefront API, WooCommerce Headless, Custom PHP/Node Core" },
+      { "category": "Payment Gateways", "tools": "Stripe, Razorpay, Cashfree, PayPal, Apple Pay" },
+      { "category": "Search & Fulfillment", "tools": "Algolia Search, Shiprocket, EasyPost, Klaviyo" }
+    ],
+    "comparisonMatrix": [
+      { "feature": "Product Browsing Speed", "afwanTech": "Instantaneous client-side navigation (<400ms)", "regularAgency": "2 to 5 second page reloads per click" },
+      { "feature": "Cart Abandonment Rate", "afwanTech": "Industry low (~52% average)", "regularAgency": "High standard rate (75% to 85%)" },
+      { "feature": "High-Traffic Flash Sales", "afwanTech": "Edge-cached static pages handle surges effortlessly", "regularAgency": "Crashes under concurrent checkout spikes" }
+    ],
+    "industryApplications": [
+      { "industry": "Fashion & Apparel", "title": "Dynamic Lookbooks", "impact": "Variant swatches, size guides, and Instagram shop integrations." },
+      { "industry": "D2C Consumer Goods", "title": "Subscription & Bundles", "impact": "Recurring monthly subscriptions and tiered volume discounts." },
+      { "industry": "Electronics & Hardware", "title": "Technical Spec Comparisons", "impact": "Multi-product side-by-side spec comparison and warranty add-ons." }
+    ],
+    "faqs": [
+      { "question": "Can you migrate our store from WooCommerce or Magento without losing orders and customers?", "answer": "Yes. We execute zero-downtime database migrations, transferring all past customer records, encrypted passwords, historical order archives, and product catalogs with strict URL 301 redirects." },
+      { "question": "Which payment gateways do you support?", "answer": "We integrate all leading domestic and international gateways including Stripe, Razorpay, PayPal, Cashfree, PayU, Apple Pay, Google Pay, and Cash on Delivery (COD) verification engines." },
+      { "question": "How do you handle inventory tracking across multiple sales channels?", "answer": "We set up automated webhook pipelines that synchronize inventory levels across your custom website, Amazon, Flipkart, and brick-and-mortar POS systems in real time." }
+    ]
+  },
+  "app-development": {
+    "slug": "app-development",
+    "title": "Mobile App Development Services",
+    "h1": "Native & Cross-Platform Mobile Application Engineering",
+    "badge": "iOS & Android Ready",
+    "heroSubtitle": "We craft fluid, feature-rich mobile applications with React Native and Flutter. High framerates, native hardware access, offline data sync, and seamless cloud backends.",
+    "metaTitle": "Mobile App Development Services | iOS & Android Apps | AFWAN TECH",
+    "metaDescription": "Premier mobile app development company. We build native-performance iOS and Android applications using React Native and Flutter with real-time sync and beautiful UI.",
+    "keywords": ["mobile app development", "react native app agency", "flutter mobile apps", "ios android development", "cross platform app developer"],
+    "stats": [
+      { "value": "60 FPS", "label": "Smooth Animation", "sub": "Native UI thread execution" },
+      { "value": "1 Single", "label": "Codebase", "sub": "Both iOS & Android" },
+      { "value": "100%", "label": "Store Approval", "sub": "Apple & Google guidelines" },
+      { "value": "Offline", "label": "Data Caching", "sub": "Works without internet" }
+    ],
+    "detailedOverview": [
+      "In an app-first consumer landscape, mobile applications must feel instantaneous, intuitive, and visually pristine. Choppy frame rates, clunky offline handling, or bloated battery consumption will lead to immediate uninstalls. AFWAN TECH engineers cross-platform mobile apps that rival pure native swift/kotlin performance while drastically slashing development timelines and maintenance overhead.",
+      "We design mobile user interfaces that comply with Apple Human Interface Guidelines and Google Material Design 3. From biometric FaceID authentication and push notifications to background Bluetooth tracking and in-app subscriptions, your mobile app is engineered for long-term user retention."
+    ],
+    "deliverablesRoadmap": [
+      { "phase": "Phase 1", "duration": "Weeks 1 - 2", "title": "Mobile UX & Prototype Design", "items": ["Touch-first UI/UX flows and micro-interaction prototypes in Figma", "Component architecture and state management strategy", "Native device capability mapping (Camera, Geolocation, Push)"] },
+      { "phase": "Phase 2", "duration": "Weeks 3 - 5", "title": "Cross-Platform Engineering", "items": ["React Native / Flutter core development with typed interfaces", "Offline SQLite / WatermelonDB local database synchronization", "Biometric authentication (TouchID, FaceID) and secure keystore"] },
+      { "phase": "Phase 3", "duration": "Weeks 6 - 7", "title": "Cloud APIs & Push Infrastructure", "items": ["Firebase Cloud Messaging (FCM) & Apple APNs push notifications", "In-App Purchases (StoreKit & Google Play Billing) integration", "Deep linking configuration for social and email campaigns"] },
+      { "phase": "Phase 4", "duration": "Week 8", "title": "App Store & Play Store Publishing", "items": ["Apple App Store Review Guidelines compliance audit", "Google Play Store submission and target SDK compliance", "Crashlytics telemetry and automated OTA code-push setup"] }
+    ],
+    "keyFeatures": [
+      { "title": "Single Codebase Efficiency", "desc": "Write once and launch simultaneously on Apple iOS and Android with unified logic.", "iconName": "Smartphone" },
+      { "title": "Offline-First Synchronization", "desc": "Users can access data and perform actions without an active connection; changes sync automatically upon reconnection.", "iconName": "Zap" },
+      { "title": "Rich Push Notifications", "desc": "Segmented, automated push messages that drive repeat opens and re-engage dormant users.", "iconName": "TrendingUp" },
+      { "title": "Enterprise Keystore Security", "desc": "Hardware-backed cryptographic storage protecting sensitive user sessions and credentials.", "iconName": "Shield" }
+    ],
+    "techStack": [
+      { "category": "Mobile Frameworks", "tools": "React Native, Flutter, Expo EAS" },
+      { "category": "State & Storage", "tools": "Redux Toolkit, Zustand, SQLite, MMKV Storage" },
+      { "category": "Cloud & Push", "tools": "Firebase (FCM), Supabase, AWS Amplify, OneSignal" },
+      { "category": "Telemetry & Testing", "tools": "Sentry, Firebase Crashlytics, Detox E2E Testing" }
+    ],
+    "comparisonMatrix": [
+      { "feature": "Development Cost", "afwanTech": "50% lower via unified cross-platform stack", "regularAgency": "Double cost requiring separate iOS & Android teams" },
+      { "feature": "App Store Review Rate", "afwanTech": "First-pass approval through strict guideline checks", "regularAgency": "Repeated rejections due to non-compliant UX" },
+      { "feature": "Code Updates", "afwanTech": "Over-The-Air (OTA) instantaneous bug fixes", "regularAgency": "Long 48-hour store approval delays for minor fixes" }
+    ],
+    "industryApplications": [
+      { "industry": "On-Demand Delivery", "title": "Customer & Driver Apps", "impact": "Real-time GPS tracking, order status, and driver dispatch." },
+      { "industry": "Fitness & Wellness", "title": "Workout & Meal Trackers", "impact": "Apple HealthKit & Google Fit sync, timers, and progress analytics." },
+      { "industry": "Real Estate", "title": "Property Buyer Apps", "impact": "Geo-fenced property alerts, virtual tours, and direct agent chat." }
+    ],
+    "faqs": [
+      { "question": "Can one single app really run smoothly on both iPhone and Android?", "answer": "Yes. Modern frameworks like React Native and Flutter compile directly to native bytecode and interface directly with native OS graphics engines, delivering 60fps performance identical to Swift or Kotlin." },
+      { "question": "Do you handle the entire Apple App Store and Google Play Store submission process?", "answer": "Yes. We configure all developer credentials, app privacy manifests, high-res screenshots, promotional copy, and handle all review communications until your app is live." },
+      { "question": "How do you push updates once the app is already published?", "answer": "We configure Over-The-Air (OTA) updates using Expo EAS or CodePush, allowing us to deploy critical bug fixes and content updates instantly to users' devices without waiting for App Store approvals." }
+    ]
+  },
+  "seo-services": {
+    "slug": "seo-services",
+    "title": "Search Engine Optimization (SEO)",
+    "h1": "Dominant Organic Search Rankings & Programmatic SEO",
+    "badge": "Page 1 Organic Strategy",
+    "heroSubtitle": "We execute data-backed, white-hat SEO strategies that capture high-intent commercial search traffic. Deep technical audits, semantic keyword clusters, programmatic scale across 500+ cities, and high-authority backlink acquisition.",
+    "metaTitle": "SEO Services Company | Search Engine Optimization & Programmatic SEO | AFWAN TECH",
+    "metaDescription": "Top SEO company delivering Page 1 Google rankings. We combine technical SEO, programmatic location scaling (500+ cities), semantic content, and high-authority link building to drive sustained organic revenue.",
+    "keywords": ["SEO services", "search engine optimization", "programmatic SEO", "technical SEO agency", "local SEO 500 cities"],
+    "stats": [
+      { "value": "+310%", "label": "Organic Traffic Lift", "sub": "Average 6-month climb" },
+      { "value": "500+", "label": "Cities Ranked", "sub": "Programmatic local mesh" },
+      { "value": "Top 3", "label": "Keyword Positions", "sub": "High-intent commercial terms" },
+      { "value": "100%", "label": "White-Hat", "sub": "Zero algorithmic penalties" }
+    ],
+    "detailedOverview": [
+      "In the age of AI search overviews and evolving ranking algorithms, surface-level keyword stuffing is dead. Sustainable organic dominance requires a multi-faceted approach combining bulletproof technical site health, semantic entity optimization, programmatic scalability, and authentic domain authority.",
+      "AFWAN TECH approaches SEO as an engineering discipline. We eliminate crawl budget waste, structure clean JSON-LD entity graphs, and deploy programmatic city and service networks that capture long-tail, high-converting buyer searches. Our campaigns don't just chase vanity impressions — we drive qualified inbound phone calls, quotation requests, and closed deals."
+    ],
+    "deliverablesRoadmap": [
+      { "phase": "Month 1", "duration": "Audit & Foundation", "title": "Deep Technical & Entity Audit", "items": ["Core Web Vitals remediation (LCP, INP, CLS optimization)", "Crawl error cleanup, indexation budget repair, and canonical enforcement", "Comprehensive competitor gap analysis and keyword master mapping"] },
+      { "phase": "Month 2", "duration": "On-Page & Architecture", "title": "Semantic On-Page & Schema Graph", "items": ["Comprehensive H1, H2, Title, and Meta descriptions optimization", "Nested Schema.org JSON-LD (Organization, Service, FAQ, Breadcrumbs)", "Internal linking architecture mesh to channel PageRank to priority money pages"] },
+      { "phase": "Month 3", "duration": "Programmatic Scaling", "title": "Programmatic 500+ City Network", "items": ["Deployment of dynamic city/state landing pages with localized content", "Localized Google Business Profile (GBP) optimization and local citations", "Hyper-targeted geo-landing page indexing and mobile crawl validation"] },
+      { "phase": "Months 4 - 6", "duration": "Authority & Growth", "title": "Authority Link Building & Content Sprints", "items": ["High-DR editorial guest placements and digital PR outreach", "Monthly thought leadership content creation targeting buyer queries", "Real-time keyword position tracking, telemetry analysis, and CRO tuning"] }
+    ],
+    "keyFeatures": [
+      { "title": "Programmatic Local SEO (500+ Cities)", "desc": "Capture geo-specific search intent across all major cities and states without duplicate content penalties.", "iconName": "Globe" },
+      { "title": "Zero-Defect Technical SEO", "desc": "Eliminate 404s, redirect loops, slow server responses, and mobile usability errors.", "iconName": "Shield" },
+      { "title": "Rich Snippets & Schema Markup", "desc": "Dominate Google SERPs with star ratings, FAQs, breadcrumbs, and expanded snippet real estate.", "iconName": "Sparkles" },
+      { "title": "White-Hat Digital PR Backlinks", "desc": "Acquire clean, high-DR contextual backlinks from authoritative niche publications.", "iconName": "TrendingUp" }
+    ],
+    "techStack": [
+      { "category": "SEO Analytics", "tools": "Google Search Console, Ahrefs, SEMrush, Screaming Frog" },
+      { "category": "Performance Tools", "tools": "Google PageSpeed Insights, Chrome User Experience Report (CrUX)" },
+      { "category": "Schema & Structured Data", "tools": "Schema.org, Google Rich Results Test, JSON-LD Graph Generator" },
+      { "category": "Local & Citations", "tools": "Google Business Profile, BrightLocal, Moz Local" }
+    ],
+    "comparisonMatrix": [
+      { "feature": "Technical Foundation", "afwanTech": "Deep Next.js SSR code-level optimization", "regularAgency": "Surface-level WordPress Yoast plugin checkmarks" },
+      { "feature": "Scalability Across Locations", "afwanTech": "500+ Programmatic city pages with dynamic local context", "regularAgency": "Manual copy-pasting resulting in duplicate content penalties" },
+      { "feature": "Link Building Strategy", "afwanTech": "Ethical editorial digital PR on authoritative websites", "regularAgency": "Spammy PBNs and link farms risking Google penalties" }
+    ],
+    "industryApplications": [
+      { "industry": "Professional & Legal Services", "title": "Local Practice Authority", "impact": "Top 3 map pack and organic rankings for high-value legal queries." },
+      { "industry": "Healthcare & Clinics", "title": "Patient Consultation Funnels", "impact": "Capturing patient search terms for specialized treatments and local appointments." },
+      { "industry": "Industrial & Manufacturing", "title": "B2B RFP Generation", "impact": "Ranking for high-volume supplier, distributor, and contract manufacturing keywords." }
+    ],
+    "faqs": [
+      { "question": "How soon can we expect noticeable improvements in our Google search rankings?", "answer": "Technical fixes and on-page optimizations often show initial crawl improvements within 2 to 4 weeks. Meaningful page-1 rankings and compounding organic traffic growth typically materialize between months 3 to 6 as domain authority and programmatic indexing expand." },
+      { "question": "What is Programmatic SEO and how does it rank 500+ cities?", "answer": "Programmatic SEO uses automated, structured data models to generate hundreds of localized landing pages (e.g., /location/mumbai, /location/bengaluru). Each page receives unique localized context, city landmarks, local FAQs, and schema markup, allowing your business to capture high-intent local queries across every city in India and globally without manual page creation." },
+      { "question": "Do you guarantee #1 ranking on Google?", "answer": "No legitimate agency can guarantee a #1 ranking, as Google's algorithm contains over 200 ranking variables. However, we guarantee rigorous adherence to Google Search Essentials, transparent monthly progress, zero spam tactics, and a proven track record of placing over 85% of target commercial keywords on Page 1." },
+      { "question": "Will we receive monthly reports tracking our keyword positions and traffic?", "answer": "Yes. You receive real-time access to our proprietary analytics dashboard and comprehensive monthly performance audits detailing keyword trajectory, organic click volume, top landing pages, and lead attribution." }
+    ]
+  },
+  "ppc-paid-ads": {
+    "slug": "ppc-paid-ads",
+    "title": "Performance Marketing & PPC Paid Ads",
+    "h1": "High-ROAS Google & Meta Performance Advertising",
+    "badge": "Data-Driven ROI",
+    "heroSubtitle": "We plan, build, and optimize high-converting paid search and social campaigns across Google Ads, Meta Ads, and LinkedIn. Scientific audience targeting, custom landing pages, and relentless A/B testing.",
+    "metaTitle": "Performance Marketing Agency | Google & Meta Ads Management | AFWAN TECH",
+    "metaDescription": "Drive qualified sales leads and aggressive revenue with high-ROAS PPC advertising. Google Search, Shopping, Meta Ads, and YouTube campaigns managed by certified specialists.",
+    "keywords": ["PPC management agency", "Google Ads agency", "Meta ads management", "performance marketing", "high ROAS ads"],
+    "stats": [
+      { "value": "4.6x", "label": "Average ROAS", "sub": "Return on ad spend" },
+      { "value": "-35%", "label": "Lower Cost Per Lead", "sub": "Optimized quality scores" },
+      { "value": "$2M+", "label": "Monthly Ad Spend", "sub": "Managed with precision" },
+      { "value": "100%", "label": "Conversion Tracking", "sub": "Server-side CAPI enabled" }
+    ],
+    "detailedOverview": [
+      "Running paid ads without deep conversion tracking and dedicated landing pages is the fastest way to burn ad budget. High cost-per-click rates and generic ad copy will exhaust budgets without generating qualified sales opportunities. AFWAN TECH approaches performance marketing with surgical quantitative discipline.",
+      "We build tailored conversion funnels starting from intent-driven ad copy to lightning-fast Next.js landing pages. We set up Server-Side Conversions API (CAPI) and Google Enhanced Conversions to circumvent cookie loss, ensuring your ad platforms feed on pristine conversion data to find high-value customers at the lowest acquisition cost."
+    ],
+    "deliverablesRoadmap": [
+      { "phase": "Week 1", "duration": "Tracking & Strategy", "title": "Server-Side Tracking & Funnel Audit", "items": ["Meta Conversions API (CAPI) & Google Enhanced Conversions setup", "Competitor ad intelligence, auction insight analysis, and negative keyword lists", "Conversion-focused landing page wireframes and value proposition definition"] },
+      { "phase": "Week 2", "duration": "Creative & Launch", "title": "Campaign Structure & Creative Production", "items": ["Single-Theme Ad Group (STAG) search campaign structuring", "High-CTR creative static banners, video hooks, and copy angles", "Custom Next.js landing page deployment with sub-second mobile load"] },
+      { "phase": "Weeks 3 - 4", "duration": "Optimization Sprint", "title": "Bid Strategy & Audience Pruning", "items": ["Search term auditing to eliminate non-converting negative query spend", "Audience lookalike and custom intent segment refinement", "Landing page A/B headline and form field split-testing"] },
+      { "phase": "Ongoing", "duration": "Scaling Phase", "title": "Aggressive Budget Scaling & Retention", "items": ["Horizontal scaling across YouTube, Display Remarketing, and LinkedIn", "ROAS target bidding adjustments based on actual sales cycle close rates", "Weekly performance calls and automated Slack lead alerts"] }
+    ],
+    "keyFeatures": [
+      { "title": "Server-Side Conversion Tracking", "desc": "Capture 100% of conversion events bypassing iOS ad blockers and cookie depreciation.", "iconName": "Shield" },
+      { "title": "Dedicated High-Speed Landing Pages", "desc": "Custom Next.js landing pages with 95+ PageSpeed scores that maximize Google Quality Scores.", "iconName": "Zap" },
+      { "title": "Aggressive Negative Keyword Mining", "desc": "Save up to 30% of your budget by filtering out tire-kickers and irrelevant search queries.", "iconName": "Target" },
+      { "title": "Creative Iteration & Video Hooks", "desc": "Continuous production of fresh visual ad creatives to defeat banner blindness and ad fatigue.", "iconName": "Sparkles" }
+    ],
+    "techStack": [
+      { "category": "Advertising Platforms", "tools": "Google Ads, Meta Ads Manager, LinkedIn Campaign Manager, YouTube Ads" },
+      { "category": "Attribution & Tracking", "tools": "Google Tag Manager Server-Side, Meta CAPI, Google Analytics 4" },
+      { "category": "Creative & Testing", "tools": "Figma, Adobe After Effects, Optimizely A/B" }
+    ],
+    "comparisonMatrix": [
+      { "feature": "Landing Page Approach", "afwanTech": "Custom sub-second Next.js pages built specifically for each campaign", "regularAgency": "Sends traffic to bloated homepages resulting in high bounce rates" },
+      { "feature": "Tracking Accuracy", "afwanTech": "Server-Side CAPI capturing 98%+ of conversions", "regularAgency": "Basic browser pixels missing 30-40% of iOS conversions" },
+      { "feature": "Account Ownership", "afwanTech": "You own 100% of all ad accounts and creative assets", "regularAgency": "Locks you out or manages ads inside agency-owned accounts" }
+    ],
+    "industryApplications": [
+      { "industry": "High-Ticket B2B", "title": "LinkedIn & Google Search", "impact": "Capturing decision-makers searching for enterprise solutions." },
+      { "industry": "E-Commerce Brands", "title": "Meta Advantage+ & Google Shopping", "impact": "Aggressive catalog sales scaling with dynamic product ads." },
+      { "industry": "Local Service Contractors", "title": "Call-Only & Local Services Ads", "impact": "Direct incoming phone calls from qualified local customers." }
+    ],
+    "faqs": [
+      { "question": "What ad budget should we start with?", "answer": "We typically recommend starting with a minimum monthly ad spend of $1,500 to $3,000 (or ₹50,000 to ₹1,50,000 for domestic Indian campaigns) to gather statistical conversion data rapidly and optimize algorithmic bidding models." },
+      { "question": "Who pays Google and Meta for the ad spend?", "answer": "You pay the ad networks directly using your company credit card. This ensures complete transparency, direct credit card reward points, and zero markups on ad spend." },
+      { "question": "How quickly will we see inbound leads?", "answer": "Unlike organic SEO which takes months to compound, paid advertising generates immediate impressions and traffic within hours of campaign launch. Most well-structured campaigns begin generating qualified inquiries in the very first week." }
+    ]
+  },
+  "social-media-management": {
+    "slug": "social-media-management",
+    "title": "Social Media Growth & Management",
+    "h1": "Strategic Social Media Management & Creative Content",
+    "badge": "Community & Viral Engagement",
+    "heroSubtitle": "We build authoritative social brand presences across LinkedIn, Instagram, X (Twitter), and YouTube. High-impact carousel designs, short-form viral reels, community moderation, and strategic narrative crafting.",
+    "metaTitle": "Social Media Management Services | Creative Brand Growth | AFWAN TECH",
+    "metaDescription": "Build a loyal community and elevate brand authority with full-service social media management. Content calendars, short-form video, aesthetic graphics, and engagement.",
+    "keywords": ["social media management", "social media marketing agency", "instagram growth service", "linkedin content agency", "creative brand building"],
+    "stats": [
+      { "value": "10M+", "label": "Organic Views", "sub": "Generated across client reels" },
+      { "value": "4.8%", "label": "Avg. Engagement Rate", "sub": "3x above industry median" },
+      { "value": "30+", "label": "Assets Per Month", "sub": "High-fidelity custom content" },
+      { "value": "24/7", "label": "Community Care", "sub": "Rapid comment & DM replies" }
+    ],
+    "detailedOverview": [
+      "Social media is no longer about sporadic generic holiday posts. It is the modern town square where customers vet your credibility, evaluate your brand personality, and decide whether to trust your organization. Boring, stock-photo heavy feeds fail to generate attention.",
+      "AFWAN TECH provides end-to-end social media growth. We design editorial calendars tailored to your executive team and company voice. From crisp LinkedIn thought leadership posts that attract enterprise partners to high-converting Instagram reels and carousels, we transform your social channels into dynamic customer acquisition funnels."
+    ],
+    "deliverablesRoadmap": [
+      { "phase": "Week 1", "duration": "Brand Alignment", "title": "Social Audit & Visual Guidelines", "items": ["Channel audit, competitor benchmarking, and visual tone-of-voice definition", "Custom Figma social media design templates matching your brand palette", "Content pillar mapping: Education, Proof, Culture, and Conversion"] },
+      { "phase": "Week 2", "duration": "Production", "title": "Content Calendar & Asset Production", "items": ["Monthly 30-day content calendar creation with copy and visual briefs", "Carousel design, static graphics, and animated motion graphics", "Short-form video script writing and video editing for Reels/TikTok"] },
+      { "phase": "Weeks 3 - 4", "duration": "Publishing & Community", "title": "Automated Scheduling & Active Moderation", "items": ["Peak-hour automated multi-platform publishing", "Active comment response, community engagement, and story polling", "Influencer relationship outreach and collaborative partner tagging"] },
+      { "phase": "Monthly", "duration": "Reporting", "title": "Monthly Growth & Engagement Review", "items": ["Follower demographics, reach metrics, and top-performing post analysis", "Content iteration based on what resonated with your target audience", "Next month's strategic calendar presentation"] }
+    ],
+    "keyFeatures": [
+      { "title": "Executive Thought Leadership", "desc": "Ghostwriting and personal brand positioning for founders and C-level executives on LinkedIn.", "iconName": "Sparkles" },
+      { "title": "Aesthetic Visual Cohesion", "desc": "Custom-designed carousels, infographics, and typography that elevate your brand reputation.", "iconName": "Palette" },
+      { "title": "High-Retention Short Video", "desc": "Punchy reels and shorts featuring trending audio, clean subtitles, and strong hook rates.", "iconName": "Smartphone" },
+      { "title": "Active Community Engagement", "desc": "Prompt responses to inquiries, direct messages, and comments to nurture prospective leads.", "iconName": "Users" }
+    ],
+    "techStack": [
+      { "category": "Creative Design", "tools": "Figma, Adobe Illustrator, Photoshop, Premiere Pro" },
+      { "category": "Scheduling & Workflows", "tools": "Buffer, Metricool, Hootsuite, Later" },
+      { "category": "Analytics & Trends", "tools": "Sprout Social, Meta Business Suite, LinkedIn Analytics" }
+    ],
+    "comparisonMatrix": [
+      { "feature": "Visual Quality", "afwanTech": "100% custom-designed brand assets and vector graphics", "regularAgency": "Generic Canva stock photo templates with company logo pasted" },
+      { "feature": "Content Strategy", "afwanTech": "Deep industry research delivering genuine value to buyers", "regularAgency": "Repetitive generic quote posts with zero audience engagement" },
+      { "feature": "Video Capability", "afwanTech": "Full short-form video editing with captions and dynamic b-roll", "regularAgency": "Static image posts only" }
+    ],
+    "industryApplications": [
+      { "industry": "B2B Tech & Consulting", "title": "LinkedIn Authority Engine", "impact": "Showcasing case studies and technical expertise to attract enterprise RFPs." },
+      { "industry": "Lifestyle & Retail", "title": "Instagram Shopping Community", "impact": "High-aesthetic product reels, influencer collaborations, and user-generated content." },
+      { "industry": "Real Estate & Hospitality", "title": "Visual Showcase Feeds", "impact": "Breathtaking property walkthroughs, architectural highlights, and lifestyle stories." }
+    ],
+    "faqs": [
+      { "question": "Which social platforms should my business focus on?", "answer": "For B2B companies, tech startups, and professional services, LinkedIn and X (Twitter) are primary drivers of enterprise authority. For B2C, e-commerce, real estate, and lifestyle brands, Instagram, YouTube, and Facebook deliver the highest visual reach and engagement." },
+      { "question": "Do I have to provide the photos and videos or do you create them?", "answer": "We handle the entire creative process. If you have internal team photos or product footage, we incorporate them. Otherwise, we produce custom vector illustrations, branded 3D renders, motion graphics, and curated licensed b-roll." },
+      { "question": "Can I approve posts before they are published?", "answer": "Yes. Every client receives an interactive monthly content calendar with exact captions, hashtags, and visual assets for full review and feedback prior to scheduling." }
+    ]
+  },
+  "graphic-design": {
+    "slug": "graphic-design",
+    "title": "Branding & UI/UX Graphic Design",
+    "h1": "Distinctive Brand Identity Systems & Modern UI/UX",
+    "badge": "World-Class Aesthetics",
+    "heroSubtitle": "We craft unforgettable brand identities, cohesive design systems, and intuitive user experiences that elevate market perception and command premium pricing.",
+    "metaTitle": "Graphic Design & Branding Agency | UI/UX Design Systems | AFWAN TECH",
+    "metaDescription": "Elevate your business with bespoke brand identity design, logo suites, vector graphics, marketing collateral, and intuitive UI/UX design systems.",
+    "keywords": ["graphic design services", "branding agency", "UI UX design company", "logo design agency", "brand identity system"],
+    "stats": [
+      { "value": "100%", "label": "Original Vectors", "sub": "Zero clip-art or templates" },
+      { "value": "40+", "label": "Brand Guidelines", "sub": "Complete identity rulebook" },
+      { "value": "14", "label": "Design Accolades", "sub": "Recognized visual excellence" },
+      { "value": "All Formats", "label": "Production Files", "sub": "SVG, AI, EPS, PDF, Figma" }
+    ],
+    "detailedOverview": [
+      "Design is not merely how something looks; it is how it communicates trust, authority, and value. In saturated markets, businesses with amateur visual presentation are immediately perceived as cheap and risky. Premium design allows you to command higher prices and establish instant credibility.",
+      "AFWAN TECH crafts comprehensive brand identity systems. From foundational logo marks and typography pairings to full-scale digital design systems and marketing collateral, our creative team ensures your brand speaks with prestige and clarity across every touchpoint."
+    ],
+    "deliverablesRoadmap": [
+      { "phase": "Step 1", "duration": "Days 1 - 4", "title": "Brand Discovery & Moodboards", "items": ["Competitor visual landscape audit and positioning analysis", "Curated moodboards exploring typography, color palettes, and texture", "Core visual metaphor exploration and brand archetype definition"] },
+      { "phase": "Step 2", "duration": "Days 5 - 10", "title": "Logo Suite & Symbol Creation", "items": ["Multiple unique conceptual logo directions presented in real-world mockups", "Precision vector geometry drafting in Adobe Illustrator and Figma", "Secondary sub-marks, icons, favicon variations, and monochrome lockups"] },
+      { "phase": "Step 3", "duration": "Days 11 - 16", "title": "Design System & Collateral", "items": ["Color token palette (Primary, Secondary, Neutral, Alert scales)", "Google / Custom font pairing rules and hierarchy specifications", "Business cards, letterheads, invoice templates, and email signatures"] },
+      { "phase": "Step 4", "duration": "Days 17 - 20", "title": "Brand Guidelines & Asset Delivery", "items": ["Comprehensive 40+ page Brand Identity Guidelines PDF book", "Complete vector asset package organized in SVG, PNG, PDF, and EPS", "Figma design system library with interactive components"] }
+    ],
+    "keyFeatures": [
+      { "title": "Complete Identity Guidelines", "desc": "A comprehensive rulebook detailing spacing, color usage, typography, and do's and don'ts.", "iconName": "Palette" },
+      { "title": "Mathematical Vector Precision", "desc": "Clean bezier curves and geometric alignment ensuring flawless reproduction on business cards or giant billboards.", "iconName": "Shield" },
+      { "title": "Comprehensive Asset Suite", "desc": "Every format your printers, developers, and partners will ever require.", "iconName": "Sparkles" },
+      { "title": "Modern UI/UX Components", "desc": "Figma design systems ready for direct front-end developer handoff.", "iconName": "Layers" }
+    ],
+    "techStack": [
+      { "category": "Design & Prototyping", "tools": "Figma, Adobe Illustrator, Adobe Photoshop, InDesign" },
+      { "category": "Vector & 3D Assets", "tools": "Blender 3D, Spline 3D, Vector Graphics" }
+    ],
+    "comparisonMatrix": [
+      { "feature": "Originality", "afwanTech": "100% custom-drawn vectors from scratch", "regularAgency": "Rehashed stock vectors from cheap marketplaces" },
+      { "feature": "Scalability", "afwanTech": "Full componentized Figma design systems with tokens", "regularAgency": "Flat image mockups with no design guidelines" },
+      { "feature": "Deliverable Format", "afwanTech": "Organized production folders with print-ready and web-ready exports", "regularAgency": "Single low-resolution JPEG or PNG" }
+    ],
+    "industryApplications": [
+      { "industry": "Luxury & Real Estate", "title": "High-End Collateral", "impact": "Gold foil brochures, presentation decks, and architectural signage." },
+      { "industry": "Tech Startups", "title": "Modern App UI Systems", "impact": "Clean dark-mode interfaces, custom iconography, and interactive components." },
+      { "industry": "Corporate Enterprises", "title": "Annual Reports & Decks", "impact": "Polished investor presentations, pitch decks, and brand identity renewals." }
+    ],
+    "faqs": [
+      { "question": "What files do I receive when the branding project is complete?", "answer": "You receive a master ZIP archive containing vector source files (.AI, .EPS, .SVG), print-ready PDFs with bleed lines, web-optimized PNGs with transparent backgrounds, high-resolution JPEGs, and an invitation to the shared Figma design system library." },
+      { "question": "Do I have complete trademark rights to the logo?", "answer": "Yes. All intellectual property and copyright rights are transferred to your company upon final delivery, allowing you to legally trademark your logo in any jurisdiction." },
+      { "question": "How many design revisions are included?", "answer": "We provide iterative collaboration phases with unlimited reasonable revisions during the concept refinement stage to guarantee you are 100% delighted with your brand identity." }
+    ]
+  }
+}

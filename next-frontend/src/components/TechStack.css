@@ -1,0 +1,41 @@
+.tech-section {
+  background-color: var(--white);
+}
+
+.tech-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 120px;
+}
+
+.tech-icon {
+  font-size: 40px;
+  width: 80px;
+  height: 80px;
+  background: var(--bg-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.tech-item:hover .tech-icon {
+  background: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+.tech-item span {
+  font-weight: 600;
+  color: var(--primary-color);
+}
