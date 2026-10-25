@@ -1,6 +1,5 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
 @theme {
   --font-sora: "Sora", sans-serif;
@@ -28,20 +27,22 @@
   --text-muted: #555555;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  color: #1a1a1a;
-  background-color: #ffffff;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-  overflow-x: hidden;
-}
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Sora', sans-serif;
-  font-weight: 800;
-  color: #1a1a1a;
-  letter-spacing: -0.03em;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    color: inherit;
+    letter-spacing: -0.03em;
+  }
 }
 
 .max-w-container {

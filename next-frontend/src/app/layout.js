@@ -1,11 +1,15 @@
 import "./globals.css";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
+import FloatingActions from "@/components/FloatingActions";
 
 export const metadata = {
   title: "AFWAN TECH | Digital Marketing & Next.js Web Engineering Agency",
   description: "Next-gen web development, custom software engineering, and programmatic SEO covering 500+ cities in India & globally.",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
     shortcut: "/favicon.png",
     apple: "/afwan.png",
   },
@@ -24,10 +28,13 @@ export default function RootLayout({ children }) {
     <html lang="en" className="h-full scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/afwan.png" />
       </head>
       <body className="min-h-full flex flex-col bg-white text-[#0f172a] antialiased selection:bg-primary selection:text-white">
         <AnalyticsTracker />
         {children}
+        <FloatingActions />
       </body>
     </html>
   );

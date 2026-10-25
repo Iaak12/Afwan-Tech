@@ -4,6 +4,7 @@ import { ArrowUpRight, TrendingUp, Sparkles, CheckCircle2 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PreFooter from '@/components/PreFooter';
+import CompactHeroForm from '@/components/CompactHeroForm';
 import { portfolioProjects } from '@/data/siteData';
 
 export const metadata = {
@@ -16,21 +17,55 @@ export default function PortfolioPage() {
     <div className="bg-white min-h-screen font-inter text-[#0f172a]">
       <Header />
 
-      <main className="pt-36">
-        {/* Header */}
-        <section className="text-center max-w-4xl mx-auto px-6 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-glow text-xs font-black uppercase tracking-wider mb-6">
-            <Sparkles size={14} className="text-primary" />
-            <span>Demonstrated ROI & Technical Rigor</span>
+      <main>
+        {/* Portfolio 100vh Hero */}
+        <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 bg-gradient-to-b from-[#f0f7fd]/70 via-white to-white overflow-hidden border-b border-gray-100">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="max-w-container mx-auto px-6 relative z-10 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-glow text-xs font-black uppercase tracking-wider">
+                  <Sparkles size={14} className="text-primary" />
+                  <span>Demonstrated ROI & Technical Rigor</span>
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0f172a] tracking-tight leading-[1.08] font-sora">
+                  Featured Case Studies & <span className="text-gradient">Client Wins</span>
+                </h1>
+
+                <p className="text-gray-600 text-base md:text-lg max-w-xl font-normal leading-relaxed">
+                  Real commercial results engineered through high-performance Next.js architectures, programmatic search expansion, and high-converting funnel design.
+                </p>
+
+                <div className="grid grid-cols-3 gap-3 pt-2">
+                  <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                    <div className="text-2xl font-black text-primary font-sora">500+</div>
+                    <div className="text-xs font-bold text-gray-900 mt-0.5">Projects Shipped</div>
+                    <div className="text-[10px] text-gray-400">Web & App solutions</div>
+                  </div>
+                  <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                    <div className="text-2xl font-black text-primary font-sora">+320%</div>
+                    <div className="text-xs font-bold text-gray-900 mt-0.5">Avg Organic Lift</div>
+                    <div className="text-[10px] text-gray-400">In first 120 days</div>
+                  </div>
+                  <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                    <div className="text-2xl font-black text-primary font-sora">4.9/5</div>
+                    <div className="text-xs font-bold text-gray-900 mt-0.5">Clutch & Google</div>
+                    <div className="text-[10px] text-gray-400">Verified feedback</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 w-full">
+                <CompactHeroForm 
+                  title="Build a Winning Project Next"
+                  subtitle="Discuss your vision with our senior tech architects. Get a roadmap in 15 mins."
+                />
+              </div>
+
+            </div>
           </div>
-
-          <h1 className="text-4xl sm:text-6xl font-black text-[#0f172a] tracking-tight leading-tight mb-6">
-            Featured Case Studies & Client Wins
-          </h1>
-
-          <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto">
-            Real commercial results engineered through high-performance Next.js architectures, programmatic search expansion, and high-converting funnel design.
-          </p>
         </section>
 
         {/* Portfolio Projects Grid */}

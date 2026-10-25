@@ -11,6 +11,7 @@ import {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import CompactHeroForm from '@/components/CompactHeroForm';
 
 const iconMap = {
   Zap: Zap,
@@ -85,7 +86,7 @@ export default function ServicePageTemplate({ data }) {
         </div>
 
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-b from-[#f0f7fd] via-white to-white overflow-hidden">
+        <section className="relative min-h-[92vh] flex items-center py-16 md:py-24 bg-gradient-to-b from-[#f0f7fd] via-white to-white overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#2081D3]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
           <div className="max-w-container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -118,11 +119,11 @@ export default function ServicePageTemplate({ data }) {
               </div>
 
               {/* Service Strategy Lead Form */}
-              <div className="lg:col-span-5">
-                <ContactForm 
+              <div className="lg:col-span-5 w-full">
+                <CompactHeroForm 
                   defaultService={data.title}
                   title={`Request ${data.title} Proposal`}
-                  subtitle="Get an actionable architecture breakdown and transparent cost estimate."
+                  subtitle="Get an actionable architecture breakdown and transparent cost estimate within 15 mins."
                 />
               </div>
             </div>
@@ -351,7 +352,7 @@ export default function ServicePageTemplate({ data }) {
         {/* Bottom CTA Banner */}
         <section className="py-20 bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white">
           <div className="max-w-4xl mx-auto px-6 text-center space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
               Ready to Accelerate Growth with High-Performance {data.title}?
             </h2>
             <p className="text-gray-300 text-base max-w-2xl mx-auto">

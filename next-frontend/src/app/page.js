@@ -57,7 +57,7 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 text-blue-300 text-xs font-black uppercase tracking-wider">
                   <MapPin size={14} className="text-primary" /> Programmatic SEO Engine
                 </div>
-                <h3 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight font-sora">
+                <h3 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight font-sora text-white">
                   Rank On Page 1 In <span className="text-primary">500+ Cities</span> Across India & Worldwide
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">

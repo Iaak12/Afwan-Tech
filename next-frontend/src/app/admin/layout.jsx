@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { 
   LayoutDashboard, BarChart3, Mail, MapPin, Globe, 
@@ -85,9 +86,16 @@ export default function AdminLayout({ children }) {
       <aside className="hidden lg:flex w-64 bg-[#0f172a] text-white flex-col justify-between fixed inset-y-0 left-0 z-40 p-6">
         <div>
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 mb-8 pb-6 border-b border-white/10">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#2081D3] to-[#2F6097] flex items-center justify-center text-white font-black text-lg shadow-md shadow-primary/20">
-              AT
+          <Link href="/" className="flex items-center gap-3 mb-8 pb-6 border-b border-white/10 group">
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
+              <Image
+                src="/afwan.png"
+                alt="Afwan Tech Logo"
+                width={40}
+                height={40}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
             <div>
               <span className="font-extrabold text-lg tracking-tight text-white block leading-none">

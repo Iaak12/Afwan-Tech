@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Search, MapPin, Globe, Building2, ChevronRight, Sparkles, Filter } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CompactHeroForm from '@/components/CompactHeroForm';
 import { getAllLocations } from '@/data/locationsData';
 
 export default function MarketAreaPage() {
@@ -39,62 +40,79 @@ export default function MarketAreaPage() {
     <div className="bg-[#fcfcfc] min-h-screen text-[#0f172a] font-inter">
       <Header />
 
-      <main className="pt-36 pb-24">
-        {/* Hero Header */}
-        <section className="text-center max-w-4xl mx-auto px-6 mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-glow text-xs font-black uppercase tracking-wider mb-6">
-            <Globe size={14} className="text-primary" />
-            <span>500+ Programmatic Regional Footprints</span>
-          </div>
+      <main>
+        {/* Hero Section */}
+        <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 bg-gradient-to-b from-[#f0f7fd]/70 via-white to-white overflow-hidden border-b border-gray-100">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="max-w-container mx-auto px-6 relative z-10 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-glow text-xs font-black uppercase tracking-wider">
+                  <Globe size={14} className="text-primary" />
+                  <span>500+ Programmatic Regional Footprints</span>
+                </div>
 
-          <h1 className="text-4xl sm:text-6xl font-black text-[#0f172a] tracking-tight leading-tight mb-6">
-            Global Reach, Hyper-Local Dominance
-          </h1>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0f172a] tracking-tight leading-[1.08] font-sora">
+                  Global Reach, <span className="text-gradient">Hyper-Local Dominance</span>
+                </h1>
 
-          <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto">
-            Click on any state or city below to view dedicated technical web development, SEO benchmarks, and digital solutions for that market.
-          </p>
+                <p className="text-gray-600 text-base md:text-lg max-w-xl font-normal leading-relaxed">
+                  Search across 500+ cities in India and global tech hubs to explore dedicated Next.js web development, local entity schemas, and organic ranking engines.
+                </p>
 
-          {/* Search Bar */}
-          <div className="mt-8 max-w-xl mx-auto relative">
-            <div className="relative flex items-center">
-              <Search className="absolute left-4 text-gray-400 w-5 h-5 pointer-events-none" />
-              <input 
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search across 500+ cities (e.g. Mumbai, Bengaluru, Noida, Dubai)..."
-                className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 shadow-lg shadow-slate-100 text-sm bg-white"
-              />
+                {/* Search Bar */}
+                <div className="max-w-xl relative">
+                  <div className="relative flex items-center">
+                    <Search className="absolute left-4 text-gray-400 w-5 h-5 pointer-events-none" />
+                    <input 
+                      type="text"
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
+                      placeholder="Search across 500+ cities (e.g. Mumbai, Bengaluru, Noida, Dubai)..."
+                      className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 shadow-md text-sm bg-white"
+                    />
+                  </div>
+                </div>
+
+                {/* Filter Pills */}
+                <div className="flex flex-wrap items-center gap-2 pt-1">
+                  <button 
+                    onClick={() => setFilterType('all')}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${filterType === 'all' ? 'bg-[#0f172a] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400'}`}
+                  >
+                    All Locations ({allLocations.length})
+                  </button>
+                  <button 
+                    onClick={() => setFilterType('state')}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${filterType === 'state' ? 'bg-[#0f172a] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400'}`}
+                  >
+                    States
+                  </button>
+                  <button 
+                    onClick={() => setFilterType('city')}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${filterType === 'city' ? 'bg-[#0f172a] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400'}`}
+                  >
+                    Cities
+                  </button>
+                  <button 
+                    onClick={() => setFilterType('region')}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${filterType === 'region' ? 'bg-[#0f172a] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400'}`}
+                  >
+                    Global Hubs
+                  </button>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 w-full">
+                <CompactHeroForm 
+                  defaultService="SEO Services"
+                  title="Expand to Your Next 10 Cities"
+                  subtitle="Get a free multi-location programmatic SEO audit & roadmap."
+                />
+              </div>
+
             </div>
-          </div>
-
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
-            <button 
-              onClick={() => setFilterType('all')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${filterType === 'all' ? 'bg-[#0f172a] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400'}`}
-            >
-              All Locations ({allLocations.length})
-            </button>
-            <button 
-              onClick={() => setFilterType('state')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${filterType === 'state' ? 'bg-[#0f172a] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400'}`}
-            >
-              Indian States ({allLocations.filter(l => l.type === 'state').length})
-            </button>
-            <button 
-              onClick={() => setFilterType('city')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${filterType === 'city' ? 'bg-[#0f172a] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400'}`}
-            >
-              Cities ({allLocations.filter(l => l.type === 'city').length})
-            </button>
-            <button 
-              onClick={() => setFilterType('region')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${filterType === 'region' ? 'bg-[#0f172a] text-white shadow-md' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400'}`}
-            >
-              Global Hubs ({allLocations.filter(l => l.country === 'Global').length})
-            </button>
           </div>
         </section>
 

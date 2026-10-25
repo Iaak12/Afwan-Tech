@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Check, Zap, Star, ShieldCheck, ArrowRight, HelpCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CompactHeroForm from '@/components/CompactHeroForm';
 import { pricingPlans } from '@/data/siteData';
 
 export const metadata = {
@@ -15,21 +16,55 @@ export default function PricingPage() {
     <div className="bg-[#fcfcfc] min-h-screen font-inter text-[#0f172a]">
       <Header />
 
-      <main className="pt-36 pb-24">
-        {/* Header */}
-        <section className="text-center max-w-4xl mx-auto px-6 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-glow text-xs font-black uppercase tracking-wider mb-6">
-            <Zap size={14} className="text-primary" />
-            <span>Predictable Investment, Guaranteed Velocity</span>
+      <main>
+        {/* Pricing 100vh Hero */}
+        <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 bg-gradient-to-b from-[#f0f7fd]/70 via-white to-white overflow-hidden border-b border-gray-100">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="max-w-container mx-auto px-6 relative z-10 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-glow text-xs font-black uppercase tracking-wider">
+                  <Zap size={14} className="text-primary" />
+                  <span>Predictable Investment, Guaranteed Velocity</span>
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0f172a] tracking-tight leading-[1.08] font-sora">
+                  Transparent Pricing <span className="text-gradient">Built For Growth</span>
+                </h1>
+
+                <p className="text-gray-600 text-base md:text-lg max-w-xl font-normal leading-relaxed">
+                  No hidden retainers or opaque hourly billing. Select a performance-focused package below or get a custom scope breakdown in minutes.
+                </p>
+
+                <div className="grid grid-cols-3 gap-3 pt-2">
+                  <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                    <ShieldCheck size={18} className="text-emerald-500 mb-1" />
+                    <div className="text-xs font-bold text-gray-900">100% Code Ownership</div>
+                    <div className="text-[10px] text-gray-400">Zero vendor lock-in</div>
+                  </div>
+                  <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                    <Star size={18} className="text-primary mb-1" />
+                    <div className="text-xs font-bold text-gray-900">Milestone Invoicing</div>
+                    <div className="text-[10px] text-gray-400">Pay on deliverables</div>
+                  </div>
+                  <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                    <Zap size={18} className="text-primary mb-1" />
+                    <div className="text-xs font-bold text-gray-900">Direct Slack/Call Sync</div>
+                    <div className="text-[10px] text-gray-400">Senior architects</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 w-full">
+                <CompactHeroForm 
+                  title="Custom Scope & Cost Estimate"
+                  subtitle="Need custom enterprise features or SLA? Get a transparent breakdown in 15 mins."
+                />
+              </div>
+
+            </div>
           </div>
-
-          <h1 className="text-4xl sm:text-6xl font-black text-[#0f172a] tracking-tight leading-tight mb-6">
-            Transparent Pricing Built For Growth
-          </h1>
-
-          <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto">
-            No hidden retainers or opaque hourly billing. Select a performance-focused package tailored to your market ambitions.
-          </p>
         </section>
 
         {/* Pricing Cards Grid */}

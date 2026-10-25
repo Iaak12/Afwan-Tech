@@ -8,6 +8,7 @@ import {
   Smartphone, Code, CircleCheckBig, Layers, ShieldCheck, MapPin
 } from 'lucide-react';
 import { siteSettings } from '@/data/siteData';
+import CompactHeroForm from '@/components/CompactHeroForm';
 
 const floatingServices = [
   { icon: <Search size={14} />, label: 'SEO Services' },
@@ -35,7 +36,7 @@ export default function Hero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-white">
       {/* ── PREMIUM BACKGROUND ELEMENTS ── */}
       {/* Grid Pattern */}
       <div 
@@ -51,10 +52,10 @@ export default function Hero() {
       <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-[#00B4A6]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-container mx-auto px-6 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
 
-          {/* ── LEFT HERO CONTENT ── */}
-          <div className="space-y-6">
+          {/* ── LEFT HERO CONTENT (7 COLS) ── */}
+          <div className="lg:col-span-7 space-y-6">
             {/* Top Rating Badge */}
             <motion.div 
               initial={{ opacity: 0, x: -20 }} 
@@ -78,11 +79,11 @@ export default function Hero() {
               transition={{ delay: 0.1 }} 
               className="space-y-4"
             >
-              <h1 className="text-5xl md:text-6xl xl:text-7xl font-black leading-[0.98] tracking-tightest text-[#1a1a1a]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black leading-[1.02] tracking-tightest text-[#1a1a1a] font-sora">
                 <span className="block mb-1">Every Digital</span>
                 <span className="text-gradient">Service Your<br />Business Needs.</span>
               </h1>
-              <p className="text-base md:text-lg text-gray-500 max-w-lg font-medium leading-relaxed pt-1">
+              <p className="text-base md:text-lg text-gray-600 max-w-xl font-medium leading-relaxed pt-1">
                 From custom-coded Next.js websites and mobile applications to graphic design, programmatic SEO, and social media — we are the single agency partner that scales your entire digital presence.
               </p>
             </motion.div>
@@ -92,22 +93,21 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }} 
               animate={{ opacity: 1, y: 0 }} 
               transition={{ delay: 0.2 }}
-              className="flex flex-wrap items-center gap-4 pt-2"
+              className="flex flex-wrap items-center gap-4 pt-1"
             >
-              <Link 
-                href="/contact-us"
+              <a 
+                href="#services-bento"
                 className="btn btn-primary !px-8 !py-4 rounded-2xl shadow-glow text-sm font-bold text-white group flex items-center"
-              >
-                Get a Free Strategy Call
-                <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link 
-                href="/services"
-                className="btn btn-outline !px-8 !py-4 rounded-2xl text-sm font-bold group backdrop-blur-md bg-white/10 flex items-center"
               >
                 Explore All Services
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
+              <a 
+                href="tel:+919560133711"
+                className="btn btn-outline !px-7 !py-4 rounded-2xl text-sm font-bold group bg-white/60 flex items-center gap-2"
+              >
+                <span>Call +91 95601 33711</span>
+              </a>
             </motion.div>
 
             {/* Social proof strip */}
@@ -145,80 +145,29 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* ── RIGHT VISUAL: Live Dashboard Glass Card ── */}
+          {/* ── RIGHT VISUAL: Small 2-Column Hero Contact Form (5 COLS) ── */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }} 
             animate={{ opacity: 1, scale: 1 }} 
             transition={{ delay: 0.25, duration: 0.8 }}
-            className="relative hidden lg:block"
+            className="lg:col-span-5 relative w-full"
           >
-            {/* Central card */}
-            <div className="relative z-10 glass-card !rounded-[2.5rem] !p-8 !border-gray-200 shadow-2xl bg-white/90">
-              {/* Live indicator */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping" />
-                  <span className="text-gray-500 text-[10px] font-black uppercase tracking-widest">
-                    Live Performance Telemetry
-                  </span>
-                </div>
-                <span className="text-primary text-xs font-bold font-mono">afwan.agency</span>
-              </div>
-
-              {/* Metrics grid */}
-              <div className="grid grid-cols-2 gap-3 mb-5">
-                {[
-                  { v: '16,000+', l: 'Global Clients', up: '+18%' },
-                  { v: '98.4%', l: 'Success Rate', up: '+2.1%' },
-                  { v: '$50M+', l: 'Revenue Added', up: '+34%' },
-                  { v: '285%', l: 'Organic Traffic Lift', up: '+62%' },
-                ].map((m, i) => (
-                  <motion.div 
-                    key={i} 
-                    initial={{ opacity: 0, y: 10 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    transition={{ delay: 0.4 + i * 0.1 }}
-                    className="bg-gray-50 rounded-2xl p-4 border border-gray-100 hover:border-primary/40 transition-colors"
-                  >
-                    <div className="text-2xl font-black text-[#1a1a1a] italic leading-none font-sora">{m.v}</div>
-                    <div className="text-[9px] font-black text-gray-400 uppercase tracking-widest mt-1.5">{m.l}</div>
-                    <div className="text-emerald-600 text-[9px] font-black mt-1 flex items-center gap-0.5">
-                      <TrendingUp size={10} /> {m.up} verified
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Mini bar chart */}
-              <div className="bg-gray-50 rounded-2xl p-4 border border-gray-100">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest">Compounding Traffic & Ranking Growth</span>
-                  <span className="text-[10px] font-bold text-primary">Live Next.js Telemetry</span>
-                </div>
-                <div className="flex items-end gap-1.5 h-14">
-                  {[35, 48, 42, 65, 58, 76, 70, 88, 82, 95, 92, 100].map((h, i) => (
-                    <motion.div 
-                      key={i} 
-                      initial={{ height: 0 }} 
-                      animate={{ height: `${h}%` }}
-                      transition={{ delay: 0.6 + i * 0.04, duration: 0.4 }}
-                      className={`flex-1 rounded-sm ${i === 11 ? 'bg-primary shadow-sm shadow-primary/50' : i >= 8 ? 'bg-[#1a1a1a]/50' : 'bg-[#1a1a1a]/15'}`} 
-                    />
-                  ))}
-                </div>
-              </div>
+            {/* Floating micro badges */}
+            <div className="absolute -top-3.5 -right-2 z-20 glass-pill px-3.5 py-1.5 rounded-xl hidden sm:flex items-center gap-1.5 border border-gray-200 shadow-md text-[11px] font-bold text-gray-800">
+              <Zap size={13} className="text-primary" />
+              <span>Sub-Second Speed</span>
             </div>
 
-            {/* Floating service pills around dashboard */}
-            <div className="absolute -top-4 -right-4 z-20 glass-pill px-4 py-2 rounded-2xl flex items-center gap-2 border border-gray-200 shadow-lg text-xs font-bold text-gray-800 animate-bounce">
-              <Zap size={14} className="text-primary" />
-              <span>Sub-Second Page Load</span>
+            <div className="absolute -bottom-3.5 -left-2 z-20 glass-pill px-3.5 py-1.5 rounded-xl hidden sm:flex items-center gap-1.5 border border-gray-200 shadow-md text-[11px] font-bold text-gray-800">
+              <ShieldCheck size={13} className="text-emerald-500" />
+              <span>100% Core Web Vitals</span>
             </div>
 
-            <div className="absolute -bottom-4 -left-4 z-20 glass-pill px-4 py-2 rounded-2xl flex items-center gap-2 border border-gray-200 shadow-lg text-xs font-bold text-gray-800">
-              <ShieldCheck size={14} className="text-emerald-500" />
-              <span>100% Core Web Vitals Pass</span>
-            </div>
+            <CompactHeroForm 
+              defaultService="Website Development"
+              title="Get Instant Strategy & Proposal"
+              subtitle="Fill in 2 quick rows to get a dedicated technical roadmap & cost quote."
+            />
           </motion.div>
 
         </div>

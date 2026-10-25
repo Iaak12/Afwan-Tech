@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Lock, User, ShieldCheck, Eye, EyeOff, ArrowRight, Sparkles, AlertCircle } from 'lucide-react';
 
 export default function AdminLoginPage() {
@@ -51,8 +52,15 @@ export default function AdminLoginPage() {
         {/* Card Header */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#2081D3] to-[#2F6097] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform">
-              AT
+            <div className="relative w-14 h-14 rounded-2xl overflow-hidden shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform flex items-center justify-center">
+              <Image
+                src="/afwan.png"
+                alt="Afwan Tech Logo"
+                width={56}
+                height={56}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
           </Link>
           <h1 className="text-2xl font-black text-white font-sora tracking-tight">

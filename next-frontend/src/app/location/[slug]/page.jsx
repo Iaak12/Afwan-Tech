@@ -9,6 +9,7 @@ import {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import CompactHeroForm from '@/components/CompactHeroForm';
 import { 
   getAllLocations, 
   getLocationBySlug, 
@@ -167,7 +168,7 @@ export default async function LocationPage({ params }) {
           </div>
 
           {/* Hero Section */}
-          <section className="py-16 md:py-24 bg-gradient-to-b from-[#f0f7fd] via-white to-white relative overflow-hidden">
+          <section className="min-h-[92vh] flex items-center py-16 md:py-24 bg-gradient-to-b from-[#f0f7fd] via-white to-white relative overflow-hidden">
             <div className="max-w-container mx-auto px-6 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-7 space-y-6">
@@ -204,12 +205,12 @@ export default async function LocationPage({ params }) {
                 </div>
 
                 {/* Local Lead Capture Card */}
-                <div className="lg:col-span-5">
-                  <ContactForm 
+                <div className="lg:col-span-5 w-full">
+                  <CompactHeroForm 
                     defaultService="Website Development"
                     defaultLocation={`${location.name}, ${location.state}`}
-                    title={`Consult with ${location.name} Team`}
-                    subtitle={`Direct digital strategy tailored for businesses targeting ${location.name}.`}
+                    title={`Instant Proposal for ${location.name}`}
+                    subtitle={`Dedicated architecture roadmap for businesses targeting ${location.name}. Response in 15 mins.`}
                   />
                 </div>
               </div>

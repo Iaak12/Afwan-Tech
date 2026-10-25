@@ -8,6 +8,7 @@ import {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import CompactHeroForm from '@/components/CompactHeroForm';
 
 export const metadata = {
   title: 'About Our Agency | AFWAN TECH - Digital Growth & Web Engineering',
@@ -119,30 +120,46 @@ export default function AboutUsPage() {
         </div>
 
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-[#f0f7fd] via-white to-white relative overflow-hidden">
-          <div className="max-w-container mx-auto px-6 relative z-10 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/70 border border-blue-200 text-primary text-xs font-black uppercase tracking-wider mb-6">
-              <Sparkles size={14} className="text-primary" />
-              <span>The AFWAN TECH Story & Philosophy</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0f172a] tracking-tight leading-[1.15] max-w-4xl mx-auto mb-6">
-              Engineering Digital Dominance & <span className="text-gradient">Measurable Revenue Growth</span>
-            </h1>
-
-            <p className="text-gray-600 text-base md:text-xl max-w-3xl mx-auto leading-relaxed font-normal">
-              Founded in 2016 by Mohammad Afwan, AFWAN TECH bridges the gap between deep full-stack software engineering and aggressive organic search acquisition. We build fast, beautiful, and indefatigable digital assets.
-            </p>
-
-            {/* Stat Counters Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
-              {stats.map((s, idx) => (
-                <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center">
-                  <div className="text-3xl sm:text-4xl font-black text-primary font-sora">{s.v}</div>
-                  <div className="text-sm font-bold text-gray-900 mt-1">{s.l}</div>
-                  <div className="text-xs text-gray-400 mt-0.5">{s.sub}</div>
+        <section className="relative min-h-[92vh] flex items-center py-20 bg-gradient-to-b from-[#f0f7fd] via-white to-white overflow-hidden border-b border-gray-100">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="max-w-container mx-auto px-6 relative z-10 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              {/* Left Column */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/70 border border-blue-200 text-primary text-xs font-black uppercase tracking-wider">
+                  <Sparkles size={14} className="text-primary" />
+                  <span>The AFWAN TECH Story & Philosophy</span>
                 </div>
-              ))}
+
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0f172a] tracking-tight leading-[1.08] font-sora">
+                  Engineering Digital Dominance & <span className="text-gradient">Measurable Revenue Growth</span>
+                </h1>
+
+                <p className="text-gray-600 text-base md:text-lg leading-relaxed font-normal">
+                  Founded in 2016 by Mohammad Afwan, AFWAN TECH bridges the gap between deep full-stack software engineering and aggressive organic search acquisition. We build fast, beautiful, and indefatigable digital assets.
+                </p>
+
+                {/* Stat Counters Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                  {stats.map((s, idx) => (
+                    <div key={idx} className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
+                      <div className="text-2xl font-black text-primary font-sora">{s.v}</div>
+                      <div className="text-xs font-bold text-gray-900 mt-0.5">{s.l}</div>
+                      <div className="text-[10px] text-gray-400">{s.sub}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column: 2-Column Compact Hero Form */}
+              <div className="lg:col-span-5 w-full">
+                <CompactHeroForm 
+                  title="Partner with AFWAN TECH"
+                  subtitle="Connect directly with our leadership and senior engineering team within 15 mins."
+                />
+              </div>
+
             </div>
           </div>
         </section>

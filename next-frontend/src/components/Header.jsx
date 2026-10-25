@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import {
   ChevronDown, Menu, X, ArrowRight, Phone, Mail, Globe, Code,
@@ -80,8 +81,15 @@ export default function Header() {
         <div className="max-w-container mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#2081D3] to-[#2F6097] flex items-center justify-center text-white font-black text-lg shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
-              AT
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
+              <Image
+                src={siteSettings.headerLogo || "/afwan.png"}
+                alt={siteSettings.siteName || "Afwan Tech"}
+                width={40}
+                height={40}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
             <div>
               <span className="font-extrabold text-xl tracking-tight text-[#0f172a] block leading-none">
