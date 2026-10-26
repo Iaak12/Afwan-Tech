@@ -84,15 +84,15 @@ export default function Header() {
       {/* Main Navbar */}
       <nav className={`transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-white/80 backdrop-blur-sm py-4'} border-b border-gray-100`}>
         <div className="max-w-container mx-auto px-6 flex items-center justify-between">
-          {/* Logo - Only logo image, text removed as requested */}
+          {/* Logo - Full clean logo image without squishing */}
           <Link href="/" className="flex items-center group py-0.5" aria-label="Afwan Tech Home">
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="relative h-10 sm:h-12 w-[150px] sm:w-[185px] flex items-center">
               <Image
                 src={siteSettings.headerLogo || "/afwan.png"}
                 alt={siteSettings.siteName || "Afwan Tech"}
-                width={48}
-                height={48}
-                className="w-full h-full object-contain"
+                width={185}
+                height={54}
+                className="w-auto h-full max-h-10 sm:max-h-12 object-contain object-left group-hover:scale-105 transition-transform"
                 priority
               />
             </div>

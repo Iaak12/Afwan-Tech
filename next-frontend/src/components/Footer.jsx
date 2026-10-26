@@ -30,19 +30,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
+            <Link href="/" className="flex items-center group" aria-label="Afwan Tech Home">
+              <div className="relative h-11 w-48 flex items-center">
                 <Image
                   src={siteSettings.footerLogo || "/afwan.png"}
                   alt={siteSettings.siteName || "Afwan Tech"}
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-contain"
+                  width={185}
+                  height={54}
+                  className="w-auto h-full max-h-11 object-contain object-left group-hover:scale-105 transition-transform"
                 />
               </div>
-              <span className="font-extrabold text-2xl tracking-tight text-white">
-                AFWAN<span className="text-[#2081D3]">.TECH</span>
-              </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               {siteSettings.footerTagline}
