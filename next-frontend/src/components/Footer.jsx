@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, Phone, MapPin, ArrowRight, ShieldCheck, Heart, BarChart3, Globe } from 'lucide-react';
 import { siteSettings, services } from '@/data/siteData';
+import { trackContactTap } from '@/lib/tracking';
 
 const popularCities = [
   { name: 'Mumbai', slug: 'mumbai' },
@@ -49,7 +52,11 @@ export default function Footer() {
                 <MapPin size={16} className="text-primary flex-shrink-0" />
                 {siteSettings.address}
               </span>
-              <a href={`tel:${siteSettings.contactPhone}`} className="flex items-center gap-2.5 hover:text-white transition-colors">
+              <a 
+                href={`tel:${siteSettings.contactPhone}`} 
+                onClick={() => trackContactTap('call', { location: 'Footer Phone' })}
+                className="flex items-center gap-2.5 hover:text-white transition-colors"
+              >
                 <Phone size={16} className="text-primary flex-shrink-0" />
                 {siteSettings.contactPhone}
               </a>

@@ -170,7 +170,7 @@ export default function ServicePageTemplate({ data }) {
                     Request Detailed Scope
                   </a>
                   <a 
-                    href={`https://wa.me/${siteSettings.whatsappNumber}?text=Hi%20Afwan%20Tech,%20I%20would%20like%20to%20discuss%20${encodeURIComponent(data.title)}`}
+                    href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=Hi%20Afwan%20Tech,%20I%20would%20like%20to%20discuss%20${encodeURIComponent(data.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackContactTap('whatsapp', { location: `Hero - ${data.title}` })}
@@ -284,7 +284,7 @@ export default function ServicePageTemplate({ data }) {
 
                   <div className="space-y-2.5 pt-1">
                     <a
-                      href={`https://wa.me/${siteSettings.whatsappNumber}?text=Hi%20Afwan%20Tech,%20I%20have%20an%20inquiry%20regarding%20${encodeURIComponent(data.title)}`}
+                      href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=Hi%20Afwan%20Tech,%20I%20have%20an%20inquiry%20regarding%20${encodeURIComponent(data.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackContactTap('whatsapp', { location: `Sidebar - ${data.title}` })}
@@ -440,7 +440,7 @@ export default function ServicePageTemplate({ data }) {
                               Call {siteSettings.contactPhone}
                             </a>
                             <a 
-                              href={`https://wa.me/${siteSettings.whatsappNumber}?text=Hi%20Afwan%20Tech,%20I%20would%20like%20to%20discuss%20${encodeURIComponent(data.title)}`}
+                              href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=Hi%20Afwan%20Tech,%20I%20would%20like%20to%20discuss%20${encodeURIComponent(data.title)}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={() => trackContactTap('whatsapp', { location: `In-Content CTA - ${data.title}` })}

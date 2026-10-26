@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Clock, MessageSquare, ShieldCheck, Sparkles } from
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import TrackedContactLink from '@/components/TrackedContactLink';
 import { siteSettings } from '@/data/siteData';
 
 export const metadata = {
@@ -58,12 +59,22 @@ export default function ContactUsPage() {
                   </div>
                   <div>
                     <h4 className="font-extrabold text-sm text-[#0f172a]">Direct Telephone</h4>
-                    <a href={`tel:${siteSettings.contactPhone}`} className="text-xs text-gray-700 hover:text-primary transition-colors block mt-1">
+                    <TrackedContactLink 
+                      type="call" 
+                      location="Contact Us - India Phone"
+                      href={`tel:${siteSettings.contactPhone}`} 
+                      className="text-xs text-gray-700 hover:text-primary transition-colors block mt-1"
+                    >
                       India: {siteSettings.contactPhone}
-                    </a>
-                    <a href={`tel:${siteSettings.contactPhone2}`} className="text-xs text-gray-500 hover:text-primary transition-colors block">
+                    </TrackedContactLink>
+                    <TrackedContactLink 
+                      type="call" 
+                      location="Contact Us - North America Phone"
+                      href={`tel:${siteSettings.contactPhone2}`} 
+                      className="text-xs text-gray-500 hover:text-primary transition-colors block"
+                    >
                       North America: {siteSettings.contactPhone2}
-                    </a>
+                    </TrackedContactLink>
                   </div>
                 </div>
 
@@ -97,14 +108,16 @@ export default function ContactUsPage() {
                   <h4 className="font-extrabold text-base">Instant WhatsApp Chat</h4>
                   <p className="text-xs text-emerald-100 mt-0.5">Chat directly with a technical representative</p>
                 </div>
-                <a 
-                  href={`https://wa.me/${siteSettings.whatsapp}?text=Hi%20AFWAN%20Tech,%20I%20would%20like%20to%20discuss%20a%20project`}
+                <TrackedContactLink 
+                  type="whatsapp"
+                  location="Contact Us - Instant WhatsApp Chat"
+                  href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=Hi%20AFWAN%20Tech,%20I%20would%20like%20to%20discuss%20a%20project`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-white text-emerald-700 rounded-xl text-xs font-black uppercase tracking-wider hover:bg-emerald-50 transition-colors shadow-sm"
                 >
                   Message Now
-                </a>
+                </TrackedContactLink>
               </div>
             </div>
 

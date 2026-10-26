@@ -1,7 +1,10 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Sparkles, PhoneCall } from 'lucide-react';
 import { siteSettings } from '@/data/siteData';
+import { trackContactTap } from '@/lib/tracking';
 
 export default function PreFooter() {
   return (
@@ -29,6 +32,7 @@ export default function PreFooter() {
             </Link>
             <a 
               href={`tel:${siteSettings.contactPhone}`}
+              onClick={() => trackContactTap('call', { location: 'PreFooter Call Direct' })}
               className="w-full sm:w-auto px-8 py-4 rounded-xl border border-white/20 hover:border-white text-white font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 bg-white/5"
             >
               <PhoneCall size={16} /> Call Direct {siteSettings.contactPhone}

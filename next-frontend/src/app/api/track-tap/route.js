@@ -2,6 +2,42 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+function getStorageLocations() {
+  return [
+    path.join(process.cwd(), '..', 'backend-php', 'data'),
+    path.join(process.cwd(), 'backend-php', 'data'),
+    path.join(process.cwd(), 'data')
+  ];
+}
+
+function loadTaps() {
+  for (const dir of getStorageLocations()) {
+    const file = path.join(dir, 'contact_taps.json');
+    if (fs.existsSync(file)) {
+      try {
+        const content = fs.readFileSync(file, 'utf8').trim();
+        if (content) {
+          const parsed = JSON.parse(content);
+          if (Array.isArray(parsed)) return parsed;
+        }
+      } catch (_) {}
+    }
+  }
+  return [];
+}
+
+function saveTaps(taps) {
+  const serialized = JSON.stringify(taps.slice(0, 2000), null, 2);
+  for (const dir of getStorageLocations()) {
+    try {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+      fs.writeFileSync(path.join(dir, 'contact_taps.json'), serialized);
+    } catch (_) {}
+  }
+}
+
 export async function POST(request) {
   try {
     const raw = await request.text();
@@ -24,28 +60,9 @@ export async function POST(request) {
       created_at: new Date().toISOString()
     };
 
-    // Save to storage
-    const dataDir = path.join(process.cwd(), '..', 'backend-php', 'data');
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
-
-    const tapsFile = path.join(dataDir, 'contact_taps.json');
-    let taps = [];
-    if (fs.existsSync(tapsFile)) {
-      try {
-        taps = JSON.parse(fs.readFileSync(tapsFile, 'utf8')) || [];
-      } catch (e) {
-        taps = [];
-      }
-    }
-
+    const taps = loadTaps();
     taps.unshift(tapRecord);
-    // Keep max 2000 tap records
-    if (taps.length > 2000) {
-      taps = taps.slice(0, 2000);
-    }
-    fs.writeFileSync(tapsFile, JSON.stringify(taps, null, 2));
+    saveTaps(taps);
 
     return NextResponse.json({ success: true, recorded: tapRecord });
   } catch (err) {
@@ -55,18 +72,7 @@ export async function POST(request) {
 
 export async function GET() {
   try {
-    const dataDir = path.join(process.cwd(), '..', 'backend-php', 'data');
-    const tapsFile = path.join(dataDir, 'contact_taps.json');
-
-    let taps = [];
-    if (fs.existsSync(tapsFile)) {
-      try {
-        taps = JSON.parse(fs.readFileSync(tapsFile, 'utf8')) || [];
-      } catch (e) {
-        taps = [];
-      }
-    }
-
+    const taps = loadTaps();
     const totalWhatsApp = taps.filter(t => t.type === 'whatsapp').length;
     const totalCalls = taps.filter(t => t.type === 'call').length;
 

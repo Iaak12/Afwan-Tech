@@ -168,7 +168,7 @@ export default function ContentSectionsRenderer({
                       Call {siteSettings.contactPhone}
                     </a>
                     <a 
-                      href={`https://wa.me/${siteSettings.whatsappNumber}?text=Hi%20Afwan%20Tech,%20I%20would%20like%20to%20discuss%20a%20project`}
+                      href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=Hi%20Afwan%20Tech,%20I%20would%20like%20to%20discuss%20a%20project`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackContactTap('whatsapp', { location: `Content CTA - ${pageTitle}` })}

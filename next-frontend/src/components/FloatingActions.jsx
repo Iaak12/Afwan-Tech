@@ -9,7 +9,7 @@ export default function FloatingActions() {
   const [hovered, setHovered] = useState(null);
 
   const phoneNum = siteSettings.contactPhone || '+91 7979850684';
-  const whatsappNum = siteSettings.whatsapp || '917979850684';
+  const whatsappNum = siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684';
   const whatsappUrl = `https://wa.me/${whatsappNum}?text=${encodeURIComponent('Hi AFWAN TECH, I would like to get a quote and discuss my project.')}`;
 
   const handleWhatsAppClick = () => {

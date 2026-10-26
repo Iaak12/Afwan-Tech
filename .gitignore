@@ -15,3 +15,4 @@ build/
 
 # Backend local runtime storage
 backend-php/data/
+next-frontend/data/

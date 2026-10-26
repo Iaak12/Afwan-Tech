@@ -9,6 +9,7 @@ export const siteSettings = {
   contactPhone2: '+91 7979850684',
   address: 'ITPL Main Rd, Pattandur Agrahara, Whitefield, Bengaluru, Karnataka 560066',
   whatsapp: '917979850684',
+  whatsappNumber: '917979850684',
   footerTagline: 'Expertly scaling your digital presence through data-driven strategies, cutting-edge web architecture, and programmatic growth.',
   footerCopyright: '© 2026 AFWAN TECH. All Rights Reserved.',
   socials: {

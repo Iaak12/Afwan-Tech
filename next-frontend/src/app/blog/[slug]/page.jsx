@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import TrackedContactLink from '@/components/TrackedContactLink';
 import { getAllBlogs, getBlogBySlug } from '@/lib/blogs';
 import { 
   Calendar, Clock, User, ArrowLeft, ArrowRight, Phone, Mail, 
@@ -144,12 +145,14 @@ export default async function BlogPostPage({ params, searchParams }) {
               </p>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
-              <a
+              <TrackedContactLink
+                type="call"
+                location={`Blog In-Article CTA - ${blog.title}`}
                 href={`tel:${siteSettings.contactPhone}`}
                 className="btn btn-outline !px-4 !py-2.5 text-xs font-bold"
               >
                 Call {siteSettings.contactPhone}
-              </a>
+              </TrackedContactLink>
               <Link
                 href="/contact-us"
                 className="btn btn-primary !px-5 !py-2.5 text-xs font-bold"
@@ -237,15 +240,17 @@ export default async function BlogPostPage({ params, searchParams }) {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <a
-                    href={`https://wa.me/917979850684?text=${encodeURIComponent(`Hi Afwan Tech, I read your article "${blog.title}" and would like to discuss a project.`)}`}
+                  <TrackedContactLink
+                    type="whatsapp"
+                    location={`Blog Author Row - ${blog.title}`}
+                    href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=${encodeURIComponent(`Hi Afwan Tech, I read your article "${blog.title}" and would like to discuss a project.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-100 text-xs font-bold flex items-center gap-1 transition-colors"
                   >
                     <MessageSquare size={14} />
                     <span className="hidden sm:inline">Ask on WA</span>
-                  </a>
+                  </TrackedContactLink>
                 </div>
               </div>
             </div>
@@ -302,20 +307,24 @@ export default async function BlogPostPage({ params, searchParams }) {
               </div>
 
               <div className="space-y-2 pt-2 border-t border-white/10 text-xs">
-                <a
+                <TrackedContactLink
+                  type="call"
+                  location={`Blog Sidebar - ${blog.title}`}
                   href={`tel:${siteSettings.contactPhone}`}
                   className="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold flex items-center justify-center gap-2 transition-colors"
                 >
                   <Phone size={14} className="text-primary" /> {siteSettings.contactPhone}
-                </a>
-                <a
-                  href={`https://wa.me/${siteSettings.whatsapp}?text=${encodeURIComponent(`Hi Afwan Tech, I would like to get a quote.`)}`}
+                </TrackedContactLink>
+                <TrackedContactLink
+                  type="whatsapp"
+                  location={`Blog Sidebar - ${blog.title}`}
+                  href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=${encodeURIComponent(`Hi Afwan Tech, I would like to get a quote.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 px-4 rounded-xl bg-[#25D366] text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
                   <MessageSquare size={14} /> WhatsApp Consultation
-                </a>
+                </TrackedContactLink>
               </div>
 
               <div className="pt-2 text-[11px] text-gray-400 space-y-1">

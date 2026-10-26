@@ -20,17 +20,26 @@ export const trackContactTap = (type = 'whatsapp', extra = {}) => {
 
     const phpApi = process.env.NEXT_PUBLIC_PHP_API_URL;
     const targetUrl = phpApi ? `${phpApi.replace(/\/$/, '')}/track_tap.php` : '/api/track-tap';
+    const jsonStr = JSON.stringify(payload);
 
-    if (navigator.sendBeacon) {
-      const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-      navigator.sendBeacon(targetUrl, blob);
-    } else {
+    // Send via fetch with keepalive first (reliable, handles JSON without CORS preflight/adblock beacon restrictions)
+    if (typeof fetch === 'function') {
       fetch(targetUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: jsonStr,
         keepalive: true
-      }).catch(() => {});
+      }).catch(() => {
+        if (navigator.sendBeacon) {
+          try {
+            navigator.sendBeacon(targetUrl, new Blob([jsonStr], { type: 'text/plain' }));
+          } catch (_) {}
+        }
+      });
+    } else if (navigator.sendBeacon) {
+      try {
+        navigator.sendBeacon(targetUrl, new Blob([jsonStr], { type: 'text/plain' }));
+      } catch (_) {}
     }
   } catch (e) {
     // Non-blocking telemetry

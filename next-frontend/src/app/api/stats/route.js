@@ -2,12 +2,24 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+function findDataFile(filename) {
+  const dirs = [
+    path.join(process.cwd(), '..', 'backend-php', 'data'),
+    path.join(process.cwd(), 'backend-php', 'data'),
+    path.join(process.cwd(), 'data')
+  ];
+  for (const dir of dirs) {
+    const file = path.join(dir, filename);
+    if (fs.existsSync(file)) return file;
+  }
+  return path.join(dirs[0], filename);
+}
+
 export async function GET() {
   try {
-    const dataDir = path.join(process.cwd(), '..', 'backend-php', 'data');
-    const summaryFile = path.join(dataDir, 'summary.json');
-    const contactsFile = path.join(dataDir, 'contacts.json');
-    const tapsFile = path.join(dataDir, 'contact_taps.json');
+    const summaryFile = findDataFile('summary.json');
+    const contactsFile = findDataFile('contacts.json');
+    const tapsFile = findDataFile('contact_taps.json');
 
     let summary = {};
     let contacts = [];
