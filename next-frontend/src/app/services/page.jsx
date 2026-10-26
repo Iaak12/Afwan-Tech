@@ -48,8 +48,8 @@ export default function ServicesPage() {
                   </div>
                   <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
                     <Globe2 size={18} className="text-primary mb-1.5" />
-                    <div className="text-xs font-bold text-gray-900">500+ Cities SEO</div>
-                    <div className="text-[10px] text-gray-400">Page 1 Rankings</div>
+                    <div className="text-xs font-bold text-gray-900">595+ Cities Network</div>
+                    <div className="text-[10px] text-gray-400">Local Search Mesh</div>
                   </div>
                   <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs col-span-2 sm:col-span-1">
                     <ShieldCheck size={18} className="text-emerald-500 mb-1.5" />
