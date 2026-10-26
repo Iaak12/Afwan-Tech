@@ -1,4 +1,4 @@
-# Afwan Tech / EzRank - PHP Backend API
+# Afwan Tech - PHP Backend API
 
 Lightweight, blazing-fast, serverless-ready PHP backend for Contact Inquiries and Privacy-Focused Web Analytics.
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Backend Configuration for Afwan Tech / EzRank PHP API
+ * Backend Configuration for Afwan Tech PHP API
  * Compatible with cPanel, Apache, Nginx, Shared Hosting, and VPS.
  */
 
@@ -17,17 +17,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 return [
     // Notification Email where contact requests will be sent
-    'admin_email' => 'contact@afwan.agency',
+    'admin_email' => 'contactafwantech@gmail.com',
     'admin_name'  => 'Afwan Tech Leads',
     
     // Website brand name
-    'brand_name'  => 'Afwan Tech / EzRank',
+    'brand_name'  => 'AFWAN TECH',
     
     // Storage directory for data logs (JSON and SQLite)
     'storage_dir' => __DIR__ . '/data',
     
     // Secret token for viewing the web analytics backend API (optional extra security)
-    'analytics_key' => 'ezrank_analytics_secret_2026',
+    'analytics_key' => 'afwantech_analytics_secret_2026',
     
     // CORS Allowed Domains
     'allowed_origins' => [

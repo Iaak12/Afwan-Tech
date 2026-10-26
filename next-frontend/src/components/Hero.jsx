@@ -8,6 +8,7 @@ import {
   Smartphone, Code, CircleCheckBig, Layers, ShieldCheck, MapPin
 } from 'lucide-react';
 import { siteSettings } from '@/data/siteData';
+import { trackContactTap } from '@/lib/tracking';
 import CompactHeroForm from '@/components/CompactHeroForm';
 
 const floatingServices = [
@@ -103,10 +104,11 @@ export default function Hero() {
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
               <a 
-                href="tel:+919560133711"
+                href={`tel:${siteSettings.contactPhone}`}
+                onClick={() => trackContactTap('call', { location: 'Hero Section' })}
                 className="btn btn-outline !px-7 !py-4 rounded-2xl text-sm font-bold group bg-white/60 flex items-center gap-2"
               >
-                <span>Call +91 95601 33711</span>
+                <span>Call {siteSettings.contactPhone}</span>
               </a>
             </motion.div>
 

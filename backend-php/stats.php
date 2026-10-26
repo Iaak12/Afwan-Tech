@@ -16,9 +16,11 @@ if (!empty($config['analytics_key']) && $providedKey !== $config['analytics_key'
 $dataDir = $config['storage_dir'];
 $summaryFile = $dataDir . '/summary.json';
 $contactsFile = $dataDir . '/contacts.json';
+$tapsFile = $dataDir . '/contact_taps.json';
 
 $summary = file_exists($summaryFile) ? (json_decode(file_get_contents($summaryFile), true) ?: []) : [];
 $contacts = file_exists($contactsFile) ? (json_decode(file_get_contents($contactsFile), true) ?: []) : [];
+$taps = file_exists($tapsFile) ? (json_decode(file_get_contents($tapsFile), true) ?: []) : [];
 
 // Aggregate total statistics
 $totalPageviews = 0;
@@ -81,18 +83,30 @@ usort($dailyTrends, function ($a, $b) {
     return strcmp($a['date'], $b['date']);
 });
 
+$whatsappTaps = 0;
+$callTaps = 0;
+foreach ($taps as $t) {
+    if (($t['type'] ?? '') === 'call') $callTaps++;
+    else $whatsappTaps++;
+}
+
 echo json_encode([
     'success' => true,
     'data' => [
         'overview' => [
             'total_pageviews'  => $totalPageviews,
             'total_leads'      => count($contacts),
-            'active_locations' => 500,
+            'total_taps'       => count($taps),
+            'whatsapp_taps'    => $whatsappTaps,
+            'call_taps'        => $callTaps,
+            'active_locations' => 595,
             'device_breakdown' => $deviceTotals
         ],
         'trends'       => $dailyTrends,
         'top_pages'    => $topPages,
         'top_referrers'=> $topReferrers,
-        'recent_leads' => array_slice($contacts, 0, 5)
+        'recent_leads' => array_slice($contacts, 0, 10),
+        'all_leads'    => $contacts,
+        'contact_taps' => array_slice($taps, 0, 50)
     ]
 ], JSON_PRETTY_PRINT);

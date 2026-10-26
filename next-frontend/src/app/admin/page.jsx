@@ -34,22 +34,14 @@ export default function AdminOverviewDashboard() {
   }, []);
 
   const overview = statsData?.overview || {
-    total_pageviews: 1840,
-    total_leads: 24,
+    total_pageviews: 0,
+    total_leads: 0,
+    total_taps: 0,
     active_locations: 595,
-    device_breakdown: { desktop: 1080, mobile: 640, tablet: 120 }
+    device_breakdown: { desktop: 0, mobile: 0, tablet: 0 }
   };
 
-  const topPages = statsData?.top_pages || [
-    { path: '/', views: 540, unique: 390 },
-    { path: '/services/website-development', views: 280, unique: 210 },
-    { path: '/services/seo-services', views: 240, unique: 185 },
-    { path: '/services/social-media-management', views: 195, unique: 150 },
-    { path: '/location/mumbai', views: 165, unique: 125 },
-    { path: '/location/bengaluru', views: 140, unique: 105 },
-    { path: '/pricing', views: 120, unique: 95 },
-    { path: '/contact-us', views: 95, unique: 80 }
-  ];
+  const topPages = statsData?.top_pages || [];
 
   const totalPageviews = overview.total_pageviews || 1;
 
@@ -157,7 +149,15 @@ export default function AdminOverviewDashboard() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100 text-gray-700">
-              {topPages.map((page, i) => {
+              {topPages.length === 0 ? (
+                <tr>
+                  <td colSpan={4} className="py-12 text-center text-gray-400">
+                    <p className="text-sm font-semibold text-gray-700">No pageview telemetry logged yet</p>
+                    <p className="text-xs text-gray-400 mt-1">Live requests from visitors across Next.js and programmatic location pages will appear here in real time.</p>
+                  </td>
+                </tr>
+              ) : (
+                topPages.map((page, i) => {
                 const pct = Math.round((page.views / totalPageviews) * 100);
                 return (
                   <tr key={i} className="hover:bg-blue-50/30 transition-colors">
@@ -187,7 +187,7 @@ export default function AdminOverviewDashboard() {
                     </td>
                   </tr>
                 );
-              })}
+              }))}
             </tbody>
           </table>
         </div>

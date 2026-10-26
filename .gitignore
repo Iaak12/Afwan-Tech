@@ -1,0 +1,17 @@
+# Root Content and Blogs raw data folders
+/content/
+/blogs/
+
+# Dependencies and build artifacts
+node_modules/
+.next/
+out/
+build/
+
+# Environment variables and logs
+.env*
+*.log
+.DS_Store
+
+# Backend local runtime storage
+backend-php/data/

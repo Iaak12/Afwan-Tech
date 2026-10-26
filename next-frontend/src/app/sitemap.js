@@ -1,8 +1,9 @@
 import { getAllLocations } from '@/data/locationsData';
 import { services } from '@/data/siteData';
+import { getPublishedBlogs } from '@/lib/blogs';
 
 export default async function sitemap() {
-  const baseUrl = 'https://afwantech.com';
+  const baseUrl = 'https://www.afwantech.com';
 
   // 1. Core static routes
   const staticRoutes = [
@@ -13,7 +14,7 @@ export default async function sitemap() {
     '/portfolio',
     '/contact-us',
     '/market-area',
-    '/analytics'
+    '/blog'
   ].map(route => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -29,7 +30,16 @@ export default async function sitemap() {
     priority: 0.85
   }));
 
-  // 3. All 500+ Programmatic Location Pages
+  // 3. Blog articles
+  const liveBlogs = getPublishedBlogs();
+  const blogRoutes = liveBlogs.map(blog => ({
+    url: `${baseUrl}/blog/${blog.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly',
+    priority: 0.8
+  }));
+
+  // 4. All 500+ Programmatic Location Pages
   const allLocations = getAllLocations();
   const locationRoutes = allLocations.map(location => ({
     url: `${baseUrl}/location/${location.slug}`,
@@ -38,5 +48,5 @@ export default async function sitemap() {
     priority: location.type === 'state' ? 0.8 : 0.75
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...locationRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...locationRoutes];
 }

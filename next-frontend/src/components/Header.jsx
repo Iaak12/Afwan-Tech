@@ -10,6 +10,7 @@ import {
   Zap, BarChart3, MapPin, Sparkles
 } from 'lucide-react';
 import { siteSettings, services } from '@/data/siteData';
+import { trackContactTap } from '@/lib/tracking';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,7 +59,11 @@ export default function Header() {
       <div className="bg-[#0f172a] text-white/80 text-xs py-1.5 px-4 hidden md:block border-b border-white/10">
         <div className="max-w-container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <a href={`tel:${siteSettings.contactPhone}`} className="hover:text-primary transition-colors flex items-center gap-1.5">
+            <a 
+              href={`tel:${siteSettings.contactPhone}`} 
+              onClick={() => trackContactTap('call', { location: 'Header Topbar' })}
+              className="hover:text-primary transition-colors flex items-center gap-1.5"
+            >
               <Phone size={12} className="text-primary" /> {siteSettings.contactPhone}
             </a>
             <a href={`mailto:${siteSettings.contactEmail}`} className="hover:text-primary transition-colors flex items-center gap-1.5">
@@ -71,7 +76,7 @@ export default function Header() {
               Serving <strong className="text-white">500+ Cities</strong> Across India & Worldwide
             </span>
             <span className="text-gray-400">|</span>
-            <span className="text-white/80 font-medium">ISO 9001:2015 Certified Agency</span>
+            <span className="text-white/80 font-medium">Digital Engineering & SEO</span>
           </div>
         </div>
       </div>
@@ -79,25 +84,17 @@ export default function Header() {
       {/* Main Navbar */}
       <nav className={`transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-white/80 backdrop-blur-sm py-4'} border-b border-gray-100`}>
         <div className="max-w-container mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
+          {/* Logo - Only logo image, text removed as requested */}
+          <Link href="/" className="flex items-center group py-0.5" aria-label="Afwan Tech Home">
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
               <Image
                 src={siteSettings.headerLogo || "/afwan.png"}
                 alt={siteSettings.siteName || "Afwan Tech"}
-                width={40}
-                height={40}
+                width={48}
+                height={48}
                 className="w-full h-full object-contain"
                 priority
               />
-            </div>
-            <div>
-              <span className="font-extrabold text-xl tracking-tight text-[#0f172a] block leading-none">
-                AFWAN<span className="text-[#2081D3]">.TECH</span>
-              </span>
-              <span className="text-[10px] uppercase font-bold tracking-widest text-gray-400 block -mt-0.5">
-                EzRank Architecture
-              </span>
             </div>
           </Link>
 
@@ -164,6 +161,10 @@ export default function Header() {
               About
             </Link>
 
+            <Link href="/blog" className={`hover:text-primary transition-colors ${pathname.startsWith('/blog') ? 'text-primary' : ''}`}>
+              Blog
+            </Link>
+
             <Link href="/contact-us" className={`hover:text-primary transition-colors ${pathname === '/contact-us' ? 'text-primary' : ''}`}>
               Contact
             </Link>
@@ -205,6 +206,7 @@ export default function Header() {
             <Link href="/pricing" className="block py-2 font-bold text-gray-800 hover:text-primary">Pricing</Link>
             <Link href="/portfolio" className="block py-2 font-bold text-gray-800 hover:text-primary">Portfolio</Link>
             <Link href="/about-us" className="block py-2 font-bold text-gray-800 hover:text-primary">About Us</Link>
+            <Link href="/blog" className="block py-2 font-bold text-gray-800 hover:text-primary">Blog</Link>
             <Link href="/contact-us" className="block py-2 font-bold text-gray-800 hover:text-primary">Contact Us</Link>
             <Link href="/contact-us" className="block text-center btn-primary w-full py-3 text-xs uppercase tracking-wider mt-4">
               Get Started Now

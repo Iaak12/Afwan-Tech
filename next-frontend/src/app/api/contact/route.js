@@ -13,6 +13,11 @@ export async function POST(request) {
       return NextResponse.json({ success: false, message: 'Valid email address is required' }, { status: 400 });
     }
 
+    const isLocationLead = Boolean(
+      (location && !location.toLowerCase().includes('direct') && !location.toLowerCase().includes('website') && !location.toLowerCase().includes('global')) ||
+      (pageSource && (pageSource.includes('/location/') || pageSource.includes('/market-area/')))
+    );
+
     const lead = {
       id: `lead_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
       name: contactName,
@@ -23,7 +28,8 @@ export async function POST(request) {
       message: message || '',
       location: location || 'Direct Website',
       source: pageSource || 'Website',
-      createdAt: new Date().toISOString()
+      lead_type: isLocationLead ? 'location' : 'website',
+      created_at: new Date().toISOString()
     };
 
     // Store in local data file if directory exists

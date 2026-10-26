@@ -7,9 +7,11 @@ export async function GET() {
     const dataDir = path.join(process.cwd(), '..', 'backend-php', 'data');
     const summaryFile = path.join(dataDir, 'summary.json');
     const contactsFile = path.join(dataDir, 'contacts.json');
+    const tapsFile = path.join(dataDir, 'contact_taps.json');
 
     let summary = {};
     let contacts = [];
+    let taps = [];
 
     if (fs.existsSync(summaryFile)) {
       try {
@@ -27,66 +29,47 @@ export async function GET() {
       }
     }
 
+    if (fs.existsSync(tapsFile)) {
+      try {
+        taps = JSON.parse(fs.readFileSync(tapsFile, 'utf8')) || [];
+      } catch (e) {
+        taps = [];
+      }
+    }
+
     let totalPageviews = 0;
     const deviceTotals = { desktop: 0, mobile: 0, tablet: 0 };
     const pageCounts = {};
     const referrerCounts = {};
     const trends = [];
 
-    // Seed dummy initial stats if empty so dashboard looks stunning immediately
-    if (Object.keys(summary).length === 0) {
-      const today = new Date();
-      for (let i = 6; i >= 0; i--) {
-        const d = new Date(today);
-        d.setDate(d.getDate() - i);
-        const dateStr = d.toISOString().split('T')[0];
-        const v = 140 + Math.floor(Math.random() * 85);
-        trends.push({
-          date: dateStr,
-          views: v,
-          visitors: Math.floor(v * 0.72)
-        });
-        totalPageviews += v;
+    for (const [date, val] of Object.entries(summary)) {
+      const views = val.pageviews || 0;
+      totalPageviews += views;
+      trends.push({
+        date,
+        views,
+        visitors: (val.unique_visitors || []).length || Math.floor(views * 0.7)
+      });
+      if (val.devices) {
+        deviceTotals.desktop += val.devices.desktop || 0;
+        deviceTotals.mobile += val.devices.mobile || 0;
+        deviceTotals.tablet += val.devices.tablet || 0;
       }
-      deviceTotals.desktop = Math.floor(totalPageviews * 0.58);
-      deviceTotals.mobile = Math.floor(totalPageviews * 0.36);
-      deviceTotals.tablet = totalPageviews - deviceTotals.desktop - deviceTotals.mobile;
-      pageCounts['/'] = 340;
-      pageCounts['/services'] = 180;
-      pageCounts['/location/mumbai'] = 120;
-      pageCounts['/location/bengaluru'] = 95;
-      pageCounts['/pricing'] = 88;
-      pageCounts['/contact-us'] = 74;
-      referrerCounts['google.com'] = 450;
-      referrerCounts['Direct'] = 220;
-      referrerCounts['linkedin.com'] = 110;
-      referrerCounts['bing.com'] = 65;
-    } else {
-      for (const [date, val] of Object.entries(summary)) {
-        const views = val.pageviews || 0;
-        totalPageviews += views;
-        trends.push({
-          date,
-          views,
-          visitors: (val.unique_visitors || []).length || Math.floor(views * 0.7)
-        });
-        if (val.devices) {
-          deviceTotals.desktop += val.devices.desktop || 0;
-          deviceTotals.mobile += val.devices.mobile || 0;
-          deviceTotals.tablet += val.devices.tablet || 0;
+      if (val.pages) {
+        for (const [p, c] of Object.entries(val.pages)) {
+          pageCounts[p] = (pageCounts[p] || 0) + c;
         }
-        if (val.pages) {
-          for (const [p, c] of Object.entries(val.pages)) {
-            pageCounts[p] = (pageCounts[p] || 0) + c;
-          }
-        }
-        if (val.referrers) {
-          for (const [r, c] of Object.entries(val.referrers)) {
-            referrerCounts[r] = (referrerCounts[r] || 0) + c;
-          }
+      }
+      if (val.referrers) {
+        for (const [r, c] of Object.entries(val.referrers)) {
+          referrerCounts[r] = (referrerCounts[r] || 0) + c;
         }
       }
     }
+
+    // Sort trends by date ascending
+    trends.sort((a, b) => a.date.localeCompare(b.date));
 
     const topPages = Object.entries(pageCounts)
       .map(([p, views]) => ({ path: p, views }))
@@ -98,19 +81,27 @@ export async function GET() {
       .sort((a, b) => b.count - a.count)
       .slice(0, 8);
 
+    const whatsappTaps = taps.filter(t => t.type === 'whatsapp').length;
+    const callTaps = taps.filter(t => t.type === 'call').length;
+
     return NextResponse.json({
       success: true,
       data: {
         overview: {
           total_pageviews: totalPageviews,
-          total_leads: contacts.length || 14,
+          total_leads: contacts.length,
+          total_taps: taps.length,
+          whatsapp_taps: whatsappTaps,
+          call_taps: callTaps,
           active_locations: 595,
           device_breakdown: deviceTotals
         },
         trends,
         top_pages: topPages,
         top_referrers: topReferrers,
-        recent_leads: contacts.slice(0, 5)
+        recent_leads: contacts.slice(0, 10),
+        all_leads: contacts,
+        contact_taps: taps.slice(0, 50)
       }
     });
   } catch (err) {

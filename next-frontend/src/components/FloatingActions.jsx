@@ -3,13 +3,22 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, X } from 'lucide-react';
 import { siteSettings } from '@/data/siteData';
+import { trackContactTap } from '@/lib/tracking';
 
 export default function FloatingActions() {
   const [hovered, setHovered] = useState(null);
 
-  const phoneNum = siteSettings.contactPhone || '+91 95601 33711';
-  const whatsappNum = siteSettings.whatsapp || '919560133711';
+  const phoneNum = siteSettings.contactPhone || '+91 7979850684';
+  const whatsappNum = siteSettings.whatsapp || '917979850684';
   const whatsappUrl = `https://wa.me/${whatsappNum}?text=${encodeURIComponent('Hi AFWAN TECH, I would like to get a quote and discuss my project.')}`;
+
+  const handleWhatsAppClick = () => {
+    trackContactTap('whatsapp', { location: 'Floating Action Button' });
+  };
+
+  const handleCallClick = () => {
+    trackContactTap('call', { location: 'Floating Action Button' });
+  };
 
   return (
     <aside aria-label="Quick contact" className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3.5 pointer-events-auto">
@@ -33,6 +42,7 @@ export default function FloatingActions() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleWhatsAppClick}
           className="group relative w-13 h-13 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-[#25D366]/40 hover:scale-110 active:scale-95 transition-all duration-300"
           aria-label="Chat with Afwan Tech on WhatsApp"
         >
@@ -67,6 +77,7 @@ export default function FloatingActions() {
 
         <a
           href={`tel:${phoneNum}`}
+          onClick={handleCallClick}
           className="group relative w-13 h-13 rounded-full bg-gradient-to-tr from-[#2081D3] to-[#2F6097] text-white flex items-center justify-center shadow-lg shadow-primary/40 hover:scale-110 active:scale-95 transition-all duration-300"
           aria-label={`Call Afwan Tech at ${phoneNum}`}
         >

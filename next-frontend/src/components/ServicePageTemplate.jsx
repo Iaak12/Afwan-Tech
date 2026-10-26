@@ -235,7 +235,7 @@ export default function ServicePageTemplate({ data }) {
                   <thead>
                     <tr className="bg-[#0f172a] text-white text-xs font-bold uppercase tracking-wider">
                       <th className="px-6 py-4">Evaluation Criteria</th>
-                      <th className="px-6 py-4 bg-[#2081D3] text-white">AFWAN TECH (EzRank Architecture)</th>
+                      <th className="px-6 py-4 bg-[#2081D3] text-white">AFWAN TECH Standard</th>
                       <th className="px-6 py-4 text-gray-300">Average Agencies / Freelancers</th>
                     </tr>
                   </thead>

@@ -6,7 +6,8 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { 
   LayoutDashboard, BarChart3, Mail, MapPin, Globe, 
-  Settings, ArrowLeft, ShieldCheck, ExternalLink, Menu, X, LogOut, Loader2 
+  Settings, ArrowLeft, ShieldCheck, ExternalLink, Menu, X, LogOut, Loader2,
+  PhoneCall, Calendar, FileText
 } from 'lucide-react';
 
 export default function AdminLayout({ children }) {
@@ -74,10 +75,13 @@ export default function AdminLayout({ children }) {
   }
 
   const navItems = [
-    { label: 'Overview Dashboard', href: '/admin', icon: LayoutDashboard },
-    { label: 'Web Analytics (Pages/Users)', href: '/admin/analytics', icon: BarChart3 },
-    { label: 'Inbound Leads / Inquiries', href: '/admin/contacts', icon: Mail },
-    { label: '500+ SEO Locations', href: '/market-area', icon: MapPin },
+    { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+    { label: 'Web Analytics', href: '/admin/analytics', icon: BarChart3 },
+    { label: 'Contact Taps (WhatsApp/Call)', href: '/admin/contact-taps', icon: PhoneCall },
+    { label: 'Inbound Leads (All/Loc/Web)', href: '/admin/contacts', icon: Mail },
+    { label: 'Blog Scheduler (1 per week)', href: '/admin/blogs', icon: Calendar },
+    { label: 'Page Content & SEO', href: '/admin/content', icon: FileText },
+    { label: '595+ Locations Network', href: '/market-area', icon: MapPin },
   ];
 
   return (

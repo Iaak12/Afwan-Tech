@@ -52,6 +52,13 @@ if (!is_dir($dataDir)) {
     mkdir($dataDir, 0755, true);
 }
 
+// Determine lead origin type
+$isLocationLead = (
+    stripos($pageSource, '/location/') !== false ||
+    stripos($pageSource, '/market-area/') !== false ||
+    (!empty($location) && stripos($location, 'Direct') === false && stripos($location, 'Website') === false && stripos($location, 'Global') === false)
+);
+
 // Construct inquiry record
 $inquiry = [
     'id'         => uniqid('lead_', true),
@@ -63,6 +70,7 @@ $inquiry = [
     'message'    => $message,
     'location'   => $location,
     'source'     => $pageSource,
+    'lead_type'  => $isLocationLead ? 'location' : 'website',
     'ip'         => $_SERVER['REMOTE_ADDR'] ?? 'Unknown',
     'created_at' => date('Y-m-d H:i:s')
 ];

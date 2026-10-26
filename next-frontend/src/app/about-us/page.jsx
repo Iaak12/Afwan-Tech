@@ -101,7 +101,7 @@ const milestones = [
   { year: '2018', title: 'First 100 Clients', desc: 'Scaled to a full-service agency with dedicated engineering and design divisions.' },
   { year: '2020', title: 'Global Expansion', desc: 'Opened operations across GCC (Dubai), United Kingdom, and Southeast Asia. Transitioned to an edge-first engineering stack.' },
   { year: '2022', title: '500+ Projects & Major Scale', desc: 'Crossed half a billion rupees in client revenue generated and launched our proprietary programmatic SEO engine.' },
-  { year: '2024+', title: '16,000+ Clients & EzRank 2.0', desc: 'Recognized as one of South Asia’s fastest-growing digital engineering partners, serving 500+ cities with 50+ specialists.' }
+  { year: '2024+', title: '16,000+ Clients & Global Reach', desc: 'Recognized as one of South Asia’s fastest-growing digital engineering partners, serving 500+ cities with 50+ specialists.' }
 ];
 
 export default function AboutUsPage() {
@@ -183,7 +183,7 @@ export default function AboutUsPage() {
                     Mohammad Afwan established AFWAN TECH with an uncompromising vision: <strong>treat web development as high-performance engineering and SEO as a mathematical science.</strong>
                   </p>
                   <p>
-                    Over the last 8 years, we have grown from a tight-knit 2-person team in New Delhi into an international agency serving over 16,000 clients across 40+ countries. Today, our EzRank architecture powers programmatic local SEO across 595+ cities in India and global business capitals like Dubai, London, and New York.
+                    Over the last 8 years, we have grown from a tight-knit 2-person team into an international agency serving over 16,000 clients across 40+ countries. Today, our proprietary programmatic architecture powers local SEO across 595+ cities in India and global business capitals like Dubai, London, and New York.
                   </p>
                 </div>
                 <div className="pt-2 flex items-center gap-4 text-sm font-bold text-gray-900">

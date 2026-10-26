@@ -24,7 +24,7 @@ $ip         = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
 
 // Anonymize IP (one-way salt hash for daily unique visitor calculation)
 $dateStr    = date('Y-m-d');
-$visitorHash= hash('sha256', $ip . $userAgent . $dateStr . 'ezrank_salt');
+$visitorHash= hash('sha256', $ip . $userAgent . $dateStr . 'afwantech_salt');
 
 // Device category detection
 $device = 'desktop';
