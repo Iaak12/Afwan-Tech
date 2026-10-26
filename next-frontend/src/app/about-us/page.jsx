@@ -9,6 +9,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import CompactHeroForm from '@/components/CompactHeroForm';
+import ContentSectionsRenderer from '@/components/ContentSectionsRenderer';
+import aboutContent from '@/data/aboutContent.json';
 
 export const metadata = {
   title: 'About Our Agency | AFWAN TECH - Digital Growth & Web Engineering',
@@ -329,6 +331,16 @@ export default function AboutUsPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Complete Deep About Us Content, 16 FAQs & Principles */}
+        <section className="py-20 bg-white">
+          <ContentSectionsRenderer 
+            contentBlocks={aboutContent.main_content}
+            faqs={aboutContent.faqs}
+            bottomContent={aboutContent.bottom_content}
+            pageTitle="About Afwan Tech"
+          />
         </section>
 
         {/* Consultation Call to Action */}

@@ -5,11 +5,17 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PreFooter from '@/components/PreFooter';
 import CompactHeroForm from '@/components/CompactHeroForm';
+import ContentSectionsRenderer from '@/components/ContentSectionsRenderer';
 import { portfolioProjects } from '@/data/siteData';
+import portfolioContent from '@/data/portfolioContent.json';
 
 export const metadata = {
-  title: 'Client Portfolio & Case Studies | AFWAN TECH',
-  description: 'Examine our proven track record: SaaS platforms, high-velocity e-commerce websites, and compounding organic search growth.',
+  title: portfolioContent.metaTitle || 'Client Portfolio & Case Studies | AFWAN TECH',
+  description: portfolioContent.metaDescription || 'Examine our proven track record: SaaS platforms, high-velocity e-commerce websites, and compounding organic search growth.',
+  keywords: portfolioContent.keywords || [],
+  alternates: {
+    canonical: 'https://www.afwantech.com/portfolio'
+  }
 };
 
 export default function PortfolioPage() {
@@ -117,6 +123,16 @@ export default function PortfolioPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Complete Deep Portfolio Content, Case Studies Methodology, 16 FAQs */}
+        <section className="py-20 bg-white border-t border-gray-100">
+          <ContentSectionsRenderer 
+            contentBlocks={portfolioContent.main_content}
+            faqs={portfolioContent.faqs}
+            bottomContent={portfolioContent.bottom_content}
+            pageTitle="Portfolio & Case Studies"
+          />
         </section>
 
         <PreFooter />

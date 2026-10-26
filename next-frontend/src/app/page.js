@@ -9,15 +9,20 @@ import ClientSlider from '@/components/ClientSlider';
 import MarketingSolutions from '@/components/MarketingSolutions';
 import ProblemSolver from '@/components/ProblemSolver';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import FAQSection from '@/components/FAQSection';
+import ContentSectionsRenderer from '@/components/ContentSectionsRenderer';
 import PreFooter from '@/components/PreFooter';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 import { ArrowRight, MapPin, Sparkles, CheckCircle2 } from 'lucide-react';
+import homeContent from '@/data/homeContent.json';
 
 export const metadata = {
-  title: 'AFWAN TECH | Digital Marketing & Web Engineering Agency',
-  description: 'Scale your business with Next.js web development, programmatic local SEO across 500+ cities, and high-performance lead generation systems.',
+  title: homeContent.metaTitle || 'AFWAN TECH | Digital Marketing & Web Engineering Agency',
+  description: homeContent.metaDescription || 'Scale your business with Next.js web development, programmatic local SEO across 595+ cities, and high-performance lead generation systems.',
+  keywords: homeContent.keywords || [],
+  alternates: {
+    canonical: 'https://www.afwantech.com'
+  }
 };
 
 export default function Home() {
@@ -40,7 +45,7 @@ export default function Home() {
           <AboutROI />
         </div>
 
-        {/* 5. Core Bento Grid Marketing Solutions */}
+        {/* 5. Core Bento Grid Marketing Solutions (All 8 Services) */}
         <MarketingSolutions />
 
         {/* 6. Growth Stats Counter Cards */}
@@ -49,7 +54,7 @@ export default function Home() {
         {/* 7. Problem vs Solution Comparison Matrix */}
         <ProblemSolver />
 
-        {/* 8. 500+ Programmatic Locations Network Banner */}
+        {/* 8. 595+ Programmatic Locations Network Banner */}
         <section className="py-20 bg-gradient-to-b from-blue-50/40 via-white to-white">
           <div className="max-w-container mx-auto px-6">
             <div className="bg-gradient-to-r from-[#0f172a] via-[#1a1a1a] to-[#0f172a] rounded-3xl p-8 md:p-14 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-white/10">
@@ -58,7 +63,7 @@ export default function Home() {
                   <MapPin size={14} className="text-primary" /> Programmatic SEO Engine
                 </div>
                 <h3 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight font-sora text-white">
-                  Expand Your Local Search Visibility In <span className="text-primary">500+ Cities</span>
+                  Expand Your Local Search Visibility In <span className="text-primary">595+ Cities</span>
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
                   Our automated multi-location SEO engine generates dedicated, authoritative landing pages with city-specific schema, keyword clusters, and localized value propositions.
@@ -70,7 +75,7 @@ export default function Home() {
                   href="/market-area" 
                   className="btn btn-primary !px-8 !py-4 text-xs uppercase tracking-wider font-extrabold text-center text-white"
                 >
-                  Explore 500+ Cities Hub
+                  Explore 595+ Cities Hub
                 </Link>
                 <Link 
                   href="/location/mumbai" 
@@ -129,8 +134,15 @@ export default function Home() {
         {/* 10. Verified Client Testimonials */}
         <TestimonialsSection />
 
-        {/* 11. FAQs */}
-        <FAQSection />
+        {/* 11. Complete Deep Home Page Content & 16 FAQs */}
+        <section className="py-20 bg-white">
+          <ContentSectionsRenderer 
+            contentBlocks={homeContent.main_content}
+            faqs={homeContent.faqs}
+            bottomContent={homeContent.bottom_content}
+            pageTitle="Digital Marketing & Software"
+          />
+        </section>
 
         {/* 12. PreFooter High-Impact CTA */}
         <PreFooter />
