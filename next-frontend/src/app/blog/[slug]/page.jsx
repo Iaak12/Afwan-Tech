@@ -36,11 +36,14 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function BlogPostPage({ params }) {
+export default async function BlogPostPage({ params, searchParams }) {
   const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
   const blog = getBlogBySlug(resolvedParams.slug);
 
-  if (!blog) {
+  const isPreview = resolvedSearchParams?.preview === 'true';
+
+  if (!blog || (!blog.isLive && !isPreview)) {
     notFound();
   }
 

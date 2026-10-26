@@ -231,23 +231,67 @@ export const testimonials = [
 
 export const faqs = [
   {
-    q: 'How does your Programmatic SEO feature work across 500+ cities?',
-    a: 'We generate localized, search-engine-optimized dynamic pages with city-specific metadata, localized service keywords, schema markup (LocalBusiness, Breadcrumbs, FAQ), and nearby internal linking mesh networks. This allows your business to rank locally across 500+ cities in India and globally without duplicating thin content.'
+    q: "What does a digital marketing company do?",
+    a: "A digital marketing company helps businesses get found and chosen online. It plans and runs SEO, paid ads, social media and content, and improves the website or app those channels lead to, then measures which activity brings enquiries and sales."
   },
   {
-    q: 'How does the PHP backend integrate with the Next.js frontend?',
-    a: 'All static content, layouts, animations, and pages are rendered statically and dynamically via Next.js for maximum speed and SEO. When a user fills out a contact form or requests a consultation, Next.js transmits the data to lightweight PHP endpoints (contact.php) on your server which handles email dispatch, validation, and database storage.'
+    q: "Is Afwan Tech a digital marketing company or a software company?",
+    a: "Both. We are a digital marketing company with in-house developers, so we build websites, web apps, online stores and mobile apps, and we also run the SEO, ads and social media that bring people to them."
   },
   {
-    q: 'What is included in the Web Analytics tracking system?',
-    a: 'Our built-in analytics system tracks real-time pageviews, unique visitors (using GDPR-compliant daily salt hashing), referral sources, top pages, and device categories (desktop, mobile, tablet). You can view the live data inside the built-in /analytics dashboard.'
+    q: "What is included in your digital marketing services?",
+    a: "Our digital marketing services include SEO, local SEO, Google and Meta ads, social media management, content and conversion improvements. We also offer website, e-commerce, custom software and mobile app development, and branding and UI/UX design."
   },
   {
-    q: 'Can I host the frontend and backend on different servers?',
-    a: 'Yes! Next.js can be deployed on Vercel, Node VPS, or Netlify, while the PHP backend can live on your existing cPanel, Apache, or Shared Hosting server. You simply configure NEXT_PUBLIC_PHP_API_URL to point to your PHP server domain.'
+    q: "Is Afwan Tech the no 1 marketing company in India?",
+    a: "No, and we would be wary of anyone who says they are. No independent body ranks a single no 1 marketing company in India; what matters is whether a provider fits your goals, shows real work and reports honestly."
   },
   {
-    q: 'How soon can we expect organic search ranking results?',
-    a: 'Most clients observe initial keyword indexation within 2 to 3 weeks and measurable organic ranking lifts and traffic growth within 60 to 90 days, backed by our programmatic location indexing and technical Core Web Vitals optimizations.'
+    q: "Do you work as a full service marketing agency?",
+    a: "Yes, for digital channels. We cover strategy, websites and apps, SEO, paid ads, social media and design. We do not handle offline media such as TV, radio, print or outdoor advertising."
+  },
+  {
+    q: "Do you offer digital marketing services for small business owners?",
+    a: "Yes. For small businesses we usually start with a fast mobile website, a complete Google Business Profile and local SEO, then add ads once the basics turn visitors into calls and messages."
+  },
+  {
+    q: "Are you a good digital marketing agency for startups?",
+    a: "We work well with startups that want to test and learn before they scale. We can build your landing page, app or web product, set up analytics and run small, controlled campaigns to find what brings paying users."
+  },
+  {
+    q: "Can you work as a digital marketing consultant in India instead of a full agency?",
+    a: "Yes. If you have your own team, we offer audits, strategy sessions and training while your staff carry out the work."
+  },
+  {
+    q: "Do you work with clients outside India?",
+    a: "Yes, remotely. We are one Bengaluru team, not a global marketing agency with offices abroad, and we work with overseas clients through video calls and shared project tools."
+  },
+  {
+    q: "How long does SEO take to show results?",
+    a: "SEO is gradual and usually takes months rather than weeks. The time depends on your site's condition, competition and how much content we can publish; we give you a realistic estimate after the audit."
+  },
+  {
+    q: "Do you guarantee first-page rankings on Google?",
+    a: "No. Google itself says no one can guarantee a #1 ranking. We commit to clear work, honest reporting and following Google's guidelines."
+  },
+  {
+    q: "How much do your services cost?",
+    a: "The total depends on scope, your starting point, competition and any ad spend paid to platforms. Our team shares the exact total after reviewing your requirements."
+  },
+  {
+    q: "Will I own my website, ad accounts and data?",
+    a: "Yes. Your domain, website code, ad accounts, analytics and content belong to you, and we hand everything over if we stop working together."
+  },
+  {
+    q: "Do you help with AI search such as Google AI Overviews?",
+    a: "Yes. Google says normal SEO best practices apply to its AI features, so we focus on clear, well-structured pages, accurate business details, fast loading and content that answers real questions."
+  },
+  {
+    q: "Do you have offices in other cities?",
+    a: "No. We have one office in Whitefield, Bengaluru, and we serve clients in other cities and countries remotely."
+  },
+  {
+    q: "How do I start working with your team?",
+    a: "Call or WhatsApp +91 79798 50684, email contactafwantech@gmail.com or request a free audit through our contact page. We will review your site and reply with first recommendations."
   }
 ];

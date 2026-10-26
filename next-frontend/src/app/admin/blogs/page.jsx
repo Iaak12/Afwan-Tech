@@ -220,7 +220,7 @@ export default function AdminBlogSchedulerPage() {
 
                   <td className="py-4 px-5 text-right space-x-2">
                     <Link
-                      href={`/blog/${blog.slug}`}
+                      href={`/blog/${blog.slug}?preview=true`}
                       target="_blank"
                       className="px-2.5 py-1 rounded-lg text-[11px] font-bold text-gray-600 hover:text-primary border border-gray-200 hover:bg-white inline-flex items-center gap-1"
                     >
