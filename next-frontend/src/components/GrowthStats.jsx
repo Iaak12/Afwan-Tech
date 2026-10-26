@@ -3,10 +3,10 @@ import { Award, Users, TrendingUp, Globe, CheckCircle2 } from 'lucide-react';
 
 export default function GrowthStats() {
   const stats = [
-    { value: '595+', label: 'Cities & Regions Covered', desc: 'Programmatic SEO network spanning India and Global tech hubs' },
-    { value: '350+', label: 'Digital Products Deployed', desc: 'High-conversion Next.js applications and customized online stores' },
-    { value: '4.9/5', label: 'Average Client Rating', desc: 'Across verified Clutch, Google, and direct client evaluations' },
-    { value: '320%', label: 'Average Client Organic Growth', desc: 'Sustained compounding search visibility within first 120 days' }
+    { value: '595+', label: 'Cities Network Coverage', desc: 'Programmatic SEO architecture spanning India and global commercial hubs' },
+    { value: '100%', label: 'Direct Code Ownership', desc: 'Full intellectual property and deployment control transferred to you' },
+    { value: 'Sub-Sec', label: 'Speed & Core Web Vitals', desc: 'Optimized Next.js and edge caching for instant user interaction' },
+    { value: 'Direct', label: 'In-House Tech Team', desc: 'Work directly with senior developers and SEO strategists in Bengaluru' }
   ];
 
   return (

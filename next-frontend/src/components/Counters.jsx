@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 import { TrendingUp, Users, Award, Star } from 'lucide-react';
 
 const stats = [
-  { v: '8+', l: 'Years of Excellence', icon: <Award size={20} />, suffix: '' },
-  { v: '16K', l: 'Global Clients Served', icon: <Users size={20} />, suffix: '+' },
-  { v: '98', l: 'Client Retention Rate', icon: <TrendingUp size={20} />, suffix: '%' },
-  { v: '595', l: 'Programmatic Cities', icon: <Star size={20} />, suffix: '+' },
+  { v: '8+', l: 'Years Technical Experience', icon: <Award size={20} />, suffix: '' },
+  { v: '100', l: 'Source Code Ownership', icon: <Users size={20} />, suffix: '%' },
+  { v: '595', l: 'Target Cities Network', icon: <Star size={20} />, suffix: '+' },
+  { v: '24/7', l: 'Engineering & SLA Support', icon: <TrendingUp size={20} />, suffix: '' },
 ];
 
 export default function Counters() {

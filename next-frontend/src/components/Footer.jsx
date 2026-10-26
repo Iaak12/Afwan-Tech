@@ -84,7 +84,7 @@ export default function Footer() {
               <li><Link href="/about-us" className="hover:text-primary transition-colors">About Agency</Link></li>
               <li><Link href="/pricing" className="hover:text-primary transition-colors">Pricing Plans</Link></li>
               <li><Link href="/portfolio" className="hover:text-primary transition-colors">Case Studies</Link></li>
-              <li><Link href="/market-area" className="hover:text-primary transition-colors">Locations Hub (500+ Cities)</Link></li>
+              <li><Link href="/market-area" className="hover:text-primary transition-colors">Locations Hub (595+ Cities)</Link></li>
               <li><Link href="/contact-us" className="hover:text-primary transition-colors">Contact & Support</Link></li>
               <li><Link href="/admin" className="text-gray-500 hover:text-primary transition-colors text-xs flex items-center gap-1.5 pt-2 border-t border-white/5">Agency Portal Login</Link></li>
             </ul>
@@ -96,7 +96,7 @@ export default function Footer() {
               <Globe size={18} className="text-primary" />
               <h4 className="text-white font-black text-sm uppercase tracking-wider">Locations Directory</h4>
             </div>
-            <p className="text-gray-400 text-xs mb-3">Serving 500+ cities with hyper-local SEO, custom web architecture & targeted lead generation.</p>
+            <p className="text-gray-400 text-xs mb-3">Serving 595+ cities with hyper-local SEO, custom web architecture & targeted lead generation.</p>
             <div className="grid grid-cols-2 gap-2 text-xs">
               {popularCities.map((city, idx) => (
                 <Link 
@@ -112,7 +112,7 @@ export default function Footer() {
               href="/market-area" 
               className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline mt-4"
             >
-              Browse all 500+ cities & states <ArrowRight size={12} />
+              Browse all 595+ cities & states <ArrowRight size={12} />
             </Link>
           </div>
         </div>

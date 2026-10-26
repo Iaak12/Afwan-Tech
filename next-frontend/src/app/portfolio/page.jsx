@@ -40,19 +40,19 @@ export default function PortfolioPage() {
 
                 <div className="grid grid-cols-3 gap-3 pt-2">
                   <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
-                    <div className="text-2xl font-black text-primary font-sora">500+</div>
-                    <div className="text-xs font-bold text-gray-900 mt-0.5">Projects Shipped</div>
-                    <div className="text-[10px] text-gray-400">Web & App solutions</div>
+                    <div className="text-2xl font-black text-primary font-sora">Next.js</div>
+                    <div className="text-xs font-bold text-gray-900 mt-0.5">Modern Architecture</div>
+                    <div className="text-[10px] text-gray-400">Headless & High Speed</div>
                   </div>
                   <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
-                    <div className="text-2xl font-black text-primary font-sora">+320%</div>
-                    <div className="text-xs font-bold text-gray-900 mt-0.5">Avg Organic Lift</div>
-                    <div className="text-[10px] text-gray-400">In first 120 days</div>
+                    <div className="text-2xl font-black text-primary font-sora">595+</div>
+                    <div className="text-xs font-bold text-gray-900 mt-0.5">Cities Reach</div>
+                    <div className="text-[10px] text-gray-400">Programmatic Framework</div>
                   </div>
                   <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
-                    <div className="text-2xl font-black text-primary font-sora">4.9/5</div>
-                    <div className="text-xs font-bold text-gray-900 mt-0.5">Clutch & Google</div>
-                    <div className="text-[10px] text-gray-400">Verified feedback</div>
+                    <div className="text-2xl font-black text-primary font-sora">100%</div>
+                    <div className="text-xs font-bold text-gray-900 mt-0.5">Asset Ownership</div>
+                    <div className="text-[10px] text-gray-400">Zero lock-in contracts</div>
                   </div>
                 </div>
               </div>

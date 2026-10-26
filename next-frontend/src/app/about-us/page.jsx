@@ -12,17 +12,17 @@ import CompactHeroForm from '@/components/CompactHeroForm';
 
 export const metadata = {
   title: 'About Our Agency | AFWAN TECH - Digital Growth & Web Engineering',
-  description: 'Learn about the AFWAN TECH journey founded by Mohammad Afwan. 8+ years of engineering high-performance Next.js websites and data-driven SEO for 16,000+ global clients.',
+  description: 'Learn about the AFWAN TECH journey founded by Mohammad Afwan. 8+ years of engineering high-performance Next.js websites and data-driven SEO for ambitious businesses.',
   alternates: {
     canonical: 'https://www.afwantech.com/about-us'
   }
 };
 
 const stats = [
-  { v: '8+', l: 'Years of Excellence', sub: 'Established 2016' },
-  { v: '16,000+', l: 'Global Clients', sub: 'Across 40+ countries' },
-  { v: '500+', l: 'Projects Delivered', sub: 'Websites & Web Apps' },
-  { v: '98%', l: 'Client Retention', sub: 'Long-term growth partners' },
+  { v: '8+', l: 'Years of Experience', sub: 'Industry Expertise' },
+  { v: '595+', l: 'Cities Network', sub: 'Programmatic SEO Reach' },
+  { v: '100%', l: 'Code Ownership', sub: 'Direct client control' },
+  { v: 'Direct', l: 'In-House Team', sub: 'Bengaluru headquarters' },
 ];
 
 const values = [
@@ -73,17 +73,17 @@ const team = [
   {
     name: 'Rahul Mehta',
     role: 'SEO & Content Director',
-    bio: 'Data-driven technical SEO strategist who has driven 300%+ organic growth for enterprise e-commerce and SaaS brands globally. Pioneer of our 500+ city programmatic SEO indexing mesh.',
+    bio: 'Data-driven technical SEO strategist who has driven sustained organic growth for enterprise e-commerce and SaaS brands. Pioneer of our 500+ city programmatic SEO indexing mesh.',
     expertise: ['Technical SEO', 'Programmatic Indexing', 'Schema.org Graph', 'Digital PR'],
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400&h=400',
     initials: 'RM',
   },
   {
     name: 'Samira Khan',
     role: 'Creative & Design Lead',
-    bio: 'Award-winning designer with 14 industry recognitions. Crafts distinctive visual brand identities, conversion-focused Figma design systems, and modern aesthetic user experiences.',
+    bio: 'Designer with deep UX expertise. Crafts distinctive visual brand identities, conversion-focused Figma design systems, and modern aesthetic user experiences.',
     expertise: ['Brand Identity', 'UI/UX Design Systems', 'Motion & Micro-interactions'],
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400',
     initials: 'SK',
   },
   {
@@ -97,11 +97,11 @@ const team = [
 ];
 
 const milestones = [
-  { year: '2016', title: 'Founded in Delhi', desc: 'Started by Mohammad Afwan as a 2-person SEO consultancy driven by a passion for measurable digital growth.' },
-  { year: '2018', title: 'First 100 Clients', desc: 'Scaled to a full-service agency with dedicated engineering and design divisions.' },
-  { year: '2020', title: 'Global Expansion', desc: 'Opened operations across GCC (Dubai), United Kingdom, and Southeast Asia. Transitioned to an edge-first engineering stack.' },
-  { year: '2022', title: '500+ Projects & Major Scale', desc: 'Crossed half a billion rupees in client revenue generated and launched our proprietary programmatic SEO engine.' },
-  { year: '2024+', title: '16,000+ Clients & Global Reach', desc: 'Recognized as one of South Asia’s fastest-growing digital engineering partners, serving 500+ cities with 50+ specialists.' }
+  { year: '2016', title: 'Founded in Delhi', desc: 'Started by Mohammad Afwan as an SEO consultancy driven by a passion for measurable digital growth.' },
+  { year: '2018', title: 'Expanded Capabilities', desc: 'Scaled to a full-service agency with dedicated engineering and design divisions.' },
+  { year: '2020', title: 'Global Reach', desc: 'Expanded delivery to clients across GCC (Dubai), United Kingdom, and Southeast Asia with an edge-first engineering stack.' },
+  { year: '2022', title: 'Programmatic Scale', desc: 'Launched our proprietary programmatic SEO engine powering location search for businesses across the country.' },
+  { year: '2024+', title: 'Pan-India & Global Infrastructure', desc: 'Operating high-performance web engineering and programmatic SEO infrastructure serving 595+ commercial cities.' }
 ];
 
 export default function AboutUsPage() {
@@ -183,7 +183,7 @@ export default function AboutUsPage() {
                     Mohammad Afwan established AFWAN TECH with an uncompromising vision: <strong>treat web development as high-performance engineering and SEO as a mathematical science.</strong>
                   </p>
                   <p>
-                    Over the last 8 years, we have grown from a tight-knit 2-person team into an international agency serving over 16,000 clients across 40+ countries. Today, our proprietary programmatic architecture powers local SEO across 595+ cities in India and global business capitals like Dubai, London, and New York.
+                    Over the last 8 years, we have grown into a high-performance digital engineering agency. Today, our proprietary programmatic architecture powers local SEO across 595+ cities in India and global business capitals like Dubai, London, and New York.
                   </p>
                 </div>
                 <div className="pt-2 flex items-center gap-4 text-sm font-bold text-gray-900">

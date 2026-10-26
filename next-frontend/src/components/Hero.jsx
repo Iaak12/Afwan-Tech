@@ -68,8 +68,8 @@ export default function Hero() {
                   <Star key={s} size={11} className="text-[#2081D3] fill-[#2081D3]" />
                 ))}
               </span>
-              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/80">
-                Trusted by 16,000+ Clients
+              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-white/90">
+                Full-Stack Web Engineering & SEO
               </span>
             </motion.div>
 
@@ -85,7 +85,7 @@ export default function Hero() {
                 <span className="text-gradient">Service Your<br />Business Needs.</span>
               </h1>
               <p className="text-base md:text-lg text-gray-600 max-w-xl font-medium leading-relaxed pt-1">
-                From custom-coded Next.js websites and mobile applications to graphic design, programmatic SEO, and social media — we are the single agency partner that scales your entire digital presence.
+                From custom-coded Next.js websites and mobile applications to graphic design, search optimization, and social media — we are the single agency partner that scales your digital presence.
               </p>
             </motion.div>
 
@@ -119,30 +119,19 @@ export default function Hero() {
               transition={{ delay: 0.3 }}
               className="flex flex-wrap items-center gap-6 pt-4 border-t border-gray-100"
             >
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2.5">
-                  {[11,12,13,14,15].map(i => (
-                    <div key={i} className="w-8 h-8 rounded-full border-2 border-white overflow-hidden bg-gray-100">
-                      <img src={`https://i.pravatar.cc/80?img=${i}`} alt="client" className="w-full h-full object-cover" />
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <div className="text-[#1a1a1a] font-black text-xs">16,000+ Clients</div>
-                  <div className="flex items-center gap-1">
-                    {[1,2,3,4,5].map(s => <Star key={s} size={9} className="text-[#2081D3] fill-[#2081D3]" />)}
-                    <span className="text-[#555555] text-[9px] font-bold ml-1">4.9/5 Rating</span>
-                  </div>
-                </div>
+              <div className="flex items-center gap-2 text-gray-700">
+                <CircleCheckBig size={16} className="text-primary flex-shrink-0" />
+                <span className="text-xs font-bold whitespace-nowrap">Direct In-House Developers</span>
               </div>
-              <div className="h-8 w-px bg-gray-200 hidden sm:block" />
-              <div className="flex items-center gap-2 text-gray-500">
-                <CircleCheckBig size={15} className="text-emerald-500 flex-shrink-0" />
+              <div className="h-6 w-px bg-gray-200 hidden sm:block" />
+              <div className="flex items-center gap-2 text-gray-700">
+                <CircleCheckBig size={16} className="text-emerald-500 flex-shrink-0" />
                 <span className="text-xs font-bold whitespace-nowrap">No Lock-in Contracts</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-500">
-                <MapPin size={15} className="text-primary flex-shrink-0" />
-                <span className="text-xs font-bold whitespace-nowrap">500+ Cities Network</span>
+              <div className="h-6 w-px bg-gray-200 hidden sm:block" />
+              <div className="flex items-center gap-2 text-gray-700">
+                <MapPin size={16} className="text-primary flex-shrink-0" />
+                <span className="text-xs font-bold whitespace-nowrap">Whitefield, Bengaluru</span>
               </div>
             </motion.div>
           </div>

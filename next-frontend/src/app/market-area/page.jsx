@@ -50,7 +50,7 @@ export default function MarketAreaPage() {
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-glow text-xs font-black uppercase tracking-wider">
                   <Globe size={14} className="text-primary" />
-                  <span>500+ Programmatic Regional Footprints</span>
+                  <span>595+ Programmatic Regional Footprints</span>
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#0f172a] tracking-tight leading-[1.08] font-sora">
@@ -58,7 +58,7 @@ export default function MarketAreaPage() {
                 </h1>
 
                 <p className="text-gray-600 text-base md:text-lg max-w-xl font-normal leading-relaxed">
-                  Search across 500+ cities in India and global tech hubs to explore dedicated Next.js web development, local entity schemas, and organic ranking engines.
+                  Search across 595+ cities in India and global tech hubs to explore dedicated Next.js web development, local entity schemas, and organic ranking engines.
                 </p>
 
                 {/* Search Bar */}
@@ -69,7 +69,7 @@ export default function MarketAreaPage() {
                       type="text"
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
-                      placeholder="Search across 500+ cities (e.g. Mumbai, Bengaluru, Noida, Dubai)..."
+                      placeholder="Search across 595+ cities (e.g. Mumbai, Bengaluru, Noida, Dubai)..."
                       className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 shadow-md text-sm bg-white"
                     />
                   </div>

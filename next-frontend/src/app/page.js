@@ -58,7 +58,7 @@ export default function Home() {
                   <MapPin size={14} className="text-primary" /> Programmatic SEO Engine
                 </div>
                 <h3 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight font-sora text-white">
-                  Rank On Page 1 In <span className="text-primary">500+ Cities</span> Across India & Worldwide
+                  Expand Your Local Search Visibility In <span className="text-primary">500+ Cities</span>
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
                   Our automated multi-location SEO engine generates dedicated, authoritative landing pages with city-specific schema, keyword clusters, and localized value propositions.

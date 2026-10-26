@@ -7,7 +7,7 @@ import { CircleCheckBig, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function AboutROI() {
   const content = {
-    title: "India's Premier Performance & Web Engine",
+    title: "Performance Web Engineering & Growth Marketing",
     description: "We don't just provide generic services; we craft conversion-engineered digital platforms. Our deep-tech integration of AI, modern Next.js architecture, and programmatic SEO ensures every dollar delivers peak compounding ROI.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900",
     data: [
