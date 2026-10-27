@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { getAllBlogs } from '@/lib/blogs';
+import { getPublishedBlogs } from '@/lib/blogs';
 import { BookOpen } from 'lucide-react';
 import BlogListingClient from '@/components/BlogListingClient';
 
@@ -16,7 +16,7 @@ export const metadata = {
 };
 
 export default function BlogIndexPage() {
-  const blogs = getAllBlogs();
+  const blogs = getPublishedBlogs();
 
   return (
     <div className="bg-white min-h-screen font-inter text-[#0f172a]">

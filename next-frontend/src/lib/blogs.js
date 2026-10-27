@@ -46,9 +46,7 @@ export function getAllBlogs() {
 
 export function getPublishedBlogs() {
   const all = getAllBlogs();
-  const live = all.filter(b => b.isLive);
-  // Ensure we at least show published blogs or fallback gracefully
-  return live.length > 0 ? live : all;
+  return all.filter(b => b.isLive);
 }
 
 export function getScheduledBlogs() {
@@ -61,14 +59,14 @@ export function getBlogBySlug(slug) {
 }
 
 /**
- * Get recommended blogs excluding current blog, with category relevance priority
+ * Get recommended blogs strictly from published blogs, excluding current blog
  */
 export function getRecommendedBlogs(currentSlug, limit = 4) {
-  const all = getAllBlogs();
-  const current = all.find(b => b.slug.toLowerCase() === (currentSlug || '').toLowerCase());
-  const others = all.filter(b => b.slug.toLowerCase() !== (currentSlug || '').toLowerCase());
+  const published = getPublishedBlogs();
+  const current = published.find(b => b.slug.toLowerCase() === (currentSlug || '').toLowerCase());
+  const others = published.filter(b => b.slug.toLowerCase() !== (currentSlug || '').toLowerCase());
 
-  // Prioritize same category first
+  // Prioritize same category first among published
   const sameCategory = current ? others.filter(b => b.category === current.category) : [];
   const differentCategory = current ? others.filter(b => b.category !== current.category) : others;
 

@@ -52,25 +52,25 @@ const servicesList = [
 export default function BlogSidebar({ currentBlog, recommendedBlogs = [] }) {
   return (
     <aside className="space-y-8">
-      {/* ── 1. RECOMMENDED ARTICLES WIDGET ── */}
-      <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-100 shadow-sm">
-        <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-5">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-blue-50 text-primary flex items-center justify-center">
-              <BookOpen size={16} />
+      {/* ── 1. RECOMMENDED ARTICLES WIDGET (Render only if other published articles exist) ── */}
+      {recommendedBlogs && recommendedBlogs.length > 0 && (
+        <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-100 shadow-sm">
+          <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-5">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-blue-50 text-primary flex items-center justify-center">
+                <BookOpen size={16} />
+              </div>
+              <h3 className="text-base font-black text-[#0f172a] font-sora">
+                Recommended Reads
+              </h3>
             </div>
-            <h3 className="text-base font-black text-[#0f172a] font-sora">
-              Recommended Reads
-            </h3>
+            <span className="text-[10px] font-black uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+              Published
+            </span>
           </div>
-          <span className="text-[10px] font-black uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-            Featured
-          </span>
-        </div>
 
-        <div className="space-y-4">
-          {recommendedBlogs && recommendedBlogs.length > 0 ? (
-            recommendedBlogs.slice(0, 4).map((blog) => (
+          <div className="space-y-4">
+            {recommendedBlogs.slice(0, 4).map((blog) => (
               <Link
                 key={blog.id || blog.slug}
                 href={`/blog/${blog.slug}`}
@@ -101,22 +101,20 @@ export default function BlogSidebar({ currentBlog, recommendedBlogs = [] }) {
                   </div>
                 </div>
               </Link>
-            ))
-          ) : (
-            <p className="text-xs text-gray-500">More articles coming soon.</p>
-          )}
-        </div>
+            ))}
+          </div>
 
-        <div className="pt-4 mt-2 border-t border-gray-100">
-          <Link
-            href="/blog"
-            className="flex items-center justify-between text-xs font-bold text-primary hover:text-[#2F6097] transition-colors group"
-          >
-            <span>Explore All Engineering Articles</span>
-            <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="pt-4 mt-2 border-t border-gray-100">
+            <Link
+              href="/blog"
+              className="flex items-center justify-between text-xs font-bold text-primary hover:text-[#2F6097] transition-colors group"
+            >
+              <span>Explore All Engineering Articles</span>
+              <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* ── 2. SERVICES SHOWCASE WIDGET ── */}
       <div className="bg-gradient-to-br from-slate-900 via-[#0f172a] to-slate-900 rounded-3xl p-6 sm:p-7 text-white shadow-xl border border-white/10 relative overflow-hidden">

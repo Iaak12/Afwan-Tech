@@ -17,8 +17,9 @@ export default function BlogListingClient({ blogs = [] }) {
   // Extract unique categories
   const categories = ['All', ...Array.from(new Set(blogs.map(b => b.category).filter(Boolean)))];
 
-  const featured = blogs[0];
-  const allOtherBlogs = blogs.slice(1);
+  const isDefaultView = selectedCategory === 'All' && !searchQuery.trim();
+  const showFeaturedHero = isDefaultView && blogs.length > 0;
+  const featured = showFeaturedHero ? blogs[0] : null;
 
   // Filter blogs based on category & search
   const filteredBlogs = blogs.filter(blog => {
@@ -29,6 +30,9 @@ export default function BlogListingClient({ blogs = [] }) {
       blog.category.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  // Grid blogs exclude the featured blog when in default view
+  const gridBlogs = showFeaturedHero ? filteredBlogs.slice(1) : filteredBlogs;
 
   return (
     <div className="space-y-16">
@@ -147,42 +151,42 @@ export default function BlogListingClient({ blogs = [] }) {
         </motion.div>
       )}
 
-      {/* ── ARTICLES GRID ── */}
-      <div className="space-y-8">
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-xs font-black uppercase tracking-wider text-primary">Curated Knowledge</span>
-            <h2 className="text-2xl sm:text-3xl font-black font-sora text-[#0f172a] mt-1">
-              {selectedCategory === 'All' ? 'All Published & Engineering Guides' : `${selectedCategory} Guides`}
-            </h2>
+      {/* ── ARTICLES GRID (Shown if more than 1 article, or if category/search filter is applied) ── */}
+      {gridBlogs.length > 0 ? (
+        <div className="space-y-8">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="text-xs font-black uppercase tracking-wider text-primary">Curated Knowledge</span>
+              <h2 className="text-2xl sm:text-3xl font-black font-sora text-[#0f172a] mt-1">
+                {selectedCategory === 'All' ? 'More Engineering Guides' : `${selectedCategory} Guides`}
+              </h2>
+            </div>
+            <span className="text-xs font-mono font-bold text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">
+              {gridBlogs.length} {gridBlogs.length === 1 ? 'Article' : 'Articles'}
+            </span>
           </div>
-          <span className="text-xs font-mono font-bold text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full">
-            {filteredBlogs.length} {filteredBlogs.length === 1 ? 'Article' : 'Articles'}
-          </span>
-        </div>
 
-        {filteredBlogs.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredBlogs.map((blog, idx) => (
+            {gridBlogs.map((blog, idx) => (
               <BlogCard key={blog.id || blog.slug} blog={blog} index={idx} />
             ))}
           </div>
-        ) : (
-          <div className="text-center py-20 bg-gray-50 rounded-3xl border border-dashed border-gray-200">
-            <BookOpen size={40} className="mx-auto text-gray-300 mb-4" />
-            <h3 className="text-lg font-bold text-gray-700 font-sora">No guides match your criteria</h3>
-            <p className="text-xs text-gray-500 mt-1 max-w-sm mx-auto">
-              Try adjusting your category filter or search keywords to explore our engineering library.
-            </p>
-            <button
-              onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}
-              className="mt-4 px-4 py-2 bg-primary text-white text-xs font-bold rounded-xl"
-            >
-              Reset Filters
-            </button>
-          </div>
-        )}
-      </div>
+        </div>
+      ) : !showFeaturedHero && (
+        <div className="text-center py-20 bg-gray-50 rounded-3xl border border-dashed border-gray-200">
+          <BookOpen size={40} className="mx-auto text-gray-300 mb-4" />
+          <h3 className="text-lg font-bold text-gray-700 font-sora">No published guides match your criteria</h3>
+          <p className="text-xs text-gray-500 mt-1 max-w-sm mx-auto">
+            Try adjusting your category filter or search keywords to explore our engineering library.
+          </p>
+          <button
+            onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}
+            className="mt-4 px-4 py-2 bg-primary text-white text-xs font-bold rounded-xl cursor-pointer"
+          >
+            Reset Filters
+          </button>
+        </div>
+      )}
     </div>
   );
 }

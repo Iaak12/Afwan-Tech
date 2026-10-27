@@ -16,7 +16,7 @@ import Link from 'next/link';
 import { ArrowRight, MapPin, Sparkles, CheckCircle2, BookOpen } from 'lucide-react';
 import homeContent from '@/data/homeContent.json';
 import BlogCard from '@/components/BlogCard';
-import { getAllBlogs } from '@/lib/blogs';
+import { getPublishedBlogs } from '@/lib/blogs';
 
 export const metadata = {
   title: homeContent.metaTitle || 'AFWAN TECH | Digital Marketing & Web Engineering Agency',
@@ -28,7 +28,7 @@ export const metadata = {
 };
 
 export default function Home() {
-  const homeBlogs = getAllBlogs().slice(0, 3);
+  const homeBlogs = getPublishedBlogs().slice(0, 3);
 
   return (
     <div className="bg-white min-h-screen font-inter overflow-hidden">
