@@ -13,8 +13,10 @@ import ContentSectionsRenderer from '@/components/ContentSectionsRenderer';
 import PreFooter from '@/components/PreFooter';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
-import { ArrowRight, MapPin, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, MapPin, Sparkles, CheckCircle2, BookOpen } from 'lucide-react';
 import homeContent from '@/data/homeContent.json';
+import BlogCard from '@/components/BlogCard';
+import { getAllBlogs } from '@/lib/blogs';
 
 export const metadata = {
   title: homeContent.metaTitle || 'AFWAN TECH | Digital Marketing & Web Engineering Agency',
@@ -26,6 +28,8 @@ export const metadata = {
 };
 
 export default function Home() {
+  const homeBlogs = getAllBlogs().slice(0, 3);
+
   return (
     <div className="bg-white min-h-screen font-inter overflow-hidden">
       <Header />
@@ -55,31 +59,48 @@ export default function Home() {
         <ProblemSolver />
 
         {/* 8. 595+ Programmatic Locations Network Banner */}
-        <section className="py-20 bg-gradient-to-b from-blue-50/40 via-white to-white">
+        <section className="py-24 bg-gradient-to-b from-blue-50/40 via-white to-white">
           <div className="max-w-container mx-auto px-6">
-            <div className="bg-gradient-to-r from-[#0f172a] via-[#1a1a1a] to-[#0f172a] rounded-3xl p-8 md:p-14 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden border border-white/10">
-              <div className="space-y-4 max-w-xl relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 text-blue-300 text-xs font-black uppercase tracking-wider">
-                  <MapPin size={14} className="text-primary" /> Programmatic SEO Engine
+            <div className="bg-gradient-to-br from-[#0f172a] via-[#162238] to-[#0f172a] rounded-[2.5rem] p-8 sm:p-12 md:p-16 text-white flex flex-col lg:flex-row items-center justify-between gap-10 shadow-2xl relative overflow-hidden border border-white/10">
+              {/* Soft ambient backlight */}
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[140px] pointer-events-none" />
+
+              <div className="space-y-5 max-w-xl relative z-10">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/20 text-blue-300 text-xs font-black uppercase tracking-wider border border-primary/30">
+                  <MapPin size={13} className="text-primary" /> Programmatic SEO Network
                 </div>
                 <h3 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight font-sora text-white">
-                  Expand Your Local Search Visibility In <span className="text-primary">595+ Cities</span>
+                  Expand Your Local Search Visibility In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">595+ Cities</span>
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Our automated multi-location SEO engine generates dedicated, authoritative landing pages with city-specific schema, keyword clusters, and localized value propositions.
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  Our automated multi-location SEO engine generates dedicated, authoritative landing pages with city-specific entity schemas, localized keyword clusters, and high-conversion funnels.
                 </p>
+
+                {/* Popular City Quick-Links Pills */}
+                <div className="pt-2 flex flex-wrap gap-2 text-xs">
+                  {['Mumbai', 'Bengaluru', 'Delhi NCR', 'Hyderabad', 'Pune', 'Chennai', 'Kolkata', 'Ahmedabad', 'Dubai'].map((city, cIdx) => (
+                    <Link
+                      key={cIdx}
+                      href={`/location/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/5 hover:bg-white/15 text-gray-300 hover:text-white border border-white/10 transition-colors"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <span>{city}</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto relative z-10">
+              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto relative z-10 flex-shrink-0">
                 <Link 
                   href="/market-area" 
-                  className="btn btn-primary !px-8 !py-4 text-xs uppercase tracking-wider font-extrabold text-center text-white"
+                  className="btn btn-primary !px-9 !py-4 text-xs uppercase tracking-wider font-extrabold text-center text-white shadow-xl shadow-primary/30 rounded-2xl hover:scale-105 transition-all"
                 >
                   Explore 595+ Cities Hub
                 </Link>
                 <Link 
                   href="/location/mumbai" 
-                  className="btn btn-outline !border-white/30 hover:!border-white !text-white text-xs uppercase tracking-wider font-bold text-center bg-white/5"
+                  className="btn btn-outline !border-white/20 hover:!border-white !text-white text-xs uppercase tracking-wider font-bold text-center bg-white/5 hover:bg-white/10 rounded-2xl transition-all"
                 >
                   View Sample City Page
                 </Link>
@@ -134,7 +155,42 @@ export default function Home() {
         {/* 10. Verified Client Testimonials */}
         <TestimonialsSection />
 
-        {/* 11. Complete Deep Home Page Content & 16 FAQs */}
+        {/* 11. Latest Engineering & AI Guides Showcase */}
+        {homeBlogs && homeBlogs.length > 0 && (
+          <section className="py-24 bg-gradient-to-b from-white via-slate-50/50 to-white border-t border-gray-100">
+            <div className="max-w-container mx-auto px-6">
+              <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-6">
+                <div className="max-w-xl space-y-3">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-primary border border-blue-100 text-xs font-black uppercase tracking-wider">
+                    <BookOpen size={13} /> Engineering & AI Insights
+                  </div>
+                  <h2 className="text-3xl sm:text-5xl font-black font-sora text-[#0f172a] tracking-tight">
+                    Latest From Our Engineering Journal
+                  </h2>
+                  <p className="text-sm sm:text-base text-gray-600">
+                    In-depth architectural guides, AI coding workflows, and programmatic search strategies written by senior engineers.
+                  </p>
+                </div>
+
+                <Link 
+                  href="/blog" 
+                  className="btn btn-outline !px-7 !py-3.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2 whitespace-nowrap shadow-xs hover:shadow-md"
+                >
+                  <span>View All Articles</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {homeBlogs.map((b, idx) => (
+                  <BlogCard key={b.id || b.slug} blog={b} index={idx} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* 12. Complete Deep Home Page Content & 16 FAQs */}
         <section className="py-20 bg-white">
           <ContentSectionsRenderer 
             contentBlocks={homeContent.main_content}

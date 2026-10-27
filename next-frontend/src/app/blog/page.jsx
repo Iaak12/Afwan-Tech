@@ -1,13 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { getPublishedBlogs } from '@/lib/blogs';
-import { 
-  Calendar, Clock, User, ArrowRight, Sparkles, BookOpen, 
-  ChevronRight, CheckCircle2 
-} from 'lucide-react';
+import { getAllBlogs } from '@/lib/blogs';
+import { BookOpen } from 'lucide-react';
+import BlogListingClient from '@/components/BlogListingClient';
 
 export const metadata = {
   title: 'Blog & Engineering Journal | Afwan Tech',
@@ -20,10 +16,7 @@ export const metadata = {
 };
 
 export default function BlogIndexPage() {
-  // Only published blogs on the public page
-  const liveBlogs = getPublishedBlogs();
-  const featured = liveBlogs[0];
-  const restBlogs = liveBlogs.slice(1);
+  const blogs = getAllBlogs();
 
   return (
     <div className="bg-white min-h-screen font-inter text-[#0f172a]">
@@ -31,7 +24,7 @@ export default function BlogIndexPage() {
 
       <main className="pt-28 md:pt-36 pb-24">
         {/* Top Hero */}
-        <section className="max-w-container mx-auto px-6 mb-16">
+        <section className="max-w-container mx-auto px-6 mb-12">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-primary border border-blue-100 text-xs font-black uppercase tracking-wider">
               <BookOpen size={14} /> Afwan Tech Engineering & Growth Journal
@@ -45,113 +38,10 @@ export default function BlogIndexPage() {
           </div>
         </section>
 
-        {/* Live Published Articles */}
-        {featured ? (
-          <section className="max-w-container mx-auto px-6 space-y-12">
-            {/* Featured Article */}
-            <div className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl border border-white/10 group">
-              <div className="relative z-10 max-w-3xl space-y-5">
-                <div className="flex items-center gap-3 flex-wrap">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary text-white">
-                    {featured.category}
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-bold">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" /> Published Article
-                  </span>
-                  <span className="text-xs text-gray-400 flex items-center gap-1 font-mono">
-                    <Calendar size={12} /> {featured.scheduledDate}
-                  </span>
-                  <span className="text-xs text-gray-400 flex items-center gap-1">
-                    <Clock size={12} /> {featured.readTime}
-                  </span>
-                </div>
-
-                <h2 className="text-2xl sm:text-4xl font-black font-sora tracking-tight leading-tight group-hover:text-blue-300 transition-colors">
-                  <Link href={`/blog/${featured.slug}`}>
-                    {featured.title}
-                  </Link>
-                </h2>
-
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed line-clamp-3">
-                  {featured.metaDescription || featured.tagline}
-                </p>
-
-                <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-blue-500/20 text-white font-black flex items-center justify-center text-xs border border-white/10">
-                      MA
-                    </div>
-                    <div>
-                      <span className="block text-xs font-bold text-white">{featured.author.name}</span>
-                      <span className="block text-[10px] text-gray-400">{featured.author.role}</span>
-                    </div>
-                  </div>
-
-                  <Link 
-                    href={`/blog/${featured.slug}`}
-                    className="btn btn-primary !px-6 !py-2.5 rounded-xl text-xs font-bold flex items-center gap-1.5"
-                  >
-                    <span>Read Article</span>
-                    <ArrowRight size={14} />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Other Published Articles (if multiple published) */}
-            {restBlogs.length > 0 && (
-              <div className="space-y-6 pt-6">
-                <h2 className="text-2xl font-bold font-sora text-[#0f172a]">
-                  Recent Articles
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {restBlogs.map(blog => (
-                    <article 
-                      key={blog.id}
-                      className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between hover:shadow-lg hover:border-primary/40 transition-all group"
-                    >
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between text-xs text-gray-500">
-                          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-primary">
-                            {blog.category}
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <Clock size={11} /> {blog.readTime}
-                          </span>
-                        </div>
-
-                        <h3 className="font-bold text-base text-gray-900 group-hover:text-primary transition-colors font-sora line-clamp-2">
-                          <Link href={`/blog/${blog.slug}`}>
-                            {blog.title}
-                          </Link>
-                        </h3>
-
-                        <p className="text-xs text-gray-500 line-clamp-3 leading-relaxed">
-                          {blog.metaDescription || blog.tagline}
-                        </p>
-                      </div>
-
-                      <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between">
-                        <span className="text-[11px] text-gray-400 font-mono">{blog.scheduledDate}</span>
-                        <Link 
-                          href={`/blog/${blog.slug}`}
-                          className="text-xs font-bold text-primary hover:underline flex items-center gap-1"
-                        >
-                          Read Guide <ChevronRight size={13} />
-                        </Link>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            )}
-          </section>
-        ) : (
-          <section className="max-w-container mx-auto px-6 text-center py-16">
-            <p className="text-gray-500 text-sm">No published articles yet.</p>
-          </section>
-        )}
+        {/* Client Interactive Listing */}
+        <section className="max-w-container mx-auto px-6">
+          <BlogListingClient blogs={blogs} />
+        </section>
       </main>
 
       <Footer />

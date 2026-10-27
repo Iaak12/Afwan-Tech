@@ -3,8 +3,12 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import TrackedContactLink from '@/components/TrackedContactLink';
-import { getAllBlogs, getBlogBySlug } from '@/lib/blogs';
+import BlogSidebar from '@/components/BlogSidebar';
+import ReadingProgress from '@/components/ReadingProgress';
+import BlogCard from '@/components/BlogCard';
+import { getAllBlogs, getBlogBySlug, getRecommendedBlogs } from '@/lib/blogs';
 import { 
   Calendar, Clock, User, ArrowLeft, ArrowRight, Phone, Mail, 
   MessageSquare, Share2, CheckCircle2, ChevronRight, BookOpen, AlertCircle
@@ -47,6 +51,8 @@ export default async function BlogPostPage({ params, searchParams }) {
   if (!blog || (!blog.isLive && !isPreview)) {
     notFound();
   }
+
+  const recommendedBlogs = getRecommendedBlogs(resolvedParams.slug, 4);
 
   // Helper to render main content blocks
   const renderBlock = (block, idx) => {
@@ -177,6 +183,9 @@ export default async function BlogPostPage({ params, searchParams }) {
 
   return (
     <div className="bg-white min-h-screen font-inter text-[#0f172a]">
+      {/* Scroll Reading Progress Bar */}
+      <ReadingProgress />
+
       <Header />
 
       {/* JSON-LD Article Schema */}
@@ -204,7 +213,7 @@ export default async function BlogPostPage({ params, searchParams }) {
           {/* Main Article Body */}
           <article className="lg:col-span-8 space-y-6">
             {/* Header info */}
-            <div className="space-y-4 pb-6 border-b border-gray-200">
+            <div className="space-y-5 pb-6 border-b border-gray-200">
               <div className="flex items-center gap-3 flex-wrap">
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-primary border border-blue-100">
                   {blog.category}
@@ -228,10 +237,10 @@ export default async function BlogPostPage({ params, searchParams }) {
               )}
 
               {/* Author Strip */}
-              <div className="flex items-center justify-between pt-4">
+              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-blue-400 text-white font-bold flex items-center justify-center text-sm shadow-sm">
-                    MA
+                    {blog.author?.name ? blog.author.name.split(' ').map(n => n[0]).join('').slice(0, 2) : 'MA'}
                   </div>
                   <div>
                     <span className="font-bold text-sm text-gray-900 block font-sora">{blog.author.name}</span>
@@ -246,17 +255,32 @@ export default async function BlogPostPage({ params, searchParams }) {
                     href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=${encodeURIComponent(`Hi Afwan Tech, I read your article "${blog.title}" and would like to discuss a project.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-100 text-xs font-bold flex items-center gap-1 transition-colors"
+                    className="p-2.5 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-100 text-xs font-bold flex items-center gap-1.5 transition-colors border border-emerald-200/50"
                   >
                     <MessageSquare size={14} />
-                    <span className="hidden sm:inline">Ask on WA</span>
+                    <span className="hidden sm:inline">Ask on WhatsApp</span>
                   </TrackedContactLink>
                 </div>
               </div>
+
+              {/* Cover Image Banner */}
+              {blog.coverImage && (
+                <div className="relative h-64 sm:h-96 w-full rounded-3xl overflow-hidden mt-6 shadow-md border border-gray-100">
+                  <Image
+                    src={blog.coverImage}
+                    alt={blog.title}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 800px"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                </div>
+              )}
             </div>
 
             {/* Content Blocks */}
-            <div className="prose prose-slate max-w-none">
+            <div className="prose prose-slate max-w-none pt-2">
               {blog.main_content?.map((block, idx) => renderBlock(block, idx))}
             </div>
 
@@ -286,56 +310,36 @@ export default async function BlogPostPage({ params, searchParams }) {
             )}
           </article>
 
-          {/* Sticky Sidebar */}
-          <aside className="lg:col-span-4 space-y-6">
-            {/* Consultation Card */}
-            <div className="sticky top-28 bg-[#0f172a] text-white p-6 sm:p-8 rounded-3xl space-y-5 shadow-xl border border-white/10">
-              <div className="w-10 h-10 rounded-xl bg-primary/20 text-primary flex items-center justify-center font-bold">
-                <BookOpen size={20} />
-              </div>
-
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-primary block">
-                  Afwan Tech Growth Deck
-                </span>
-                <h3 className="text-xl font-bold font-sora text-white mt-1">
-                  Ready to Scale Your Platform?
-                </h3>
-                <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-                  We build lightning-fast web applications, programmatic SEO architectures across 500+ cities, and high-converting ecommerce platforms.
-                </p>
-              </div>
-
-              <div className="space-y-2 pt-2 border-t border-white/10 text-xs">
-                <TrackedContactLink
-                  type="call"
-                  location={`Blog Sidebar - ${blog.title}`}
-                  href={`tel:${siteSettings.contactPhone}`}
-                  className="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold flex items-center justify-center gap-2 transition-colors"
-                >
-                  <Phone size={14} className="text-primary" /> {siteSettings.contactPhone}
-                </TrackedContactLink>
-                <TrackedContactLink
-                  type="whatsapp"
-                  location={`Blog Sidebar - ${blog.title}`}
-                  href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=${encodeURIComponent(`Hi Afwan Tech, I would like to get a quote.`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3 px-4 rounded-xl bg-[#25D366] text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-                >
-                  <MessageSquare size={14} /> WhatsApp Consultation
-                </TrackedContactLink>
-              </div>
-
-              <div className="pt-2 text-[11px] text-gray-400 space-y-1">
-                <div className="flex items-center gap-2">
-                  <Mail size={12} className="text-primary" />
-                  <a href={`mailto:${siteSettings.contactEmail}`} className="hover:underline">{siteSettings.contactEmail}</a>
-                </div>
-              </div>
+          {/* Sticky Sidebar with Recommended Blogs & Services */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-28">
+              <BlogSidebar currentBlog={blog} recommendedBlogs={recommendedBlogs} />
             </div>
-          </aside>
+          </div>
         </div>
+
+        {/* Bottom Related Articles */}
+        {recommendedBlogs && recommendedBlogs.length > 0 && (
+          <section className="max-w-container mx-auto px-6 mt-20 pt-16 border-t border-gray-200">
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4">
+              <div>
+                <span className="text-xs font-black uppercase tracking-wider text-primary">Keep Exploring</span>
+                <h2 className="text-2xl sm:text-4xl font-black font-sora text-[#0f172a] mt-1">
+                  Recommended Engineering Guides
+                </h2>
+              </div>
+              <Link href="/blog" className="btn btn-outline !px-6 !py-3 text-xs font-bold">
+                View All Articles
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {recommendedBlogs.slice(0, 3).map((item, idx) => (
+                <BlogCard key={item.id || item.slug} blog={item} index={idx} />
+              ))}
+            </div>
+          </section>
+        )}
       </main>
 
       <Footer />

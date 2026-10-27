@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
 import FloatingActions from "@/components/FloatingActions";
 
@@ -32,6 +33,26 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/afwan.png" />
       </head>
       <body className="min-h-full flex flex-col bg-white text-[#0f172a] antialiased selection:bg-primary selection:text-white">
+        {/* Google Analytics 4 (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-H1Z6QJM1NH"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-H1Z6QJM1NH', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+
         <AnalyticsTracker />
         {children}
         <FloatingActions />
