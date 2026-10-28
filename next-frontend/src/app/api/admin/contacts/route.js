@@ -3,6 +3,19 @@ import fs from 'fs';
 import path from 'path';
 import { getPhpApiUrl } from '@/lib/apiConfig';
 
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, DELETE, PATCH, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+};
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: corsHeaders
+  });
+}
+
 function findContactsFiles() {
   const possiblePaths = [
     path.join(process.cwd(), '..', 'backend-php', 'data', 'contacts.json'),
@@ -65,11 +78,10 @@ export async function GET() {
       if (res.ok) {
         const json = await res.json();
         if (json.success && Array.isArray(json.data) && json.data.length > 0) {
-          return NextResponse.json({
-            success: true,
-            data: json.data,
-            source: 'mysql'
-          });
+          return NextResponse.json(
+            { success: true, data: json.data, source: 'mysql' },
+            { headers: corsHeaders }
+          );
         }
       }
     } catch (e) {
@@ -80,13 +92,15 @@ export async function GET() {
   // 2. Fallback: Local JSON storage
   try {
     const { list } = getContacts();
-    return NextResponse.json({
-      success: true,
-      data: list,
-      source: 'local'
-    });
+    return NextResponse.json(
+      { success: true, data: list, source: 'local' },
+      { headers: corsHeaders }
+    );
   } catch (err) {
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: err.message },
+      { status: 500, headers: corsHeaders }
+    );
   }
 }
 
@@ -102,18 +116,24 @@ export async function DELETE(request) {
       // ignore
     }
 
-    const idsToDelete = body.ids || (body.id ? [body.id] : (queryId ? [queryId] : []));
+    const rawIds = body.ids || (body.id ? [body.id] : (queryId ? [queryId] : []));
+    const idsToDelete = (Array.isArray(rawIds) ? rawIds : [rawIds])
+      .map(id => String(id).trim())
+      .filter(Boolean);
 
     if (!idsToDelete || idsToDelete.length === 0) {
-      return NextResponse.json({ success: false, message: 'No submission ID provided to delete' }, { status: 400 });
+      return NextResponse.json(
+        { success: false, message: 'No submission ID provided to delete' },
+        { status: 400, headers: corsHeaders }
+      );
     }
 
     const phpApi = getPhpApiUrl();
 
-    // 1. Delete from Hostinger MySQL
+    // 1. Delete from Hostinger MySQL directly
     if (phpApi) {
       try {
-        await fetch(`${phpApi}/contact.php`, {
+        const delRes = await fetch(`${phpApi}/contact.php`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -121,6 +141,16 @@ export async function DELETE(request) {
           },
           body: JSON.stringify({ ids: idsToDelete })
         });
+        if (!delRes.ok) {
+          await fetch(`${phpApi}/contact.php`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json'
+            },
+            body: JSON.stringify({ action: 'delete', ids: idsToDelete })
+          });
+        }
       } catch (e) {
         console.warn('MySQL delete error:', e.message);
       }
@@ -129,16 +159,22 @@ export async function DELETE(request) {
     // 2. Also remove from local files
     const { list, targetPath } = getContacts();
     const idSet = new Set(idsToDelete);
-    const updated = list.filter(lead => !idSet.has(lead.id));
+    const updated = list.filter(lead => !idSet.has(String(lead.id)));
     saveContacts(updated, targetPath);
 
-    return NextResponse.json({
-      success: true,
-      message: `Successfully deleted submission(s).`,
-      deletedCount: idsToDelete.length
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        message: `Successfully deleted submission(s).`,
+        deletedCount: idsToDelete.length
+      },
+      { headers: corsHeaders }
+    );
   } catch (err) {
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: err.message },
+      { status: 500, headers: corsHeaders }
+    );
   }
 }
 
@@ -148,7 +184,10 @@ export async function PATCH(request) {
     const { id, status, notes } = body;
 
     if (!id) {
-      return NextResponse.json({ success: false, message: 'Submission ID is required' }, { status: 400 });
+      return NextResponse.json(
+        { success: false, message: 'Submission ID is required' },
+        { status: 400, headers: corsHeaders }
+      );
     }
 
     const phpApi = getPhpApiUrl();
@@ -180,11 +219,14 @@ export async function PATCH(request) {
       saveContacts(list, targetPath);
     }
 
-    return NextResponse.json({
-      success: true,
-      message: 'Submission status updated successfully!'
-    });
+    return NextResponse.json(
+      { success: true, message: 'Submission status updated successfully!' },
+      { headers: corsHeaders }
+    );
   } catch (err) {
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: err.message },
+      { status: 500, headers: corsHeaders }
+    );
   }
 }

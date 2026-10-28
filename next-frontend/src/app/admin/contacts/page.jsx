@@ -26,29 +26,25 @@ export default function AdminContactSubmissionsPage() {
       // 1. Try Next.js admin contacts API
       const res = await fetch('/api/admin/contacts', { cache: 'no-store' });
       const json = await res.json();
-      if (json.success && Array.isArray(json.data) && json.data.length > 0) {
+      if (json.success && Array.isArray(json.data)) {
         setContacts(json.data);
         return;
       }
 
-      // 2. Fallback to stats endpoint
-      const statsRes = await fetch('/api/stats', { cache: 'no-store' });
-      const statsJson = await statsRes.json();
-      const leads = statsJson?.data?.all_leads || statsJson?.data?.recent_leads || [];
-      if (leads.length > 0) {
-        setContacts(leads);
-        return;
-      }
-
-      // 3. Fallback directly to Hostinger PHP MySQL backend
-      const phpApi = process.env.NEXT_PUBLIC_PHP_API_URL || 'https://violet-ibis-402728.hostingersite.com/api/backend-php';
+      // 2. Direct Hostinger PHP MySQL backend fallback
+      const phpApi = getPhpUrl();
       const directRes = await fetch(`${phpApi}/contact.php`, { cache: 'no-store' });
       const directJson = await directRes.json();
       if (directJson.success && Array.isArray(directJson.data)) {
         setContacts(directJson.data);
-      } else {
-        setContacts([]);
+        return;
       }
+
+      // 3. Fallback to stats endpoint
+      const statsRes = await fetch('/api/stats', { cache: 'no-store' });
+      const statsJson = await statsRes.json();
+      const leads = statsJson?.data?.all_leads || statsJson?.data?.recent_leads || [];
+      setContacts(leads);
     } catch (e) {
       console.error('Error fetching leads:', e);
     } finally {
@@ -90,53 +86,102 @@ export default function AdminContactSubmissionsPage() {
     }
   };
 
-  // Handle single delete
+  const getPhpUrl = () => {
+    return process.env.NEXT_PUBLIC_PHP_API_URL || 'https://violet-ibis-402728.hostingersite.com/api/backend-php';
+  };
+
+  // Handle single delete with optimistic UI + multi-backend sync
   const handleDeleteSingle = async (id, e) => {
-    if (e) e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     if (!confirm('Are you sure you want to delete this submission?')) return;
 
+    const targetId = String(id);
+
+    // 1. Instant Optimistic UI Update (disappears immediately)
+    setContacts(prev => prev.filter(c => String(c.id) !== targetId));
+    if (selectedLead && String(selectedLead.id) === targetId) setSelectedLead(null);
+    setSelectedIds(prev => {
+      const next = new Set();
+      prev.forEach(val => {
+        if (String(val) !== targetId) next.add(val);
+      });
+      return next;
+    });
+    setMessage({ type: 'success', text: 'Submission deleted successfully.' });
+
+    // 2. Multi-backend sync (Direct Hostinger MySQL + Next.js Proxy)
     try {
       setProcessing(true);
-      const res = await fetch(`/api/admin/contacts?id=${id}`, { method: 'DELETE' });
-      const json = await res.json();
-      if (json.success) {
-        setMessage({ type: 'success', text: json.message });
-        if (selectedLead?.id === id) setSelectedLead(null);
-        setSelectedIds(prev => {
-          const next = new Set(prev);
-          next.delete(id);
-          return next;
-        });
-        fetchContacts();
-      }
+      const phpApi = getPhpUrl();
+
+      // Direct to Hostinger MySQL via POST (action=delete) and DELETE
+      fetch(`${phpApi}/contact.php`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ action: 'delete', ids: [targetId] })
+      }).catch(err => console.warn('Direct MySQL POST delete notice:', err));
+
+      fetch(`${phpApi}/contact.php`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ ids: [targetId] })
+      }).catch(() => {});
+
+      // Next.js API Route (Relative)
+      await fetch('/api/admin/contacts', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids: [targetId] })
+      });
     } catch (err) {
-      setMessage({ type: 'error', text: err.message });
+      console.error('Delete submission error:', err);
     } finally {
       setProcessing(false);
     }
   };
 
-  // Handle bulk delete
+  // Handle bulk delete with optimistic UI
   const handleBulkDelete = async () => {
     const count = selectedIds.size;
     if (count === 0) return;
     if (!confirm(`Are you sure you want to permanently delete ${count} selected submission(s)?`)) return;
 
+    const idsArray = Array.from(selectedIds).map(x => String(x));
+    const idSet = new Set(idsArray);
+
+    // 1. Instant Optimistic UI Update
+    setContacts(prev => prev.filter(c => !idSet.has(String(c.id))));
+    setSelectedIds(new Set());
+    if (selectedLead && idSet.has(String(selectedLead.id))) setSelectedLead(null);
+    setMessage({ type: 'success', text: `${count} submission(s) deleted successfully.` });
+
+    // 2. Multi-backend sync
     try {
       setProcessing(true);
-      const res = await fetch('/api/admin/contacts', {
+      const phpApi = getPhpUrl();
+
+      fetch(`${phpApi}/contact.php`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ action: 'delete', ids: idsArray })
+      }).catch(err => console.warn('Direct MySQL bulk delete notice:', err));
+
+      fetch(`${phpApi}/contact.php`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ ids: idsArray })
+      }).catch(() => {});
+
+      await fetch('/api/admin/contacts', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ids: Array.from(selectedIds) })
+        body: JSON.stringify({ ids: idsArray })
       });
-      const json = await res.json();
-      if (json.success) {
-        setMessage({ type: 'success', text: json.message });
-        setSelectedIds(new Set());
-        fetchContacts();
-      }
     } catch (err) {
-      setMessage({ type: 'error', text: err.message });
+      console.error('Bulk delete error:', err);
     } finally {
       setProcessing(false);
     }
@@ -145,45 +190,57 @@ export default function AdminContactSubmissionsPage() {
   // Handle status update
   const handleStatusUpdate = async (id, newStatus, e) => {
     if (e) e.stopPropagation();
+
+    // Optimistic UI
+    setContacts(prev => prev.map(c => c.id === id ? { ...c, status: newStatus } : c));
+    if (selectedLead?.id === id) {
+      setSelectedLead(prev => ({ ...prev, status: newStatus }));
+    }
+
     try {
-      setProcessing(true);
-      const res = await fetch('/api/admin/contacts', {
+      const phpApi = getPhpUrl();
+      fetch(`${phpApi}/contact.php`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, status: newStatus })
+      }).catch(() => {});
+
+      await fetch('/api/admin/contacts', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id, status: newStatus })
       });
-      const json = await res.json();
-      if (json.success) {
-        setContacts(prev => prev.map(c => c.id === id ? { ...c, status: newStatus } : c));
-        if (selectedLead?.id === id) {
-          setSelectedLead(prev => ({ ...prev, status: newStatus }));
-        }
-      }
     } catch (err) {
-      console.error(err);
-    } finally {
-      setProcessing(false);
+      console.error('Status update notice:', err);
     }
   };
 
   // Handle save notes
   const handleSaveNotes = async () => {
     if (!selectedLead) return;
+    const targetId = selectedLead.id;
+
+    // Optimistic UI
+    setContacts(prev => prev.map(c => c.id === targetId ? { ...c, notes: leadNotes } : c));
+    setSelectedLead(prev => ({ ...prev, notes: leadNotes }));
+    setMessage({ type: 'success', text: 'Notes saved for lead!' });
+
     try {
       setProcessing(true);
-      const res = await fetch('/api/admin/contacts', {
+      const phpApi = getPhpUrl();
+      fetch(`${phpApi}/contact.php`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: selectedLead.id, notes: leadNotes })
+        body: JSON.stringify({ id: targetId, notes: leadNotes })
+      }).catch(() => {});
+
+      await fetch('/api/admin/contacts', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: targetId, notes: leadNotes })
       });
-      const json = await res.json();
-      if (json.success) {
-        setContacts(prev => prev.map(c => c.id === selectedLead.id ? { ...c, notes: leadNotes } : c));
-        setSelectedLead(prev => ({ ...prev, notes: leadNotes }));
-        setMessage({ type: 'success', text: 'Notes saved for lead!' });
-      }
     } catch (err) {
-      setMessage({ type: 'error', text: err.message });
+      console.error('Save notes notice:', err);
     } finally {
       setProcessing(false);
     }
@@ -220,20 +277,31 @@ export default function AdminContactSubmissionsPage() {
 
   // Selection toggle
   const toggleSelect = (id, e) => {
-    if (e) e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    const targetId = String(id);
     setSelectedIds(prev => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
+      const next = new Set();
+      let found = false;
+      prev.forEach(val => {
+        if (String(val) === targetId) {
+          found = true;
+        } else {
+          next.add(val);
+        }
+      });
+      if (!found) next.add(targetId);
       return next;
     });
   };
 
   const selectAll = () => {
-    if (selectedIds.size === filteredLeads.length) {
+    if (selectedIds.size === filteredLeads.length && filteredLeads.length > 0) {
       setSelectedIds(new Set());
     } else {
-      setSelectedIds(new Set(filteredLeads.map(l => l.id)));
+      setSelectedIds(new Set(filteredLeads.map(l => String(l.id))));
     }
   };
 
@@ -462,7 +530,8 @@ export default function AdminContactSubmissionsPage() {
                 </tr>
               ) : (
                 filteredLeads.map((lead) => {
-                  const isSelected = selectedIds.has(lead.id);
+                  const leadIdStr = String(lead.id);
+                  const isSelected = selectedIds.has(leadIdStr) || selectedIds.has(lead.id);
                   const isLocationLead = lead.lead_type === 'location' || 
                     (lead.location && !lead.location.toLowerCase().includes('direct') && !lead.location.toLowerCase().includes('website') && !lead.location.toLowerCase().includes('global')) ||
                     (lead.source && (lead.source.includes('/location/') || lead.source.includes('/market-area/')));

@@ -40,11 +40,33 @@ if ($method === 'GET') {
     exit();
 }
 
+// Parse JSON body once if available
+$rawInput = file_get_contents('php://input');
+$jsonInput = json_decode($rawInput, true) ?: [];
+
+// Check if DELETE action (via HTTP DELETE verb or POST fallback)
+$isDeleteAction = ($method === 'DELETE') ||
+    ($method === 'POST' && (
+        (isset($_GET['action']) && $_GET['action'] === 'delete') ||
+        (isset($jsonInput['action']) && $jsonInput['action'] === 'delete') ||
+        (isset($jsonInput['_method']) && strtoupper($jsonInput['_method']) === 'DELETE') ||
+        (isset($_POST['action']) && $_POST['action'] === 'delete')
+    ));
+
+// Check if PATCH action (via HTTP PATCH verb or POST fallback)
+$isPatchAction = ($method === 'PATCH') ||
+    ($method === 'POST' && (
+        (isset($_GET['action']) && in_array($_GET['action'], ['patch', 'update'])) ||
+        (isset($jsonInput['action']) && in_array($jsonInput['action'], ['patch', 'update'])) ||
+        (isset($jsonInput['_method']) && strtoupper($jsonInput['_method']) === 'PATCH') ||
+        (isset($_POST['action']) && in_array($_POST['action'], ['patch', 'update']))
+    ));
+
 // DELETE: Delete lead by ID or bulk IDs from MySQL
-if ($method === 'DELETE') {
-    $input = json_decode(file_get_contents('php://input'), true) ?: [];
-    $id = $input['id'] ?? $_GET['id'] ?? null;
-    $ids = $input['ids'] ?? ($id ? [$id] : []);
+if ($isDeleteAction) {
+    $id = $jsonInput['id'] ?? $_POST['id'] ?? $_GET['id'] ?? null;
+    $rawIds = $jsonInput['ids'] ?? $_POST['ids'] ?? ($id ? [$id] : []);
+    $ids = array_values(array_filter(array_map('trim', array_map('strval', (array)$rawIds))));
 
     if ($pdo && !empty($ids)) {
         try {
@@ -63,7 +85,7 @@ if ($method === 'DELETE') {
 
     if (file_exists($contactsFile) && !empty($ids)) {
         $contacts = json_decode(file_get_contents($contactsFile), true) ?: [];
-        $contacts = array_values(array_filter($contacts, fn($l) => !in_array($l['id'] ?? '', $ids)));
+        $contacts = array_values(array_filter($contacts, fn($l) => !in_array(strval($l['id'] ?? ''), $ids)));
         file_put_contents($contactsFile, json_encode($contacts, JSON_PRETTY_PRINT));
         echo json_encode(['success' => true, 'message' => 'Submission(s) deleted from storage']);
         exit();
@@ -75,9 +97,9 @@ if ($method === 'DELETE') {
 }
 
 // PATCH: Update lead status or internal notes in MySQL
-if ($method === 'PATCH') {
-    $input = json_decode(file_get_contents('php://input'), true) ?: [];
-    $id = $input['id'] ?? null;
+if ($isPatchAction) {
+    $input = !empty($jsonInput) ? $jsonInput : $_POST;
+    $id = $input['id'] ?? $_GET['id'] ?? null;
 
     if (!$id) {
         http_response_code(400);
