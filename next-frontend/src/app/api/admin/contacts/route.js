@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { getPhpApiUrl } from '@/lib/apiConfig';
 
 function findContactsFiles() {
   const possiblePaths = [
@@ -52,11 +53,37 @@ function saveContacts(contacts, targetPath) {
 }
 
 export async function GET() {
+  const phpApi = getPhpApiUrl();
+
+  // 1. Primary: Fetch live submissions from Hostinger MySQL
+  if (phpApi) {
+    try {
+      const res = await fetch(`${phpApi}/contact.php`, {
+        cache: 'no-store',
+        headers: { Accept: 'application/json' }
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && Array.isArray(json.data) && json.data.length > 0) {
+          return NextResponse.json({
+            success: true,
+            data: json.data,
+            source: 'mysql'
+          });
+        }
+      }
+    } catch (e) {
+      console.warn('MySQL contacts fetch error, attempting fallback:', e.message);
+    }
+  }
+
+  // 2. Fallback: Local JSON storage
   try {
     const { list } = getContacts();
     return NextResponse.json({
       success: true,
-      data: list
+      data: list,
+      source: 'local'
     });
   } catch (err) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
@@ -75,30 +102,40 @@ export async function DELETE(request) {
       // ignore
     }
 
-    const { list, targetPath } = getContacts();
+    const idsToDelete = body.ids || (body.id ? [body.id] : (queryId ? [queryId] : []));
 
-    if (body.action === 'clear_all') {
-      saveContacts([], targetPath);
-      return NextResponse.json({ success: true, message: 'All contact submissions have been cleared.' });
-    }
-
-    const idsToDelete = new Set(
-      body.ids || (body.id ? [body.id] : (queryId ? [queryId] : []))
-    );
-
-    if (idsToDelete.size === 0) {
+    if (!idsToDelete || idsToDelete.length === 0) {
       return NextResponse.json({ success: false, message: 'No submission ID provided to delete' }, { status: 400 });
     }
 
-    const updated = list.filter(lead => !idsToDelete.has(lead.id));
-    const deletedCount = list.length - updated.length;
+    const phpApi = getPhpApiUrl();
 
+    // 1. Delete from Hostinger MySQL
+    if (phpApi) {
+      try {
+        await fetch(`${phpApi}/contact.php`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({ ids: idsToDelete })
+        });
+      } catch (e) {
+        console.warn('MySQL delete error:', e.message);
+      }
+    }
+
+    // 2. Also remove from local files
+    const { list, targetPath } = getContacts();
+    const idSet = new Set(idsToDelete);
+    const updated = list.filter(lead => !idSet.has(lead.id));
     saveContacts(updated, targetPath);
 
     return NextResponse.json({
       success: true,
-      message: `Successfully deleted ${deletedCount} submission(s).`,
-      deletedCount
+      message: `Successfully deleted submission(s).`,
+      deletedCount: idsToDelete.length
     });
   } catch (err) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
@@ -114,32 +151,40 @@ export async function PATCH(request) {
       return NextResponse.json({ success: false, message: 'Submission ID is required' }, { status: 400 });
     }
 
+    const phpApi = getPhpApiUrl();
+
+    // 1. Update in Hostinger MySQL
+    if (phpApi) {
+      try {
+        await fetch(`${phpApi}/contact.php`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({ id, status, notes })
+        });
+      } catch (e) {
+        console.warn('MySQL update error:', e.message);
+      }
+    }
+
+    // 2. Also update local storage
     const { list, targetPath } = getContacts();
     const idx = list.findIndex(lead => lead.id === id);
 
-    if (idx === -1) {
-      return NextResponse.json({ success: false, message: 'Submission not found' }, { status: 404 });
+    if (idx !== -1) {
+      if (status) list[idx].status = status;
+      if (notes !== undefined) list[idx].notes = notes;
+      list[idx].updated_at = new Date().toISOString();
+      saveContacts(list, targetPath);
     }
-
-    if (status) {
-      list[idx].status = status;
-    }
-
-    if (notes !== undefined) {
-      list[idx].notes = notes;
-    }
-
-    list[idx].updated_at = new Date().toISOString();
-
-    saveContacts(list, targetPath);
 
     return NextResponse.json({
       success: true,
-      message: 'Submission status updated successfully!',
-      lead: list[idx]
+      message: 'Submission status updated successfully!'
     });
   } catch (err) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }
 }
-

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { getPhpApiUrl } from '@/lib/apiConfig';
 
 function findDataFile(filename) {
   const dirs = [
@@ -17,6 +18,25 @@ function findDataFile(filename) {
 
 export async function GET() {
   try {
+    // 1. Primary: Fetch live telemetry from Hostinger MySQL via PHP API
+    const phpApi = getPhpApiUrl();
+    if (phpApi) {
+      try {
+        const liveRes = await fetch(`${phpApi}/stats.php`, {
+          cache: 'no-store',
+          headers: { Accept: 'application/json' }
+        });
+        if (liveRes.ok) {
+          const liveJson = await liveRes.json();
+          if (liveJson.success && liveJson.data) {
+            return NextResponse.json(liveJson);
+          }
+        }
+      } catch (e) {
+        // Fallback to local files below
+      }
+    }
+
     const summaryFile = findDataFile('summary.json');
     const contactsFile = findDataFile('contacts.json');
     const tapsFile = findDataFile('contact_taps.json');

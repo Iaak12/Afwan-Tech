@@ -23,17 +23,31 @@ export default function AdminContactSubmissionsPage() {
   const fetchContacts = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/admin/contacts');
+      // 1. Try Next.js admin contacts API
+      const res = await fetch('/api/admin/contacts', { cache: 'no-store' });
       const json = await res.json();
-      if (json.success && json.data) {
+      if (json.success && Array.isArray(json.data) && json.data.length > 0) {
         setContacts(json.data);
+        return;
+      }
+
+      // 2. Fallback to stats endpoint
+      const statsRes = await fetch('/api/stats', { cache: 'no-store' });
+      const statsJson = await statsRes.json();
+      const leads = statsJson?.data?.all_leads || statsJson?.data?.recent_leads || [];
+      if (leads.length > 0) {
+        setContacts(leads);
+        return;
+      }
+
+      // 3. Fallback directly to Hostinger PHP MySQL backend
+      const phpApi = process.env.NEXT_PUBLIC_PHP_API_URL || 'https://violet-ibis-402728.hostingersite.com/api/backend-php';
+      const directRes = await fetch(`${phpApi}/contact.php`, { cache: 'no-store' });
+      const directJson = await directRes.json();
+      if (directJson.success && Array.isArray(directJson.data)) {
+        setContacts(directJson.data);
       } else {
-        // Fallback to /api/stats if contacts empty
-        const statsRes = await fetch('/api/stats');
-        const statsJson = await statsRes.json();
-        if (statsJson.success && statsJson.data) {
-          setContacts(statsJson.data.all_leads || statsJson.data.recent_leads || []);
-        }
+        setContacts([]);
       }
     } catch (e) {
       console.error('Error fetching leads:', e);
