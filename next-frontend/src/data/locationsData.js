@@ -1,3 +1,4 @@
+import customLocations from './customLocations.json';
 // Automatically Generated Programmatic SEO Location Directory
 // Total Locations: 595 (States, Regions & Cities)
 
@@ -9549,34 +9550,57 @@ export const locationsData = [
   }
 ];
 
-export const getAllLocations = () => locationsData;
+const getMergedLocations = () => {
+  const deleted = new Set(customLocations?.deletedSlugs || []);
+  let list = locationsData.filter(loc => !deleted.has(loc.slug));
+
+  if (customLocations?.updated && Object.keys(customLocations.updated).length > 0) {
+    list = list.map(loc => customLocations.updated[loc.slug] ? { ...loc, ...customLocations.updated[loc.slug] } : loc);
+  }
+
+  if (customLocations?.added && customLocations.added.length > 0) {
+    const validAdded = customLocations.added.filter(loc => !deleted.has(loc.slug));
+    list = [...validAdded, ...list];
+  }
+
+  return list;
+};
+
+export const getAllLocations = () => getMergedLocations();
 
 export const getLocationBySlug = (slug) => {
   if (!slug) return null;
   const clean = slug.toLowerCase().trim();
-  return locationsData.find(loc => loc.slug === clean) || null;
+  const all = getMergedLocations();
+  return all.find(loc => loc.slug === clean) || null;
 };
 
 export const getLocationsByType = (type) => {
-  return locationsData.filter(loc => loc.type === type);
+  return getMergedLocations().filter(loc => loc.type === type);
 };
 
 export const getNearbyLocations = (slug, limit = 8) => {
+  const all = getMergedLocations();
   const current = getLocationBySlug(slug);
-  if (!current) return locationsData.slice(0, limit);
+  if (!current) return all.slice(0, limit);
   
   // Return locations in same state first
-  const sameState = locationsData.filter(loc => loc.state === current.state && loc.slug !== slug);
+  const sameState = all.filter(loc => loc.state === current.state && loc.slug !== slug);
   if (sameState.length >= limit) return sameState.slice(0, limit);
   
-  const others = locationsData.filter(loc => loc.state !== current.state && loc.slug !== slug);
+  const others = all.filter(loc => loc.state !== current.state && loc.slug !== slug);
   return [...sameState, ...others].slice(0, limit);
 };
 
 export const searchLocations = (query, limit = 12) => {
   if (!query) return [];
   const q = query.toLowerCase().trim();
-  return locationsData
+  return getMergedLocations()
     .filter(loc => loc.name.toLowerCase().includes(q) || loc.state.toLowerCase().includes(q))
     .slice(0, limit);
+};
+
+export const getCustomLocationsData = () => customLocations;
+export const isLocationCustom = (slug) => {
+  return (customLocations?.added || []).some(l => l.slug === slug);
 };

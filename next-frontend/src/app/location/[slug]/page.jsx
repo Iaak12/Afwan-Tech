@@ -17,6 +17,7 @@ import {
 } from '@/data/locationsData';
 import { getLocationIntelligence } from '@/data/locationIntelligence';
 import { services } from '@/data/siteData';
+import { fetchDripStatus, isLocationUnlocked } from '@/lib/dripConfig';
 
 // Dynamic SEO Metadata for each of the 500+ locations
 export async function generateMetadata({ params }) {
@@ -33,6 +34,10 @@ export async function generateMetadata({ params }) {
   const intel = getLocationIntelligence(location);
   const title = `Top Web Development & SEO Agency in ${location.name}, ${location.state} | AFWAN TECH`;
   const description = `Scale revenue in ${location.name} with award-winning Next.js Web Development, Custom Web Apps, and Page 1 Google SEO. Trusted by leading businesses across ${location.state}.`;
+
+  const drip = await fetchDripStatus();
+  const allLocations = getAllLocations();
+  const isUnlocked = isLocationUnlocked(slug, allLocations, drip.unlockedCount, drip.enabled);
 
   return {
     title,
@@ -55,7 +60,15 @@ export async function generateMetadata({ params }) {
     },
     alternates: {
       canonical: `https://www.afwantech.com/location/${location.slug}`
-    }
+    },
+    robots: {
+      index: isUnlocked,
+      follow: true,
+      googleBot: {
+        index: isUnlocked,
+        follow: true,
+      },
+    },
   };
 }
 

@@ -10,6 +10,7 @@ import {
   Zap, BarChart3, MapPin, Sparkles
 } from 'lucide-react';
 import { siteSettings, services } from '@/data/siteData';
+import { getLocationBySlug } from '@/data/locationsData';
 import { trackContactTap } from '@/lib/tracking';
 
 export default function Header() {
@@ -32,23 +33,45 @@ export default function Header() {
     setServicesDropdown(false);
   }, [pathname]);
 
+  // Step 5: Location-Aware Detection ("Service in A")
+  const reservedPaths = ['about', 'about-us', 'services', 'pricing', 'portfolio', 'contact', 'contact-us', 'blog', 'market-area', 'admin', 'analytics', 'api'];
+  const segments = (pathname || '').split('/').filter(Boolean);
+
+  let locationSlug = null;
+  let locationName = null;
+
+  if (pathname?.startsWith('/location/') && segments[1]) {
+    locationSlug = segments[1];
+  } else if (segments.length >= 1 && !reservedPaths.includes(segments[0])) {
+    locationSlug = segments[0];
+  }
+
+  if (locationSlug) {
+    const matchedLoc = getLocationBySlug(locationSlug);
+    if (matchedLoc) {
+      locationName = matchedLoc.name;
+    } else {
+      locationName = locationSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    }
+  }
+
   const serviceCategories = [
     {
       title: 'Engineering & Web',
       items: [
-        { name: 'Website Development', href: '/services/website-development', desc: 'Fast, high-converting Next.js websites' },
-        { name: 'Custom Web Dev', href: '/services/custom-web-development', desc: 'Bespoke full-stack web applications' },
-        { name: 'E-commerce Dev', href: '/services/ecommerce-development', desc: 'Shopify & headless commerce engines' },
-        { name: 'Mobile App Development', href: '/services/app-development', desc: 'Cross-platform iOS & Android apps' }
+        { name: 'Website Development', slug: 'website-development', href: '/services/website-development', desc: 'Fast, high-converting Next.js websites' },
+        { name: 'Custom Web Dev', slug: 'custom-web-development', href: '/services/custom-web-development', desc: 'Bespoke full-stack web applications' },
+        { name: 'E-commerce Dev', slug: 'ecommerce-development', href: '/services/ecommerce-development', desc: 'Shopify & headless commerce engines' },
+        { name: 'Mobile App Development', slug: 'app-development', href: '/services/app-development', desc: 'Cross-platform iOS & Android apps' }
       ]
     },
     {
       title: 'Organic & Paid Growth',
       items: [
-        { name: 'SEO Services', href: '/services/seo-services', desc: 'Page 1 organic rankings & authority' },
-        { name: 'Performance Marketing', href: '/services/ppc-paid-ads', desc: 'Google & Meta high-ROAS ads' },
-        { name: 'Social Media Growth', href: '/services/social-media-management', desc: 'Community & creative advocacy' },
-        { name: 'Branding & UI/UX', href: '/services/graphic-design', desc: 'Distinctive brand design systems' }
+        { name: 'SEO Services', slug: 'seo-services', href: '/services/seo-services', desc: 'Page 1 organic rankings & authority' },
+        { name: 'Performance Marketing', slug: 'ppc-paid-ads', href: '/services/ppc-paid-ads', desc: 'Google & Meta high-ROAS ads' },
+        { name: 'Social Media Growth', slug: 'social-media-management', href: '/services/social-media-management', desc: 'Community & creative advocacy' },
+        { name: 'Branding & UI/UX', slug: 'graphic-design', href: '/services/graphic-design', desc: 'Distinctive brand design systems' }
       ]
     }
   ];
@@ -71,10 +94,17 @@ export default function Header() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-white/90">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
-              Serving <strong className="text-white">500+ Cities</strong> Across India & Worldwide
-            </span>
+            {locationName ? (
+              <span className="flex items-center gap-1.5 text-white/90">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
+                Active Region: <strong className="text-white bg-white/10 px-2 py-0.5 rounded border border-white/20">📍 {locationName}</strong>
+              </span>
+            ) : (
+              <span className="flex items-center gap-1.5 text-white/90">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
+                Serving <strong className="text-white">500+ Cities</strong> Across India & Worldwide
+              </span>
+            )}
             <span className="text-gray-400">|</span>
             <span className="text-white/80 font-medium">Digital Engineering & SEO</span>
           </div>
@@ -84,19 +114,32 @@ export default function Header() {
       {/* Main Navbar */}
       <nav className={`transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-white/80 backdrop-blur-sm py-4'} border-b border-gray-100`}>
         <div className="max-w-container mx-auto px-6 flex items-center justify-between">
-          {/* Logo - Full clean logo image without squishing */}
-          <Link href="/" className="flex items-center group py-0.5" aria-label="Afwan Tech Home">
-            <div className="relative h-10 sm:h-12 w-[150px] sm:w-[185px] flex items-center">
-              <Image
-                src={siteSettings.headerLogo || "/afwan.png"}
-                alt={siteSettings.siteName || "Afwan Tech"}
-                width={185}
-                height={54}
-                className="w-auto h-full max-h-10 sm:max-h-12 object-contain object-left group-hover:scale-105 transition-transform"
-                priority
-              />
-            </div>
-          </Link>
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center group py-0.5" aria-label="Afwan Tech Home">
+              <div className="relative h-10 sm:h-12 w-[150px] sm:w-[185px] flex items-center">
+                <Image
+                  src={siteSettings.headerLogo || "/afwan.png"}
+                  alt={siteSettings.siteName || "Afwan Tech"}
+                  width={185}
+                  height={54}
+                  className="w-auto h-full max-h-10 sm:max-h-12 object-contain object-left group-hover:scale-105 transition-transform"
+                  priority
+                />
+              </div>
+            </Link>
+
+            {/* Location Badge (when on a location or city/service page) */}
+            {locationName && (
+              <Link 
+                href={locationSlug ? `/location/${locationSlug}` : '#'}
+                className="hidden xl:inline-flex items-center gap-1.5 bg-blue-50 text-primary text-xs font-bold px-3 py-1 rounded-full border border-blue-200 hover:bg-blue-100 transition-colors"
+                title={`Currently exploring services in ${locationName}`}
+              >
+                <MapPin size={12} className="text-primary" /> {locationName}
+              </Link>
+            )}
+          </div>
 
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-8 text-[14px] font-semibold text-gray-700">
@@ -104,38 +147,46 @@ export default function Header() {
               Home
             </Link>
 
-            {/* Services Dropdown */}
+            {/* Services Dropdown (Location-Aware) */}
             <div 
               className="relative"
               onMouseEnter={() => setServicesDropdown(true)}
               onMouseLeave={() => setServicesDropdown(false)}
             >
               <button className="flex items-center gap-1 hover:text-primary transition-colors py-2 cursor-pointer">
-                Services <ChevronDown size={15} className={`transition-transform duration-200 ${servicesDropdown ? 'rotate-180 text-primary' : ''}`} />
+                Services {locationName ? <span className="text-primary font-bold">in {locationName}</span> : ''} <ChevronDown size={15} className={`transition-transform duration-200 ${servicesDropdown ? 'rotate-180 text-primary' : ''}`} />
               </button>
 
               {servicesDropdown && (
-                <div className="absolute top-full left-0 w-[580px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 grid grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute top-full left-0 w-[620px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 grid grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-200">
                   {serviceCategories.map((cat, idx) => (
                     <div key={idx}>
                       <h4 className="text-[11px] font-black uppercase tracking-wider text-primary mb-3">
                         {cat.title}
                       </h4>
                       <div className="space-y-2">
-                        {cat.items.map((item, i) => (
-                          <Link 
-                            key={i} 
-                            href={item.href}
-                            className="block p-2.5 rounded-xl hover:bg-blue-50/60 transition-colors group"
-                          >
-                            <span className="block font-bold text-gray-900 group-hover:text-primary text-sm transition-colors">
-                              {item.name}
-                            </span>
-                            <span className="block text-xs text-gray-500 line-clamp-1">
-                              {item.desc}
-                            </span>
-                          </Link>
-                        ))}
+                        {cat.items.map((item, i) => {
+                          const targetHref = locationSlug ? `/${locationSlug}/${item.slug}` : item.href;
+                          return (
+                            <Link 
+                              key={i} 
+                              href={targetHref}
+                              className="block p-2.5 rounded-xl hover:bg-blue-50/60 transition-colors group"
+                            >
+                              <span className="block font-bold text-gray-900 group-hover:text-primary text-sm transition-colors">
+                                {item.name}
+                                {locationName && (
+                                  <span className="text-primary font-semibold ml-1.5 text-xs inline-block bg-blue-50 px-2 py-0.5 rounded-md border border-blue-100">
+                                    in {locationName}
+                                  </span>
+                                )}
+                              </span>
+                              <span className="block text-xs text-gray-500 line-clamp-1">
+                                {locationName ? `Premium ${item.name} tailored for ${locationName}` : item.desc}
+                              </span>
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   ))}
@@ -192,15 +243,28 @@ export default function Header() {
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-b border-gray-200 px-6 py-6 space-y-4 shadow-xl">
+            {locationName && (
+              <div className="p-3 bg-blue-50 rounded-xl border border-blue-100 flex items-center gap-2 text-xs font-bold text-primary">
+                <MapPin size={14} /> Current Market Area: <strong>{locationName}</strong>
+              </div>
+            )}
             <Link href="/" className="block py-2 font-bold text-gray-800 hover:text-primary">Home</Link>
             <div className="py-2 border-y border-gray-100">
-              <span className="block text-xs font-black uppercase text-gray-400 mb-2">Services</span>
+              <span className="block text-xs font-black uppercase text-gray-400 mb-2">
+                Services {locationName ? `in ${locationName}` : ''}
+              </span>
               <div className="grid grid-cols-1 gap-2 pl-2">
-                {services.slice(0, 6).map((s, idx) => (
-                  <Link key={idx} href={`/services/${s.slug}`} className="text-sm font-semibold text-gray-700 hover:text-primary">
-                    {s.title}
-                  </Link>
-                ))}
+                {services.slice(0, 6).map((s, idx) => {
+                  const targetHref = locationSlug ? `/${locationSlug}/${s.slug}` : `/services/${s.slug}`;
+                  return (
+                    <Link key={idx} href={targetHref} className="text-sm font-semibold text-gray-700 hover:text-primary flex items-center justify-between">
+                      <span>{s.title}</span>
+                      {locationName && (
+                        <span className="text-xs text-primary font-bold">in {locationName}</span>
+                      )}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
             <Link href="/pricing" className="block py-2 font-bold text-gray-800 hover:text-primary">Pricing</Link>

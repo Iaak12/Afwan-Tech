@@ -82,9 +82,40 @@ export async function GET() {
         total: taps.length,
         whatsapp_taps: totalWhatsApp,
         call_taps: totalCalls,
-        recent: taps.slice(0, 50)
+        recent: taps.slice(0, 200),
+        contact_taps: taps
       }
     });
+  } catch (err) {
+    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+  }
+}
+
+export async function DELETE(request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const tapId = searchParams.get('id');
+
+    let body = {};
+    try {
+      body = await request.json();
+    } catch (e) {}
+
+    const taps = loadTaps();
+
+    if (body.action === 'clear_all') {
+      saveTaps([]);
+      return NextResponse.json({ success: true, message: 'All contact taps cleared.' });
+    }
+
+    const idsToDelete = new Set(
+      body.ids || (body.id ? [body.id] : (tapId ? [tapId] : []))
+    );
+
+    const updated = taps.filter(t => !idsToDelete.has(t.id));
+    saveTaps(updated);
+
+    return NextResponse.json({ success: true, message: `Deleted ${taps.length - updated.length} tap(s).` });
   } catch (err) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }

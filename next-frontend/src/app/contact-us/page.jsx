@@ -9,6 +9,19 @@ import { siteSettings } from '@/data/siteData';
 export const metadata = {
   title: 'Contact Us | Free Growth Consultation | AFWAN TECH',
   description: 'Connect directly with our engineering and SEO strategists. Guaranteed response within 24 hours.',
+  keywords: [
+    'contact afwan tech',
+    'web development inquiry',
+    'hire next.js developers',
+    'seo consultation india',
+    'custom web application quote',
+    'bengaluru software agency contact',
+    'mohammad afwan phone',
+    'digital marketing agency consultation'
+  ],
+  alternates: {
+    canonical: 'https://www.afwantech.com/contact-us'
+  }
 };
 
 export default function ContactUsPage() {

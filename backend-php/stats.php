@@ -1,30 +1,52 @@
 <?php
 /**
- * Analytics Statistics Dashboard API
- * Returns aggregated visitor insights, real-time counts, and page popularities.
+ * Analytics & Growth Telemetry Dashboard API (MySQL Powered)
+ * Returns live counts from Hostinger MySQL (contacts, locations, taps, views).
  */
 
 $config = require_once __DIR__ . '/config.php';
-header('Content-Type: application/json; charset=utf-8');
+$pdo = require_once __DIR__ . '/db.php';
 
-// Optional API Key check if needed
-$providedKey = $_GET['key'] ?? $_SERVER['HTTP_X_ANALYTICS_KEY'] ?? '';
-if (!empty($config['analytics_key']) && $providedKey !== $config['analytics_key']) {
-    // We allow public read-only summary for frontend metrics widget or demo
+header('Content-Type: application/json; charset=utf-8');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
 }
 
-$dataDir = $config['storage_dir'];
+$dataDir = $config['storage_dir'] ?? (__DIR__ . '/data');
 $summaryFile = $dataDir . '/summary.json';
 $contactsFile = $dataDir . '/contacts.json';
 $tapsFile = $dataDir . '/contact_taps.json';
 
-$summary = file_exists($summaryFile) ? (json_decode(file_get_contents($summaryFile), true) ?: []) : [];
-$contacts = file_exists($contactsFile) ? (json_decode(file_get_contents($contactsFile), true) ?: []) : [];
-$taps = file_exists($tapsFile) ? (json_decode(file_get_contents($tapsFile), true) ?: []) : [];
+$contacts = [];
+$taps = [];
+$totalLocations = 595;
 
-// Aggregate total statistics
+if ($pdo) {
+    try {
+        $contacts = $pdo->query("SELECT * FROM contacts ORDER BY created_at DESC")->fetchAll(PDO::FETCH_ASSOC);
+        $taps = $pdo->query("SELECT * FROM contact_taps ORDER BY created_at DESC LIMIT 100")->fetchAll(PDO::FETCH_ASSOC);
+        $totalLocations = (int)$pdo->query("SELECT COUNT(*) FROM locations WHERE status = 'active'")->fetchColumn() ?: 595;
+    } catch (Exception $e) {
+        // fallback
+    }
+}
+
+if (empty($contacts) && file_exists($contactsFile)) {
+    $contacts = json_decode(file_get_contents($contactsFile), true) ?: [];
+}
+
+if (empty($taps) && file_exists($tapsFile)) {
+    $taps = json_decode(file_get_contents($tapsFile), true) ?: [];
+}
+
+$summary = file_exists($summaryFile) ? (json_decode(file_get_contents($summaryFile), true) ?: []) : [];
+
 $totalPageviews = 0;
-$allUniqueVisitors = [];
 $deviceTotals = ['desktop' => 0, 'mobile' => 0, 'tablet' => 0];
 $pageCounts = [];
 $referrerCounts = [];
@@ -60,53 +82,46 @@ foreach ($summary as $date => $dayData) {
     }
 }
 
-// Sort top pages
 arsort($pageCounts);
 $topPages = [];
-$i = 0;
-foreach ($pageCounts as $path => $count) {
-    if ($i++ >= 15) break;
-    $topPages[] = ['path' => $path, 'views' => $count];
+$rank = 1;
+foreach (array_slice($pageCounts, 0, 10, true) as $path => $count) {
+    $topPages[] = [
+        'rank' => $rank++,
+        'path' => $path,
+        'views' => $count
+    ];
 }
 
-// Sort top referrers
 arsort($referrerCounts);
 $topReferrers = [];
-$i = 0;
-foreach ($referrerCounts as $ref => $count) {
-    if ($i++ >= 10) break;
-    $topReferrers[] = ['referrer' => $ref, 'count' => $count];
+foreach (array_slice($referrerCounts, 0, 8, true) as $ref => $count) {
+    $topReferrers[] = [
+        'referrer' => $ref,
+        'count' => $count
+    ];
 }
 
-// Sort daily trends by date ascending
-usort($dailyTrends, function ($a, $b) {
-    return strcmp($a['date'], $b['date']);
-});
-
-$whatsappTaps = 0;
-$callTaps = 0;
-foreach ($taps as $t) {
-    if (($t['type'] ?? '') === 'call') $callTaps++;
-    else $whatsappTaps++;
-}
+$whatsappTaps = count(array_filter($taps, fn($t) => ($t['type'] ?? '') === 'whatsapp'));
+$callTaps = count(array_filter($taps, fn($t) => ($t['type'] ?? '') === 'call'));
 
 echo json_encode([
     'success' => true,
     'data' => [
         'overview' => [
-            'total_pageviews'  => $totalPageviews,
-            'total_leads'      => count($contacts),
-            'total_taps'       => count($taps),
-            'whatsapp_taps'    => $whatsappTaps,
-            'call_taps'        => $callTaps,
-            'active_locations' => 595,
-            'device_breakdown' => $deviceTotals
+            'total_pageviews' => $totalPageviews,
+            'total_leads'     => count($contacts),
+            'total_taps'      => count($taps),
+            'whatsapp_taps'   => $whatsappTaps,
+            'call_taps'       => $callTaps,
+            'active_locations'=> $totalLocations,
+            'device_breakdown'=> $deviceTotals
         ],
-        'trends'       => $dailyTrends,
-        'top_pages'    => $topPages,
-        'top_referrers'=> $topReferrers,
-        'recent_leads' => array_slice($contacts, 0, 10),
-        'all_leads'    => $contacts,
-        'contact_taps' => array_slice($taps, 0, 50)
+        'trends'          => array_slice($dailyTrends, -14),
+        'top_pages'       => $topPages,
+        'top_referrers'   => $topReferrers,
+        'recent_leads'    => array_slice($contacts, 0, 10),
+        'all_leads'       => $contacts,
+        'contact_taps'    => array_slice($taps, 0, 50)
     ]
-], JSON_PRETTY_PRINT);
+]);

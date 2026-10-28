@@ -7,7 +7,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { 
   LayoutDashboard, BarChart3, Mail, MapPin, Globe, 
   Settings, ArrowLeft, ShieldCheck, ExternalLink, Menu, X, LogOut, Loader2,
-  PhoneCall, Calendar, FileText
+  PhoneCall, Calendar, FileText, Zap
 } from 'lucide-react';
 
 export default function AdminLayout({ children }) {
@@ -76,12 +76,14 @@ export default function AdminLayout({ children }) {
 
   const navItems = [
     { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
-    { label: 'Web Analytics', href: '/admin/analytics', icon: BarChart3 },
+    { label: 'Cities & Locations', href: '/admin/locations', icon: MapPin },
+    { label: 'Inbound Submissions', href: '/admin/contacts', icon: Mail },
     { label: 'Contact Taps (WhatsApp/Call)', href: '/admin/contact-taps', icon: PhoneCall },
-    { label: 'Inbound Leads (All/Loc/Web)', href: '/admin/contacts', icon: Mail },
+    { label: 'Drip SEO Engine', href: '/admin/drip-seo', icon: Zap },
+    { label: 'Web Analytics', href: '/admin/analytics', icon: BarChart3 },
     { label: 'Blog Scheduler (1 per week)', href: '/admin/blogs', icon: Calendar },
     { label: 'Page Content & SEO', href: '/admin/content', icon: FileText },
-    { label: '595+ Locations Network', href: '/market-area', icon: MapPin },
+    { label: 'Public Market Area', href: '/market-area', icon: Globe },
   ];
 
   return (

@@ -9,6 +9,19 @@ import { pricingPlans } from '@/data/siteData';
 export const metadata = {
   title: 'Transparent Pricing Plans | AFWAN TECH',
   description: 'Fixed and predictable pricing for Web Development, Custom Coded Web Applications, Programmatic SEO, and Paid Media Management.',
+  keywords: [
+    'web development cost',
+    'website design packages india',
+    'seo pricing plans',
+    'app development cost india',
+    'ecommerce development cost',
+    'digital marketing agency pricing',
+    'transparent software pricing',
+    'afwan tech pricing plans'
+  ],
+  alternates: {
+    canonical: 'https://www.afwantech.com/pricing'
+  }
 };
 
 export default function PricingPage() {

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
   Eye, Users, Mail, Globe, ArrowUpRight, Monitor, 
-  Smartphone, Tablet, RefreshCw, Sparkles, Filter, ExternalLink 
+  Smartphone, Tablet, RefreshCw, Sparkles, Filter, ExternalLink, Zap, Rocket, Layers 
 } from 'lucide-react';
 
 export default function AdminOverviewDashboard() {
@@ -70,38 +70,38 @@ export default function AdminOverviewDashboard() {
 
       {/* Overview Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between">
+        <Link href="/admin/analytics" className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between hover:shadow-md hover:border-primary/30 transition-all group">
           <div>
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Total Users / Views</span>
-            <div className="text-3xl font-black text-[#0f172a] font-sora">{overview.total_pageviews.toLocaleString()}</div>
-            <span className="text-[11px] text-emerald-600 font-bold mt-1 inline-block">↑ 24.8% organic lift</span>
+            <div className="text-3xl font-black text-[#0f172a] font-sora group-hover:text-primary transition-colors">{overview.total_pageviews.toLocaleString()}</div>
+            <span className="text-[11px] text-emerald-600 font-bold mt-1 inline-block">View Live Traffic →</span>
           </div>
-          <div className="w-12 h-12 rounded-2xl bg-blue-50 text-primary flex items-center justify-center">
+          <div className="w-12 h-12 rounded-2xl bg-blue-50 text-primary flex items-center justify-center group-hover:scale-105 transition-transform">
             <Eye size={22} />
           </div>
-        </div>
+        </Link>
 
-        <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between">
+        <Link href="/admin/contacts" className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between hover:shadow-md hover:border-emerald-200 transition-all group">
           <div>
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Inbound Leads</span>
-            <div className="text-3xl font-black text-[#0f172a] font-sora">{overview.total_leads}</div>
-            <span className="text-[11px] text-emerald-600 font-bold mt-1 inline-block">Captured via PHP API</span>
+            <div className="text-3xl font-black text-[#0f172a] font-sora group-hover:text-emerald-600 transition-colors">{overview.total_leads}</div>
+            <span className="text-[11px] text-emerald-600 font-bold mt-1 inline-block">Manage & Delete Leads →</span>
           </div>
-          <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform">
             <Mail size={22} />
           </div>
-        </div>
+        </Link>
 
-        <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between">
+        <Link href="/admin/locations" className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between hover:shadow-md hover:border-purple-200 transition-all group">
           <div>
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">Programmatic SEO</span>
-            <div className="text-3xl font-black text-[#0f172a] font-sora">595+</div>
-            <span className="text-[11px] text-primary font-bold mt-1 inline-block">Dedicated Cities & States</span>
+            <div className="text-3xl font-black text-[#0f172a] font-sora group-hover:text-purple-600 transition-colors">595+</div>
+            <span className="text-[11px] text-primary font-bold mt-1 inline-block">Add / Delete Cities →</span>
           </div>
-          <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform">
             <Globe size={22} />
           </div>
-        </div>
+        </Link>
 
         <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex items-center justify-between">
           <div>
@@ -112,6 +112,37 @@ export default function AdminOverviewDashboard() {
           <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center">
             <Monitor size={22} />
           </div>
+        </div>
+      </div>
+
+            {/* ── DRIP SEO QUICK STATUS & ACTION ── */}
+      <div className="bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="space-y-1">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-[#38bdf8] text-xs font-bold uppercase tracking-wider">
+            <Zap size={13} /> Drip SEO Indexing Engine
+          </div>
+          <h3 className="text-xl sm:text-2xl font-black font-sora mt-2">
+            Safe Google Crawl Pacing (75 URLs/Week)
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-300 max-w-xl">
+            Cohort pacing protects domain authority by unlocking programmatic city/service URLs in batches. Queued pages remain accessible with safe <code>robots: noindex</code>.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <Link
+            href="/admin/drip-seo"
+            className="btn-primary !px-5 !py-2.5 text-xs uppercase font-bold tracking-wider flex items-center gap-2"
+          >
+            <Rocket size={14} /> Open Drip Control Deck
+          </Link>
+          <Link
+            href="/sitemap.xml"
+            target="_blank"
+            className="px-4 py-2.5 rounded-xl border border-white/20 text-white text-xs font-bold hover:bg-white/10 transition-colors flex items-center gap-1.5"
+          >
+            <span>Live Sitemap</span> <ExternalLink size={12} />
+          </Link>
         </div>
       </div>
 

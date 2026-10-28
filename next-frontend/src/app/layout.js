@@ -6,6 +6,20 @@ import FloatingActions from "@/components/FloatingActions";
 export const metadata = {
   title: "AFWAN TECH | Digital Marketing & Next.js Web Engineering Agency",
   description: "Next-gen web development, custom software engineering, and programmatic SEO covering 500+ cities in India & globally.",
+  keywords: [
+    "digital marketing company",
+    "web development company",
+    "next.js development agency",
+    "custom software development",
+    "seo services india",
+    "top digital marketing companies",
+    "best digital marketing agency",
+    "ecommerce website development",
+    "mobile app development company",
+    "programmatic seo agency",
+    "afwan tech",
+    "mohammad afwan"
+  ],
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png" },

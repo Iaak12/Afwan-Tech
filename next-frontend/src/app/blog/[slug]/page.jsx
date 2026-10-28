@@ -284,6 +284,22 @@ export default async function BlogPostPage({ params, searchParams }) {
               {blog.main_content?.map((block, idx) => renderBlock(block, idx))}
             </div>
 
+            {/* Topic Keywords & Indexing Entities */}
+            {blog.keywords && (
+              <div className="pt-8 pb-4 my-8 border-y border-gray-100">
+                <div className="text-xs font-black uppercase tracking-wider text-primary mb-3">
+                  Topic Keywords & Entity Tags:
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {(typeof blog.keywords === 'string' ? blog.keywords.split(',') : blog.keywords).map((kw, idx) => (
+                    <span key={idx} className="inline-block text-xs font-semibold px-3 py-1.5 bg-blue-50 text-primary rounded-xl border border-blue-100 hover:bg-blue-100 transition-colors">
+                      #{kw.trim()}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* FAQs Accordion */}
             {blog.faqs && blog.faqs.length > 0 && (
               <div className="pt-10 mt-10 border-t border-gray-200 space-y-4">
@@ -340,6 +356,31 @@ export default async function BlogPostPage({ params, searchParams }) {
             </div>
           </section>
         )}
+        {/* Article Schema with Keywords */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Article',
+              headline: blog.title,
+              description: blog.metaDescription || blog.tagline,
+              keywords: typeof blog.keywords === 'string' ? blog.keywords : (blog.keywords || []).join(', '),
+              author: {
+                '@type': 'Person',
+                name: blog.author?.name || 'Mohammad Afwan',
+                jobTitle: blog.author?.role || 'Founder & CEO, Afwan Tech'
+              },
+              publisher: {
+                '@type': 'Organization',
+                name: 'AFWAN TECH',
+                url: 'https://www.afwantech.com'
+              },
+              datePublished: blog.scheduledDate || '2026-10-26',
+              mainEntityOfPage: blog.canonical || https://www.afwantech.com/blog/
+            })
+          }}
+        />
       </main>
 
       <Footer />

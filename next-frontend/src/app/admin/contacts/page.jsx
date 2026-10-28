@@ -4,25 +4,36 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Mail, Phone, MapPin, Globe, RefreshCw, Search, 
   ExternalLink, MessageSquare, ArrowUpRight, Calendar,
-  Filter, CheckCircle2, User, ChevronRight, X, Clock, Shield
+  Filter, CheckCircle2, User, ChevronRight, X, Clock, Shield,
+  Trash2, Download, CheckSquare, Square, AlertCircle, FileText
 } from 'lucide-react';
 
 export default function AdminContactSubmissionsPage() {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('all'); // 'all' | 'location' | 'website'
+  const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'new' | 'in_progress' | 'contacted' | 'closed'
   const [search, setSearch] = useState('');
   const [selectedLead, setSelectedLead] = useState(null);
+  const [selectedIds, setSelectedIds] = useState(new Set());
+  const [processing, setProcessing] = useState(false);
+  const [message, setMessage] = useState(null);
+  const [leadNotes, setLeadNotes] = useState('');
 
   const fetchContacts = async () => {
     setLoading(true);
     try {
-      const phpApi = process.env.NEXT_PUBLIC_PHP_API_URL;
-      const targetUrl = phpApi ? `${phpApi.replace(/\/$/, '')}/stats.php` : '/api/stats';
-      const res = await fetch(targetUrl);
+      const res = await fetch('/api/admin/contacts');
       const json = await res.json();
       if (json.success && json.data) {
-        setContacts(json.data.all_leads || json.data.recent_leads || []);
+        setContacts(json.data);
+      } else {
+        // Fallback to /api/stats if contacts empty
+        const statsRes = await fetch('/api/stats');
+        const statsJson = await statsRes.json();
+        if (statsJson.success && statsJson.data) {
+          setContacts(statsJson.data.all_leads || statsJson.data.recent_leads || []);
+        }
       }
     } catch (e) {
       console.error('Error fetching leads:', e);
@@ -35,44 +46,12 @@ export default function AdminContactSubmissionsPage() {
     fetchContacts();
   }, []);
 
-  // Filter leads by tab and search
-  const filteredLeads = useMemo(() => {
-    return contacts.filter(lead => {
-      // Determine lead category
-      const isLoc = lead.lead_type === 'location' || 
-        (lead.location && !lead.location.toLowerCase().includes('direct') && !lead.location.toLowerCase().includes('website') && !lead.location.toLowerCase().includes('global')) ||
-        (lead.source && (lead.source.includes('/location/') || lead.source.includes('/market-area/')));
-
-      if (activeTab === 'location' && !isLoc) return false;
-      if (activeTab === 'website' && isLoc) return false;
-
-      if (!search.trim()) return true;
-      const q = search.toLowerCase();
-      return (
-        (lead.name || '').toLowerCase().includes(q) ||
-        (lead.email || '').toLowerCase().includes(q) ||
-        (lead.phone || '').toLowerCase().includes(q) ||
-        (lead.service || '').toLowerCase().includes(q) ||
-        (lead.location || '').toLowerCase().includes(q)
-      );
-    });
-  }, [contacts, activeTab, search]);
-
-  const counts = useMemo(() => {
-    const total = contacts.length;
-    let locationCount = 0;
-    let websiteCount = 0;
-
-    contacts.forEach(lead => {
-      const isLoc = lead.lead_type === 'location' || 
-        (lead.location && !lead.location.toLowerCase().includes('direct') && !lead.location.toLowerCase().includes('website') && !lead.location.toLowerCase().includes('global')) ||
-        (lead.source && (lead.source.includes('/location/') || lead.source.includes('/market-area/')));
-      if (isLoc) locationCount++;
-      else websiteCount++;
-    });
-
-    return { total, locationCount, websiteCount };
-  }, [contacts]);
+  // Sync modal notes when lead selected
+  useEffect(() => {
+    if (selectedLead) {
+      setLeadNotes(selectedLead.notes || '');
+    }
+  }, [selectedLead]);
 
   // Clean phone for WhatsApp link
   const cleanPhone = (phone) => {
@@ -97,240 +76,477 @@ export default function AdminContactSubmissionsPage() {
     }
   };
 
+  // Handle single delete
+  const handleDeleteSingle = async (id, e) => {
+    if (e) e.stopPropagation();
+    if (!confirm('Are you sure you want to delete this submission?')) return;
+
+    try {
+      setProcessing(true);
+      const res = await fetch(`/api/admin/contacts?id=${id}`, { method: 'DELETE' });
+      const json = await res.json();
+      if (json.success) {
+        setMessage({ type: 'success', text: json.message });
+        if (selectedLead?.id === id) setSelectedLead(null);
+        setSelectedIds(prev => {
+          const next = new Set(prev);
+          next.delete(id);
+          return next;
+        });
+        fetchContacts();
+      }
+    } catch (err) {
+      setMessage({ type: 'error', text: err.message });
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  // Handle bulk delete
+  const handleBulkDelete = async () => {
+    const count = selectedIds.size;
+    if (count === 0) return;
+    if (!confirm(`Are you sure you want to permanently delete ${count} selected submission(s)?`)) return;
+
+    try {
+      setProcessing(true);
+      const res = await fetch('/api/admin/contacts', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids: Array.from(selectedIds) })
+      });
+      const json = await res.json();
+      if (json.success) {
+        setMessage({ type: 'success', text: json.message });
+        setSelectedIds(new Set());
+        fetchContacts();
+      }
+    } catch (err) {
+      setMessage({ type: 'error', text: err.message });
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  // Handle status update
+  const handleStatusUpdate = async (id, newStatus, e) => {
+    if (e) e.stopPropagation();
+    try {
+      setProcessing(true);
+      const res = await fetch('/api/admin/contacts', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, status: newStatus })
+      });
+      const json = await res.json();
+      if (json.success) {
+        setContacts(prev => prev.map(c => c.id === id ? { ...c, status: newStatus } : c));
+        if (selectedLead?.id === id) {
+          setSelectedLead(prev => ({ ...prev, status: newStatus }));
+        }
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  // Handle save notes
+  const handleSaveNotes = async () => {
+    if (!selectedLead) return;
+    try {
+      setProcessing(true);
+      const res = await fetch('/api/admin/contacts', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: selectedLead.id, notes: leadNotes })
+      });
+      const json = await res.json();
+      if (json.success) {
+        setContacts(prev => prev.map(c => c.id === selectedLead.id ? { ...c, notes: leadNotes } : c));
+        setSelectedLead(prev => ({ ...prev, notes: leadNotes }));
+        setMessage({ type: 'success', text: 'Notes saved for lead!' });
+      }
+    } catch (err) {
+      setMessage({ type: 'error', text: err.message });
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  // Export to CSV
+  const exportToCSV = () => {
+    if (contacts.length === 0) return;
+    const headers = ['ID', 'Name', 'Email', 'Phone', 'Service', 'Budget', 'Location', 'Source', 'Lead Type', 'Status', 'Submitted At', 'Notes'];
+    const rows = filteredLeads.map(l => [
+      `"${l.id || ''}"`,
+      `"${(l.name || '').replace(/"/g, '""')}"`,
+      `"${l.email || ''}"`,
+      `"${l.phone || ''}"`,
+      `"${(l.service || '').replace(/"/g, '""')}"`,
+      `"${l.budget || ''}"`,
+      `"${(l.location || '').replace(/"/g, '""')}"`,
+      `"${(l.source || '').replace(/"/g, '""')}"`,
+      `"${l.lead_type || ''}"`,
+      `"${l.status || 'new'}"`,
+      `"${l.created_at || ''}"`,
+      `"${(l.notes || '').replace(/"/g, '""')}"`
+    ]);
+
+    const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', `afwantech_leads_${new Date().toISOString().split('T')[0]}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Selection toggle
+  const toggleSelect = (id, e) => {
+    if (e) e.stopPropagation();
+    setSelectedIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const selectAll = () => {
+    if (selectedIds.size === filteredLeads.length) {
+      setSelectedIds(new Set());
+    } else {
+      setSelectedIds(new Set(filteredLeads.map(l => l.id)));
+    }
+  };
+
+  // Filter leads by tab, status and search
+  const filteredLeads = useMemo(() => {
+    return contacts.filter(lead => {
+      const isLoc = lead.lead_type === 'location' || 
+        (lead.location && !lead.location.toLowerCase().includes('direct') && !lead.location.toLowerCase().includes('website') && !lead.location.toLowerCase().includes('global')) ||
+        (lead.source && (lead.source.includes('/location/') || lead.source.includes('/market-area/')));
+
+      if (activeTab === 'location' && !isLoc) return false;
+      if (activeTab === 'website' && isLoc) return false;
+
+      const leadStatus = lead.status || 'new';
+      if (statusFilter !== 'all' && leadStatus !== statusFilter) return false;
+
+      if (!search.trim()) return true;
+      const q = search.toLowerCase();
+      return (
+        (lead.name || '').toLowerCase().includes(q) ||
+        (lead.email || '').toLowerCase().includes(q) ||
+        (lead.phone || '').toLowerCase().includes(q) ||
+        (lead.service || '').toLowerCase().includes(q) ||
+        (lead.location || '').toLowerCase().includes(q) ||
+        (lead.notes || '').toLowerCase().includes(q)
+      );
+    });
+  }, [contacts, activeTab, statusFilter, search]);
+
+  const counts = useMemo(() => {
+    const total = contacts.length;
+    let locationCount = 0;
+    let websiteCount = 0;
+    let newCount = 0;
+
+    contacts.forEach(lead => {
+      const isLoc = lead.lead_type === 'location' || 
+        (lead.location && !lead.location.toLowerCase().includes('direct') && !lead.location.toLowerCase().includes('website') && !lead.location.toLowerCase().includes('global')) ||
+        (lead.source && (lead.source.includes('/location/') || lead.source.includes('/market-area/')));
+      if (isLoc) locationCount++;
+      else websiteCount++;
+
+      if (!lead.status || lead.status === 'new') newCount++;
+    });
+
+    return { total, locationCount, websiteCount, newCount };
+  }, [contacts]);
+
   return (
-    <div className="space-y-6 font-inter text-[#0f172a]">
-      {/* Page Title & Subtitle */}
-      <div>
-        <h1 className="text-xl sm:text-2xl font-bold text-[#0f172a] font-sora">
-          Contact Submissions & Inbound Leads
-        </h1>
-        <p className="text-xs sm:text-sm text-gray-500 mt-1">
-          Track and manage leads categorized by Location vs Website
-        </p>
-      </div>
-
-      {/* Tabs & Search Filter Bar */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        {/* Pills / Tabs */}
-        <div className="flex items-center gap-2 flex-wrap">
-          {/* Tab 1: All Leads */}
-          <button
-            onClick={() => setActiveTab('all')}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
-              activeTab === 'all'
-                ? 'bg-[#0f172a] text-white shadow-sm'
-                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-            }`}
-          >
-            <span>All Leads ({counts.total})</span>
-          </button>
-
-          {/* Tab 2: Location Leads */}
-          <button
-            onClick={() => setActiveTab('location')}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
-              activeTab === 'location'
-                ? 'bg-[#EA580C] text-white shadow-sm'
-                : 'bg-[#FFF7ED] text-[#EA580C] border border-[#FFEDD5] hover:bg-[#FFEDD5]/60'
-            }`}
-          >
-            <MapPin size={13} className="text-[#EA580C]" />
-            <span>Location Leads ({counts.locationCount})</span>
-          </button>
-
-          {/* Tab 3: Website Leads */}
-          <button
-            onClick={() => setActiveTab('website')}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
-              activeTab === 'website'
-                ? 'bg-[#2081D3] text-white shadow-sm'
-                : 'bg-[#EFF6FF] text-[#2081D3] border border-[#DBEAFE] hover:bg-[#DBEAFE]/60'
-            }`}
-          >
-            <Globe size={13} className="text-[#2081D3]" />
-            <span>Website Leads ({counts.websiteCount})</span>
-          </button>
+    <div className="space-y-8 font-inter">
+      {/* Top Banner */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+        <div>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-primary border border-blue-100 text-xs font-bold uppercase tracking-wider mb-2">
+            <Mail size={13} /> Consultation Pipeline & CRM
+          </div>
+          <h1 className="text-2xl sm:text-3xl font-black text-[#0f172a] font-sora">
+            Inbound Submissions & Leads
+          </h1>
+          <p className="text-xs sm:text-sm text-gray-500 mt-1">
+            Track inquiries captured via hero consultation forms, localized landing pages, and contact modals.
+          </p>
         </div>
 
-        {/* Right Search Input & Refresh */}
         <div className="flex items-center gap-3">
-          <div className="relative w-full md:w-80">
-            <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search name, phone, city, service..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl text-xs bg-white border border-gray-200 focus:border-primary focus:outline-none shadow-2xs"
-            />
-          </div>
+          {selectedIds.size > 0 && (
+            <button
+              onClick={handleBulkDelete}
+              disabled={processing}
+              className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer shadow-md transition-colors"
+            >
+              <Trash2 size={14} />
+              <span>Delete Selected ({selectedIds.size})</span>
+            </button>
+          )}
 
           <button
+            onClick={exportToCSV}
+            disabled={contacts.length === 0}
+            className="btn btn-outline !px-4 !py-2.5 text-xs font-bold flex items-center gap-2 cursor-pointer"
+          >
+            <Download size={14} />
+            <span>Export CSV</span>
+          </button>
+
+          <button 
             onClick={fetchContacts}
             disabled={loading}
-            className="p-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 text-gray-600 transition-colors cursor-pointer"
+            className="btn btn-outline !px-3.5 !py-2.5 text-xs font-bold cursor-pointer"
             title="Refresh Leads"
           >
-            <RefreshCw size={15} className={loading ? 'animate-spin text-primary' : ''} />
+            <RefreshCw size={14} className={loading ? 'animate-spin text-primary' : ''} />
           </button>
         </div>
       </div>
 
-      {/* Main Table */}
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-2xs overflow-hidden">
+      {/* Alert Notification */}
+      {message && (
+        <div className={`p-4 rounded-2xl flex items-center justify-between gap-3 text-sm font-semibold ${message.type === 'success' ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+          <div className="flex items-center gap-2">
+            {message.type === 'success' ? <CheckCircle2 size={18} className="text-emerald-600 shrink-0" /> : <AlertCircle size={18} className="text-red-600 shrink-0" />}
+            <span>{message.text}</span>
+          </div>
+          <button onClick={() => setMessage(null)} className="text-gray-400 hover:text-gray-600 cursor-pointer">
+            <X size={16} />
+          </button>
+        </div>
+      )}
+
+      {/* KPI Stats Strip */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+          <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">Total Inquiries</span>
+          <div className="text-3xl font-black text-[#0f172a] font-sora mt-1">{counts.total}</div>
+          <span className="text-xs text-primary font-medium">Lifetime leads captured</span>
+        </div>
+
+        <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+          <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">New / Unaddressed</span>
+          <div className="text-3xl font-black text-amber-600 font-sora mt-1">{counts.newCount}</div>
+          <span className="text-xs text-amber-600 font-medium">Pending initial contact</span>
+        </div>
+
+        <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+          <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">Regional City Leads</span>
+          <div className="text-3xl font-black text-emerald-600 font-sora mt-1">{counts.locationCount}</div>
+          <span className="text-xs text-emerald-600 font-medium">From 595+ city pages</span>
+        </div>
+
+        <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+          <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">Direct Website Leads</span>
+          <div className="text-3xl font-black text-blue-600 font-sora mt-1">{counts.websiteCount}</div>
+          <span className="text-xs text-blue-600 font-medium">From main brand site</span>
+        </div>
+      </div>
+
+      {/* Filter Tabs & Search Bar */}
+      <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          {/* Category Tabs */}
+          <div className="flex items-center gap-2 bg-gray-100 p-1.5 rounded-2xl self-start">
+            <button
+              onClick={() => setActiveTab('all')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeTab === 'all' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'}`}
+            >
+              All Leads ({counts.total})
+            </button>
+            <button
+              onClick={() => setActiveTab('location')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeTab === 'location' ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-900'}`}
+            >
+              City Hub Leads ({counts.locationCount})
+            </button>
+            <button
+              onClick={() => setActiveTab('website')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeTab === 'website' ? 'bg-white text-blue-700 shadow-sm' : 'text-gray-500 hover:text-gray-900'}`}
+            >
+              Direct Leads ({counts.websiteCount})
+            </button>
+          </div>
+
+          {/* Search Input & Status Filter */}
+          <div className="flex flex-wrap items-center gap-3">
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+              className="px-3.5 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 focus:outline-hidden focus:border-primary"
+            >
+              <option value="all">All Statuses</option>
+              <option value="new">🔵 New Inquiries</option>
+              <option value="in_progress">🟡 In Progress</option>
+              <option value="contacted">🟢 Contacted</option>
+              <option value="closed">⚪ Closed</option>
+            </select>
+
+            <div className="relative">
+              <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search name, phone, email, city..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-64 pl-9 pr-8 py-2 rounded-xl border border-gray-200 text-xs focus:outline-hidden focus:border-primary"
+              />
+              {search && (
+                <button onClick={() => setSearch('')} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                  <X size={12} />
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Submissions Table */}
+      <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs border-collapse">
-            <thead>
-              <tr className="border-b border-gray-200 bg-[#fafafa] text-gray-500 font-bold uppercase tracking-wider text-[11px]">
-                <th className="py-3.5 px-5 w-28">DATE</th>
-                <th className="py-3.5 px-5 w-52">LEAD ORIGIN</th>
-                <th className="py-3.5 px-5 w-44">NAME</th>
-                <th className="py-3.5 px-5">CONTACT INFO</th>
-                <th className="py-3.5 px-5 w-48">SERVICE</th>
-                <th className="py-3.5 px-5 text-right w-24">ACTION</th>
+          <table className="w-full text-left text-sm">
+            <thead className="bg-gray-50/70 border-b border-gray-100 text-[11px] font-black uppercase text-gray-400 tracking-wider">
+              <tr>
+                <th className="py-4 px-4 text-center w-12">
+                  <button onClick={selectAll} className="text-gray-400 hover:text-gray-700 cursor-pointer">
+                    {selectedIds.size > 0 && selectedIds.size === filteredLeads.length ? (
+                      <CheckSquare size={16} className="text-primary" />
+                    ) : (
+                      <Square size={16} />
+                    )}
+                  </button>
+                </th>
+                <th className="py-4 px-6">Client / Contact</th>
+                <th className="py-4 px-6">Service Requested</th>
+                <th className="py-4 px-6">Budget & Location</th>
+                <th className="py-4 px-6">Status Tracker</th>
+                <th className="py-4 px-6">Date</th>
+                <th className="py-4 px-6 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              {loading ? (
+              {filteredLeads.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center text-gray-400">
-                    <RefreshCw size={24} className="animate-spin mx-auto mb-2 text-primary" />
-                    <span>Loading leads...</span>
-                  </td>
-                </tr>
-              ) : filteredLeads.length === 0 ? (
-                <tr>
-                  <td colSpan={6} className="py-16 text-center text-gray-400">
-                    <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-3 text-gray-400">
-                      <Mail size={20} />
-                    </div>
-                    <p className="text-sm font-semibold text-gray-700">No client submissions found</p>
-                    <p className="text-xs text-gray-400 mt-1 max-w-sm mx-auto">
-                      {search ? 'Try adjusting your search filter keywords.' : 'Inbound consultation inquiries from your website and programmatic location pages will be logged here in real-time.'}
-                    </p>
+                  <td colSpan={7} className="py-12 text-center text-gray-400">
+                    <Mail size={36} className="mx-auto mb-2 text-gray-300" />
+                    <p className="font-bold text-gray-600">No submissions found</p>
+                    <p className="text-xs text-gray-400 mt-1">Inbound form submissions will appear here live in real time.</p>
                   </td>
                 </tr>
               ) : (
-                filteredLeads.map((lead, idx) => {
-                  const isLoc = lead.lead_type === 'location' || 
+                filteredLeads.map((lead) => {
+                  const isSelected = selectedIds.has(lead.id);
+                  const isLocationLead = lead.lead_type === 'location' || 
                     (lead.location && !lead.location.toLowerCase().includes('direct') && !lead.location.toLowerCase().includes('website') && !lead.location.toLowerCase().includes('global')) ||
                     (lead.source && (lead.source.includes('/location/') || lead.source.includes('/market-area/')));
 
-                  const waDigits = cleanPhone(lead.phone);
+                  const leadStatus = lead.status || 'new';
 
                   return (
                     <tr 
-                      key={lead.id || idx}
+                      key={lead.id} 
                       onClick={() => setSelectedLead(lead)}
-                      className="hover:bg-blue-50/40 transition-colors cursor-pointer group"
+                      className={`hover:bg-blue-50/30 transition-colors cursor-pointer group ${isSelected ? 'bg-blue-50/50' : ''}`}
                     >
-                      {/* DATE */}
-                      <td className="py-4 px-5 text-gray-600 font-mono text-[11px] whitespace-nowrap align-top">
+                      <td className="py-4 px-4 text-center" onClick={(e) => toggleSelect(lead.id, e)}>
+                        <button className="text-gray-400 hover:text-primary cursor-pointer">
+                          {isSelected ? <CheckSquare size={16} className="text-primary" /> : <Square size={16} />}
+                        </button>
+                      </td>
+
+                      <td className="py-4 px-6">
+                        <div className="flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary to-blue-400 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
+                            {lead.name ? lead.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() : 'LD'}
+                          </div>
+                          <div>
+                            <div className="font-bold text-gray-900 group-hover:text-primary transition-colors flex items-center gap-1.5">
+                              <span>{lead.name || 'Anonymous'}</span>
+                              {isLocationLead && (
+                                <span className="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                                  City Hub
+                                </span>
+                              )}
+                            </div>
+                            <div className="flex items-center gap-2 text-xs text-gray-400 mt-0.5">
+                              {lead.email && <span className="truncate max-w-[150px]">{lead.email}</span>}
+                              {lead.phone && <span>• {lead.phone}</span>}
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td className="py-4 px-6 font-semibold text-gray-800">
+                        <span className="block text-xs font-bold text-gray-900">{lead.service || 'General Inquiry'}</span>
+                        {lead.message && (
+                          <span className="text-[11px] text-gray-400 line-clamp-1 mt-0.5 italic">"{lead.message}"</span>
+                        )}
+                      </td>
+
+                      <td className="py-4 px-6">
+                        <span className="text-xs font-bold text-emerald-600 block">{lead.budget || 'Flexible'}</span>
+                        <span className="text-xs text-gray-400 flex items-center gap-1 mt-0.5">
+                          <MapPin size={11} /> {lead.location || 'Direct Website'}
+                        </span>
+                      </td>
+
+                      <td className="py-4 px-6" onClick={(e) => e.stopPropagation()}>
+                        <select
+                          value={leadStatus}
+                          onChange={(e) => handleStatusUpdate(lead.id, e.target.value)}
+                          className={`text-xs font-bold px-2.5 py-1 rounded-lg border cursor-pointer focus:outline-hidden ${
+                            leadStatus === 'new' ? 'bg-blue-50 text-primary border-blue-200' :
+                            leadStatus === 'in_progress' ? 'bg-amber-50 text-amber-800 border-amber-200' :
+                            leadStatus === 'contacted' ? 'bg-emerald-50 text-emerald-800 border-emerald-200' :
+                            'bg-gray-100 text-gray-600 border-gray-200'
+                          }`}
+                        >
+                          <option value="new">🔵 New</option>
+                          <option value="in_progress">🟡 In Progress</option>
+                          <option value="contacted">🟢 Contacted</option>
+                          <option value="closed">⚪ Closed</option>
+                        </select>
+                      </td>
+
+                      <td className="py-4 px-6 font-mono text-xs text-gray-500 whitespace-nowrap">
                         {formatDate(lead.created_at || lead.createdAt)}
                       </td>
 
-                      {/* LEAD ORIGIN */}
-                      <td className="py-4 px-5 align-top">
-                        {isLoc ? (
-                          <div className="space-y-1">
-                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#FFF7ED] text-[#EA580C] border border-[#FFEDD5]">
-                              Location Lead <ArrowUpRight size={10} />
-                            </span>
-                            <div className="flex items-center gap-1 text-[11px] text-gray-600 font-medium">
-                              <MapPin size={11} className="text-[#EA580C] flex-shrink-0" />
-                              <span className="line-clamp-1">{lead.location}</span>
-                            </div>
-                          </div>
-                        ) : (
-                          <div className="space-y-1">
-                            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#EFF6FF] text-[#2081D3] border border-[#DBEAFE]">
-                              🌐 Website Lead <ArrowUpRight size={10} />
-                            </span>
-                            <div className="text-[11px] text-gray-500 font-medium line-clamp-1">
-                              {lead.source?.includes('http') ? lead.source.split('/').slice(3).join('/') || 'Home Page' : lead.source || 'Website'}
-                            </div>
-                          </div>
-                        )}
-                      </td>
-
-                      {/* NAME */}
-                      <td className="py-4 px-5 align-top">
-                        <span className="font-bold text-gray-900 text-[13px] block font-sora group-hover:text-primary transition-colors">
-                          {lead.name}
-                        </span>
-                        {lead.budget && lead.budget !== 'Flexible' && (
-                          <span className="text-[10px] text-gray-400 font-medium">Budget: {lead.budget}</span>
-                        )}
-                      </td>
-
-                      {/* CONTACT INFO */}
-                      <td className="py-4 px-5 align-top space-y-1">
-                        {/* Email */}
-                        <div className="flex items-center gap-1.5 text-gray-700">
-                          <Mail size={12} className="text-gray-400 flex-shrink-0" />
-                          {lead.email ? (
-                            <a 
-                              href={`mailto:${lead.email}`} 
-                              onClick={(e) => e.stopPropagation()}
-                              className="text-primary hover:underline font-medium text-[11px]"
-                            >
-                              {lead.email}
-                            </a>
-                          ) : (
-                            <span className="text-gray-400 italic text-[11px]">Not Provided</span>
-                          )}
-                        </div>
-
-                        {/* Phone */}
-                        {lead.phone && (
-                          <div className="flex items-center gap-1.5 text-gray-700">
-                            <Phone size={12} className="text-gray-400 flex-shrink-0" />
-                            <a 
-                              href={`tel:${lead.phone}`}
-                              onClick={(e) => e.stopPropagation()}
-                              className="text-gray-700 hover:text-primary font-mono text-[11px]"
-                            >
-                              {lead.phone}
-                            </a>
-                          </div>
-                        )}
-
-                        {/* WhatsApp Direct Link */}
-                        {waDigits && (
-                          <div className="flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#25D366]" />
-                            <a 
-                              href={`https://wa.me/${waDigits}?text=${encodeURIComponent(`Hi ${lead.name}, thank you for contacting Afwan Tech regarding your project.`)}`}
+                      <td className="py-4 px-6 text-right" onClick={(e) => e.stopPropagation()}>
+                        <div className="flex items-center justify-end gap-1.5">
+                          {cleanPhone(lead.phone) && (
+                            <a
+                              href={`https://wa.me/${cleanPhone(lead.phone)}?text=${encodeURIComponent(`Hi ${lead.name}, this is Afwan Tech regarding your consultation request for ${lead.service || 'digital growth'}.`)}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="text-[#16a34a] hover:underline font-bold text-[11px] flex items-center gap-1"
+                              className="p-2 text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
+                              title="Chat on WhatsApp"
                             >
-                              <span>WA: {lead.phone}</span>
-                              <ExternalLink size={10} />
+                              <MessageSquare size={16} />
                             </a>
-                          </div>
-                        )}
-                      </td>
+                          )}
 
-                      {/* SERVICE */}
-                      <td className="py-4 px-5 align-top">
-                        <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold bg-gray-100 text-gray-800 border border-gray-200">
-                          {lead.service || 'Website Development'}
-                        </span>
-                      </td>
-
-                      {/* ACTION */}
-                      <td className="py-4 px-5 text-right align-top">
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedLead(lead);
-                          }}
-                          className="px-2.5 py-1 text-[11px] font-bold text-gray-600 hover:text-primary hover:bg-white rounded-lg border border-gray-200 transition-colors"
-                        >
-                          View
-                        </button>
+                          <button
+                            onClick={(e) => handleDeleteSingle(lead.id, e)}
+                            className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
+                            title="Delete Submission"
+                          >
+                            <Trash2 size={16} />
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   );
@@ -341,88 +557,141 @@ export default function AdminContactSubmissionsPage() {
         </div>
       </div>
 
-      {/* Slide-over / Modal for Lead Details */}
+      {/* ── LEAD DETAILS & CRM NOTES MODAL ── */}
       {selectedLead && (
-        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-lg w-full p-6 space-y-6 shadow-2xl border border-gray-200 animate-in fade-in zoom-in-95 duration-150">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-gray-100 space-y-6 max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-gray-100 pb-4">
-              <div>
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Lead Details</span>
-                <h3 className="text-lg font-bold text-[#0f172a] font-sora">{selectedLead.name}</h3>
+            <div className="flex items-start justify-between pb-4 border-b border-gray-100">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-primary to-blue-500 text-white font-black text-sm flex items-center justify-center shadow-md">
+                  {selectedLead.name ? selectedLead.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() : 'LD'}
+                </div>
+                <div>
+                  <h3 className="text-xl font-black font-sora text-gray-900">{selectedLead.name || 'Anonymous'}</h3>
+                  <span className="text-xs text-gray-400 font-mono">ID: {selectedLead.id}</span>
+                </div>
               </div>
-              <button 
-                onClick={() => setSelectedLead(null)}
-                className="p-1.5 rounded-full hover:bg-gray-100 text-gray-500"
-              >
-                <X size={18} />
+              <button onClick={() => setSelectedLead(null)} className="text-gray-400 hover:text-gray-600 cursor-pointer">
+                <X size={20} />
               </button>
             </div>
 
-            {/* Details List */}
+            {/* Status & Quick Communication Actions */}
+            <div className="flex items-center justify-between bg-gray-50 p-4 rounded-2xl border border-gray-100">
+              <div>
+                <span className="text-[10px] font-bold uppercase text-gray-400 block mb-1">Lead Stage</span>
+                <select
+                  value={selectedLead.status || 'new'}
+                  onChange={(e) => handleStatusUpdate(selectedLead.id, e.target.value)}
+                  className="text-xs font-bold px-3 py-1.5 rounded-lg border bg-white cursor-pointer"
+                >
+                  <option value="new">🔵 New Inquiry</option>
+                  <option value="in_progress">🟡 In Progress / Follow-Up</option>
+                  <option value="contacted">🟢 Contacted & Pitch Sent</option>
+                  <option value="closed">⚪ Closed / Converted</option>
+                </select>
+              </div>
+
+              <div className="flex items-center gap-2">
+                {cleanPhone(selectedLead.phone) && (
+                  <a
+                    href={`https://wa.me/${cleanPhone(selectedLead.phone)}?text=${encodeURIComponent(`Hi ${selectedLead.name}, this is Afwan Tech regarding your consultation request.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2 rounded-xl bg-[#25D366] text-white text-xs font-bold flex items-center gap-1.5 shadow-sm"
+                  >
+                    <MessageSquare size={13} /> WhatsApp
+                  </a>
+                )}
+                {selectedLead.phone && (
+                  <a
+                    href={`tel:${selectedLead.phone}`}
+                    className="p-2 rounded-xl bg-blue-50 text-primary hover:bg-blue-100 transition-colors"
+                    title="Call"
+                  >
+                    <Phone size={14} />
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Lead Specifications Grid */}
             <div className="space-y-3 text-xs">
-              <div className="flex justify-between py-1.5 border-b border-gray-50">
-                <span className="text-gray-400 font-medium">Service Needed</span>
-                <span className="font-bold text-primary">{selectedLead.service}</span>
+              <div className="flex justify-between py-1.5 border-b border-gray-100">
+                <span className="text-gray-500 font-medium">Email Address</span>
+                <a href={`mailto:${selectedLead.email}`} className="font-bold text-primary hover:underline">{selectedLead.email || 'N/A'}</a>
               </div>
-              <div className="flex justify-between py-1.5 border-b border-gray-50">
-                <span className="text-gray-400 font-medium">Email</span>
-                <a href={`mailto:${selectedLead.email}`} className="font-bold text-primary hover:underline">{selectedLead.email}</a>
+              <div className="flex justify-between py-1.5 border-b border-gray-100">
+                <span className="text-gray-500 font-medium">Phone Number</span>
+                <span className="font-bold text-gray-800">{selectedLead.phone || 'N/A'}</span>
               </div>
-              <div className="flex justify-between py-1.5 border-b border-gray-50">
-                <span className="text-gray-400 font-medium">Phone</span>
-                <a href={`tel:${selectedLead.phone}`} className="font-bold text-gray-900 hover:text-primary">{selectedLead.phone}</a>
+              <div className="flex justify-between py-1.5 border-b border-gray-100">
+                <span className="text-gray-500 font-medium">Service Needed</span>
+                <span className="font-bold text-gray-900">{selectedLead.service}</span>
               </div>
-              <div className="flex justify-between py-1.5 border-b border-gray-50">
-                <span className="text-gray-400 font-medium">Location</span>
-                <span className="font-bold text-gray-900">{selectedLead.location || 'Direct Website'}</span>
+              <div className="flex justify-between py-1.5 border-b border-gray-100">
+                <span className="text-gray-500 font-medium">Target Location</span>
+                <span className="font-bold text-gray-800">{selectedLead.location || 'Direct Website'}</span>
               </div>
-              <div className="flex justify-between py-1.5 border-b border-gray-50">
-                <span className="text-gray-400 font-medium">Estimated Budget</span>
+              <div className="flex justify-between py-1.5 border-b border-gray-100">
+                <span className="text-gray-500 font-medium">Estimated Budget</span>
                 <span className="font-bold text-emerald-600">{selectedLead.budget || 'Flexible'}</span>
               </div>
-              <div className="flex justify-between py-1.5 border-b border-gray-50">
-                <span className="text-gray-400 font-medium">Submitted On</span>
+              <div className="flex justify-between py-1.5 border-b border-gray-100">
+                <span className="text-gray-500 font-medium">Submitted On</span>
                 <span className="font-mono text-gray-600">{selectedLead.created_at || selectedLead.createdAt}</span>
               </div>
-              {selectedLead.source && (
-                <div className="flex justify-between py-1.5 border-b border-gray-50">
-                  <span className="text-gray-400 font-medium">Origin Source</span>
-                  <span className="font-mono text-[10px] text-gray-500 max-w-[250px] truncate">{selectedLead.source}</span>
-                </div>
-              )}
 
-              {/* Message Box */}
+              {/* Client Message */}
               {selectedLead.message && (
                 <div className="pt-2">
-                  <span className="text-gray-400 font-medium block mb-1">Client Message:</span>
+                  <span className="text-gray-500 font-bold block mb-1">Client Message:</span>
                   <div className="p-3 bg-gray-50 rounded-xl border border-gray-100 text-gray-700 italic text-xs leading-relaxed">
                     "{selectedLead.message}"
                   </div>
                 </div>
               )}
+
+              {/* Internal Notes / Tracking */}
+              <div className="pt-2 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-700 font-bold flex items-center gap-1.5">
+                    <FileText size={13} className="text-primary" /> Internal Follow-up Notes
+                  </span>
+                  <button
+                    onClick={handleSaveNotes}
+                    disabled={processing}
+                    className="text-xs font-bold text-primary hover:underline cursor-pointer"
+                  >
+                    Save Notes
+                  </button>
+                </div>
+                <textarea
+                  rows={3}
+                  value={leadNotes}
+                  onChange={(e) => setLeadNotes(e.target.value)}
+                  placeholder="e.g. Spoke with client. Looking for Next.js e-commerce store with 200 products. Follow up next Tuesday."
+                  className="w-full p-3 rounded-xl border border-gray-200 text-xs focus:outline-hidden focus:border-primary"
+                />
+              </div>
             </div>
 
-            {/* Modal Actions */}
-            <div className="flex items-center gap-3 pt-2">
-              {cleanPhone(selectedLead.phone) && (
-                <a
-                  href={`https://wa.me/${cleanPhone(selectedLead.phone)}?text=${encodeURIComponent(`Hi ${selectedLead.name}, this is Afwan Tech regarding your consultation request.`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 py-2.5 rounded-xl bg-[#25D366] text-white text-xs font-bold text-center hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5"
-                >
-                  <MessageSquare size={14} /> Chat on WhatsApp
-                </a>
-              )}
-              {selectedLead.email && (
-                <a
-                  href={`mailto:${selectedLead.email}?subject=${encodeURIComponent(`Afwan Tech - ${selectedLead.service} Consultation`)}`}
-                  className="flex-1 py-2.5 rounded-xl bg-primary text-white text-xs font-bold text-center hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5"
-                >
-                  <Mail size={14} /> Send Email
-                </a>
-              )}
+            {/* Bottom Actions */}
+            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+              <button
+                onClick={() => handleDeleteSingle(selectedLead.id)}
+                className="px-4 py-2.5 rounded-xl text-red-600 hover:bg-red-50 text-xs font-bold flex items-center gap-1.5 cursor-pointer transition-colors"
+              >
+                <Trash2 size={14} /> Delete Submission
+              </button>
+
+              <button
+                onClick={() => setSelectedLead(null)}
+                className="btn-primary !px-6 !py-2.5 text-xs font-bold cursor-pointer"
+              >
+                Done
+              </button>
             </div>
           </div>
         </div>

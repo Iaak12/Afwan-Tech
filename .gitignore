@@ -14,5 +14,6 @@ build/
 .DS_Store
 
 # Backend local runtime storage
-backend-php/data/
+backend-php/data/*
+!backend-php/data/all_locations.json
 next-frontend/data/

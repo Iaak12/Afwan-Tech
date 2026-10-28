@@ -1,6 +1,9 @@
 import { getAllLocations } from '@/data/locationsData';
 import { services } from '@/data/siteData';
 import { getPublishedBlogs } from '@/lib/blogs';
+import { fetchDripStatus, calculateActiveCohort } from '@/lib/dripConfig';
+
+export const revalidate = 3600; // 1 hour auto-refresh
 
 export default async function sitemap() {
   const baseUrl = 'https://www.afwantech.com';
@@ -39,14 +42,33 @@ export default async function sitemap() {
     priority: 0.8
   }));
 
-  // 4. All 500+ Programmatic Location Pages
+  // 4. Programmatic Location Pages - ONLY Unlocked Cohort (Drip SEO Engine)
   const allLocations = getAllLocations();
-  const locationRoutes = allLocations.map(location => ({
+  const drip = await fetchDripStatus();
+  const { unlocked } = calculateActiveCohort(allLocations, drip.unlockedCount, drip.enabled);
+
+  const locationRoutes = unlocked.map(location => ({
     url: `${baseUrl}/location/${location.slug}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'weekly',
     priority: location.type === 'state' ? 0.8 : 0.75
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes, ...locationRoutes];
+  // 5. City + Service URLs for unlocked locations
+  const cityServiceRoutes = unlocked.flatMap(location =>
+    services.map(service => ({
+      url: `${baseUrl}/${location.slug}/${service.slug}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    }))
+  );
+
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...blogRoutes,
+    ...locationRoutes,
+    ...cityServiceRoutes
+  ];
 }

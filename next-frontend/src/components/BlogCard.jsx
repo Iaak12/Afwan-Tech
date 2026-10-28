@@ -72,6 +72,17 @@ export default function BlogCard({ blog, index = 0 }) {
           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3">
             {blog.metaDescription || blog.tagline}
           </p>
+
+          {/* Topic Keywords Preview */}
+          {blog.keywords && (
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              {(typeof blog.keywords === 'string' ? blog.keywords.split(',') : blog.keywords).slice(0, 3).map((kw, idx) => (
+                <span key={idx} className="text-[10px] font-semibold text-primary bg-blue-50/80 px-2 py-0.5 rounded-md border border-blue-100/60">
+                  #{kw.trim()}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Bottom Author & CTA Row */}

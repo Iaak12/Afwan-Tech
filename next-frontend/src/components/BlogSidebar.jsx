@@ -180,6 +180,23 @@ export default function BlogSidebar({ currentBlog, recommendedBlogs = [] }) {
         </div>
       </div>
 
+      {/* ── 2.5 ARTICLE FOCUS KEYWORDS ── */}
+      {currentBlog?.keywords && (
+        <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm space-y-3">
+          <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-gray-700">
+            <Sparkles size={13} className="text-primary" />
+            <span>Article Focus Entities</span>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {(typeof currentBlog.keywords === 'string' ? currentBlog.keywords.split(',') : currentBlog.keywords).map((kw, i) => (
+              <span key={i} className="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-primary rounded-lg border border-blue-100">
+                #{kw.trim()}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* ── 3. INSTANT AUDIT & CONSULTATION CTA ── */}
       <div className="bg-gradient-to-br from-blue-50/70 via-indigo-50/40 to-blue-50/70 rounded-3xl p-6 sm:p-7 border border-blue-100 shadow-sm space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-black uppercase tracking-wider">

@@ -8,6 +8,21 @@ import BlogListingClient from '@/components/BlogListingClient';
 export const metadata = {
   title: 'Blog & Engineering Journal | Afwan Tech',
   description: 'In-depth engineering guides, AI tools analysis, ecommerce architectures, and modern SEO playbooks written by senior architects.',
+  keywords: [
+    'ai for web development',
+    'ai tools for web development',
+    'ecommerce app builder',
+    'headless ecommerce',
+    'flask vs django',
+    'python web development framework',
+    'search engine optimization startup',
+    'shopify vs wordpress',
+    'magento vs shopify',
+    'afwan tech blog'
+  ],
+  alternates: {
+    canonical: 'https://www.afwantech.com/blog'
+  },
   openGraph: {
     title: 'Afwan Tech Engineering Journal',
     description: 'Practical guides on AI tools, Python frameworks, headless commerce, and search engine optimization.',

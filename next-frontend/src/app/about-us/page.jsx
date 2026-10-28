@@ -368,6 +368,29 @@ export default function AboutUsPage() {
             </div>
           </div>
         </section>
+        {/* About Page Schema with Keywords */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'AboutPage',
+              name: 'About AFWAN TECH',
+              description: 'Who Afwan Tech is, how we work and how we compare with top digital marketing companies and software firms.',
+              url: 'https://www.afwantech.com/about-us',
+              keywords: aboutContent.keywords.join(', '),
+              mainEntity: {
+                '@type': 'Organization',
+                name: 'AFWAN TECH',
+                founder: 'Mohammad Afwan',
+                foundingDate: '2016',
+                url: 'https://www.afwantech.com',
+                telephone: '+91 79798 50684',
+                email: 'contactafwantech@gmail.com'
+              }
+            })
+          }}
+        />
       </main>
 
       <Footer />

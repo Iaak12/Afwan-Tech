@@ -9,6 +9,21 @@ import { Sparkles, CheckCircle2, Zap, ArrowRight, ShieldCheck, Code, Globe2 } fr
 export const metadata = {
   title: 'Digital Services & Solutions | AFWAN TECH',
   description: 'Explore our full spectrum of digital services: Next.js website development, custom web applications, e-commerce engineering, SEO, and paid performance advertising.',
+  keywords: [
+    'web development services',
+    'custom web application development',
+    'ecommerce website development',
+    'technical seo services',
+    'mobile app development',
+    'ppc advertising management',
+    'social media marketing',
+    'ui ux branding design',
+    'full service digital agency india',
+    'afwan tech digital solutions'
+  ],
+  alternates: {
+    canonical: 'https://www.afwantech.com/services'
+  }
 };
 
 export default function ServicesPage() {
