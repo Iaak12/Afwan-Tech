@@ -57,7 +57,7 @@ export default async function sitemap() {
   // 5. City + Service URLs for unlocked locations
   const cityServiceRoutes = unlocked.flatMap(location =>
     services.map(service => ({
-      url: `${baseUrl}/${location.slug}/${service.slug}`,
+      url: `${baseUrl}/${location.slug}/services/${service.slug}`,
       lastModified: new Date().toISOString(),
       changeFrequency: 'weekly',
       priority: 0.7,

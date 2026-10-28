@@ -39,7 +39,7 @@ function renderFormattedText(text) {
   });
 }
 
-export default function ServicePageTemplate({ data }) {
+export default function ServicePageTemplate({ data, location }) {
   const [openFaq, setOpenFaq] = useState(0);
 
   if (!data) return null;
@@ -112,11 +112,24 @@ export default function ServicePageTemplate({ data }) {
       <main className="pt-28 md:pt-32">
         {/* Breadcrumb */}
         <div className="bg-gray-50 border-b border-gray-100 py-3">
-          <div className="max-w-[1360px] mx-auto px-6 flex items-center gap-2 text-xs text-gray-500">
+          <div className="max-w-[1360px] mx-auto px-6 flex items-center gap-2 text-xs text-gray-500 flex-wrap">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
-            <span>/</span>
+            {location ? (
+              <>
+                <Link href="/market-area" className="hover:text-primary transition-colors">Market Area</Link>
+                <span>/</span>
+                <Link href={`/location/${location.slug}`} className="hover:text-primary transition-colors font-medium">
+                  {location.name}
+                </Link>
+                <span>/</span>
+              </>
+            ) : (
+              <>
+                <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+                <span>/</span>
+              </>
+            )}
             <span className="text-primary font-bold">{data.title}</span>
           </div>
         </div>
@@ -131,7 +144,7 @@ export default function ServicePageTemplate({ data }) {
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/70 border border-blue-200 text-primary text-xs font-black uppercase tracking-wider">
                   <Sparkles size={14} className="text-primary" />
-                  <span>{data.title} • Afwan Tech</span>
+                  <span>{location ? `📍 ${location.name}, ${location.state} • ${data.title}` : `${data.title} • Afwan Tech`}</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0f172a] tracking-tight leading-[1.15] font-sora">
@@ -149,11 +162,19 @@ export default function ServicePageTemplate({ data }) {
                     <div className="text-xs font-bold text-gray-900">100% Code Ownership</div>
                     <div className="text-[10px] text-gray-400">Zero Lock-in Contracts</div>
                   </div>
-                  <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
-                    <MapPin size={18} className="text-primary mb-1" />
-                    <div className="text-xs font-bold text-gray-900">Bengaluru Direct Team</div>
-                    <div className="text-[10px] text-gray-400">Whitefield Headquarters</div>
-                  </div>
+                  {location ? (
+                    <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                      <MapPin size={18} className="text-primary mb-1" />
+                      <div className="text-xs font-bold text-gray-900">{location.name} Focus</div>
+                      <div className="text-[10px] text-gray-400">Regional Client Support</div>
+                    </div>
+                  ) : (
+                    <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                      <MapPin size={18} className="text-primary mb-1" />
+                      <div className="text-xs font-bold text-gray-900">Bengaluru Direct Team</div>
+                      <div className="text-[10px] text-gray-400">Whitefield Headquarters</div>
+                    </div>
+                  )}
                   <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs col-span-2 sm:col-span-1">
                     <Users size={18} className="text-[#2081D3] mb-1" />
                     <div className="text-xs font-bold text-gray-900">In-House Engineers</div>
@@ -170,10 +191,10 @@ export default function ServicePageTemplate({ data }) {
                     Request Detailed Scope
                   </a>
                   <a 
-                    href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=Hi%20Afwan%20Tech,%20I%20would%20like%20to%20discuss%20${encodeURIComponent(data.title)}`}
+                    href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=Hi%20Afwan%20Tech,%20I%20would%20like%20to%20discuss%20${encodeURIComponent(data.title)}${location ? `%20in%20${encodeURIComponent(location.name)}` : ''}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => trackContactTap('whatsapp', { location: `Hero - ${data.title}` })}
+                    onClick={() => trackContactTap('whatsapp', { location: `Hero - ${data.title}${location ? ` - ${location.name}` : ''}` })}
                     className="btn btn-outline !px-6 !py-3.5 text-xs font-bold uppercase tracking-wider bg-white/70"
                   >
                     Chat on WhatsApp
@@ -222,10 +243,11 @@ export default function ServicePageTemplate({ data }) {
                     {allServicesNav.map((srv) => {
                       const isActive = srv.slug === data.slug;
                       const Icon = srv.icon;
+                      const targetHref = location ? `/${location.slug}/services/${srv.slug}` : `/services/${srv.slug}`;
                       return (
                         <Link
                           key={srv.slug}
-                          href={`/services/${srv.slug}`}
+                          href={targetHref}
                           className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
                             isActive
                               ? 'bg-primary text-white shadow-md shadow-primary/25 translate-x-1'
@@ -279,15 +301,15 @@ export default function ServicePageTemplate({ data }) {
                     Need technical advice for {data.title}?
                   </h4>
                   <p className="text-xs text-gray-300 leading-relaxed">
-                    Talk with our senior engineering architects in Bengaluru. 15-min turnaround.
+                    {location ? `Talk with our senior engineering architects serving ${location.name}. 15-min turnaround.` : 'Talk with our senior engineering architects in Bengaluru. 15-min turnaround.'}
                   </p>
 
                   <div className="space-y-2.5 pt-1">
                     <a
-                      href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=Hi%20Afwan%20Tech,%20I%20have%20an%20inquiry%20regarding%20${encodeURIComponent(data.title)}`}
+                      href={`https://wa.me/${siteSettings.whatsapp || siteSettings.whatsappNumber || '917979850684'}?text=Hi%20Afwan%20Tech,%20I%20have%20an%20inquiry%20regarding%20${encodeURIComponent(data.title)}${location ? `%20in%20${encodeURIComponent(location.name)}` : ''}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackContactTap('whatsapp', { location: `Sidebar - ${data.title}` })}
+                      onClick={() => trackContactTap('whatsapp', { location: `Sidebar - ${data.title}${location ? ` - ${location.name}` : ''}` })}
                       className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-colors"
                     >
                       <MessageSquare size={14} /> WhatsApp Us

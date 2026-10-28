@@ -17,6 +17,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
+  const [selectedCitySlug, setSelectedCitySlug] = useState(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -25,6 +26,27 @@ export default function Header() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Sync selected location from localStorage & global events
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('afwan_selected_location');
+      if (saved) {
+        setSelectedCitySlug(saved);
+      }
+    } catch (_) {}
+
+    const handleLocationChange = (e) => {
+      if (e?.detail) {
+        setSelectedCitySlug(e.detail);
+      } else {
+        setSelectedCitySlug(null);
+      }
+    };
+
+    window.addEventListener('afwan_location_changed', handleLocationChange);
+    return () => window.removeEventListener('afwan_location_changed', handleLocationChange);
   }, []);
 
   // Close mobile menu on route change
@@ -37,14 +59,25 @@ export default function Header() {
   const reservedPaths = ['about', 'about-us', 'services', 'pricing', 'portfolio', 'contact', 'contact-us', 'blog', 'market-area', 'admin', 'analytics', 'api'];
   const segments = (pathname || '').split('/').filter(Boolean);
 
-  let locationSlug = null;
-  let locationName = null;
-
+  let urlLocationSlug = null;
   if (pathname?.startsWith('/location/') && segments[1]) {
-    locationSlug = segments[1];
+    urlLocationSlug = segments[1];
   } else if (segments.length >= 1 && !reservedPaths.includes(segments[0])) {
-    locationSlug = segments[0];
+    urlLocationSlug = segments[0];
   }
+
+  // When visiting a city URL directly, update selectedCitySlug and sync to localStorage
+  useEffect(() => {
+    if (urlLocationSlug) {
+      setSelectedCitySlug(urlLocationSlug);
+      try {
+        localStorage.setItem('afwan_selected_location', urlLocationSlug);
+      } catch (_) {}
+    }
+  }, [urlLocationSlug]);
+
+  const locationSlug = urlLocationSlug || selectedCitySlug;
+  let locationName = null;
 
   if (locationSlug) {
     const matchedLoc = getLocationBySlug(locationSlug);
@@ -54,6 +87,18 @@ export default function Header() {
       locationName = locationSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
     }
   }
+
+  const handleClearLocation = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setSelectedCitySlug(null);
+    try {
+      localStorage.removeItem('afwan_selected_location');
+    } catch (_) {}
+    window.dispatchEvent(new CustomEvent('afwan_location_changed', { detail: null }));
+  };
 
   const serviceCategories = [
     {
@@ -98,6 +143,13 @@ export default function Header() {
               <span className="flex items-center gap-1.5 text-white/90">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
                 Active Region: <strong className="text-white bg-white/10 px-2 py-0.5 rounded border border-white/20">📍 {locationName}</strong>
+                <button
+                  onClick={handleClearLocation}
+                  className="text-white/60 hover:text-white hover:bg-white/20 px-1.5 py-0.2 rounded ml-1 text-[11px] transition-colors"
+                  title="Reset to all regions"
+                >
+                  ✕
+                </button>
               </span>
             ) : (
               <span className="flex items-center gap-1.5 text-white/90">
@@ -131,13 +183,22 @@ export default function Header() {
 
             {/* Location Badge (when on a location or city/service page) */}
             {locationName && (
-              <Link 
-                href={locationSlug ? `/location/${locationSlug}` : '#'}
-                className="hidden xl:inline-flex items-center gap-1.5 bg-blue-50 text-primary text-xs font-bold px-3 py-1 rounded-full border border-blue-200 hover:bg-blue-100 transition-colors"
-                title={`Currently exploring services in ${locationName}`}
-              >
-                <MapPin size={12} className="text-primary" /> {locationName}
-              </Link>
+              <div className="hidden xl:inline-flex items-center gap-1.5 bg-blue-50 text-primary text-xs font-bold px-3 py-1 rounded-full border border-blue-200">
+                <Link 
+                  href={locationSlug ? `/location/${locationSlug}` : '#'}
+                  className="hover:underline flex items-center gap-1"
+                  title={`Currently exploring services in ${locationName}`}
+                >
+                  <MapPin size={12} className="text-primary" /> {locationName}
+                </Link>
+                <button
+                  onClick={handleClearLocation}
+                  className="text-primary/50 hover:text-red-500 ml-1 text-xs transition-colors"
+                  title="Reset region"
+                >
+                  ✕
+                </button>
+              </div>
             )}
           </div>
 
@@ -166,7 +227,7 @@ export default function Header() {
                       </h4>
                       <div className="space-y-2">
                         {cat.items.map((item, i) => {
-                          const targetHref = locationSlug ? `/${locationSlug}/${item.slug}` : item.href;
+                          const targetHref = locationSlug ? `/${locationSlug}/services/${item.slug}` : item.href;
                           return (
                             <Link 
                               key={i} 
@@ -254,8 +315,8 @@ export default function Header() {
                 Services {locationName ? `in ${locationName}` : ''}
               </span>
               <div className="grid grid-cols-1 gap-2 pl-2">
-                {services.slice(0, 6).map((s, idx) => {
-                  const targetHref = locationSlug ? `/${locationSlug}/${s.slug}` : `/services/${s.slug}`;
+                {services.slice(0, 8).map((s, idx) => {
+                  const targetHref = locationSlug ? `/${locationSlug}/services/${s.slug}` : `/services/${s.slug}`;
                   return (
                     <Link key={idx} href={targetHref} className="text-sm font-semibold text-gray-700 hover:text-primary flex items-center justify-between">
                       <span>{s.title}</span>

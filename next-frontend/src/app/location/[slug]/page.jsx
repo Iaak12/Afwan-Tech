@@ -320,7 +320,7 @@ export default async function LocationPage({ params }) {
                       </ul>
                     </div>
                     <Link 
-                      href={`/services/${service.slug}`}
+                      href={`/${location.slug}/services/${service.slug}`}
                       className="text-xs font-bold text-primary hover:underline flex items-center gap-1 pt-3 border-t border-gray-100"
                     >
                       Explore {service.title} <ArrowRight size={13} />

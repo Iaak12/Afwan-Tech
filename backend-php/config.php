@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
-
 return [
     // Notification Email where contact requests will be sent
     'admin_email' => 'contactafwantech@gmail.com',

@@ -1,18 +1,78 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
-import { Search, MapPin, Globe, Building2, ChevronRight, Sparkles, Filter } from 'lucide-react';
+import { 
+  Search, MapPin, Globe, Building2, ChevronRight, Sparkles, 
+  Filter, X, ArrowRight, Code, ShoppingCart, Smartphone, 
+  BarChart3, Palette, Share2, TrendingUp, Layers, CheckCircle2 
+} from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CompactHeroForm from '@/components/CompactHeroForm';
-import { getAllLocations } from '@/data/locationsData';
+import { getAllLocations, getLocationBySlug } from '@/data/locationsData';
+
+const servicesList = [
+  { name: 'Website Development', slug: 'website-development', icon: Code, desc: 'High-speed Next.js web systems' },
+  { name: 'Custom Web Dev', slug: 'custom-web-development', icon: Layers, desc: 'Bespoke full-stack web applications' },
+  { name: 'E-commerce Dev', slug: 'ecommerce-development', icon: ShoppingCart, desc: 'Shopify & headless commerce engines' },
+  { name: 'Mobile App Dev', slug: 'app-development', icon: Smartphone, desc: 'Cross-platform iOS & Android apps' },
+  { name: 'SEO Services', slug: 'seo-services', icon: TrendingUp, desc: 'Page 1 rankings & semantic authority' },
+  { name: 'Performance Marketing', slug: 'ppc-paid-ads', icon: BarChart3, desc: 'Google & Meta high-ROAS ads' },
+  { name: 'Social Media Growth', slug: 'social-media-management', icon: Share2, desc: 'Brand advocacy & organic reach' },
+  { name: 'Branding & UI/UX', slug: 'graphic-design', icon: Palette, desc: 'Design systems & conversion UX' },
+];
 
 export default function MarketAreaPage() {
   const [search, setSearch] = useState('');
   const [filterType, setFilterType] = useState('all'); // all, state, city, region
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const allLocations = useMemo(() => getAllLocations(), []);
+
+  // Read saved location on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('afwan_selected_location');
+      if (saved) {
+        const found = getLocationBySlug(saved);
+        if (found) {
+          setSelectedCity(found);
+        }
+      }
+    } catch (_) {}
+
+    const handleLocationChange = (e) => {
+      if (e?.detail) {
+        const found = getLocationBySlug(e.detail);
+        if (found) setSelectedCity(found);
+      } else {
+        setSelectedCity(null);
+      }
+    };
+
+    window.addEventListener('afwan_location_changed', handleLocationChange);
+    return () => window.removeEventListener('afwan_location_changed', handleLocationChange);
+  }, []);
+
+  const handleSelectCity = (loc) => {
+    setSelectedCity(loc);
+    setIsModalOpen(true);
+    try {
+      localStorage.setItem('afwan_selected_location', loc.slug);
+    } catch (_) {}
+    window.dispatchEvent(new CustomEvent('afwan_location_changed', { detail: loc.slug }));
+  };
+
+  const handleClearCity = () => {
+    setSelectedCity(null);
+    setIsModalOpen(false);
+    try {
+      localStorage.removeItem('afwan_selected_location');
+    } catch (_) {}
+    window.dispatchEvent(new CustomEvent('afwan_location_changed', { detail: null }));
+  };
 
   const filtered = useMemo(() => {
     return allLocations.filter(loc => {
@@ -58,8 +118,43 @@ export default function MarketAreaPage() {
                 </h1>
 
                 <p className="text-gray-600 text-base md:text-lg max-w-xl font-normal leading-relaxed">
-                  Search across 595+ cities in India and global tech hubs to explore dedicated Next.js web development, local entity schemas, and organic ranking engines.
+                  Tap any city below to instantly adapt the entire site and navbar services dropdown for that location, or explore dedicated Next.js engineering and SEO services.
                 </p>
+
+                {/* Active Selected Location Banner */}
+                {selectedCity && (
+                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-2xl flex items-center justify-between gap-4 max-w-xl animate-in fade-in slide-in-from-top-1">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-primary text-white flex items-center justify-center font-bold">
+                        <MapPin size={18} />
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-500 font-medium">Selected Active Region:</div>
+                        <div className="text-sm font-black text-[#0f172a]">
+                          {selectedCity.name}, {selectedCity.state}
+                          <span className="text-primary text-xs ml-2 font-semibold">
+                            (Navbar Services Updated)
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="px-3 py-1.5 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-colors"
+                      >
+                        Explore Services
+                      </button>
+                      <button
+                        onClick={handleClearCity}
+                        className="p-1.5 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-white"
+                        title="Clear selection"
+                      >
+                        <X size={16} />
+                      </button>
+                    </div>
+                  </div>
+                )}
 
                 {/* Search Bar */}
                 <div className="max-w-xl relative">
@@ -117,7 +212,7 @@ export default function MarketAreaPage() {
         </section>
 
         {/* Locations Directory Content */}
-        <section className="max-w-container mx-auto px-6">
+        <section className="max-w-container mx-auto px-6 py-12">
           <div className="space-y-12">
             {Object.keys(stateGroups).map((stateName) => {
               const list = stateGroups[stateName];
@@ -132,27 +227,38 @@ export default function MarketAreaPage() {
                       </div>
                       <div>
                         <h2 className="text-xl font-black text-[#0f172a]">{stateName}</h2>
-                        <span className="text-xs text-gray-400">{list.length} dedicated locations indexed</span>
+                        <span className="text-xs text-gray-400">{list.length} dedicated locations indexed • Tap to select</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                    {list.map((item) => (
-                      <Link
-                        key={item.slug}
-                        href={`/location/${item.slug}`}
-                        className={`p-3.5 rounded-xl border transition-all group flex flex-col justify-between ${item.type === 'state' ? 'bg-primary/5 border-primary/30 hover:bg-primary/10' : 'bg-gray-50/50 border-gray-100 hover:border-primary/40 hover:bg-white hover:shadow-sm'}`}
-                      >
-                        <span className={`font-bold text-xs truncate ${item.type === 'state' ? 'text-primary' : 'text-[#0f172a] group-hover:text-primary'} transition-colors`}>
-                          {item.name}
-                        </span>
-                        <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100/60 text-[10px] text-gray-400">
-                          <span className="capitalize">{item.type}</span>
-                          <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform group-hover:text-primary" />
-                        </div>
-                      </Link>
-                    ))}
+                    {list.map((item) => {
+                      const isSelected = selectedCity?.slug === item.slug;
+                      return (
+                        <button
+                          key={item.slug}
+                          onClick={() => handleSelectCity(item)}
+                          className={`p-3.5 rounded-xl border transition-all text-left group flex flex-col justify-between cursor-pointer ${
+                            isSelected 
+                              ? 'bg-blue-50 border-primary shadow-sm ring-2 ring-primary/20' 
+                              : item.type === 'state'
+                                ? 'bg-primary/5 border-primary/30 hover:bg-primary/10'
+                                : 'bg-gray-50/50 border-gray-100 hover:border-primary/40 hover:bg-white hover:shadow-sm'
+                          }`}
+                        >
+                          <span className={`font-bold text-xs truncate ${isSelected ? 'text-primary' : item.type === 'state' ? 'text-primary' : 'text-[#0f172a] group-hover:text-primary'} transition-colors`}>
+                            {item.name}
+                          </span>
+                          <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100/60 text-[10px] text-gray-400 w-full">
+                            <span className="capitalize">{item.type}</span>
+                            <span className="text-primary font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                              Select →
+                            </span>
+                          </div>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               );
@@ -160,6 +266,101 @@ export default function MarketAreaPage() {
           </div>
         </section>
       </main>
+
+      {/* Quick Services Selection Modal / Drawer */}
+      {isModalOpen && selectedCity && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-gray-100 relative animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-800 flex items-center justify-center transition-colors"
+            >
+              <X size={18} />
+            </button>
+
+            {/* Modal Header */}
+            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+              <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                <MapPin size={24} />
+              </div>
+              <div>
+                <span className="text-xs font-black uppercase tracking-wider text-primary">
+                  Region Activated in Navbar
+                </span>
+                <h3 className="text-2xl font-black text-[#0f172a]">
+                  {selectedCity.name}, {selectedCity.state}
+                </h3>
+                <p className="text-xs text-gray-500">
+                  Services dropdown in the top navbar is now customized for {selectedCity.name}. Select a service below:
+                </p>
+              </div>
+            </div>
+
+            {/* Prominent Website Development Direct Button */}
+            <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <div className="inline-flex items-center gap-1.5 text-xs font-bold text-primary mb-1">
+                  <Sparkles size={14} /> Recommended Entry Point
+                </div>
+                <div className="text-base font-black text-[#0f172a]">
+                  Website Development in {selectedCity.name}
+                </div>
+                <div className="text-xs text-gray-600">
+                  Sub-second Next.js web architecture engineered for {selectedCity.name} market.
+                </div>
+              </div>
+              <Link
+                href={`/${selectedCity.slug}/services/website-development`}
+                className="btn-primary px-5 py-2.5 text-xs font-bold uppercase tracking-wider whitespace-nowrap flex items-center gap-1.5"
+              >
+                Open Page <ArrowRight size={14} />
+              </Link>
+            </div>
+
+            {/* All 8 Services Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              {servicesList.map((srv) => {
+                const Icon = srv.icon;
+                return (
+                  <Link
+                    key={srv.slug}
+                    href={`/${selectedCity.slug}/services/${srv.slug}`}
+                    className="p-3.5 rounded-xl border border-gray-100 hover:border-primary/40 hover:bg-blue-50/40 transition-all flex items-start gap-3 group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-gray-100 text-gray-700 group-hover:bg-primary group-hover:text-white flex items-center justify-center flex-shrink-0 transition-colors">
+                      <Icon size={16} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-bold text-gray-900 group-hover:text-primary transition-colors flex items-center justify-between">
+                        <span className="truncate">{srv.name} in {selectedCity.name}</span>
+                        <ChevronRight size={13} className="text-gray-400 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                      </div>
+                      <div className="text-[11px] text-gray-500 line-clamp-1">{srv.desc}</div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <Link
+                href={`/location/${selectedCity.slug}`}
+                className="font-bold text-gray-600 hover:text-primary flex items-center gap-1"
+              >
+                <Globe size={14} /> View Complete Regional Hub for {selectedCity.name}
+              </Link>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="text-gray-500 hover:text-gray-800 font-medium cursor-pointer"
+              >
+                Close & Keep Active in Navbar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
