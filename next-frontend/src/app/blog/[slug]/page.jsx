@@ -377,7 +377,7 @@ export default async function BlogPostPage({ params, searchParams }) {
                 url: 'https://www.afwantech.com'
               },
               datePublished: blog.scheduledDate || '2026-10-26',
-              mainEntityOfPage: blog.canonical || https://www.afwantech.com/blog/
+              mainEntityOfPage: blog.canonical || `https://www.afwantech.com/blog/${slug}`
             })
           }}
         />
