@@ -10,3 +10,4 @@ export function getPhpApiUrl() {
   }
   return 'https://violet-ibis-402728.hostingersite.com/api/backend-php';
 }
+
