@@ -48,7 +48,11 @@ export default function AdminLocationsPage() {
       const res = await fetch('/api/admin/locations');
       const json = await res.json();
       if (json.success && json.data) {
-        setLocations(json.data.locations || []);
+        const normalized = (json.data.locations || []).map(loc => ({
+          ...loc,
+          isCustom: Boolean(loc.isCustom || loc.is_custom === 1 || loc.is_custom === '1' || loc.is_custom === true)
+        }));
+        setLocations(normalized);
         setStats(json.data.stats || {});
         setAvailableStates(json.data.states || []);
         setDeletedSlugs(json.data.deletedSlugs || []);
@@ -167,7 +171,8 @@ export default function AdminLocationsPage() {
   // Filtered List
   const filtered = useMemo(() => {
     return locations.filter(loc => {
-      if (sourceFilter === 'custom' && !loc.isCustom) return false;
+      const isCustomCity = Boolean(loc.isCustom || loc.is_custom === 1 || loc.is_custom === '1' || loc.is_custom === true);
+      if (sourceFilter === 'custom' && !isCustomCity) return false;
       if (stateFilter && loc.state !== stateFilter) return false;
       if (typeFilter && loc.type !== typeFilter) return false;
 
@@ -372,7 +377,7 @@ export default function AdminLocationsPage() {
                         <div>
                           <div className="font-bold text-gray-900 group-hover:text-primary transition-colors flex items-center gap-2">
                             <span>{loc.name}</span>
-                            {loc.isCustom && (
+                            {(loc.isCustom || loc.is_custom === 1 || loc.is_custom === '1' || loc.is_custom === true) && (
                               <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 border border-purple-200">
                                 Custom Added
                               </span>

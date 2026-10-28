@@ -67,6 +67,10 @@ if ($method === 'GET') {
             $stmt = $pdo->prepare($sql);
             $stmt->execute($params);
             $locations = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $locations = array_map(function($l) {
+                $l['isCustom'] = !empty($l['is_custom']);
+                return $l;
+            }, $locations);
 
             // Fetch distinct states
             $statesStmt = $pdo->query("SELECT DISTINCT state FROM locations WHERE status = 'active' AND state IS NOT NULL ORDER BY state ASC");
