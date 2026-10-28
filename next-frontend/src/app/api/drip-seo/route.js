@@ -132,7 +132,14 @@ export async function POST(req) {
     const action = body.action || '';
     let message = '';
 
-    if (action === 'push_urls') {
+    if (action === 'reset_cohort' || action === 'reset') {
+      const today = new Date().toISOString().split('T')[0];
+      config.start_date = today;
+      config.manual_urls_unlocked = 0;
+      config.manual_batches_unlocked = 0;
+      config.enabled = true;
+      message = `Drip cohort reset successfully! Fresh weekly pacing active starting today (${today}).`;
+    } else if (action === 'push_urls') {
       const count = Number(body.count || 100);
       config.manual_urls_unlocked = (config.manual_urls_unlocked || 0) + count;
       message = `Pushed +${count} URLs into live indexing!`;
@@ -140,6 +147,9 @@ export async function POST(req) {
       const count = Number(body.count || 1);
       config.manual_batches_unlocked = (config.manual_batches_unlocked || 0) + count;
       message = `Released ${count} batch(es)!`;
+    } else if (body.startDate) {
+      config.start_date = body.startDate;
+      message = `Start date updated to ${body.startDate}`;
     } else if (body.pagesPerWeek !== undefined) {
       config.pages_per_week = Math.max(10, Math.min(1000, Number(body.pagesPerWeek)));
       message = `Speed updated to ${config.pages_per_week}/week`;

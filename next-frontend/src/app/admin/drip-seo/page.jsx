@@ -381,6 +381,20 @@ export default function DripSeoAdminPage() {
             <Layers size={14} />
             <span>📦 Release +1 Full Batch</span>
           </button>
+
+          <button
+            onClick={() => {
+              if (confirm('Start Drip SEO pacing fresh from today? This sets Batch 1 active (75 locations live, ~675 URLs in sitemap) and automatically unlocks +75 locations every 7 days.')) {
+                handleAction({ action: 'reset_cohort' });
+              }
+            }}
+            disabled={processing}
+            className="px-5 py-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 cursor-pointer transition-colors shadow-md"
+            title="Reset start date to today and begin batch-by-batch pacing"
+          >
+            <RefreshCw size={14} />
+            <span>🔄 Start Fresh From Today (Batch 1: 75/wk)</span>
+          </button>
         </div>
 
         {/* Speed Adjustment & Mode Toggle */}

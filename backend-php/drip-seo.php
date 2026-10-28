@@ -92,6 +92,27 @@ if ($method === 'POST') {
             saveDripConfigFallback($jsonFile, $config);
         }
         $message = "Released {$batches} batch(es) ahead of schedule!";
+    } elseif ($action === 'reset_cohort' || $action === 'reset') {
+        $today = date('Y-m-d');
+        if ($pdo) {
+            $pdo->prepare("UPDATE drip_seo_config SET start_date = ?, manual_urls_unlocked = 0, manual_batches_unlocked = 0, enabled = 1")->execute([$today]);
+        } else {
+            $config['start_date'] = $today;
+            $config['manual_urls_unlocked'] = 0;
+            $config['manual_batches_unlocked'] = 0;
+            $config['enabled'] = 1;
+            saveDripConfigFallback($jsonFile, $config);
+        }
+        $message = "Drip cohort reset successfully! Fresh weekly pacing active starting today ($today).";
+    } elseif (isset($input['startDate'])) {
+        $newStart = date('Y-m-d', strtotime($input['startDate']));
+        if ($pdo) {
+            $pdo->prepare("UPDATE drip_seo_config SET start_date = ?")->execute([$newStart]);
+        } else {
+            $config['start_date'] = $newStart;
+            saveDripConfigFallback($jsonFile, $config);
+        }
+        $message = "Cohort start date updated to $newStart!";
     } elseif (isset($input['pagesPerWeek'])) {
         $speed = max(10, min(1000, (int)$input['pagesPerWeek']));
         if ($pdo) {
