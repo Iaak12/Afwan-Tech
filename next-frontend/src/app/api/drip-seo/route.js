@@ -39,6 +39,11 @@ function saveFallbackConfig(config) {
 
 function computeDripMath(config) {
   const totalLocations = 595;
+  const servicesPerLocation = 8;
+  const otherPages = 22; // 8 core services + 8 static + 6 blogs
+  const totalCityServiceUrls = totalLocations * servicesPerLocation; // 4,760
+  const totalUrls = totalLocations + totalCityServiceUrls + otherPages; // 5,377
+
   const startMs = new Date(config.start_date || '2026-07-01').getTime();
   const weeksElapsed = Math.max(0, Math.floor((Date.now() - startMs) / (7 * 86400 * 1000)));
   const manualBatches = Number(config.manual_batches_unlocked || 0);
@@ -55,6 +60,11 @@ function computeDripMath(config) {
     queued = Math.max(0, totalLocations - unlocked);
   }
 
+  const unlockedCityServiceUrls = unlocked * servicesPerLocation;
+  const unlockedUrls = unlocked + unlockedCityServiceUrls + otherPages;
+  const queuedCityServiceUrls = queued * servicesPerLocation;
+  const queuedUrls = queued + queuedCityServiceUrls;
+
   const nextBatchTime = new Date(startMs + (weeksElapsed + 1) * 7 * 86400 * 1000);
 
   return {
@@ -62,8 +72,14 @@ function computeDripMath(config) {
     pagesPerWeek,
     startDate: config.start_date || '2026-07-01',
     totalLocations,
+    servicesPerLocation,
+    totalCityServiceUrls,
+    otherPages,
+    totalUrls,
     unlockedCount: unlocked,
     queuedCount: queued,
+    unlockedUrls,
+    queuedUrls,
     manualUrlsUnlocked: manualBonus,
     manualBatchesUnlocked: manualBatches,
     nextBatchDate: nextBatchTime.toISOString().split('T')[0]

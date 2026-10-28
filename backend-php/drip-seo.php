@@ -216,6 +216,15 @@ if (isset($_GET['view']) && $_GET['view'] === 'admin') {
 }
 
 // Return JSON Response
+$servicesPerLocation = 8;
+$otherPages = 22;
+$totalCityServiceUrls = (int)$totalLocations * $servicesPerLocation;
+$totalUrls = (int)$totalLocations + $totalCityServiceUrls + $otherPages;
+$unlockedCityServiceUrls = (int)$unlocked * $servicesPerLocation;
+$unlockedUrls = (int)$unlocked + $unlockedCityServiceUrls + $otherPages;
+$queuedCityServiceUrls = (int)$queued * $servicesPerLocation;
+$queuedUrls = (int)$queued + $queuedCityServiceUrls;
+
 header("Content-Type: application/json; charset=utf-8");
 echo json_encode([
     "success" => true,
@@ -224,8 +233,14 @@ echo json_encode([
         "pagesPerWeek" => $pagesPerWeek,
         "startDate" => $config['start_date'] ?? '2026-07-01',
         "totalLocations" => (int)$totalLocations,
+        "servicesPerLocation" => $servicesPerLocation,
+        "totalCityServiceUrls" => $totalCityServiceUrls,
+        "otherPages" => $otherPages,
+        "totalUrls" => $totalUrls,
         "unlockedCount" => (int)$unlocked,
         "queuedCount" => (int)$queued,
+        "unlockedUrls" => $unlockedUrls,
+        "queuedUrls" => $queuedUrls,
         "manualUrlsUnlocked" => (int)$manualBonus,
         "manualBatchesUnlocked" => (int)$manualBatches,
         "nextBatchDate" => date("Y-m-d", $nextBatchTime)
