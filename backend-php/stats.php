@@ -22,8 +22,8 @@ $summaryFile = $dataDir . '/summary.json';
 $contactsFile = $dataDir . '/contacts.json';
 $tapsFile = $dataDir . '/contact_taps.json';
 
-$contacts = [];
-$taps = [];
+$contacts = null;
+$taps = null;
 $totalLocations = 595;
 
 if ($pdo) {
@@ -32,16 +32,23 @@ if ($pdo) {
         $taps = $pdo->query("SELECT * FROM contact_taps ORDER BY created_at DESC LIMIT 100")->fetchAll(PDO::FETCH_ASSOC);
         $totalLocations = (int)$pdo->query("SELECT COUNT(*) FROM locations WHERE status = 'active'")->fetchColumn() ?: 595;
     } catch (Exception $e) {
-        // fallback
+        $contacts = null;
+        $taps = null;
     }
 }
 
-if (empty($contacts) && file_exists($contactsFile)) {
+if ($contacts === null && file_exists($contactsFile)) {
     $contacts = json_decode(file_get_contents($contactsFile), true) ?: [];
 }
+if (!is_array($contacts)) {
+    $contacts = [];
+}
 
-if (empty($taps) && file_exists($tapsFile)) {
+if ($taps === null && file_exists($tapsFile)) {
     $taps = json_decode(file_get_contents($tapsFile), true) ?: [];
+}
+if (!is_array($taps)) {
+    $taps = [];
 }
 
 $summary = file_exists($summaryFile) ? (json_decode(file_get_contents($summaryFile), true) ?: []) : [];

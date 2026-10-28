@@ -22,18 +22,16 @@ $contactsFile = $dataDir . '/contacts.json';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
-// GET: Return all submissions from MySQL
+// GET: Return all submissions from MySQL (fallback to contacts.json only on DB exception)
 if ($method === 'GET') {
     if ($pdo) {
         try {
             $stmt = $pdo->query("SELECT * FROM contacts ORDER BY created_at DESC");
             $leads = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            if (!empty($leads)) {
-                echo json_encode(['success' => true, 'data' => $leads]);
-                exit();
-            }
+            echo json_encode(['success' => true, 'data' => $leads]);
+            exit();
         } catch (Exception $e) {
-            // fallback below
+            // fallback below only on DB exception
         }
     }
 
@@ -46,14 +44,15 @@ if ($method === 'GET') {
 $rawInput = file_get_contents('php://input');
 $jsonInput = json_decode($rawInput, true) ?: [];
 
-// Check if DELETE action (via HTTP DELETE verb or POST fallback)
+// Check if DELETE action (via HTTP DELETE verb, POST fallback, or GET action=delete)
 $isDeleteAction = ($method === 'DELETE') ||
     ($method === 'POST' && (
         (isset($_GET['action']) && $_GET['action'] === 'delete') ||
         (isset($jsonInput['action']) && $jsonInput['action'] === 'delete') ||
         (isset($jsonInput['_method']) && strtoupper($jsonInput['_method']) === 'DELETE') ||
         (isset($_POST['action']) && $_POST['action'] === 'delete')
-    ));
+    )) ||
+    ($method === 'GET' && isset($_GET['action']) && $_GET['action'] === 'delete');
 
 // Check if PATCH action (via HTTP PATCH verb or POST fallback)
 $isPatchAction = ($method === 'PATCH') ||
@@ -64,37 +63,49 @@ $isPatchAction = ($method === 'PATCH') ||
         (isset($_POST['action']) && in_array($_POST['action'], ['patch', 'update']))
     ));
 
-// DELETE: Delete lead by ID or bulk IDs from MySQL
+// DELETE: Delete lead by ID or bulk IDs from MySQL AND contacts.json
 if ($isDeleteAction) {
     $id = $jsonInput['id'] ?? $_POST['id'] ?? $_GET['id'] ?? null;
-    $rawIds = $jsonInput['ids'] ?? $_POST['ids'] ?? ($id ? [$id] : []);
+    $rawIds = $jsonInput['ids'] ?? $_POST['ids'] ?? $_GET['ids'] ?? ($id ? [$id] : []);
     $ids = array_values(array_filter(array_map('trim', array_map('strval', (array)$rawIds))));
 
-    if ($pdo && !empty($ids)) {
+    if (empty($ids)) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => 'No ID provided to delete']);
+        exit();
+    }
+
+    $deletedFromMysql = 0;
+    // 1. Delete from MySQL
+    if ($pdo) {
         try {
             $inClause = implode(',', array_fill(0, count($ids), '?'));
             $stmt = $pdo->prepare("DELETE FROM contacts WHERE id IN ($inClause)");
             $stmt->execute(array_values($ids));
-
-            echo json_encode(['success' => true, 'message' => count($ids) . ' submission(s) deleted from MySQL successfully!']);
-            exit();
+            $deletedFromMysql = $stmt->rowCount();
         } catch (Exception $e) {
-            http_response_code(500);
-            echo json_encode(['success' => false, 'message' => $e->getMessage()]);
-            exit();
+            // MySQL error fallback
         }
     }
 
-    if (file_exists($contactsFile) && !empty($ids)) {
+    // 2. ALWAYS ALSO delete from contacts.json
+    $deletedFromJson = false;
+    if (file_exists($contactsFile)) {
         $contacts = json_decode(file_get_contents($contactsFile), true) ?: [];
+        $origCount = count($contacts);
         $contacts = array_values(array_filter($contacts, fn($l) => !in_array(strval($l['id'] ?? ''), $ids)));
-        file_put_contents($contactsFile, json_encode($contacts, JSON_PRETTY_PRINT));
-        echo json_encode(['success' => true, 'message' => 'Submission(s) deleted from storage']);
-        exit();
+        if (count($contacts) < $origCount) {
+            $deletedFromJson = true;
+            file_put_contents($contactsFile, json_encode($contacts, JSON_PRETTY_PRINT));
+        }
     }
 
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'No ID provided to delete']);
+    echo json_encode([
+        'success' => true,
+        'message' => count($ids) . ' submission(s) deleted successfully!',
+        'mysql_rows_deleted' => $deletedFromMysql,
+        'json_updated' => $deletedFromJson
+    ]);
     exit();
 }
 

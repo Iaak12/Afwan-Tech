@@ -26,7 +26,7 @@ export default function AdminContactSubmissionsPage() {
       // 1. Try Next.js admin contacts API
       const res = await fetch('/api/admin/contacts', { cache: 'no-store' });
       const json = await res.json();
-      if (json.success && Array.isArray(json.data) && json.data.length > 0) {
+      if (json.success && Array.isArray(json.data)) {
         setContacts(json.data);
         return;
       }
@@ -35,17 +35,8 @@ export default function AdminContactSubmissionsPage() {
       const phpApi = getPhpUrl();
       const directRes = await fetch(`${phpApi}/contact.php`, { cache: 'no-store' });
       const directJson = await directRes.json();
-      if (directJson.success && Array.isArray(directJson.data) && directJson.data.length > 0) {
+      if (directJson.success && Array.isArray(directJson.data)) {
         setContacts(directJson.data);
-        return;
-      }
-
-      // 3. Fallback to stats endpoint (which includes all_leads)
-      const statsRes = await fetch('/api/stats', { cache: 'no-store' });
-      const statsJson = await statsRes.json();
-      const leads = statsJson?.data?.all_leads || statsJson?.data?.recent_leads || [];
-      if (leads.length > 0) {
-        setContacts(leads);
         return;
       }
 
@@ -121,22 +112,24 @@ export default function AdminContactSubmissionsPage() {
     try {
       setProcessing(true);
       const phpApi = getPhpUrl();
+      const queryParam = `id=${encodeURIComponent(targetId)}`;
 
-      // Direct to Hostinger MySQL via POST (action=delete) and DELETE
-      fetch(`${phpApi}/contact.php`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ action: 'delete', ids: [targetId] })
-      }).catch(err => console.warn('Direct MySQL POST delete notice:', err));
-
-      fetch(`${phpApi}/contact.php`, {
+      // Direct to Hostinger MySQL with query string (works on both old and new PHP versions)
+      fetch(`${phpApi}/contact.php?${queryParam}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ ids: [targetId] })
+      }).catch(err => console.warn('Direct MySQL delete notice:', err));
+
+      // Direct to Hostinger MySQL via POST fallback
+      fetch(`${phpApi}/contact.php?action=delete&${queryParam}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ action: 'delete', ids: [targetId] })
       }).catch(() => {});
 
-      // Next.js API Route (Relative)
-      await fetch('/api/admin/contacts', {
+      // Next.js API Route (Relative) with query param AND body
+      await fetch(`/api/admin/contacts?${queryParam}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ids: [targetId] })
@@ -156,6 +149,7 @@ export default function AdminContactSubmissionsPage() {
 
     const idsArray = Array.from(selectedIds).map(x => String(x));
     const idSet = new Set(idsArray);
+    const queryParams = idsArray.map(id => `ids[]=${encodeURIComponent(id)}`).join('&') + `&id=${encodeURIComponent(idsArray[0])}`;
 
     // 1. Instant Optimistic UI Update
     setContacts(prev => prev.filter(c => !idSet.has(String(c.id))));
@@ -168,19 +162,19 @@ export default function AdminContactSubmissionsPage() {
       setProcessing(true);
       const phpApi = getPhpUrl();
 
-      fetch(`${phpApi}/contact.php`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ action: 'delete', ids: idsArray })
-      }).catch(err => console.warn('Direct MySQL bulk delete notice:', err));
-
-      fetch(`${phpApi}/contact.php`, {
+      fetch(`${phpApi}/contact.php?${queryParams}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ ids: idsArray })
+      }).catch(err => console.warn('Direct MySQL bulk delete notice:', err));
+
+      fetch(`${phpApi}/contact.php?action=delete&${queryParams}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ action: 'delete', ids: idsArray })
       }).catch(() => {});
 
-      await fetch('/api/admin/contacts', {
+      await fetch(`/api/admin/contacts?${queryParams}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ids: idsArray })

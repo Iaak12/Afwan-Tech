@@ -77,7 +77,7 @@ export async function GET() {
       });
       if (res.ok) {
         const json = await res.json();
-        if (json.success && Array.isArray(json.data) && json.data.length > 0) {
+        if (json.success && Array.isArray(json.data)) {
           return NextResponse.json(
             { success: true, data: json.data, source: 'mysql' },
             { headers: corsHeaders }
@@ -87,29 +87,9 @@ export async function GET() {
     } catch (e) {
       console.warn('MySQL contacts fetch error, attempting fallback:', e.message);
     }
-
-    // 2. Fallback: Try stats.php if contact.php was empty
-    try {
-      const statsRes = await fetch(`${phpApi}/stats.php`, {
-        cache: 'no-store',
-        headers: { Accept: 'application/json' }
-      });
-      if (statsRes.ok) {
-        const sJson = await statsRes.json();
-        const leads = sJson?.data?.all_leads || sJson?.data?.recent_leads || [];
-        if (leads.length > 0) {
-          return NextResponse.json(
-            { success: true, data: leads, source: 'stats' },
-            { headers: corsHeaders }
-          );
-        }
-      }
-    } catch (e) {
-      // ignore
-    }
   }
 
-  // 3. Fallback: Local JSON storage
+  // 2. Fallback: Local JSON storage
   try {
     const { list } = getContacts();
     return NextResponse.json(
@@ -128,6 +108,7 @@ export async function DELETE(request) {
   try {
     const { searchParams } = new URL(request.url);
     const queryId = searchParams.get('id');
+    const queryIds = searchParams.getAll('ids[]');
 
     let body = {};
     try {
@@ -136,7 +117,7 @@ export async function DELETE(request) {
       // ignore
     }
 
-    const rawIds = body.ids || (body.id ? [body.id] : (queryId ? [queryId] : []));
+    const rawIds = body.ids || (body.id ? [body.id] : (queryIds.length > 0 ? queryIds : (queryId ? [queryId] : [])));
     const idsToDelete = (Array.isArray(rawIds) ? rawIds : [rawIds])
       .map(id => String(id).trim())
       .filter(Boolean);
@@ -153,7 +134,10 @@ export async function DELETE(request) {
     // 1. Delete from Hostinger MySQL directly
     if (phpApi) {
       try {
-        const delRes = await fetch(`${phpApi}/contact.php`, {
+        const queryParams = idsToDelete.map(id => `ids[]=${encodeURIComponent(id)}`).join('&') + `&id=${encodeURIComponent(idsToDelete[0])}`;
+
+        // Call Hostinger DELETE with query params AND body
+        await fetch(`${phpApi}/contact.php?${queryParams}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -161,16 +145,16 @@ export async function DELETE(request) {
           },
           body: JSON.stringify({ ids: idsToDelete })
         });
-        if (!delRes.ok) {
-          await fetch(`${phpApi}/contact.php`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              Accept: 'application/json'
-            },
-            body: JSON.stringify({ action: 'delete', ids: idsToDelete })
-          });
-        }
+
+        // Also call POST with action=delete for fallback
+        await fetch(`${phpApi}/contact.php?action=delete&${queryParams}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({ action: 'delete', ids: idsToDelete })
+        }).catch(() => {});
       } catch (e) {
         console.warn('MySQL delete error:', e.message);
       }
