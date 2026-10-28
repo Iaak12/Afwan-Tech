@@ -79,3 +79,4 @@ export default async function CityServiceDetailPage({ params }) {
 
   return <ServicePageTemplate data={localizedData} location={location} />;
 }
+
