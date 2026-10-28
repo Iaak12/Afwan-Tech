@@ -26,7 +26,7 @@ export default function AdminContactSubmissionsPage() {
       // 1. Try Next.js admin contacts API
       const res = await fetch('/api/admin/contacts', { cache: 'no-store' });
       const json = await res.json();
-      if (json.success && Array.isArray(json.data)) {
+      if (json.success && Array.isArray(json.data) && json.data.length > 0) {
         setContacts(json.data);
         return;
       }
@@ -35,16 +35,21 @@ export default function AdminContactSubmissionsPage() {
       const phpApi = getPhpUrl();
       const directRes = await fetch(`${phpApi}/contact.php`, { cache: 'no-store' });
       const directJson = await directRes.json();
-      if (directJson.success && Array.isArray(directJson.data)) {
+      if (directJson.success && Array.isArray(directJson.data) && directJson.data.length > 0) {
         setContacts(directJson.data);
         return;
       }
 
-      // 3. Fallback to stats endpoint
+      // 3. Fallback to stats endpoint (which includes all_leads)
       const statsRes = await fetch('/api/stats', { cache: 'no-store' });
       const statsJson = await statsRes.json();
       const leads = statsJson?.data?.all_leads || statsJson?.data?.recent_leads || [];
-      setContacts(leads);
+      if (leads.length > 0) {
+        setContacts(leads);
+        return;
+      }
+
+      setContacts([]);
     } catch (e) {
       console.error('Error fetching leads:', e);
     } finally {

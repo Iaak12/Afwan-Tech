@@ -87,9 +87,29 @@ export async function GET() {
     } catch (e) {
       console.warn('MySQL contacts fetch error, attempting fallback:', e.message);
     }
+
+    // 2. Fallback: Try stats.php if contact.php was empty
+    try {
+      const statsRes = await fetch(`${phpApi}/stats.php`, {
+        cache: 'no-store',
+        headers: { Accept: 'application/json' }
+      });
+      if (statsRes.ok) {
+        const sJson = await statsRes.json();
+        const leads = sJson?.data?.all_leads || sJson?.data?.recent_leads || [];
+        if (leads.length > 0) {
+          return NextResponse.json(
+            { success: true, data: leads, source: 'stats' },
+            { headers: corsHeaders }
+          );
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
   }
 
-  // 2. Fallback: Local JSON storage
+  // 3. Fallback: Local JSON storage
   try {
     const { list } = getContacts();
     return NextResponse.json(

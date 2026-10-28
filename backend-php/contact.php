@@ -28,8 +28,10 @@ if ($method === 'GET') {
         try {
             $stmt = $pdo->query("SELECT * FROM contacts ORDER BY created_at DESC");
             $leads = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo json_encode(['success' => true, 'data' => $leads]);
-            exit();
+            if (!empty($leads)) {
+                echo json_encode(['success' => true, 'data' => $leads]);
+                exit();
+            }
         } catch (Exception $e) {
             // fallback below
         }
