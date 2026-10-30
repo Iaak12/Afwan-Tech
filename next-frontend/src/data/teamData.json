@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ayaz-khan",
+    "name": "Ayaz Khan",
+    "role": "Founder & CEO",
+    "category": "leadership",
+    "bio": "Visionary entrepreneur and digital architect leading AFWAN TECH with a singular mission — building high-performance web engineering and Page 1 organic SEO systems for ambitious businesses worldwide.",
+    "expertise": [
+      "Executive Leadership",
+      "Growth Strategy",
+      "SEO Architecture",
+      "Business Scaling"
+    ],
+    "initials": "AK",
+    "image": "",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": true,
+    "order": 1
+  },
+  {
+    "id": "aaliya-behal",
+    "name": "Aaliya Behal",
+    "role": "Co-Founder",
+    "category": "leadership",
+    "bio": "Co-founder steering operational velocity, strategic client partnerships, and cross-functional brand expansion across India, Middle East, and global markets.",
+    "expertise": [
+      "Operations Strategy",
+      "Client Partnerships",
+      "Brand Scaling",
+      "Organizational Growth"
+    ],
+    "initials": "AB",
+    "image": "",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
+    "order": 2
+  },
+  {
+    "id": "shahbaz-ahmad",
+    "name": "Shahbaz Ahmad",
+    "role": "Lead Software Engineer & Platform Architect",
+    "category": "leadership",
+    "bio": "Lead software engineer and platform architect specializing in React 19, Next.js App Router, scalable cloud architectures, and high-performance web systems with sub-second response times.",
+    "expertise": [
+      "React / Next.js",
+      "Full Stack Architecture",
+      "Node.js & PHP APIs",
+      "Performance & Caching"
+    ],
+    "initials": "SA",
+    "image": "",
+    "linkedin": "https://www.linkedin.com/in/shahbaz-ahmad-react/",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "Nazra Software Solutions",
+    "isCEO": false,
+    "order": 3
+  }
+]

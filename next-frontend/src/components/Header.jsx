@@ -107,7 +107,8 @@ export default function Header() {
         { name: 'Website Development', slug: 'website-development', href: '/services/website-development', desc: 'Fast, high-converting Next.js websites' },
         { name: 'Custom Web Dev', slug: 'custom-web-development', href: '/services/custom-web-development', desc: 'Bespoke full-stack web applications' },
         { name: 'E-commerce Dev', slug: 'ecommerce-development', href: '/services/ecommerce-development', desc: 'Shopify & headless commerce engines' },
-        { name: 'Mobile App Development', slug: 'app-development', href: '/services/app-development', desc: 'Cross-platform iOS & Android apps' }
+        { name: 'Mobile App Development', slug: 'app-development', href: '/services/app-development', desc: 'Cross-platform iOS & Android apps' },
+        { name: 'CRM Software', slug: 'crm-software', href: '/services/crm-software', desc: 'Custom CRM development & automation' }
       ]
     },
     {

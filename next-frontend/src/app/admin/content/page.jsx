@@ -58,10 +58,10 @@ export default function AdminPageContentPage() {
         return (
           <div key={idx} className="my-4 overflow-x-auto rounded-xl border border-gray-200">
             <table className="w-full text-left text-xs">
-              {block.headers && (
+              {(block.header || block.headers) && (
                 <thead className="bg-[#0f172a] text-white">
                   <tr>
-                    {block.headers.map((h, i) => (
+                    {(block.header || block.headers).map((h, i) => (
                       <th key={i} className="py-2.5 px-4 font-bold">{h}</th>
                     ))}
                   </tr>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { 
   Rocket, ShieldCheck, Target, Heart, Globe, Users, 
   Award, Sparkles, Star, TrendingUp, CheckCircle2, ArrowRight,
-  MapPin, Check 
+  MapPin, Check, ExternalLink 
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -11,10 +11,11 @@ import ContactForm from '@/components/ContactForm';
 import CompactHeroForm from '@/components/CompactHeroForm';
 import ContentSectionsRenderer from '@/components/ContentSectionsRenderer';
 import aboutContent from '@/data/aboutContent.json';
+import teamData from '@/data/teamData.json';
 
 export const metadata = {
   title: 'About Our Agency | AFWAN TECH - Digital Growth & Web Engineering',
-  description: 'Learn about the AFWAN TECH journey founded by Mohammad Afwan. 8+ years of engineering high-performance Next.js websites and data-driven SEO for ambitious businesses.',
+  description: 'Learn about the AFWAN TECH journey led by Ayaz Khan. 8+ years of engineering high-performance Next.js websites and data-driven SEO for ambitious businesses.',
   alternates: {
     canonical: 'https://www.afwantech.com/about-us'
   }
@@ -54,52 +55,10 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: 'Mohammad Afwan',
-    role: 'Founder & CEO',
-    bio: 'Visionary entrepreneur and digital architect with 8+ years building high-performance growth systems for global brands. Mohammad founded AFWAN TECH with a singular mission — to make institutional-grade web engineering and Page 1 organic SEO accessible to ambitious businesses worldwide.',
-    expertise: ['Growth Strategy', 'SEO Architecture', 'Business Scaling', 'Next.js Systems'],
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400',
-    initials: 'MA',
-    isCEO: true,
-  },
-  {
-    name: 'Priya Sharma',
-    role: 'Head of Development',
-    bio: 'Full-stack software architect with deep expertise in React 19, Next.js App Router, and scalable cloud infrastructure. Leads our technical delivery team ensuring sub-second load times and 100/100 Core Web Vitals on every release.',
-    expertise: ['React / Next.js', 'Node.js & PHP APIs', 'Cloud Architecture', 'Core Web Vitals'],
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400&h=400',
-    initials: 'PS',
-  },
-  {
-    name: 'Rahul Mehta',
-    role: 'SEO & Content Director',
-    bio: 'Data-driven technical SEO strategist who has driven sustained organic growth for enterprise e-commerce and SaaS brands. Pioneer of our 500+ city programmatic SEO indexing mesh.',
-    expertise: ['Technical SEO', 'Programmatic Indexing', 'Schema.org Graph', 'Digital PR'],
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400&h=400',
-    initials: 'RM',
-  },
-  {
-    name: 'Samira Khan',
-    role: 'Creative & Design Lead',
-    bio: 'Designer with deep UX expertise. Crafts distinctive visual brand identities, conversion-focused Figma design systems, and modern aesthetic user experiences.',
-    expertise: ['Brand Identity', 'UI/UX Design Systems', 'Motion & Micro-interactions'],
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400',
-    initials: 'SK',
-  },
-  {
-    name: 'Arjun Patel',
-    role: 'PPC & Performance Lead',
-    bio: 'Performance marketing specialist managing $2M+ in monthly ad spend across Google, Meta, and LinkedIn with consistent 4x to 6x ROAS through server-side CAPI tracking.',
-    expertise: ['Google Search & Shopping', 'Meta Ads CAPI', 'Funnel CRO', 'Algorithmic Bidding'],
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400',
-    initials: 'AP',
-  },
-];
+const team = teamData;
 
 const milestones = [
-  { year: '2016', title: 'Founded in Delhi', desc: 'Started by Mohammad Afwan as an SEO consultancy driven by a passion for measurable digital growth.' },
+  { year: '2016', title: 'Founded in Delhi', desc: 'Started by Ayaz Khan as a digital consultancy driven by a passion for measurable digital growth.' },
   { year: '2018', title: 'Expanded Capabilities', desc: 'Scaled to a full-service agency with dedicated engineering and design divisions.' },
   { year: '2020', title: 'Global Reach', desc: 'Expanded delivery to clients across GCC (Dubai), United Kingdom, and Southeast Asia with an edge-first engineering stack.' },
   { year: '2022', title: 'Programmatic Scale', desc: 'Launched our proprietary programmatic SEO engine powering location search for businesses across the country.' },
@@ -139,7 +98,7 @@ export default function AboutUsPage() {
                 </h1>
 
                 <p className="text-gray-600 text-base md:text-lg leading-relaxed font-normal">
-                  Founded in 2016 by Mohammad Afwan, AFWAN TECH bridges the gap between deep full-stack software engineering and aggressive organic search acquisition. We build fast, beautiful, and indefatigable digital assets.
+                  Founded in 2016 by Ayaz Khan, AFWAN TECH bridges the gap between deep full-stack software engineering and aggressive organic search acquisition. We build fast, beautiful, and indefatigable digital assets.
                 </p>
 
                 {/* Stat Counters Grid */}
@@ -175,14 +134,14 @@ export default function AboutUsPage() {
                   Our Inception & Vision
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-black text-[#0f172a] tracking-tight">
-                  Why Mohammad Afwan Started This Agency
+                  Why Ayaz Khan Started This Agency
                 </h2>
                 <div className="space-y-4 text-gray-700 text-base leading-relaxed">
                   <p>
                     In 2016, the digital agency ecosystem was plagued by two major extremes: traditional IT firms who could write code but knew nothing about organic marketing, and marketing agencies who relied on slow, vulnerable WordPress page-builders that failed every Core Web Vitals benchmark.
                   </p>
                   <p>
-                    Mohammad Afwan established AFWAN TECH with an uncompromising vision: <strong>treat web development as high-performance engineering and SEO as a mathematical science.</strong>
+                    Ayaz Khan established AFWAN TECH with an uncompromising vision: <strong>treat web development as high-performance engineering and SEO as a mathematical science.</strong>
                   </p>
                   <p>
                     Over the last 8 years, we have grown into a high-performance digital engineering agency. Today, our proprietary programmatic architecture powers local SEO across 595+ cities in India and global business capitals like Dubai, London, and New York.
@@ -190,10 +149,10 @@ export default function AboutUsPage() {
                 </div>
                 <div className="pt-2 flex items-center gap-4 text-sm font-bold text-gray-900">
                   <div className="w-12 h-12 rounded-xl bg-blue-100 text-primary flex items-center justify-center font-black">
-                    MA
+                    AK
                   </div>
                   <div>
-                    <div className="text-base text-gray-900">Mohammad Afwan</div>
+                    <div className="text-base text-gray-900">Ayaz Khan</div>
                     <div className="text-xs text-gray-500 font-normal">Founder & Chief Executive Officer</div>
                   </div>
                 </div>
@@ -266,42 +225,202 @@ export default function AboutUsPage() {
               <p className="text-gray-500 text-sm mt-3">Direct access to senior engineering and growth directors with proven global credentials.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {team.map((member, idx) => (
-                <div key={idx} className="bg-[#fcfcfc] rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {team.filter(m => m.category === 'leadership' || !m.category).map((member, idx) => (
+                <div 
+                  key={idx} 
+                  id={member.id}
+                  itemScope 
+                  itemType="https://schema.org/Person"
+                  className="bg-white rounded-2xl border border-gray-200/90 p-7 shadow-xs hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between scroll-mt-28"
+                >
+                  {/* Google AI Overview & Knowledge Graph Hidden Microdata */}
+                  <meta itemProp="name" content={member.name} />
+                  <meta itemProp="jobTitle" content={member.role} />
+                  <meta itemProp="description" content={member.id === 'shahbaz-ahmad' ? 'Shahbaz Ahmad is the Lead Software Engineer and Platform Architect at Nazra Software Solutions in Bengaluru, Karnataka, India. Leading modern React 19, Next.js, and scalable cloud engineering.' : member.bio} />
+                  <meta itemProp="worksFor" content={member.id === 'shahbaz-ahmad' || member.company ? (member.company || 'Nazra Software Solutions') : 'AFWAN TECH'} />
+                  <meta itemProp="affiliation" content="Nazra Software Solutions" />
+                  {member.location && <meta itemProp="homeLocation" content={member.location} />}
+                  {member.location && <meta itemProp="workLocation" content={member.location} />}
+                  {member.linkedin && <meta itemProp="sameAs" content={member.linkedin} />}
                   <div>
-                    <div className="h-64 overflow-hidden relative bg-gray-100">
-                      <img 
-                        src={member.image} 
-                        alt={member.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-                      />
-                      {member.isCEO && (
-                        <span className="absolute top-3 right-3 bg-primary text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-md">
-                          Founder & CEO
-                        </span>
+                    <div className="flex items-start justify-between gap-4 mb-5">
+                      {member.image ? (
+                        <div className="w-14 h-14 rounded-2xl overflow-hidden border border-gray-200 shadow-xs bg-gray-50 shrink-0">
+                          <img 
+                            src={member.image} 
+                            alt={member.name} 
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-blue-50 border border-primary/20 flex items-center justify-center font-black text-lg text-primary font-sora shadow-xs shrink-0">
+                          {member.initials}
+                        </div>
                       )}
+
+                      <div className="flex items-center gap-2">
+                        {member.isCEO && (
+                          <span className="bg-primary text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-xs">
+                            Founder & CEO
+                          </span>
+                        )}
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0077b5] hover:text-[#005582] bg-blue-50/80 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-colors border border-blue-200/60"
+                            title="LinkedIn Profile"
+                          >
+                            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                            <ExternalLink size={12} className="opacity-70" />
+                          </a>
+                        )}
+                      </div>
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-black text-gray-900">{member.name}</h3>
-                      <span className="text-xs font-bold text-primary block mb-3">{member.role}</span>
-                      <p className="text-xs text-gray-600 leading-relaxed mb-4">{member.bio}</p>
-                    </div>
+
+                    <h3 className="text-xl font-black text-gray-900 font-sora">{member.name}</h3>
+                    <span className="text-xs font-bold text-primary block mt-0.5 mb-3">{member.role}</span>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-5">{member.bio}</p>
                   </div>
 
-                  <div className="p-6 pt-0 border-t border-gray-100">
-                    <span className="text-[10px] font-extrabold uppercase text-gray-400 block mb-2">Core Domains</span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {member.expertise.map((tag, i) => (
-                        <span key={i} className="text-[10px] bg-blue-50 text-primary font-semibold px-2 py-0.5 rounded-md">
-                          {tag}
-                        </span>
-                      ))}
+                  <div className="pt-4 border-t border-gray-100 flex flex-col gap-3">
+                    <div>
+                      <span className="text-[10px] font-extrabold uppercase text-gray-400 block mb-2">Core Domains</span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {member.expertise && member.expertise.map((tag, i) => (
+                          <span key={i} className="text-[10px] bg-blue-50 text-primary font-semibold px-2 py-0.5 rounded-md">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
+
+                    {member.linkedin && (
+                      <div className="pt-1">
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full inline-flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-blue-50/70 hover:bg-blue-100/90 text-[#0077b5] text-xs font-bold transition-all border border-blue-200/50"
+                        >
+                          <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                          </svg>
+                          <span>Connect on LinkedIn</span>
+                          <ExternalLink size={12} className="opacity-70" />
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
+
+            {/* Core Team Members Section (Rendered dynamically if added in admin) */}
+            {team.some(m => m.category === 'core') && (
+              <div className="mt-16 pt-16 border-t border-gray-100">
+                <div className="text-center max-w-2xl mx-auto mb-12">
+                  <span className="text-xs font-black uppercase tracking-widest text-primary font-sora block mb-2">
+                    Specialists & Delivery Team
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-black text-[#0f172a]">Core Engineering & Growth Specialists</h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {team.filter(m => m.category === 'core').map((member, idx) => (
+                    <div 
+                  key={idx} 
+                  id={member.id}
+                  itemScope 
+                  itemType="https://schema.org/Person"
+                  className="bg-white rounded-2xl border border-gray-200/90 p-7 shadow-xs hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between scroll-mt-28"
+                >
+                  {/* Google AI Overview & Knowledge Graph Hidden Microdata */}
+                  <meta itemProp="name" content={member.name} />
+                  <meta itemProp="jobTitle" content={member.role} />
+                  <meta itemProp="description" content={member.id === 'shahbaz-ahmad' ? 'Shahbaz Ahmad is the Lead Software Engineer and Platform Architect at Nazra Software Solutions in Bengaluru, Karnataka, India. Leading modern React 19, Next.js, and scalable cloud engineering.' : member.bio} />
+                  <meta itemProp="worksFor" content={member.id === 'shahbaz-ahmad' || member.company ? (member.company || 'Nazra Software Solutions') : 'AFWAN TECH'} />
+                  <meta itemProp="affiliation" content="Nazra Software Solutions" />
+                  {member.location && <meta itemProp="homeLocation" content={member.location} />}
+                  {member.location && <meta itemProp="workLocation" content={member.location} />}
+                  {member.linkedin && <meta itemProp="sameAs" content={member.linkedin} />}
+                      <div>
+                        <div className="flex items-start justify-between gap-4 mb-5">
+                          {member.image ? (
+                            <div className="w-14 h-14 rounded-2xl overflow-hidden border border-gray-200 shadow-xs bg-gray-50 shrink-0">
+                              <img 
+                                src={member.image} 
+                                alt={member.name} 
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          ) : (
+                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-blue-50 border border-primary/20 flex items-center justify-center font-black text-lg text-primary font-sora shadow-xs shrink-0">
+                              {member.initials}
+                            </div>
+                          )}
+
+                          {member.linkedin && (
+                            <a
+                              href={member.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0077b5] hover:text-[#005582] bg-blue-50/80 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition-colors border border-blue-200/60"
+                              title="LinkedIn Profile"
+                            >
+                              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                              </svg>
+                              <span>LinkedIn</span>
+                              <ExternalLink size={12} className="opacity-70" />
+                            </a>
+                          )}
+                        </div>
+
+                        <h3 className="text-xl font-black text-gray-900 font-sora">{member.name}</h3>
+                        <span className="text-xs font-bold text-primary block mt-0.5 mb-3">{member.role}</span>
+                        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-5">{member.bio}</p>
+                      </div>
+
+                      <div className="pt-4 border-t border-gray-100 flex flex-col gap-3">
+                        <div>
+                          <span className="text-[10px] font-extrabold uppercase text-gray-400 block mb-2">Core Domains</span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {member.expertise && member.expertise.map((tag, i) => (
+                              <span key={i} className="text-[10px] bg-blue-50 text-primary font-semibold px-2 py-0.5 rounded-md">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {member.linkedin && (
+                          <div className="pt-1">
+                            <a
+                              href={member.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-full inline-flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-blue-50/70 hover:bg-blue-100/90 text-[#0077b5] text-xs font-bold transition-all border border-blue-200/50"
+                            >
+                              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                              </svg>
+                              <span>Connect on LinkedIn</span>
+                              <ExternalLink size={12} className="opacity-70" />
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -350,7 +469,7 @@ export default function AboutUsPage() {
               Partner with an Agency That Puts Engineering First
             </h2>
             <p className="text-gray-300 text-base max-w-2xl mx-auto">
-              Schedule a strategic consultation directly with Mohammad Afwan and our senior engineering leadership.
+              Schedule a strategic consultation directly with Ayaz Khan and our senior engineering leadership.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link 
@@ -374,20 +493,119 @@ export default function AboutUsPage() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'AboutPage',
-              name: 'About AFWAN TECH',
-              description: 'Who Afwan Tech is, how we work and how we compare with top digital marketing companies and software firms.',
-              url: 'https://www.afwantech.com/about-us',
-              keywords: aboutContent.keywords.join(', '),
-              mainEntity: {
-                '@type': 'Organization',
-                name: 'AFWAN TECH',
-                founder: 'Mohammad Afwan',
-                foundingDate: '2016',
-                url: 'https://www.afwantech.com',
-                telephone: '+91 79798 50684',
-                email: 'contactafwantech@gmail.com'
-              }
+              '@graph': [
+                {
+                  '@type': 'AboutPage',
+                  '@id': 'https://www.afwantech.com/about-us#webpage',
+                  'url': 'https://www.afwantech.com/about-us',
+                  'name': 'About AFWAN TECH - Digital Growth & Web Engineering',
+                  'description': 'Who Afwan Tech is, how we work, executive leadership, and engineering architecture.',
+                  'inLanguage': 'en-IN',
+                  'keywords': aboutContent.keywords.join(', '),
+                  'about': {
+                    '@id': 'https://www.afwantech.com/#organization'
+                  }
+                },
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://www.afwantech.com/#organization',
+                  'name': 'AFWAN TECH',
+                  'legalName': 'Nazra Software Solutions',
+                  'alternateName': ['Nazra Software Solutions', 'Nazra Soft', 'AFWAN TECH'],
+                  'url': 'https://www.afwantech.com',
+                  'telephone': '+91 79798 50684',
+                  'email': 'contactafwantech@gmail.com',
+                  'address': {
+                    '@type': 'PostalAddress',
+                    'streetAddress': 'ITPL Main Rd, Pattandur Agrahara, Whitefield',
+                    'addressLocality': 'Bengaluru',
+                    'addressRegion': 'Karnataka',
+                    'postalCode': '560066',
+                    'addressCountry': 'IN'
+                  },
+                  'founder': {
+                    '@type': 'Person',
+                    '@id': 'https://www.afwantech.com/about-us#ayaz-khan',
+                    'name': 'Ayaz Khan',
+                    'jobTitle': 'Founder & CEO'
+                  },
+                  'employee': team.map(m => ({
+                    '@type': 'Person',
+                    '@id': `https://www.afwantech.com/about-us#${m.id}`,
+                    'name': m.name,
+                    'jobTitle': m.role,
+                    'sameAs': m.linkedin ? [m.linkedin] : []
+                  }))
+                },
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://www.afwantech.com/#nazra-software-solutions',
+                  'name': 'Nazra Software Solutions',
+                  'alternateName': ['Nazra Soft', 'AFWAN TECH'],
+                  'url': 'https://www.afwantech.com',
+                  'description': 'Nazra Software Solutions is a full-stack software development and platform engineering agency delivering Next.js applications and programmatic cloud architectures.',
+                  'address': {
+                    '@type': 'PostalAddress',
+                    'streetAddress': 'ITPL Main Rd, Pattandur Agrahara, Whitefield',
+                    'addressLocality': 'Bengaluru',
+                    'addressRegion': 'Karnataka',
+                    'postalCode': '560066',
+                    'addressCountry': 'IN'
+                  }
+                },
+                // Dedicated Person Entities for Google AI Overview & Knowledge Graph
+                ...team.map(m => ({
+                  '@type': 'Person',
+                  '@id': `https://www.afwantech.com/about-us#${m.id}`,
+                  'name': m.name,
+                  'jobTitle': m.role,
+                  'url': `https://www.afwantech.com/about-us#${m.id}`,
+                  'worksFor': {
+                    '@type': 'Organization',
+                    '@id': m.id === 'shahbaz-ahmad' || m.company === 'Nazra Software Solutions'
+                      ? 'https://www.afwantech.com/#nazra-software-solutions'
+                      : 'https://www.afwantech.com/#organization',
+                    'name': m.id === 'shahbaz-ahmad' || m.company === 'Nazra Software Solutions'
+                      ? 'Nazra Software Solutions'
+                      : 'AFWAN TECH',
+                    'alternateName': m.id === 'shahbaz-ahmad' ? 'AFWAN TECH' : 'Nazra Software Solutions',
+                    'url': 'https://www.afwantech.com'
+                  },
+                  'affiliation': {
+                    '@type': 'Organization',
+                    'name': m.company || 'Nazra Software Solutions'
+                  },
+                  'sameAs': m.linkedin ? [m.linkedin] : [],
+                  'description': m.id === 'shahbaz-ahmad'
+                    ? `${m.name} is the ${m.role} at Nazra Software Solutions (operating as AFWAN TECH) in ${m.location || 'Bengaluru, Karnataka, India'}. He specializes in modern React 19, Next.js App Router full-stack web engineering, programmatic SEO architecture, scalable cloud systems, and sub-second performance optimization.`
+                    : `${m.name} is the ${m.role} at ${m.company || 'AFWAN TECH'} in ${m.location || 'Bengaluru, Karnataka, India'}.`,
+                  'homeLocation': {
+                    '@type': 'Place',
+                    'name': m.location || 'Bengaluru, Karnataka, India'
+                  },
+                  'workLocation': {
+                    '@type': 'Place',
+                    'name': m.location || 'Bengaluru, Karnataka, India',
+                    'address': {
+                      '@type': 'PostalAddress',
+                      'streetAddress': 'ITPL Main Rd, Pattandur Agrahara, Whitefield',
+                      'addressLocality': 'Bengaluru',
+                      'addressRegion': 'Karnataka',
+                      'postalCode': '560066',
+                      'addressCountry': 'IN'
+                    }
+                  },
+                  'knowsAbout': m.expertise || [
+                    'Software Engineering',
+                    'Full Stack Web Development',
+                    'React.js',
+                    'Next.js',
+                    'Platform Architecture',
+                    'Programmatic SEO',
+                    'Performance Optimization'
+                  ]
+                }))
+              ]
             })
           }}
         />

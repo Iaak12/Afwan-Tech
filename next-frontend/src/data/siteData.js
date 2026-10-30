@@ -58,6 +58,15 @@ export const services = [
     features: ['Flutter & React Native', 'iOS & Android Native Builds', 'Push Notifications & Webhooks', 'Secure Biometric Auth', 'Offline-First Data Caching', 'App Store Optimization (ASO)']
   },
   {
+    title: 'CRM Software',
+    slug: 'crm-software',
+    category: 'Development',
+    shortDesc: 'Custom CRM systems, Zoho/HubSpot implementation, and seamless integrations with WhatsApp and call links.',
+    icon: 'Users',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800',
+    features: ['Custom CRM Engineering', 'Zoho & HubSpot Deployment', 'WhatsApp & Telephony Sync', 'Customer Data Migration', 'Role-Based Access Control', 'Automated Lead Pipelines']
+  },
+  {
     title: 'Search Engine Optimization (SEO)',
     slug: 'seo-services',
     category: 'Marketing & Growth',

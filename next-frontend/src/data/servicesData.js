@@ -59,6 +59,11 @@ export const servicesData = {
     desc: "World-class iOS and Android applications — native or cross-platform — delivering exceptional user experiences.",
     points: ["iOS / Android", "React Native", "Flutter", "Backend APIs", "App Store Optimization", "Push Notifications"]
   },
+  "crm-software": {
+    title: "CRM Software",
+    desc: "Custom CRM systems, Zoho/HubSpot implementation, and seamless integrations with WhatsApp, telephony, and business workflows.",
+    points: ["Custom CRM Builds", "Zoho & HubSpot Setup", "WhatsApp Automation", "Telephony / Call Links", "Data Migration", "Secure Role-Based Access"]
+  },
   "graphic-design": {
     title: "Graphic Design",
     desc: "Stunning visual identity, UI/UX, packaging, and digital creatives that make your brand impossible to ignore.",
@@ -84,6 +89,7 @@ export const megaMenuData = [
       { name: "Custom Coded Website", slug: "custom-web-development" },
       { name: "E-commerce Development", slug: "ecommerce-development" },
       { name: "App Development", slug: "app-development" },
+      { name: "CRM Software", slug: "crm-software" },
       { name: "Shopify", slug: "shopify-development" },
       { name: "WordPress", slug: "wordpress" },
     ]

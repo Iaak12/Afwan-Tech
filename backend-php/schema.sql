@@ -93,4 +93,39 @@ CREATE TABLE IF NOT EXISTS analytics_logs (
     INDEX idx_analytics_created_at (created_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- 6. Team Members & Executive Leadership Table
+CREATE TABLE IF NOT EXISTS team_members (
+    id VARCHAR(100) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    category VARCHAR(50) DEFAULT 'leadership',
+    bio TEXT NULL,
+    expertise TEXT NULL,
+    initials VARCHAR(10) NULL,
+    image VARCHAR(500) NULL,
+    linkedin VARCHAR(500) NULL,
+    location VARCHAR(255) DEFAULT 'Bengaluru, Karnataka, India',
+    is_ceo TINYINT(1) DEFAULT 0,
+    display_order INT DEFAULT 99,
+    status VARCHAR(20) DEFAULT 'active',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_team_category (category),
+    INDEX idx_team_order (display_order),
+    INDEX idx_team_status (status)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Initial Seed for Core Leadership
+INSERT INTO team_members (id, name, role, category, bio, expertise, initials, image, linkedin, location, is_ceo, display_order)
+SELECT 'ayaz-khan', 'Ayaz Khan', 'Founder & CEO', 'leadership', 'Visionary entrepreneur and digital architect leading AFWAN TECH with a singular mission — building high-performance web engineering and Page 1 organic SEO systems for ambitious businesses worldwide.', '["Executive Leadership", "Growth Strategy", "SEO Architecture", "Business Scaling"]', 'AK', '', '', 'Bengaluru, Karnataka, India', 1, 1
+WHERE NOT EXISTS (SELECT 1 FROM team_members WHERE id = 'ayaz-khan');
+
+INSERT INTO team_members (id, name, role, category, bio, expertise, initials, image, linkedin, location, is_ceo, display_order)
+SELECT 'aaliya-behal', 'Aaliya Behal', 'Co-Founder', 'leadership', 'Co-founder steering operational velocity, strategic client partnerships, and cross-functional brand expansion across India, Middle East, and global markets.', '["Operations Strategy", "Client Partnerships", "Brand Scaling", "Organizational Growth"]', 'AB', '', '', 'Bengaluru, Karnataka, India', 0, 2
+WHERE NOT EXISTS (SELECT 1 FROM team_members WHERE id = 'aaliya-behal');
+
+INSERT INTO team_members (id, name, role, category, bio, expertise, initials, image, linkedin, location, is_ceo, display_order)
+SELECT 'shahbaz-ahmad', 'Shahbaz Ahmad', 'Lead Software Engineer & Platform Architect', 'leadership', 'Lead software engineer and platform architect specializing in React 19, Next.js App Router, scalable cloud architectures, and high-performance web systems with sub-second response times.', '["React / Next.js", "Full Stack Architecture", "Node.js & PHP APIs", "Performance & Caching"]', 'SA', '', 'https://www.linkedin.com/in/shahbaz-ahmad-react/', 'Bengaluru, Karnataka, India', 0, 3
+WHERE NOT EXISTS (SELECT 1 FROM team_members WHERE id = 'shahbaz-ahmad');
+
 SET FOREIGN_KEY_CHECKS = 1;

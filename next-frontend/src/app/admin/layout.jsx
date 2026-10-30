@@ -7,7 +7,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { 
   LayoutDashboard, BarChart3, Mail, MapPin, Globe, 
   Settings, ArrowLeft, ShieldCheck, ExternalLink, Menu, X, LogOut, Loader2,
-  PhoneCall, Calendar, FileText, Zap
+  PhoneCall, Calendar, FileText, Zap, Users
 } from 'lucide-react';
 
 export default function AdminLayout({ children }) {
@@ -83,6 +83,7 @@ export default function AdminLayout({ children }) {
     { label: 'Web Analytics', href: '/admin/analytics', icon: BarChart3 },
     { label: 'Blog Scheduler (1 per week)', href: '/admin/blogs', icon: Calendar },
     { label: 'Page Content & SEO', href: '/admin/content', icon: FileText },
+    { label: 'Team & Leadership', href: '/admin/team', icon: Users },
     { label: 'Public Market Area', href: '/market-area', icon: Globe },
   ];
 

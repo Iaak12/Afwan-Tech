@@ -21,6 +21,7 @@ const allServicesNav = [
   { slug: 'custom-web-development', title: 'Custom Web Applications', icon: Layers },
   { slug: 'ecommerce-development', title: 'E-Commerce Development', icon: ShoppingCart },
   { slug: 'app-development', title: 'Mobile App Development', icon: Smartphone },
+  { slug: 'crm-software', title: 'CRM Software & Integration', icon: Users },
   { slug: 'seo-services', title: 'Search Engine Optimization', icon: Search },
   { slug: 'ppc-paid-ads', title: 'PPC & Paid Search Advertising', icon: TrendingUp },
   { slug: 'social-media-management', title: 'Social Media Management', icon: Globe },
@@ -501,6 +502,82 @@ export default function ServicePageTemplate({ data, location }) {
             </div>
           </div>
         </section>
+
+        {/* Service Specific Pricing Plans (if provided) */}
+        {data.pricingPlans && data.pricingPlans.length > 0 && (
+          <section className="py-16 md:py-24 bg-gradient-to-b from-white via-blue-50/20 to-white border-b border-gray-100">
+            <div className="max-w-[1360px] mx-auto px-6">
+              <div className="text-center max-w-2xl mx-auto mb-12">
+                <span className="text-xs font-black uppercase tracking-widest text-primary font-sora block mb-2">
+                  Transparent Packages
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-black text-[#0f172a] font-sora">
+                  {data.title} Pricing & Packages
+                </h2>
+                <p className="text-gray-500 text-sm mt-3">
+                  Predictable monthly investment engineered for sustainable reach, viral creative formats, and community advocacy.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+                {data.pricingPlans.map((plan) => (
+                  <div 
+                    key={plan.id}
+                    className={`bg-white rounded-3xl p-8 md:p-10 border transition-all duration-300 flex flex-col justify-between relative ${plan.popular ? 'border-primary shadow-2xl shadow-primary/10 ring-2 ring-primary/20 scale-105 z-10' : (plan.isVip ? 'border-purple-300 shadow-xl shadow-purple-500/5' : 'border-gray-200/80 shadow-md hover:shadow-xl')}`}
+                  >
+                    {plan.popular && (
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-[11px] font-black uppercase tracking-wider px-4 py-1 rounded-full shadow-md">
+                        {plan.tag || 'Most Popular Choice'}
+                      </div>
+                    )}
+                    {plan.isVip && !plan.popular && (
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-[11px] font-black uppercase tracking-wider px-4 py-1 rounded-full shadow-md">
+                        {plan.tag || 'Maximum Impact'}
+                      </div>
+                    )}
+
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-xl font-extrabold text-[#0f172a]">{plan.name}</h3>
+                      </div>
+
+                      <p className="text-xs text-gray-500 leading-relaxed mb-6 min-h-[36px]">
+                        {plan.desc}
+                      </p>
+
+                      <div className="flex items-baseline gap-1 mb-8 pb-6 border-b border-gray-100">
+                        <span className="text-4xl sm:text-5xl font-black text-[#0f172a] font-sora">
+                          {plan.price}
+                        </span>
+                        <span className="text-xs text-gray-400 font-bold">{plan.period}</span>
+                      </div>
+
+                      <div className="space-y-3 mb-8">
+                        <span className="text-[11px] font-black uppercase tracking-wider text-gray-400 block mb-2">
+                          Included Deliverables:
+                        </span>
+                        {plan.features.map((feat, i) => (
+                          <div key={i} className="flex items-start gap-2.5 text-xs text-gray-700 leading-normal">
+                            <Check size={14} className="text-primary flex-shrink-0 mt-0.5" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <Link
+                      href="/contact-us"
+                      className={`w-full py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-center transition-all flex items-center justify-center gap-2 cursor-pointer ${plan.popular ? 'btn-primary shadow-lg shadow-primary/25' : (plan.isVip ? 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white shadow-md' : 'bg-gray-100 hover:bg-gray-200 text-gray-800')}`}
+                    >
+                      <span>Get Started with {plan.name}</span>
+                      <ArrowRight size={14} />
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* 16 Comprehensive FAQs Accordion */}
         {data.faqs && data.faqs.length > 0 && (

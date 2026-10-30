@@ -1,0 +1,1812 @@
+﻿{
+    "slug":  "pricing",
+    "title":  "Pricing",
+    "h1":  "Clear Pricing for Websites, Logos and Affordable Local SEO Services",
+    "tagline":  "Published SEO plan prices, starting prices for WordPress websites and logo design, and honest quotes for everything else, with no hidden charges.",
+    "heroSubtitle":  "Clear pricing for websites, logos and affordable local SEO services across India. Transparent deliverables, milestone invoicing, and zero vendor lock-in.",
+    "metaTitle":  "Website Cost \u0026 Affordable Local SEO Services | AFWAN TECH",
+    "metaDescription":  "Affordable local SEO services from â‚¹15,000/month, WordPress websites from â‚¹5,999 and logo design from â‚¹2,000. Clear pricing, GST extra, no hidden costs.",
+    "keywords":  [
+                     "affordable local seo services",
+                     "website development charges",
+                     "website development costs",
+                     "affordable search engine optimization",
+                     "website design india price",
+                     "website creation charges in india",
+                     "website creation cost in india",
+                     "affordable seo services",
+                     "ecommerce website price",
+                     "ecommerce website cost"
+                 ],
+    "schema_jsonld":  {
+                          "@context":  "https://schema.org",
+                          "@graph":  [
+                                         {
+                                             "@type":  [
+                                                           "Organization",
+                                                           "ProfessionalService"
+                                                       ],
+                                             "@id":  "https://www.afwantech.com/#organization",
+                                             "name":  "Afwan Tech",
+                                             "url":  "https://www.afwantech.com/",
+                                             "telephone":  "+91-7979850684",
+                                             "email":  "contactafwantech@gmail.com",
+                                             "address":  {
+                                                             "@type":  "PostalAddress",
+                                                             "streetAddress":  "ITPL Main Rd, Pattandur Agrahara, Whitefield",
+                                                             "addressLocality":  "Bengaluru",
+                                                             "addressRegion":  "Karnataka",
+                                                             "postalCode":  "560066",
+                                                             "addressCountry":  "IN"
+                                                         }
+                                         },
+                                         {
+                                             "@type":  "OfferCatalog",
+                                             "@id":  "https://www.afwantech.com/pricing#catalog",
+                                             "name":  "Afwan Tech pricing",
+                                             "url":  "https://www.afwantech.com/pricing",
+                                             "itemListElement":  [
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "SEO Local plan",
+                                                                         "description":  "Up to 5 cities, 1 state; 15 keywords; 4 blogs/month; 1 Google Business Profile",
+                                                                         "price":  15000,
+                                                                         "priceCurrency":  "INR",
+                                                                         "priceSpecification":  {
+                                                                                                    "@type":  "UnitPriceSpecification",
+                                                                                                    "price":  15000,
+                                                                                                    "priceCurrency":  "INR",
+                                                                                                    "unitText":  "MONTH",
+                                                                                                    "referenceQuantity":  {
+                                                                                                                              "@type":  "QuantitativeValue",
+                                                                                                                              "value":  1,
+                                                                                                                              "unitCode":  "MON"
+                                                                                                                          },
+                                                                                                    "valueAddedTaxIncluded":  false
+                                                                                                },
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "SEO Local plan",
+                                                                                             "serviceType":  "Search engine optimization",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "SEO State plan",
+                                                                         "description":  "10 states and 10 cities; 50 keywords; 8 blogs/month; up to 3 Google Business Profiles",
+                                                                         "price":  25000,
+                                                                         "priceCurrency":  "INR",
+                                                                         "priceSpecification":  {
+                                                                                                    "@type":  "UnitPriceSpecification",
+                                                                                                    "price":  25000,
+                                                                                                    "priceCurrency":  "INR",
+                                                                                                    "unitText":  "MONTH",
+                                                                                                    "referenceQuantity":  {
+                                                                                                                              "@type":  "QuantitativeValue",
+                                                                                                                              "value":  1,
+                                                                                                                              "unitCode":  "MON"
+                                                                                                                          },
+                                                                                                    "valueAddedTaxIncluded":  false
+                                                                                                },
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "SEO State plan",
+                                                                                             "serviceType":  "Search engine optimization",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "SEO Pan-India plan",
+                                                                         "description":  "50 cities, 37 states/UTs, 10 countries; 100 keywords; 12 blogs/month; up to 5 Google Business Profiles",
+                                                                         "price":  35000,
+                                                                         "priceCurrency":  "INR",
+                                                                         "priceSpecification":  {
+                                                                                                    "@type":  "UnitPriceSpecification",
+                                                                                                    "price":  35000,
+                                                                                                    "priceCurrency":  "INR",
+                                                                                                    "unitText":  "MONTH",
+                                                                                                    "referenceQuantity":  {
+                                                                                                                              "@type":  "QuantitativeValue",
+                                                                                                                              "value":  1,
+                                                                                                                              "unitCode":  "MON"
+                                                                                                                          },
+                                                                                                    "valueAddedTaxIncluded":  false
+                                                                                                },
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "SEO Pan-India plan",
+                                                                                             "serviceType":  "Search engine optimization",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "SEO Enterprise plan",
+                                                                         "description":  "Custom quote after a free requirement review",
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "SEO Enterprise plan",
+                                                                                             "serviceType":  "Search engine optimization",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "WordPress website",
+                                                                         "priceCurrency":  "INR",
+                                                                         "priceSpecification":  {
+                                                                                                    "@type":  "PriceSpecification",
+                                                                                                    "minPrice":  5999,
+                                                                                                    "priceCurrency":  "INR",
+                                                                                                    "valueAddedTaxIncluded":  false
+                                                                                                },
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "WordPress website",
+                                                                                             "serviceType":  "Website development",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "Logo design",
+                                                                         "priceCurrency":  "INR",
+                                                                         "priceSpecification":  {
+                                                                                                    "@type":  "PriceSpecification",
+                                                                                                    "minPrice":  2000,
+                                                                                                    "priceCurrency":  "INR",
+                                                                                                    "valueAddedTaxIncluded":  false
+                                                                                                },
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "Logo design",
+                                                                                             "serviceType":  "Logo design",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "Custom-coded website",
+                                                                         "description":  "Custom quote after a free requirement review",
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "Custom-coded website",
+                                                                                             "serviceType":  "Website development",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "E-commerce website",
+                                                                         "description":  "Custom quote after a free requirement review",
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "E-commerce website",
+                                                                                             "serviceType":  "E-commerce development",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "Mobile app development",
+                                                                         "description":  "Custom quote after a free requirement review",
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "Mobile app development",
+                                                                                             "serviceType":  "Mobile app development",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "PPC and paid ads management",
+                                                                         "description":  "Custom quote after a free requirement review",
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "PPC and paid ads management",
+                                                                                             "serviceType":  "Pay-per-click advertising",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "Social media management",
+                                                                         "description":  "Custom quote after a free requirement review",
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "Social media management",
+                                                                                             "serviceType":  "Social media marketing",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "Offer",
+                                                                         "name":  "CRM software",
+                                                                         "description":  "Custom quote after a free requirement review",
+                                                                         "itemOffered":  {
+                                                                                             "@type":  "Service",
+                                                                                             "name":  "CRM software",
+                                                                                             "serviceType":  "CRM software development",
+                                                                                             "provider":  {
+                                                                                                              "@id":  "https://www.afwantech.com/#organization"
+                                                                                                          }
+                                                                                         },
+                                                                         "seller":  {
+                                                                                        "@id":  "https://www.afwantech.com/#organization"
+                                                                                    },
+                                                                         "url":  "https://www.afwantech.com/pricing"
+                                                                     }
+                                                                 ]
+                                         },
+                                         {
+                                             "@type":  "WebPage",
+                                             "@id":  "https://www.afwantech.com/pricing#webpage",
+                                             "url":  "https://www.afwantech.com/pricing",
+                                             "name":  "Website Cost \u0026 Affordable Local SEO Services",
+                                             "description":  "Affordable local SEO services from â‚¹15,000/month, WordPress websites from â‚¹5,999 and logo design from â‚¹2,000. Clear pricing, GST extra, no hidden costs.",
+                                             "inLanguage":  "en-IN",
+                                             "publisher":  {
+                                                               "@id":  "https://www.afwantech.com/#organization"
+                                                           },
+                                             "mainEntity":  {
+                                                                "@id":  "https://www.afwantech.com/pricing#catalog"
+                                                            },
+                                             "breadcrumb":  {
+                                                                "@id":  "https://www.afwantech.com/pricing#breadcrumb"
+                                                            },
+                                             "dateModified":  "2026-10-30"
+                                         },
+                                         {
+                                             "@type":  "BreadcrumbList",
+                                             "@id":  "https://www.afwantech.com/pricing#breadcrumb",
+                                             "itemListElement":  [
+                                                                     {
+                                                                         "@type":  "ListItem",
+                                                                         "position":  1,
+                                                                         "name":  "Home",
+                                                                         "item":  "https://www.afwantech.com/"
+                                                                     },
+                                                                     {
+                                                                         "@type":  "ListItem",
+                                                                         "position":  2,
+                                                                         "name":  "Pricing",
+                                                                         "item":  "https://www.afwantech.com/pricing"
+                                                                     }
+                                                                 ]
+                                         },
+                                         {
+                                             "@type":  "FAQPage",
+                                             "@id":  "https://www.afwantech.com/pricing#faq",
+                                             "mainEntity":  [
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "How much do your affordable local SEO services cost?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "Our affordable local SEO services start at â‚¹15,000 per month for the Local plan, which covers up to 5 cities in one state. The State plan is â‚¹25,000 per month and the Pan-India plan is â‚¹35,000 per month, while Enterprise is quoted separately. All prices exclude GST."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "Are your prices inclusive of GST?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "No, all prices on this page exclude GST, which is added to your invoice as applicable."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "Is there a minimum contract for SEO plans?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "We recommend at least three months, because search engines need time to crawl and trust changes. Ask us about notice periods before you start."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "Do you guarantee first-page rankings?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "No. Nobody can honestly guarantee a ranking on Google, so we promise transparent monthly work, tracked keywords and plain-language reports instead."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "What are the website development charges for a WordPress website?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "WordPress websites start from â‚¹5,999 for a simple, mobile-friendly business website. The final price depends on pages, design, features and content, and your written quote lists everything included."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "How much does a custom-coded website cost?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "The price of a custom-coded website depends on your requirements, such as design, features, integrations and security. We share a written quote after a free discussion."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "What is the average website cost in India?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "There is no single average, because a simple brochure website and a portal with logins and payments are very different projects. Compare quotes by what they include, such as pages, features, hosting, content and support."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "Are domain and hosting included in the website price?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "It depends on the package, and your quote will clearly say whether the domain, hosting, SSL and business email are included or paid directly by you."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "How is the ecommerce website cost calculated?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "The ecommerce website cost depends on the platform, number of products, payments, shipping, integrations and design. We quote after understanding your catalogue and sales process."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "How do I get a mobile app development quotation?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "Share the users of your app, the main features, reference apps, platforms and timeline. We reply with a written quote covering scope, milestones and third-party costs."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "Why does mobile app development cost vary so much?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "The cost changes with the number of platforms, screens, features, back-end work, integrations and design. A simple information app costs far less than a booking or delivery app with payments and tracking."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "How much does logo design cost?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "Logo design starts from â‚¹2,000 for a simple, original logo with a set number of concepts and revisions. Full brand identity packages are quoted separately."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "Is ad spend included in your PPC management price?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "No, ad spend is paid directly to Google, Meta or other platforms. Our fee covers planning, setup, management and reporting."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "Can I upgrade or downgrade my SEO plan?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "Yes, you can move between plans as your business grows or changes. We review your goals before switching so the work stays consistent."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "Who owns the website and accounts after the project?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "You do. Your website, content, logo files, Google Business Profile, analytics and ad accounts stay in your business name."
+                                                                                       }
+                                                                },
+                                                                {
+                                                                    "@type":  "Question",
+                                                                    "name":  "How do I get a quote for services without a published price?",
+                                                                    "acceptedAnswer":  {
+                                                                                           "@type":  "Answer",
+                                                                                           "text":  "Call 79798 50684, message us on WhatsApp or email contactafwantech@gmail.com with a short description of what you need. We will set up a free call and send a written quote."
+                                                                                       }
+                                                                }
+                                                            ]
+                                         }
+                                     ]
+                      },
+    "faqs":  [
+                 {
+                     "q":  "How much do your affordable local SEO services cost?",
+                     "a":  "Our affordable local SEO services start at â‚¹15,000 per month for the Local plan, which covers up to 5 cities in one state. The State plan is â‚¹25,000 per month and the Pan-India plan is â‚¹35,000 per month, while Enterprise is quoted separately. All prices exclude GST."
+                 },
+                 {
+                     "q":  "Are your prices inclusive of GST?",
+                     "a":  "No, all prices on this page exclude GST, which is added to your invoice as applicable."
+                 },
+                 {
+                     "q":  "Is there a minimum contract for SEO plans?",
+                     "a":  "We recommend at least three months, because search engines need time to crawl and trust changes. Ask us about notice periods before you start."
+                 },
+                 {
+                     "q":  "Do you guarantee first-page rankings?",
+                     "a":  "No. Nobody can honestly guarantee a ranking on Google, so we promise transparent monthly work, tracked keywords and plain-language reports instead."
+                 },
+                 {
+                     "q":  "What are the website development charges for a WordPress website?",
+                     "a":  "WordPress websites start from â‚¹5,999 for a simple, mobile-friendly business website. The final price depends on pages, design, features and content, and your written quote lists everything included."
+                 },
+                 {
+                     "q":  "How much does a custom-coded website cost?",
+                     "a":  "The price of a custom-coded website depends on your requirements, such as design, features, integrations and security. We share a written quote after a free discussion."
+                 },
+                 {
+                     "q":  "What is the average website cost in India?",
+                     "a":  "There is no single average, because a simple brochure website and a portal with logins and payments are very different projects. Compare quotes by what they include, such as pages, features, hosting, content and support."
+                 },
+                 {
+                     "q":  "Are domain and hosting included in the website price?",
+                     "a":  "It depends on the package, and your quote will clearly say whether the domain, hosting, SSL and business email are included or paid directly by you."
+                 },
+                 {
+                     "q":  "How is the ecommerce website cost calculated?",
+                     "a":  "The ecommerce website cost depends on the platform, number of products, payments, shipping, integrations and design. We quote after understanding your catalogue and sales process."
+                 },
+                 {
+                     "q":  "How do I get a mobile app development quotation?",
+                     "a":  "Share the users of your app, the main features, reference apps, platforms and timeline. We reply with a written quote covering scope, milestones and third-party costs."
+                 },
+                 {
+                     "q":  "Why does mobile app development cost vary so much?",
+                     "a":  "The cost changes with the number of platforms, screens, features, back-end work, integrations and design. A simple information app costs far less than a booking or delivery app with payments and tracking."
+                 },
+                 {
+                     "q":  "How much does logo design cost?",
+                     "a":  "Logo design starts from â‚¹2,000 for a simple, original logo with a set number of concepts and revisions. Full brand identity packages are quoted separately."
+                 },
+                 {
+                     "q":  "Is ad spend included in your PPC management price?",
+                     "a":  "No, ad spend is paid directly to Google, Meta or other platforms. Our fee covers planning, setup, management and reporting."
+                 },
+                 {
+                     "q":  "Can I upgrade or downgrade my SEO plan?",
+                     "a":  "Yes, you can move between plans as your business grows or changes. We review your goals before switching so the work stays consistent."
+                 },
+                 {
+                     "q":  "Who owns the website and accounts after the project?",
+                     "a":  "You do. Your website, content, logo files, Google Business Profile, analytics and ad accounts stay in your business name."
+                 },
+                 {
+                     "q":  "How do I get a quote for services without a published price?",
+                     "a":  "Call 79798 50684, message us on WhatsApp or email contactafwantech@gmail.com with a short description of what you need. We will set up a free call and send a written quote."
+                 }
+             ],
+    "main_content":  [
+                         {
+                             "type":  "h1",
+                             "text":  "Clear Pricing for Websites, Logos and Affordable Local SEO Services"
+                         },
+                         {
+                             "type":  "tagline",
+                             "text":  "Published SEO plan prices, starting prices for WordPress websites and logo design, and honest quotes for everything else, with no hidden charges."
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Afwan Tech publishes its main prices so you can plan before you call. Our affordable local SEO services start at â‚¹15,000 per month, WordPress websites start from â‚¹5,999, and logo design starts from â‚¹2,000. Custom-coded websites, e-commerce stores, mobile apps, CRM software and other projects are priced after we understand your requirements, because their scope varies widely. All prices are in Indian rupees and exclude GST; advertising spend is always separate."
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "This page explains what each SEO plan includes, what decides website development charges, why e-commerce and app costs differ so much, how we prepare a quote and which costs are paid to third parties. It also answers common questions about website cost in India, so you can compare offers fairly, whether you choose us or another provider."
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "SEO plans: Local â‚¹15,000, State â‚¹25,000 and Pan-India â‚¹35,000 per month; Enterprise quoted",
+                                           "WordPress website development from â‚¹5,999",
+                                           "Logo design from â‚¹2,000",
+                                           "Custom-coded websites, e-commerce, apps, CRM, ads and social media: quoted after a free requirement review",
+                                           "Prices exclude GST; ad spend, domains, hosting and paid plugins are separate unless your quote says otherwise",
+                                           "You own your website, content and accounts"
+                                       ]
+                         },
+                         {
+                             "type":  "cta",
+                             "buttons":  [
+                                             "Get a Free Quote",
+                                             "Call 79798 50684",
+                                             "Chat on WhatsApp"
+                                         ]
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Pricing at a Glance"
+                         },
+                         {
+                             "type":  "table",
+                             "header":  [
+                                            "Service",
+                                            "Price",
+                                            "How it is billed"
+                                        ],
+                             "rows":  [
+                                          [
+                                              "SEO â€“ Local plan",
+                                              "â‚¹15,000 per month",
+                                              "Monthly; we recommend at least 3 months"
+                                          ],
+                                          [
+                                              "SEO â€“ State plan",
+                                              "â‚¹25,000 per month",
+                                              "Monthly; we recommend at least 3 months"
+                                          ],
+                                          [
+                                              "SEO â€“ Pan-India plan",
+                                              "â‚¹35,000 per month",
+                                              "Monthly; we recommend at least 3 months"
+                                          ],
+                                          [
+                                              "SEO â€“ Enterprise plan",
+                                              "Custom quote",
+                                              "Quoted after a free call about your cities, countries and goals"
+                                          ],
+                                          [
+                                              "WordPress website",
+                                              "From â‚¹5,999",
+                                              "One-time project price; final total depends on scope"
+                                          ],
+                                          [
+                                              "Custom-coded website",
+                                              "Custom quote",
+                                              "Depends on pages, features, integrations and design"
+                                          ],
+                                          [
+                                              "E-commerce website",
+                                              "Custom quote",
+                                              "Depends on platform, products, payments and integrations"
+                                          ],
+                                          [
+                                              "Mobile app",
+                                              "Custom quote",
+                                              "Depends on platforms, features and back end"
+                                          ],
+                                          [
+                                              "Logo design",
+                                              "From â‚¹2,000",
+                                              "One-time; brand identity packages quoted separately"
+                                          ],
+                                          [
+                                              "PPC and paid ads management",
+                                              "Custom quote",
+                                              "Management fee; ad spend paid directly to Google, Meta and others"
+                                          ],
+                                          [
+                                              "Social media management",
+                                              "Custom quote",
+                                              "Monthly, based on platforms and content volume"
+                                          ],
+                                          [
+                                              "UI/UX design, custom web apps and CRM software",
+                                              "Custom quote",
+                                              "Based on scope after discovery"
+                                          ]
+                                      ]
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Prices are in Indian rupees and exclude GST. Prices listed as \"from\" are starting prices; your written quote shows the exact total before any work starts."
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "SEO Plans and Pricing: Affordable Local SEO Services"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Our SEO plans are built around how far you want to reach: one city, several states, all of India or many countries. Every plan includes a free website check before we start, a monthly content plan, technical fixes on your existing site, a plain-language monthly report and updates on WhatsApp. If you have been searching for affordable local SEO services that show their price openly, the Local plan is the place to start."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Local Plan â€“ â‚¹15,000 per month"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "For clinics, shops, consultants and service businesses that serve one city or a few nearby ones."
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "Up to 5 cities and 1 state",
+                                           "15 keywords tracked and 2 competitors monitored",
+                                           "5 existing pages optimised, with titles, descriptions and headings written by us",
+                                           "4 SEO blog articles a month",
+                                           "1 Google Business Profile managed",
+                                           "20 local listings and directories",
+                                           "5 quality backlinks a month",
+                                           "Speed, mobile and indexing fixes; sitemap, broken links and redirects",
+                                           "Technical check once a quarter",
+                                           "Live dashboard for keywords and pages",
+                                           "Monthly report and monthly review call"
+                                       ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "State Plan â€“ â‚¹25,000 per month (most popular)"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "For growing businesses, schools, hotels and stores that want customers from many cities and states."
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "10 states and 10 major cities",
+                                           "50 keywords tracked and 5 competitors monitored",
+                                           "15 existing pages optimised",
+                                           "City and service landing pages, up to 200, each with genuinely useful local content",
+                                           "8 SEO blog articles a month, with a blog scheduler",
+                                           "Up to 3 Google Business Profiles managed",
+                                           "50 local listings and directories; 15 quality backlinks a month",
+                                           "Schema markup for rich results",
+                                           "Full dashboard with live web analytics, WhatsApp and call tap tracking, and a lead enquiries inbox",
+                                           "Monthly technical check, monthly report and monthly review call"
+                                       ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Pan-India Plan â€“ â‚¹35,000 per month"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "For brands, exporters and service companies that want to be found in cities across India and in other countries."
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "Up to 50 cities, all 37 states and union territories, and up to 10 countries",
+                                           "100 keywords tracked and 8 competitors monitored",
+                                           "30 existing pages optimised",
+                                           "City and service pages for all 50 cities and your services, written to avoid thin or duplicate content",
+                                           "12 SEO blog articles a month, with a blog scheduler",
+                                           "Up to 5 Google Business Profiles managed",
+                                           "75 local listings and directories; 25 quality backlinks a month",
+                                           "Full dashboard, analytics, call and WhatsApp tracking, and lead inbox",
+                                           "Monthly technical check, review call every two weeks and priority replies"
+                                       ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Enterprise Plan â€“ Custom Quote"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "For large brands and multi-location companies that want the widest reach, with a plan and price set around their needs."
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "Up to 560 cities, all 37 states and territories, and up to 52 countries",
+                                           "200 keywords tracked and 10 competitors monitored",
+                                           "40 existing pages optimised, plus bulk editing of titles and descriptions from your admin",
+                                           "20 SEO blog articles a month, with a blog scheduler",
+                                           "Up to 10 Google Business Profiles managed",
+                                           "100 local listings and directories; 30 quality backlinks a month",
+                                           "Admin control centre: live web analytics, WhatsApp and call taps, lead inbox, city and service pages, bulk title and description import",
+                                           "Review call every two weeks and priority replies"
+                                       ]
+                         },
+                         {
+                             "type":  "link_note",
+                             "links":  [
+                                           {
+                                               "anchor":  "SEO services",
+                                               "url":  "https://www.afwantech.com/services/seo-services",
+                                               "live":  true
+                                           }
+                                       ]
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Compare SEO Plans Side by Side"
+                         },
+                         {
+                             "type":  "table",
+                             "header":  [
+                                            "Feature",
+                                            "Local",
+                                            "State",
+                                            "Pan-India",
+                                            "Enterprise"
+                                        ],
+                             "rows":  [
+                                          [
+                                              "Price per month (excl. GST)",
+                                              "â‚¹15,000",
+                                              "â‚¹25,000",
+                                              "â‚¹35,000",
+                                              "Custom quote"
+                                          ],
+                                          [
+                                              "Best for",
+                                              "One city or a few nearby",
+                                              "Many cities and states",
+                                              "All of India and abroad",
+                                              "Large and multi-location brands"
+                                          ],
+                                          [
+                                              "Cities and areas covered",
+                                              "Up to 5 cities, 1 state",
+                                              "10 states, 10 major cities",
+                                              "50 cities, 37 states/UTs, 10 countries",
+                                              "560 cities, 37 states/UTs, 52 countries"
+                                          ],
+                                          [
+                                              "Keywords tracked",
+                                              "15",
+                                              "50",
+                                              "100",
+                                              "200"
+                                          ],
+                                          [
+                                              "Competitors monitored",
+                                              "2",
+                                              "5",
+                                              "8",
+                                              "10"
+                                          ],
+                                          [
+                                              "Existing pages optimised",
+                                              "5",
+                                              "15",
+                                              "30",
+                                              "40"
+                                          ],
+                                          [
+                                              "Schema markup",
+                                              "Not included",
+                                              "Included",
+                                              "Included",
+                                              "Included"
+                                          ],
+                                          [
+                                              "Blog articles per month",
+                                              "4",
+                                              "8",
+                                              "12",
+                                              "20"
+                                          ],
+                                          [
+                                              "Google Business Profiles",
+                                              "1",
+                                              "Up to 3",
+                                              "Up to 5",
+                                              "Up to 10"
+                                          ],
+                                          [
+                                              "Local listings and directories",
+                                              "20",
+                                              "50",
+                                              "75",
+                                              "100"
+                                          ],
+                                          [
+                                              "Quality backlinks per month",
+                                              "5",
+                                              "15",
+                                              "25",
+                                              "30"
+                                          ],
+                                          [
+                                              "Technical check",
+                                              "Quarterly",
+                                              "Monthly",
+                                              "Monthly",
+                                              "Monthly"
+                                          ],
+                                          [
+                                              "Dashboard",
+                                              "Keywords and pages",
+                                              "Full, with analytics and leads",
+                                              "Full, with analytics and leads",
+                                              "Admin control centre"
+                                          ],
+                                          [
+                                              "Review call",
+                                              "Monthly",
+                                              "Monthly",
+                                              "Every two weeks",
+                                              "Every two weeks"
+                                          ]
+                                      ]
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "All plans include a free website check, a content plan, speed, mobile and indexing fixes, sitemap and redirect clean-up, a review plan for your customers, a plain-language monthly report and WhatsApp updates."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "What \"Quality Backlinks\" Means in Our Plans"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "We earn links from relevant directories, local listings, industry sites, partners and genuine mentions. We do not buy links from link farms or private blog networks, because those can harm a website. The monthly number in each plan is our working target; we report every link we build so you can check it yourself."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Why We Recommend at Least Three Months"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Search engines take time to crawl changes, and new content needs time to earn trust. For that reason we recommend a minimum of three months on any plan. Many businesses start to see movement in rankings and enquiries within three to six months, but results depend on your competition, your website\u0027s history and how quickly changes go live, so we never promise a fixed outcome or the first position."
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Affordable SEO Services: What Makes a Plan Good Value"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Affordable SEO services are not simply the cheapest ones. A low monthly fee that delivers no real work, or that relies on spammy links, costs more in the long run. Good value means you know exactly what is done every month, the work suits your size, and the reports show real progress. Our affordable local SEO services are priced so a single-city clinic or shop pays only for the reach it needs, while a growing business can move up a plan without starting over."
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "When you compare affordable search engine optimization offers, check these points:"
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "Is the monthly price published or at least written down, with deliverables listed?",
+                                           "Are the number of keywords, pages, blogs and listings clear?",
+                                           "Who owns the website, content, Google Business Profile and analytics accounts?",
+                                           "How are backlinks built, and will you see a list?",
+                                           "Is there a lock-in period, and what happens if you stop?",
+                                           "Are reports in plain language, with enquiries and calls tracked, not just rankings?",
+                                           "Does anyone promise \"guaranteed first page\" results? That is a warning sign."
+                                       ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Affordable SEO Service for Small Business Owners"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "An affordable SEO service for small business owners should focus on the searches that bring paying customers nearby, not vanity keywords. For most small businesses this means a well-managed Google Business Profile, accurate listings, reviews, a fast mobile website and pages that answer local questions. That is exactly what our Local plan covers. If you serve only one area, you do not need a nationwide plan; if you later open a second branch or start selling across India, you can upgrade."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Affordable Local SEO Services vs DIY SEO"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Some owners handle basic SEO themselves, and that can work for very small websites. You can claim your Google Business Profile, ask customers for reviews and keep your contact details consistent for free. Affordable local SEO services make sense when you do not have the time to research keywords, write content every month, fix technical issues and build listings consistently. Whatever you choose, keep ownership of every account in your business name."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Which SEO Plan Is Right for You?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Choosing a plan is easier when you start from where your customers are, not from the number of keywords. Use these examples as a guide; we confirm the right fit during the free website check."
+                         },
+                         {
+                             "type":  "table",
+                             "header":  [
+                                            "Your situation",
+                                            "Plan that usually fits",
+                                            "Why"
+                                        ],
+                             "rows":  [
+                                          [
+                                              "A clinic, salon, coaching centre or shop serving one city",
+                                              "Local",
+                                              "Google Business Profile, local listings, reviews and a few strong pages matter most"
+                                          ],
+                                          [
+                                              "A service business covering nearby towns in one state",
+                                              "Local",
+                                              "Up to 5 cities can be targeted with useful area pages"
+                                          ],
+                                          [
+                                              "A school group, hotel chain or distributor across several states",
+                                              "State",
+                                              "More cities, more Google Business Profiles and landing pages for each area"
+                                          ],
+                                          [
+                                              "A brand selling or serving customers anywhere in India",
+                                              "Pan-India",
+                                              "City and service pages at scale, more content and wider keyword tracking"
+                                          ],
+                                          [
+                                              "An exporter or company targeting other countries too",
+                                              "Pan-India or Enterprise",
+                                              "Country targeting, more competitors and more content"
+                                          ],
+                                          [
+                                              "A large multi-location business with many branches",
+                                              "Enterprise",
+                                              "Many profiles, bulk page management and an admin control centre"
+                                          ]
+                                      ]
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "If you are unsure, start smaller. Moving up a plan later is simple, and the work already done carries forward."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "How We Keep City Pages Useful"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Plans that include city and service pages can help you appear for searches in many places, but only if each page is genuinely useful. Pages that only swap the city name can be treated as low-quality by search engines. We write every location page with real details, such as the areas you serve, delivery or visit times, local projects you are allowed to show and answers to local questions. If you do not serve a place, we do not create a page for it."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "What Affordable Local SEO Services Include Every Month"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Whichever plan you choose, our affordable local SEO services follow the same monthly rhythm. In the first week we review rankings, enquiries and any technical issues. Through the month we publish the planned blog articles, update pages, add listings and build links. We also post updates on your Google Business Profile and reply to reviews if you want us to. At the end of the month you receive a report that explains, in plain words, what was done, what changed and what we will focus on next."
+                         },
+                         {
+                             "type":  "link_note",
+                             "links":  [
+                                           {
+                                               "anchor":  "local SEO",
+                                               "url":  "https://www.afwantech.com/services/seo-services",
+                                               "live":  true
+                                           },
+                                           {
+                                               "anchor":  "SEO blog",
+                                               "url":  "https://www.afwantech.com/blog",
+                                               "live":  true
+                                           }
+                                       ]
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Website Development Charges and Website Cost in India"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Website development charges depend on what the website needs to do. A five-page brochure site for a consultant is very different from a portal with logins, bookings and payments. That is why we publish a starting price for WordPress websites and quote custom-coded websites only after understanding your requirements."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "WordPress Website â€“ From â‚¹5,999"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Our WordPress websites start from â‚¹5,999. This starting price suits a simple, professional website for a small business or professional, and covers:"
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "A responsive, mobile-friendly design based on a theme customised to your brand",
+                                           "Key pages such as Home, About, Services and Contact",
+                                           "A contact or enquiry form with a WhatsApp and click-to-call button",
+                                           "Basic on-page SEO setup: titles, descriptions, headings and an XML sitemap",
+                                           "Google Map embed and links to your social profiles",
+                                           "Basic training so you can update text and images yourself"
+                                       ]
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The final price goes up with more pages, custom design work, blogs, multiple languages, booking or payment features, premium plugins and content writing. Your quote lists what is included before you pay anything."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Custom-Coded Website â€“ Price Depends on Requirements"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "A custom-coded website is designed and built from scratch, usually with a modern framework, for businesses that need unique design, high speed, special features or integrations with other software. Because every project is different, the price depends on your requirements. We share a written quote after a free discussion and, for larger projects, a short discovery phase."
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Common reasons to choose custom code include a portal with customer or staff logins, a booking engine, dashboards, integrations with CRM or ERP software, very high traffic, or strict security needs."
+                         },
+                         {
+                             "type":  "link_note",
+                             "links":  [
+                                           {
+                                               "anchor":  "website development",
+                                               "url":  "https://www.afwantech.com/services/website-development",
+                                               "live":  true
+                                           },
+                                           {
+                                               "anchor":  "custom web development",
+                                               "url":  "https://www.afwantech.com/services/custom-web-development",
+                                               "live":  true
+                                           }
+                                       ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "What Decides Website Development Costs"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Website development costs in India vary widely because the work itself varies. These are the main factors:"
+                         },
+                         {
+                             "type":  "table",
+                             "header":  [
+                                            "Factor",
+                                            "How it changes the price"
+                                        ],
+                             "rows":  [
+                                          [
+                                              "Number of pages",
+                                              "More pages mean more design, content placement and testing"
+                                          ],
+                                          [
+                                              "Design",
+                                              "Theme-based design costs less than a fully custom design and prototype"
+                                          ],
+                                          [
+                                              "Platform",
+                                              "WordPress, Shopify, a framework such as Next.js or Laravel, or a fully custom build"
+                                          ],
+                                          [
+                                              "Features",
+                                              "Forms, bookings, logins, payments, search, filters, multiple languages, dashboards"
+                                          ],
+                                          [
+                                              "Integrations",
+                                              "CRM, ERP, accounting, WhatsApp, SMS, shipping and payment gateways"
+                                          ],
+                                          [
+                                              "Content",
+                                              "Writing, translation, photography and product uploads"
+                                          ],
+                                          [
+                                              "Speed, security and SEO",
+                                              "Performance tuning, security hardening and technical SEO setup"
+                                          ],
+                                          [
+                                              "Timeline",
+                                              "Urgent deadlines may need a larger team"
+                                          ],
+                                          [
+                                              "Support",
+                                              "Maintenance, backups, updates and changes after launch"
+                                          ]
+                                      ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Website Creation Cost in India: Typical Scenarios"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "People searching for website creation cost in India often want a simple answer, but the honest one is \"it depends on what you need\". The scenarios below explain the kind of project that sits at each level; your written quote gives the exact figure."
+                         },
+                         {
+                             "type":  "table",
+                             "header":  [
+                                            "Scenario",
+                                            "Typical build",
+                                            "Our pricing"
+                                        ],
+                             "rows":  [
+                                          [
+                                              "Simple business or professional website",
+                                              "WordPress, 5â€“8 pages, forms, WhatsApp button",
+                                              "From â‚¹5,999"
+                                          ],
+                                          [
+                                              "Larger business website with blog",
+                                              "WordPress with more pages, custom sections and SEO setup",
+                                              "Quoted on pages and features"
+                                          ],
+                                          [
+                                              "Custom-coded website or portal",
+                                              "Framework-based design and development with integrations",
+                                              "Quoted on requirements"
+                                          ],
+                                          [
+                                              "Online store",
+                                              "WooCommerce, Shopify or custom e-commerce",
+                                              "Quoted on products, payments and integrations"
+                                          ],
+                                          [
+                                              "Web application",
+                                              "Custom software with logins, roles and dashboards",
+                                              "Quoted after discovery"
+                                          ]
+                                      ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Website Creation Charges in India: Beyond the Build"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Website creation charges in India often look different between providers because some include items that others leave out. Before you compare quotes, check whether each one includes the domain, hosting, SSL certificate, business email, premium themes or plugins, content writing, stock images, maintenance and SEO setup. A lower quote that excludes these can end up costing more than a complete one."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Website Design India Price: Design Choices That Matter"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The website design India price you are quoted depends mostly on how custom the design is. A customised theme is quick and affordable. A fully custom design involves research, wireframes, a visual design for desktop and mobile, and revisions before development starts. For brands that rely on their website to win trust, custom UI/UX design is often worth it; for a new small business, a clean customised theme is usually enough to start."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Website Building Cost in India: One-Time and Running Costs"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The website building cost in India is not only the one-time build. Plan for running costs too:"
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "Domain renewal every year",
+                                           "Hosting, which depends on traffic and the type of website",
+                                           "SSL certificate if not included by your host",
+                                           "Renewals for premium plugins, themes or apps",
+                                           "Business email accounts",
+                                           "Maintenance: updates, backups, security checks and small changes",
+                                           "Marketing such as SEO, ads and social media to bring visitors"
+                                       ]
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "We tell you which of these you will pay directly to providers and which are part of our quote, so there are no surprises later."
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Ecommerce Website Cost and Ecommerce Website Price"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "An online store needs more than pages: it needs a product catalogue, cart, checkout, payment gateway, shipping, taxes, order management and customer accounts. That is why the ecommerce website cost is always higher than a simple business website, and why we quote every store after understanding your products and sales process."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "What Decides the Ecommerce Website Price"
+                         },
+                         {
+                             "type":  "table",
+                             "header":  [
+                                            "Factor",
+                                            "What to think about"
+                                        ],
+                             "rows":  [
+                                          [
+                                              "Platform",
+                                              "WooCommerce, Shopify or a custom-built store; each has different setup and running costs"
+                                          ],
+                                          [
+                                              "Number of products and categories",
+                                              "Uploading, variants (size, colour), filters and search"
+                                          ],
+                                          [
+                                              "Payments",
+                                              "Payment gateway setup, UPI, cards, cash on delivery and refunds"
+                                          ],
+                                          [
+                                              "Shipping",
+                                              "Courier integration, pin-code checks, rates and tracking"
+                                          ],
+                                          [
+                                              "Taxes and invoices",
+                                              "GST settings and invoice formats"
+                                          ],
+                                          [
+                                              "Design",
+                                              "Theme-based or custom store design"
+                                          ],
+                                          [
+                                              "Integrations",
+                                              "Inventory, ERP, accounting, CRM, WhatsApp and marketplaces"
+                                          ],
+                                          [
+                                              "Content",
+                                              "Product photos, descriptions and category pages"
+                                          ],
+                                          [
+                                              "Marketing setup",
+                                              "Product schema, Google Merchant Center feed, analytics and ad tracking"
+                                          ]
+                                      ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Ecommerce Website Development Cost in India: Running Costs to Plan"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The ecommerce website development cost in India also includes costs you pay to other companies. Payment gateways usually charge a fee per transaction; hosted platforms such as Shopify charge a subscription and may charge app fees; courier partners charge per shipment; and premium plugins or apps have renewals. We list these in your quote so you know the true cost of running the store."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Cost of E-Commerce Website Development in India: Three Common Routes"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The cost of e-commerce website development in India depends a lot on the route you choose:"
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "WooCommerce on WordPress: flexible, you own the website, good for small and mid-sized catalogues; needs good hosting and maintenance.",
+                                           "Shopify: quick to launch with hosting included; you pay a monthly subscription and some app fees.",
+                                           "Custom e-commerce: built for special workflows such as B2B pricing, multi-vendor marketplaces or complex inventory; highest flexibility and highest build cost."
+                                       ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "E-Commerce Website Making Cost in India: Tips to Control the Budget"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "To keep the e-commerce website making cost in India under control, launch with the features you need now, start with your best-selling products, use proven payment and shipping integrations, and add features such as loyalty points or marketplaces later. A phased plan keeps the first bill smaller and lets real sales guide what you build next."
+                         },
+                         {
+                             "type":  "link_note",
+                             "links":  [
+                                           {
+                                               "anchor":  "e-commerce development",
+                                               "url":  "https://www.afwantech.com/services/ecommerce-development",
+                                               "live":  true
+                                           }
+                                       ]
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Mobile App Development Cost and Quotation"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Mobile app development cost depends on how many platforms you need, how many screens and features the app has, and the back end that powers it. A simple information app is a very different project from a delivery, booking or marketplace app with payments, live tracking and an admin panel."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "What Decides Mobile App Development Cost"
+                         },
+                         {
+                             "type":  "table",
+                             "header":  [
+                                            "Factor",
+                                            "How it changes the cost"
+                                        ],
+                             "rows":  [
+                                          [
+                                              "Platforms",
+                                              "Android only, iOS only, or both with a cross-platform framework such as Flutter or React Native"
+                                          ],
+                                          [
+                                              "Screens and features",
+                                              "Logins, profiles, search, chat, maps, notifications, payments, bookings"
+                                          ],
+                                          [
+                                              "Back end and admin panel",
+                                              "Database, APIs, admin dashboard and reports"
+                                          ],
+                                          [
+                                              "Design",
+                                              "Standard components or a custom UI/UX design"
+                                          ],
+                                          [
+                                              "Integrations",
+                                              "Payment gateways, SMS, WhatsApp, maps, CRM or ERP"
+                                          ],
+                                          [
+                                              "Security and compliance",
+                                              "Data protection, encryption and role-based access"
+                                          ],
+                                          [
+                                              "Testing and launch",
+                                              "Device testing, app store listings and review fixes"
+                                          ],
+                                          [
+                                              "Support",
+                                              "Bug fixes, OS updates, hosting and new features"
+                                          ]
+                                      ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Ecommerce App Development Cost"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The ecommerce app development cost depends on whether the app works with an existing online store or needs its own back end. If you already run a WooCommerce or Shopify store, an app connected to it usually costs less than building catalogue, cart and order systems from scratch. Multi-vendor marketplaces, live delivery tracking and loyalty features add to the scope."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Ecommerce Mobile App Development Cost: Website First or App First?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The ecommerce mobile app development cost is often higher than a store website because you need app store publishing, push notifications and support for many devices. For most new brands, we suggest starting with a fast, mobile-friendly store website and adding an app once you have repeat customers who would use it."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "How to Get a Mobile App Development Quotation"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "To get an accurate mobile app development quotation from us, share a short list of the users of the app, the main features for each, any apps you like as a reference, your preferred platforms and your timeline. We reply with questions, then a written quote with scope, milestones, timeline and the cost of hosting and third-party services. For larger apps we may suggest a paid discovery phase that ends with wireframes and a fixed quote."
+                         },
+                         {
+                             "type":  "link_note",
+                             "links":  [
+                                           {
+                                               "anchor":  "app development",
+                                               "url":  "https://www.afwantech.com/services/app-development",
+                                               "live":  true
+                                           }
+                                       ]
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Logo Design â€“ From â‚¹2,000"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Our logo design starts from â‚¹2,000. The starting price covers a simple, original logo with a set number of concepts and revisions, delivered in common formats for web and print. Brand identity work, such as colour palettes, typography, business cards, letterheads and social media kits, is quoted separately based on what you need. You receive the final files and own the logo once payment is complete."
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "To get the most from a starting-price logo, send us your business name, a line about what you do, two or three logos you like, colours you prefer or want to avoid, and where the logo will be used most, such as signboards, packaging, social media or a website header. A clear brief means fewer revisions and a logo that works well at every size, from a small app icon to a large hoarding."
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "If you are also starting your website or our affordable local SEO services at the same time, we can make sure the logo, website colours and Google Business Profile images match from day one."
+                         },
+                         {
+                             "type":  "link_note",
+                             "links":  [
+                                           {
+                                               "anchor":  "graphic design",
+                                               "url":  "/services/graphic-design",
+                                               "live":  false
+                                           }
+                                       ]
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Other Services: Priced on Your Requirements"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "For the services below, scope varies so much that a fixed price would not be fair. We quote each one after a free discussion."
+                         },
+                         {
+                             "type":  "table",
+                             "header":  [
+                                            "Service",
+                                            "What the price depends on"
+                                        ],
+                             "rows":  [
+                                          [
+                                              "PPC and paid ads",
+                                              "Platforms (Google, Meta, LinkedIn), number of campaigns, creatives and reporting; ad spend is paid directly to the platform"
+                                          ],
+                                          [
+                                              "Social media management",
+                                              "Number of platforms, posts and reels per month, design and community replies"
+                                          ],
+                                          [
+                                              "UI/UX design",
+                                              "Number of screens, user research, prototypes and design system"
+                                          ],
+                                          [
+                                              "Custom web applications",
+                                              "Users and roles, features, integrations and security"
+                                          ],
+                                          [
+                                              "CRM software",
+                                              "Ready-made setup or custom build, users, integrations and data migration"
+                                          ],
+                                          [
+                                              "Website maintenance",
+                                              "Number of websites, update frequency, backups and support hours"
+                                          ],
+                                          [
+                                              "Content writing",
+                                              "Number and length of articles or pages, research and languages"
+                                          ]
+                                      ]
+                         },
+                         {
+                             "type":  "link_note",
+                             "links":  [
+                                           {
+                                               "anchor":  "PPC and paid ads",
+                                               "url":  "/services/ppc-paid-ads",
+                                               "live":  false
+                                           },
+                                           {
+                                               "anchor":  "social media marketing",
+                                               "url":  "https://www.afwantech.com/services/social-media-marketing",
+                                               "live":  true
+                                           },
+                                           {
+                                               "anchor":  "CRM software",
+                                               "url":  "/services/crm-software",
+                                               "live":  false
+                                           }
+                                       ]
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "How to Compare Quotes Fairly"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Two quotes for the same project can look very different. Before you decide, line them up against the same checklist, so you are comparing like with like rather than only the final number."
+                         },
+                         {
+                             "type":  "table",
+                             "header":  [
+                                            "Check",
+                                            "Questions to ask"
+                                        ],
+                             "rows":  [
+                                          [
+                                              "Scope",
+                                              "Are pages, features, keywords, blogs or app screens listed in writing?"
+                                          ],
+                                          [
+                                              "Third-party costs",
+                                              "Are domain, hosting, plugins, platform fees and ad spend included or extra?"
+                                          ],
+                                          [
+                                              "Ownership",
+                                              "Will the website, source code, logo files and accounts be in your name?"
+                                          ],
+                                          [
+                                              "Timeline",
+                                              "Are milestones and a launch date written down?"
+                                          ],
+                                          [
+                                              "Revisions",
+                                              "How many rounds of design changes are included?"
+                                          ],
+                                          [
+                                              "Support",
+                                              "How long is free support after launch, and what does maintenance cost?"
+                                          ],
+                                          [
+                                              "Reporting",
+                                              "For SEO, ads and social media, what will the monthly report show?"
+                                          ],
+                                          [
+                                              "Exit",
+                                              "What happens if you want to stop or switch providers?"
+                                          ]
+                                      ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Warning Signs in Low-Cost Offers"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Very low prices can be genuine for simple work, but be careful when you see:"
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "Guaranteed first-page or first-position rankings",
+                                           "Hundreds of backlinks for a tiny fee",
+                                           "No written scope or deliverables",
+                                           "The provider keeps your domain, hosting or Google Business Profile in its own name",
+                                           "Hidden renewal charges for themes, plugins or hosting",
+                                           "No access to analytics or ad accounts"
+                                       ]
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Our pricing is designed to avoid these problems. You see the SEO plan price before you start, the starting price of a WordPress website or logo, and a written quote for everything else."
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "How We Prepare Your Quote"
+                         },
+                         {
+                             "type":  "ol",
+                             "items":  [
+                                           "Free website check or requirement call: we understand your business, goals and current website.",
+                                           "Clear plan: we share a written scope with deliverables, timeline and price.",
+                                           "Work begins: you get regular updates on WhatsApp and access to progress.",
+                                           "Report and review: for monthly services, a plain-language report and review call; for projects, testing and sign-off before launch."
+                                       ]
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "What Every Quote Includes"
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "A list of deliverables, so you know exactly what you get",
+                                           "Timeline and milestones",
+                                           "Payment terms",
+                                           "Third-party costs you will pay directly, such as ad spend, domains, hosting or platform fees",
+                                           "What happens after launch: support period, maintenance options and ownership of files and accounts"
+                                       ]
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Good to Know Before You Buy"
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "Taxes: all prices exclude GST, which is added to your invoice as applicable.",
+                                           "Ad spend: money spent on Google, Meta or other ads is separate from our management fee.",
+                                           "No ranking guarantees: no honest provider can promise the first position on Google; we promise transparent work and regular reports.",
+                                           "Bigger website changes: new pages or a redesign are quoted separately; SEO fixes on your existing website are included in SEO plans.",
+                                           "Ownership: you own your website, content and accounts, including Google Business Profile, analytics and ad accounts.",
+                                           "Plan changes: you can move to a bigger or smaller SEO plan as your business changes; ask us about notice periods before you start."
+                                       ]
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Why Choose Afwan Tech\u0027s Affordable Local SEO Services and Websites"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "We work with small and growing businesses that want honest prices and steady progress. Our affordable local SEO services, websites and apps come from one team, so your website, search visibility and campaigns work together instead of being handled by three separate vendors."
+                         },
+                         {
+                             "type":  "ul",
+                             "items":  [
+                                           "Published prices for SEO plans, WordPress websites and logo design",
+                                           "Written quotes for everything else, with third-party costs listed",
+                                           "Plain-language reports and WhatsApp updates",
+                                           "No paid link schemes and no false ranking promises",
+                                           "You keep ownership of everything we create for you"
+                                       ]
+                         },
+                         {
+                             "type":  "cta",
+                             "buttons":  [
+                                             "Get a Free Website Check",
+                                             "Call 79798 50684",
+                                             "Email contactafwantech@gmail.com"
+                                         ]
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Afwan Tech, ITPL Main Rd, Pattandur Agrahara, Whitefield, Bengaluru, Karnataka 560066. Phone: +91 79798 50684. Email: contactafwantech@gmail.com. Open 24 hours."
+                         },
+                         {
+                             "type":  "h2",
+                             "text":  "Frequently Asked Questions About Our Pricing"
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "How much do your affordable local SEO services cost?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Our affordable local SEO services start at â‚¹15,000 per month for the Local plan, which covers up to 5 cities in one state. The State plan is â‚¹25,000 per month and the Pan-India plan is â‚¹35,000 per month, while Enterprise is quoted separately. All prices exclude GST."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Are your prices inclusive of GST?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "No, all prices on this page exclude GST, which is added to your invoice as applicable."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Is there a minimum contract for SEO plans?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "We recommend at least three months, because search engines need time to crawl and trust changes. Ask us about notice periods before you start."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Do you guarantee first-page rankings?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "No. Nobody can honestly guarantee a ranking on Google, so we promise transparent monthly work, tracked keywords and plain-language reports instead."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "What are the website development charges for a WordPress website?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "WordPress websites start from â‚¹5,999 for a simple, mobile-friendly business website. The final price depends on pages, design, features and content, and your written quote lists everything included."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "How much does a custom-coded website cost?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The price of a custom-coded website depends on your requirements, such as design, features, integrations and security. We share a written quote after a free discussion."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "What is the average website cost in India?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "There is no single average, because a simple brochure website and a portal with logins and payments are very different projects. Compare quotes by what they include, such as pages, features, hosting, content and support."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Are domain and hosting included in the website price?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "It depends on the package, and your quote will clearly say whether the domain, hosting, SSL and business email are included or paid directly by you."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "How is the ecommerce website cost calculated?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The ecommerce website cost depends on the platform, number of products, payments, shipping, integrations and design. We quote after understanding your catalogue and sales process."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "How do I get a mobile app development quotation?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Share the users of your app, the main features, reference apps, platforms and timeline. We reply with a written quote covering scope, milestones and third-party costs."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Why does mobile app development cost vary so much?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "The cost changes with the number of platforms, screens, features, back-end work, integrations and design. A simple information app costs far less than a booking or delivery app with payments and tracking."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "How much does logo design cost?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Logo design starts from â‚¹2,000 for a simple, original logo with a set number of concepts and revisions. Full brand identity packages are quoted separately."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Is ad spend included in your PPC management price?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "No, ad spend is paid directly to Google, Meta or other platforms. Our fee covers planning, setup, management and reporting."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Can I upgrade or downgrade my SEO plan?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Yes, you can move between plans as your business grows or changes. We review your goals before switching so the work stays consistent."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "Who owns the website and accounts after the project?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "You do. Your website, content, logo files, Google Business Profile, analytics and ad accounts stay in your business name."
+                         },
+                         {
+                             "type":  "h3",
+                             "text":  "How do I get a quote for services without a published price?"
+                         },
+                         {
+                             "type":  "p",
+                             "text":  "Call 79798 50684, message us on WhatsApp or email contactafwantech@gmail.com with a short description of what you need. We will set up a free call and send a written quote."
+                         }
+                     ],
+    "bottom_content":  [
+                           {
+                               "type":  "h2",
+                               "text":  "Our Prices for SEO, Apps and Sites in Brief"
+                           },
+                           {
+                               "type":  "p",
+                               "text":  "Afwan Tech offers affordable local SEO services from â‚¹15,000 per month, with State (â‚¹25,000) and Pan-India (â‚¹35,000) plans for wider reach and a custom quote for Enterprise. These are affordable SEO services with published deliverables: keywords tracked, pages optimised, blogs, Google Business Profiles, listings and backlinks are all written down. For owners who need an affordable SEO service for small business growth, the Local plan focuses on nearby customers, reviews and a fast mobile site. We do not sell guaranteed rankings; affordable search engine optimization should still be honest, measurable and owned by you."
+                           },
+                           {
+                               "type":  "p",
+                               "text":  "Website development charges start from â‚¹5,999 for a WordPress website. A custom-coded build is priced on your requirements. Website development costs depend on pages, design, platform, features, integrations, content and support, so a realistic website cost in India is the one that matches your needs. When you compare website creation charges in India or the website creation cost in India, check whether the domain, hosting, SSL, plugins and maintenance are included. The website design India price rises with custom design work, and the website building cost in India also includes yearly renewals and upkeep."
+                           },
+                           {
+                               "type":  "p",
+                               "text":  "For online stores, the ecommerce website cost and ecommerce website price depend on the platform, products, payments, shipping and integrations. The ecommerce website development cost in India also includes gateway fees, platform subscriptions and courier charges. The cost of e-commerce website development in India changes with the route you choose (WooCommerce, Shopify or custom), and you can lower the e-commerce website making cost in India by launching in phases."
+                           },
+                           {
+                               "type":  "p",
+                               "text":  "Mobile app development cost depends on platforms, screens, back end and integrations. The ecommerce app development cost is lower when the app connects to an existing store, while the ecommerce mobile app development cost rises with marketplaces, live tracking and loyalty features. To receive a mobile app development quotation, share your users, features, reference apps and timeline."
+                           },
+                           {
+                               "type":  "p",
+                               "text":  "Logo design starts from â‚¹2,000. PPC management, social media management, UI/UX design, custom web applications, CRM software, maintenance and content writing are given a custom quote after a free call. Our SEO plans and all other prices exclude GST, and ad spend is paid directly to the platforms."
+                           },
+                           {
+                               "type":  "p",
+                               "text":  "Every quote lists deliverables, timeline, payment terms and third-party costs, and you keep ownership of your site, content and accounts. We prefer clear scopes to surprise invoices, and we explain any change in price before work on it begins."
+                           },
+                           {
+                               "type":  "p",
+                               "text":  "If you are unsure which plan or package fits, start with the free audit. We look at your current site, your competitors and the places your customers search from, then suggest the smallest plan that can do the job well. Many clients begin with one service, such as the Local plan or a starter site, and add ads, social media or an app later as enquiries grow. Monthly reports and review calls make it easy to decide what to do next with real numbers in front of you. There is no pressure to sign a long contract on day one; we would rather earn the next month through results you can see in the report."
+                           },
+                           {
+                               "type":  "p",
+                               "text":  "Afwan Tech is based at ITPL Main Rd, Pattandur Agrahara, Whitefield, Bengaluru, Karnataka 560066, and works with businesses across India. Call +91 79798 50684 or email contactafwantech@gmail.com for a free audit or a written quote."
+                           }
+                       ]
+}
