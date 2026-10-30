@@ -54,6 +54,7 @@
     "initials": "SA",
     "image": "",
     "linkedin": "https://www.linkedin.com/in/shahbaz-ahmad-react/",
+    "showLinkedin": false,
     "location": "Bengaluru, Karnataka, India",
     "company": "Nazra Software Solutions",
     "isCEO": false,

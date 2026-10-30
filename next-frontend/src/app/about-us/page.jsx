@@ -265,7 +265,7 @@ export default function AboutUsPage() {
                             Founder & CEO
                           </span>
                         )}
-                        {member.linkedin && (
+                        {member.linkedin && member.showLinkedin && member.id !== 'shahbaz-ahmad' && (
                           <a
                             href={member.linkedin}
                             target="_blank"
@@ -300,7 +300,7 @@ export default function AboutUsPage() {
                       </div>
                     </div>
 
-                    {member.linkedin && (
+                    {member.linkedin && member.showLinkedin && member.id !== 'shahbaz-ahmad' && (
                       <div className="pt-1">
                         <a
                           href={member.linkedin}
@@ -365,7 +365,7 @@ export default function AboutUsPage() {
                             </div>
                           )}
 
-                          {member.linkedin && (
+                          {member.linkedin && member.showLinkedin && member.id !== 'shahbaz-ahmad' && (
                             <a
                               href={member.linkedin}
                               target="_blank"
@@ -399,7 +399,7 @@ export default function AboutUsPage() {
                           </div>
                         </div>
 
-                        {member.linkedin && (
+                        {member.linkedin && member.showLinkedin && member.id !== 'shahbaz-ahmad' && (
                           <div className="pt-1">
                             <a
                               href={member.linkedin}
