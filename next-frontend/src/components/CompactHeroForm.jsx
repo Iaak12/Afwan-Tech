@@ -14,7 +14,8 @@ export default function CompactHeroForm({
     phone: '',
     email: '',
     interestedIn: defaultService,
-    location: defaultLocation
+    location: defaultLocation,
+    message: ''
   });
 
   const [loading, setLoading] = useState(false);
@@ -42,8 +43,8 @@ export default function CompactHeroForm({
         body: JSON.stringify({
           ...formData,
           lastName: '',
-          budget: '₹25k - ₹50k',
-          message: `Hero quick inquiry for ${formData.interestedIn} from ${formData.location}`,
+          budget: 'Flexible',
+          message: formData.message?.trim() || `Hero quick inquiry for ${formData.interestedIn} from ${formData.location}`,
           pageSource: typeof window !== 'undefined' ? window.location.href : 'Hero Section'
         })
       });
@@ -60,7 +61,8 @@ export default function CompactHeroForm({
           phone: '',
           email: '',
           interestedIn: defaultService,
-          location: defaultLocation
+          location: defaultLocation,
+          message: ''
         });
       } else {
         setStatus({
@@ -76,7 +78,7 @@ export default function CompactHeroForm({
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             ...formData,
-            message: `Hero quick inquiry for ${formData.interestedIn}`
+            message: formData.message?.trim() || `Hero quick inquiry for ${formData.interestedIn}`
           })
         });
         const fallbackData = await fallbackRes.json();
@@ -85,7 +87,7 @@ export default function CompactHeroForm({
             type: 'success',
             message: 'Inquiry received! Our director will call you within 15 minutes.'
           });
-          setFormData({ firstName: '', phone: '', email: '', interestedIn: defaultService, location: defaultLocation });
+          setFormData({ firstName: '', phone: '', email: '', interestedIn: defaultService, location: defaultLocation, message: '' });
           return;
         }
       } catch (e) {}
@@ -219,7 +221,24 @@ export default function CompactHeroForm({
           </div>
         </div>
 
-        {/* ROW 3: Submit Button */}
+        {/* ROW 3: Message / Project Requirements Box */}
+        <div>
+          <label className="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">
+            Your Message / Project Requirements
+          </label>
+          <div className="relative">
+            <textarea
+              name="message"
+              rows={2}
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Tell us about your project goals, existing website, or requirements..."
+              className="w-full px-3.5 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-xs sm:text-sm bg-gray-50/70 transition-all font-medium text-gray-900 resize-none"
+            />
+          </div>
+        </div>
+
+        {/* ROW 4: Submit Button */}
         <button
           type="submit"
           disabled={loading}

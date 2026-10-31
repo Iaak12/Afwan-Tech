@@ -74,10 +74,10 @@ export default function ServicePageTemplate({ data, location }) {
         "@type": "FAQPage",
         "mainEntity": data.faqs ? data.faqs.map(faq => ({
           "@type": "Question",
-          "name": faq.question,
+          "name": faq.question || faq.q,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": faq.answer
+            "text": faq.answer || faq.a
           }
         })) : []
       }
@@ -611,7 +611,7 @@ export default function ServicePageTemplate({ data, location }) {
                           <span className="w-6 h-6 rounded-lg bg-blue-50 text-primary text-xs font-black flex items-center justify-center flex-shrink-0">
                             {idx + 1}
                           </span>
-                          <span>{faq.question}</span>
+                          <span>{faq.question || faq.q}</span>
                         </span>
                         <ChevronDown 
                           size={18} 
@@ -620,7 +620,7 @@ export default function ServicePageTemplate({ data, location }) {
                       </button>
                       {isOpen && (
                         <div className="px-6 pb-6 pt-0 text-sm md:text-base text-gray-600 leading-relaxed border-t border-gray-100/80">
-                          <p className="mt-4">{faq.answer}</p>
+                          <p className="mt-4">{faq.answer || faq.a}</p>
                         </div>
                       )}
                     </div>

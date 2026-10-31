@@ -246,7 +246,7 @@ export default function AboutUsPage() {
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-5">
                       {member.image ? (
-                        <div className="w-14 h-14 rounded-2xl overflow-hidden border border-gray-200 shadow-xs bg-gray-50 shrink-0">
+                        <div className="w-16 h-16 rounded-2xl overflow-hidden border border-gray-200 shadow-xs bg-gray-50 shrink-0">
                           <img 
                             src={member.image} 
                             alt={member.name} 
@@ -254,7 +254,7 @@ export default function AboutUsPage() {
                           />
                         </div>
                       ) : (
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-blue-50 border border-primary/20 flex items-center justify-center font-black text-lg text-primary font-sora shadow-xs shrink-0">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-blue-50 border border-primary/20 flex items-center justify-center font-black text-lg text-primary font-sora shadow-xs shrink-0">
                           {member.initials}
                         </div>
                       )}
@@ -352,7 +352,7 @@ export default function AboutUsPage() {
                       <div>
                         <div className="flex items-start justify-between gap-4 mb-5">
                           {member.image ? (
-                            <div className="w-14 h-14 rounded-2xl overflow-hidden border border-gray-200 shadow-xs bg-gray-50 shrink-0">
+                            <div className="w-16 h-16 rounded-2xl overflow-hidden border border-gray-200 shadow-xs bg-gray-50 shrink-0">
                               <img 
                                 src={member.image} 
                                 alt={member.name} 
@@ -360,7 +360,7 @@ export default function AboutUsPage() {
                               />
                             </div>
                           ) : (
-                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-blue-50 border border-primary/20 flex items-center justify-center font-black text-lg text-primary font-sora shadow-xs shrink-0">
+                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-blue-50 border border-primary/20 flex items-center justify-center font-black text-lg text-primary font-sora shadow-xs shrink-0">
                               {member.initials}
                             </div>
                           )}

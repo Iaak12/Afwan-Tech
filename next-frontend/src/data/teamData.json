@@ -2,42 +2,22 @@
   {
     "id": "ayaz-khan",
     "name": "Ayaz Khan",
-    "role": "Founder & CEO",
+    "role": "Developer Team Lead, Founder",
     "category": "leadership",
-    "bio": "Visionary entrepreneur and digital architect leading AFWAN TECH with a singular mission — building high-performance web engineering and Page 1 organic SEO systems for ambitious businesses worldwide.",
+    "bio": "Founder and Developer Team Lead directing full-stack architecture, high-performance web systems, and scalable cloud infrastructure for enterprise brands worldwide.",
     "expertise": [
-      "Executive Leadership",
-      "Growth Strategy",
-      "SEO Architecture",
-      "Business Scaling"
+      "AWS",
+      "MERN Stack",
+      "Scalable Architecture",
+      "Executive Leadership"
     ],
     "initials": "AK",
-    "image": "",
+    "image": "/team/ayaz-khan.jpeg",
     "linkedin": "",
     "location": "Bengaluru, Karnataka, India",
     "company": "AFWAN TECH",
     "isCEO": true,
     "order": 1
-  },
-  {
-    "id": "aaliya-behal",
-    "name": "Aaliya Behal",
-    "role": "Co-Founder",
-    "category": "leadership",
-    "bio": "Co-founder steering operational velocity, strategic client partnerships, and cross-functional brand expansion across India, Middle East, and global markets.",
-    "expertise": [
-      "Operations Strategy",
-      "Client Partnerships",
-      "Brand Scaling",
-      "Organizational Growth"
-    ],
-    "initials": "AB",
-    "image": "",
-    "linkedin": "",
-    "location": "Bengaluru, Karnataka, India",
-    "company": "AFWAN TECH",
-    "isCEO": false,
-    "order": 2
   },
   {
     "id": "shahbaz-ahmad",
@@ -52,12 +32,172 @@
       "Performance & Caching"
     ],
     "initials": "SA",
-    "image": "",
+    "image": "/team/shahbaz-ahmad.jpeg",
     "linkedin": "https://www.linkedin.com/in/shahbaz-ahmad-react/",
     "showLinkedin": false,
     "location": "Bengaluru, Karnataka, India",
     "company": "Nazra Software Solutions",
     "isCEO": false,
+    "order": 2
+  },
+  {
+    "id": "eman-fatima",
+    "name": "Eman Fatima",
+    "role": "Creative Head",
+    "category": "leadership",
+    "bio": "Leading creative direction, multi-channel social media management, brand identities, and high-converting visual design systems.",
+    "expertise": [
+      "Creative Direction",
+      "Social Media Management",
+      "Brand Identity",
+      "UI/UX Design"
+    ],
+    "initials": "EF",
+    "image": "/team/eman-fatima.jpeg",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
     "order": 3
+  },
+  {
+    "id": "md-saif",
+    "name": "Md. Saif",
+    "role": "Website Developer",
+    "category": "core",
+    "bio": "Frontend engineer dedicated to responsive design systems, sub-second web performance, and modern JavaScript architectures.",
+    "expertise": [
+      "Frontend Development",
+      "Web Performance",
+      "JavaScript",
+      "Responsive Design"
+    ],
+    "initials": "MS",
+    "image": "/team/md-saif.jpeg",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
+    "order": 4
+  },
+  {
+    "id": "anshuman-singh",
+    "name": "Anshuman Singh",
+    "role": "Website Developer",
+    "category": "core",
+    "bio": "Web developer crafting dynamic web applications with React.js, Tailwind CSS, clean components, and pixel-perfect responsiveness.",
+    "expertise": [
+      "React.js",
+      "Tailwind CSS",
+      "Responsive Design",
+      "Modern UI"
+    ],
+    "initials": "AS",
+    "image": "/team/anshuman-singh.jpeg",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
+    "order": 5
+  },
+  {
+    "id": "purushottam-thakur",
+    "name": "Purushottam Thakur",
+    "role": "Website Developer",
+    "category": "core",
+    "bio": "Software developer focused on scalable web architectures, modern interactive user interfaces, and robust client state management.",
+    "expertise": [
+      "Web Architectures",
+      "Modern UI",
+      "State Management",
+      "Component Systems"
+    ],
+    "initials": "PT",
+    "image": "/team/purushottam-thakur.jpeg",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
+    "order": 6
+  },
+  {
+    "id": "preet-tyagi",
+    "name": "Preet Tyagi",
+    "role": "Website Developer",
+    "category": "core",
+    "bio": "Frontend developer specializing in semantic HTML5/CSS3, JavaScript workflows, and fluid component-driven user experiences.",
+    "expertise": [
+      "HTML5/CSS3",
+      "JavaScript",
+      "Component Design",
+      "UI Engineering"
+    ],
+    "initials": "PT",
+    "image": "/team/preet-tyagi.jpeg",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
+    "order": 7
+  },
+  {
+    "id": "mohammad-aarish",
+    "name": "Mohammad Aarish",
+    "role": "Website Developer",
+    "category": "core",
+    "bio": "Web developer focusing on Next.js App Router applications, secure web authentication protocols, and decoupled API integrations.",
+    "expertise": [
+      "Next.js",
+      "Web Security",
+      "API Integration",
+      "Full Stack"
+    ],
+    "initials": "MA",
+    "image": "/team/mohammad-aarish.jpeg",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
+    "order": 8
+  },
+  {
+    "id": "faiz-akhtar",
+    "name": "Faiz Akhtar",
+    "role": "Full Stack Developer",
+    "category": "core",
+    "bio": "Full-stack engineer building fast, reliable web backends, RESTful APIs, and responsive frontends with sub-second performance.",
+    "expertise": [
+      "Full Stack Development",
+      "Node.js & APIs",
+      "Database Optimization",
+      "React.js"
+    ],
+    "initials": "FA",
+    "image": "/team/faiz-akhtar.jpeg",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
+    "order": 9
+  },
+  {
+    "id": "umar",
+    "name": "Umar",
+    "role": "UI/UX & Frontend Specialist",
+    "category": "core",
+    "bio": "Design and frontend specialist transforming Figma concepts into high-speed, interactive, accessible web interfaces.",
+    "expertise": [
+      "UI/UX Design",
+      "Frontend Development",
+      "CSS Architecture",
+      "Design Systems"
+    ],
+    "initials": "UM",
+    "image": "/team/umar.jpeg",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
+    "order": 10
   }
 ]

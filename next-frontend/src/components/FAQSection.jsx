@@ -35,12 +35,12 @@ export default function FAQSection() {
                   onClick={() => toggle(idx)}
                   className="w-full text-left p-6 font-extrabold text-[#0f172a] text-base md:text-lg flex items-center justify-between gap-4 cursor-pointer hover:text-primary transition-colors"
                 >
-                  <span>{faq.q}</span>
+                  <span>{faq.q || faq.question}</span>
                   <ChevronDown size={20} className={`text-primary transition-transform duration-200 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isOpen && (
                   <div className="px-6 pb-6 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4 bg-white">
-                    {faq.a}
+                    {faq.a || faq.answer}
                   </div>
                 )}
               </div>

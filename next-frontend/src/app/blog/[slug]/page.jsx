@@ -240,7 +240,7 @@ export default async function BlogPostPage({ params, searchParams }) {
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-blue-400 text-white font-bold flex items-center justify-center text-sm shadow-sm">
-                    {blog.author?.name ? blog.author.name.split(' ').map(n => n[0]).join('').slice(0, 2) : 'MA'}
+                    {blog.author?.name ? blog.author.name.split(' ').map(n => n[0]).join('').slice(0, 2) : 'AK'}
                   </div>
                   <div>
                     <span className="font-bold text-sm text-gray-900 block font-sora">{blog.author.name}</span>
@@ -313,11 +313,11 @@ export default async function BlogPostPage({ params, searchParams }) {
                       className="group bg-gray-50 rounded-2xl p-5 border border-gray-100 open:bg-white open:shadow-xs transition-all"
                     >
                       <summary className="font-bold text-sm text-gray-900 cursor-pointer list-none flex items-center justify-between font-sora">
-                        <span>{faq.q}</span>
+                        <span>{faq.q || faq.question}</span>
                         <ChevronRight size={16} className="text-gray-400 group-open:rotate-90 transition-transform" />
                       </summary>
                       <p className="text-xs sm:text-sm text-gray-600 mt-3 pt-3 border-t border-gray-100 leading-relaxed">
-                        {faq.a}
+                        {faq.a || faq.answer}
                       </p>
                     </details>
                   ))}
@@ -368,7 +368,7 @@ export default async function BlogPostPage({ params, searchParams }) {
               keywords: typeof blog.keywords === 'string' ? blog.keywords : (blog.keywords || []).join(', '),
               author: {
                 '@type': 'Person',
-                name: blog.author?.name || 'Mohammad Afwan',
+                name: blog.author?.name || 'Ayaz Khan',
                 jobTitle: blog.author?.role || 'Founder & CEO, Afwan Tech'
               },
               publisher: {

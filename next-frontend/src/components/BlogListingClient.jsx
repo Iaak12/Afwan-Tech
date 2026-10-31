@@ -113,11 +113,11 @@ export default function BlogListingClient({ blogs = [] }) {
               <div className="flex items-center justify-between pt-6 border-t border-white/10 flex-wrap gap-4">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-blue-400 text-white font-black flex items-center justify-center text-sm shadow-md border border-white/20">
-                    {featured.author?.name ? featured.author.name.split(' ').map(n => n[0]).join('').slice(0, 2) : 'MA'}
+                    {featured.author?.name ? featured.author.name.split(' ').map(n => n[0]).join('').slice(0, 2) : 'AK'}
                   </div>
                   <div>
                     <span className="block text-sm font-bold text-white font-sora">
-                      {featured.author?.name || 'Mohammad Afwan'}
+                      {featured.author?.name || 'Ayaz Khan'}
                     </span>
                     <span className="block text-xs text-gray-400">
                       {featured.author?.role || 'Founder & CEO'}

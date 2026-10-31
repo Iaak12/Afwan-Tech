@@ -210,13 +210,13 @@ export default function ContactForm({ defaultService = 'Web Development', defaul
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Project Details / Goals</label>
+          <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">Your Message / Project Details</label>
           <textarea 
             name="message" 
             rows="3"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Tell us about your brand, current bottlenecks, and target timeline..."
+            placeholder="Tell us about your project requirements, current website, or target timeline..."
             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm bg-gray-50/50"
           ></textarea>
         </div>

@@ -204,7 +204,7 @@ export default function BlogSidebar({ currentBlog, recommendedBlogs = [] }) {
         </div>
 
         <h4 className="text-base font-black text-[#0f172a] font-sora">
-          Discuss Your Project With Mohammad Afwan
+          Discuss Your Project With Ayaz Khan
         </h4>
 
         <p className="text-xs text-gray-600 leading-relaxed">
