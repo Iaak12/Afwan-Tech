@@ -20,6 +20,26 @@
     "order": 1
   },
   {
+    "id": "aaliya-behal",
+    "name": "Aaliya Behal",
+    "role": "Co-Founder",
+    "category": "leadership",
+    "bio": "Co-founder steering operational velocity, strategic client partnerships, and cross-functional brand expansion across India, Middle East, and global markets.",
+    "expertise": [
+      "Operations Strategy",
+      "Client Partnerships",
+      "Brand Scaling",
+      "Organizational Growth"
+    ],
+    "initials": "AB",
+    "image": "",
+    "linkedin": "",
+    "location": "Bengaluru, Karnataka, India",
+    "company": "AFWAN TECH",
+    "isCEO": false,
+    "order": 2
+  },
+  {
     "id": "shahbaz-ahmad",
     "name": "Shahbaz Ahmad",
     "role": "Lead Software Engineer & Platform Architect",
@@ -38,7 +58,7 @@
     "location": "Bengaluru, Karnataka, India",
     "company": "Nazra Software Solutions",
     "isCEO": false,
-    "order": 2
+    "order": 3
   },
   {
     "id": "eman-fatima",
@@ -58,7 +78,7 @@
     "location": "Bengaluru, Karnataka, India",
     "company": "AFWAN TECH",
     "isCEO": false,
-    "order": 3
+    "order": 4
   },
   {
     "id": "md-saif",
@@ -78,7 +98,7 @@
     "location": "Bengaluru, Karnataka, India",
     "company": "AFWAN TECH",
     "isCEO": false,
-    "order": 4
+    "order": 5
   },
   {
     "id": "anshuman-singh",
@@ -98,7 +118,7 @@
     "location": "Bengaluru, Karnataka, India",
     "company": "AFWAN TECH",
     "isCEO": false,
-    "order": 5
+    "order": 6
   },
   {
     "id": "purushottam-thakur",
@@ -118,7 +138,7 @@
     "location": "Bengaluru, Karnataka, India",
     "company": "AFWAN TECH",
     "isCEO": false,
-    "order": 6
+    "order": 7
   },
   {
     "id": "preet-tyagi",
@@ -138,7 +158,7 @@
     "location": "Bengaluru, Karnataka, India",
     "company": "AFWAN TECH",
     "isCEO": false,
-    "order": 7
+    "order": 8
   },
   {
     "id": "mohammad-aarish",
@@ -158,7 +178,7 @@
     "location": "Bengaluru, Karnataka, India",
     "company": "AFWAN TECH",
     "isCEO": false,
-    "order": 8
+    "order": 9
   },
   {
     "id": "faiz-akhtar",
@@ -178,7 +198,7 @@
     "location": "Bengaluru, Karnataka, India",
     "company": "AFWAN TECH",
     "isCEO": false,
-    "order": 9
+    "order": 10
   },
   {
     "id": "umar",
@@ -198,6 +218,6 @@
     "location": "Bengaluru, Karnataka, India",
     "company": "AFWAN TECH",
     "isCEO": false,
-    "order": 10
+    "order": 11
   }
 ]
