@@ -12,49 +12,61 @@ export default function AdminBlogSchedulerPage() {
   const [blogs, setBlogs] = useState([]);
   const [filter, setFilter] = useState('all'); // 'all' | 'published' | 'scheduled'
 
-  useEffect(() => {
-    // Check if there are overrides in localStorage
-    const saved = localStorage.getItem('afwan_blogs_status_override');
-    let overrides = {};
-    if (saved) {
-      try { overrides = JSON.parse(saved); } catch {}
-    }
+  const fetchBlogs = async () => {
+    try {
+      const res = await fetch('/api/admin/blogs');
+      const data = await res.json();
+      if (data.success && Array.isArray(data.blogs)) {
+        setBlogs(data.blogs);
+        return;
+      }
+    } catch (e) {}
 
+    // Fallback to local evaluation
     const now = new Date();
     const evaluated = blogsInitialData.map(b => {
-      const isOverridden = overrides[b.id] !== undefined;
       const scheduledTime = new Date(b.scheduledDate + 'T00:00:00Z').getTime();
       const isPastOrToday = now.getTime() >= scheduledTime;
-      const isLive = isOverridden ? overrides[b.id] : (b.isPublished || isPastOrToday);
-
+      const isLive = b.isPublished || isPastOrToday;
       return {
         ...b,
         isLive,
         status: isLive ? 'published' : 'scheduled'
       };
     });
-
     setBlogs(evaluated);
+  };
+
+  useEffect(() => {
+    fetchBlogs();
   }, []);
 
-  const handleTogglePublish = (blogId) => {
-    const saved = localStorage.getItem('afwan_blogs_status_override');
-    let overrides = {};
-    if (saved) {
-      try { overrides = JSON.parse(saved); } catch {}
-    }
-
+  const handleTogglePublish = async (blogId) => {
     const current = blogs.find(b => b.id === blogId)?.isLive;
-    overrides[blogId] = !current;
-    localStorage.setItem('afwan_blogs_status_override', JSON.stringify(overrides));
+    const nextStatus = !current;
 
+    // Optimistic UI update
     setBlogs(prev => prev.map(b => {
       if (b.id === blogId) {
-        const next = !b.isLive;
-        return { ...b, isLive: next, status: next ? 'published' : 'scheduled' };
+        return { ...b, isLive: nextStatus, status: nextStatus ? 'published' : 'scheduled' };
       }
       return b;
     }));
+
+    try {
+      const res = await fetch('/api/admin/blogs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ blogId, isPublished: nextStatus })
+      });
+      const data = await res.json();
+      if (data.success && Array.isArray(data.blogs)) {
+        setBlogs(data.blogs);
+      }
+    } catch (e) {
+      // In case of error, reload
+      fetchBlogs();
+    }
   };
 
   const total = blogs.length;

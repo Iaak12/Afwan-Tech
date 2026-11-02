@@ -89,11 +89,11 @@ export default function BlogCard({ blog, index = 0 }) {
         <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-blue-400 text-white font-bold text-xs flex items-center justify-center shadow-xs">
-              {blog.author?.name ? blog.author.name.split(' ').map(n => n[0]).join('').slice(0, 2) : 'AT'}
+              {blog.author?.name ? blog.author.name.split(' ').map(n => n[0]).join('').slice(0, 2) : 'AK'}
             </div>
             <div>
               <span className="block text-xs font-bold text-gray-900 leading-none">
-                {blog.author?.name || 'Afwan Tech'}
+                {blog.author?.name || 'Ayaz Khan'}
               </span>
               <span className="block text-[10px] text-gray-400 mt-0.5 leading-none">
                 Author

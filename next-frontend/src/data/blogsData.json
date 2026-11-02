@@ -1422,7 +1422,7 @@
     },
     "weekNumber": 2,
     "scheduledDate": "2026-11-02",
-    "isPublished": false,
+    "isPublished": true,
     "faqs": [
       {
         "q": "What are AI tools for web development?",
