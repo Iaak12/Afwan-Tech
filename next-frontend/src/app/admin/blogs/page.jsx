@@ -64,7 +64,6 @@ export default function AdminBlogSchedulerPage() {
         setBlogs(data.blogs);
       }
     } catch (e) {
-      // In case of error, reload
       fetchBlogs();
     }
   };
