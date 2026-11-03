@@ -6,17 +6,17 @@ import StaggeredStairs from "@/components/StaggeredStairs";
 
 export default function Template({ children }) {
   return (
-    <div className="relative">
-      {/* 5-Column Staggered Diagonal Stairs Wipe replicating the Globussoft style */}
+    <div className="relative overflow-x-hidden">
+      {/* 5 Horizontal Rows Staircase Wipe (Left to Right) */}
       <StaggeredStairs />
 
-      {/* Smooth Content Micro-Fade so the incoming page stabilizes smoothly without layout jerks */}
+      {/* Page Content Reveal: Smooth horizontal slide-in from the left matching the book page-turn feel */}
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0.3, x: -25 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{
-          duration: 0.45,
-          delay: 0.18,
+          duration: 0.55,
+          delay: 0.12,
           ease: [0.22, 1, 0.36, 1],
         }}
       >
@@ -25,4 +25,3 @@ export default function Template({ children }) {
     </div>
   );
 }
-

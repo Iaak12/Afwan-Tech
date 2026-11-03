@@ -3,37 +3,45 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Staggered Stairs transition variant replicating the Globussoft staircase cubes wipe
-const stairsAnimation = {
+const TOTAL_ROWS = 5;
+
+// Horizontal Staircase Slide Animation (Left to Right)
+// Top row starts moving first, cascading down to the bottom row,
+// creating the exact diagonal staircase cube/strip wipe shown in Globussoft
+const horizontalRowVariants = {
   initial: {
-    top: "0%",
+    x: "0%",
   },
-  animate: {
-    top: "100%",
-  },
+  animate: (index) => ({
+    x: "100%",
+    transition: {
+      duration: 0.65,
+      ease: [0.76, 0, 0.24, 1],
+      delay: index * 0.08, // Stagger delay per row
+    },
+  }),
 };
 
 export default function StaggeredStairs() {
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9998] flex w-screen h-screen">
-      {[0, 1, 2, 3, 4].map((index) => (
+    <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
+      {[...Array(TOTAL_ROWS)].map((_, index) => (
         <motion.div
           key={index}
-          variants={stairsAnimation}
+          custom={index}
+          variants={horizontalRowVariants}
           initial="initial"
           animate="animate"
-          transition={{
-            duration: 0.55,
-            ease: [0.76, 0, 0.24, 1],
-            delay: 0.06 * index, // Diagonal staircase cascade from left to right
+          style={{
+            top: `${index * 20}vh`,
+            height: "20.5vh", // Slight overlap to prevent subpixel hairline gap
           }}
-          className="relative h-full w-full bg-gradient-to-b from-[#050B14] via-[#091529] to-[#040810] border-r border-white/[0.04] shadow-[0_10px_50px_rgba(32,129,211,0.25)]"
+          className="absolute left-0 right-0 w-full bg-gradient-to-r from-[#050B14] via-[#0A1A33] to-[#071122] border-l-2 border-[#2081D3]/80 shadow-[-20px_0_40px_rgba(32,129,211,0.4)] backdrop-blur-md"
         >
-          {/* Frosted Cyan/Blue glow highlight */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#2081D3]/15 via-transparent to-[#00B4A6]/10 pointer-events-none" />
+          {/* Subtle frosted glass reflection texture inside each horizontal strip */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
         </motion.div>
       ))}
     </div>
   );
 }
-
