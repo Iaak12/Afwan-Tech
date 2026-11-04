@@ -2,7 +2,6 @@ import "./globals.css";
 import Script from "next/script";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
 import FloatingActions from "@/components/FloatingActions";
-import CinematicPreloader from "@/components/CinematicPreloader";
 import TopProgressBar from "@/components/TopProgressBar";
 
 export const metadata = {
@@ -69,7 +68,6 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        <CinematicPreloader />
         <TopProgressBar />
         <AnalyticsTracker />
         {children}

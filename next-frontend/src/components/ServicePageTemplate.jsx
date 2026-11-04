@@ -226,10 +226,10 @@ export default function ServicePageTemplate({ data, location }) {
         {/* 2-COLUMN MAIN CONTENT & STICKY SIDEBAR SECTION */}
         <section className="py-16 md:py-24 bg-white border-b border-gray-100">
           <div className="max-w-[1360px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-              {/* ── LEFT STICKY SIDEBAR (4 COLS) ── */}
-              <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+              {/* ── LEFT SIDEBAR (4 COLS) ── */}
+              <aside className="lg:col-span-4 space-y-6">
                 
                 {/* 1. Services Navigation Card */}
                 <div className="bg-white rounded-3xl p-6 border border-gray-200/90 shadow-md">
@@ -290,8 +290,8 @@ export default function ServicePageTemplate({ data, location }) {
                   </div>
                 )}
 
-                {/* 3. Direct Contact & Support Card */}
-                <div className="bg-gradient-to-br from-[#0f172a] via-[#1a2942] to-[#0f172a] text-white rounded-3xl p-6 shadow-xl border border-white/10 space-y-4">
+                {/* 3. Direct Contact & Support Card (Sticky on scroll) */}
+                <div className="bg-gradient-to-br from-[#0f172a] via-[#1a2942] to-[#0f172a] text-white rounded-3xl p-6 shadow-xl border border-white/10 space-y-4 lg:sticky lg:top-28 z-20">
                   <div className="flex items-center gap-2">
                     <Sparkles size={16} className="text-primary" />
                     <span className="text-[11px] font-black uppercase tracking-wider text-blue-300 font-mono">
