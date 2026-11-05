@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { sendSmtpEmail, buildLeadNotificationHtml } from '@/lib/sendEmail';
 
 export async function POST(request) {
   try {
@@ -53,10 +54,31 @@ export async function POST(request) {
       console.warn('Local file write notice:', err.message);
     }
 
+    // Send instant email notification via SMTP
+    let emailStatus = { success: false, skipped: true };
+    try {
+      const subject = `🔥 New Lead: ${lead.service} - ${lead.name} (${lead.location})`;
+      const html = buildLeadNotificationHtml(lead);
+      const text = `New Lead Submission on AFWAN TECH:\n\nName: ${lead.name}\nEmail: ${lead.email}\nPhone: ${lead.phone}\nService: ${lead.service}\nBudget: ${lead.budget}\nTarget Location: ${lead.location}\nPage Source: ${lead.source}\nMessage: ${lead.message}\nDate: ${lead.created_at}`;
+
+      emailStatus = await sendSmtpEmail({
+        subject,
+        html,
+        text
+      });
+
+      if (!emailStatus.success && emailStatus.warning) {
+        console.warn('[Contact API Email Notice]:', emailStatus.warning);
+      }
+    } catch (mailErr) {
+      console.error('[Contact API Email Error]:', mailErr.message);
+    }
+
     return NextResponse.json({
       success: true,
       message: 'Thank you! Your consultation request has been submitted. Our growth team will reach out within 24 hours.',
-      lead_id: lead.id
+      lead_id: lead.id,
+      email_dispatched: emailStatus.success
     });
   } catch (err) {
     return NextResponse.json({ success: false, message: err.message || 'Server error' }, { status: 500 });
