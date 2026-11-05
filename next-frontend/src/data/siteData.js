@@ -15,7 +15,8 @@ export const siteSettings = {
   socials: {
     linkedin: 'https://www.linkedin.com/company/afwan-tech',
     youtube: 'https://youtube.com/@afwantechservices?si=C1yL9fv94A6gaKy5',
-    instagram: 'https://www.instagram.com/afwan.tech?cplk=MTB0cXN5amZ0dzVpNA=='
+    instagram: 'https://www.instagram.com/afwan.tech?cplk=MTB0cXN5amZ0dzVpNA==',
+    facebook: 'https://www.facebook.com/share/r/16Vp15WPEqC/'
   }
 };
 
