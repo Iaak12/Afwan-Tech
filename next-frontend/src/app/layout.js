@@ -5,7 +5,11 @@ import FloatingActions from "@/components/FloatingActions";
 import TopProgressBar from "@/components/TopProgressBar";
 
 export const metadata = {
-  title: "AFWAN TECH | Digital Marketing & Next.js Web Engineering Agency",
+  metadataBase: new URL('https://www.afwantech.com'),
+  title: {
+    default: "AFWAN TECH | Digital Marketing & Next.js Web Engineering Agency",
+    template: "%s | AFWAN TECH"
+  },
   description: "Next-gen web development, custom software engineering, and programmatic SEO covering 500+ cities in India & globally.",
   keywords: [
     "digital marketing company",
@@ -21,6 +25,28 @@ export const metadata = {
     "afwan tech",
     "mohammad afwan"
   ],
+  authors: [{ name: "Ayaz Khan", url: "https://www.afwantech.com/about-us" }],
+  creator: "Ayaz Khan",
+  publisher: "AFWAN TECH",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://www.afwantech.com',
+  },
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png" },
@@ -36,6 +62,14 @@ export const metadata = {
     siteName: "Afwan Tech",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/afwan.png", width: 1200, height: 630, alt: "AFWAN TECH" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AFWAN TECH | Digital Marketing & Web Engineering Agency",
+    description: "Next-gen web development, custom software engineering, and programmatic SEO covering 500+ cities in India & globally.",
+    images: ["/afwan.png"],
+  ,
   },
 };
 

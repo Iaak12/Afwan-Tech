@@ -1,4 +1,4 @@
-{
+﻿{
     "slug":  "pricing",
     "title":  "Pricing",
     "h1":  "Clear Pricing for Websites, Logos and Affordable Local SEO Services",
@@ -593,22 +593,22 @@
                                         ],
                              "rows":  [
                                           [
-                                              "SEO â€“ Local plan",
+                                              "SEO - Local plan",
                                               "₹15,000 per month",
                                               "Monthly; we recommend at least 3 months"
                                           ],
                                           [
-                                              "SEO â€“ State plan",
+                                              "SEO - State plan",
                                               "₹25,000 per month",
                                               "Monthly; we recommend at least 3 months"
                                           ],
                                           [
-                                              "SEO â€“ Pan-India plan",
+                                              "SEO - Pan-India plan",
                                               "₹35,000 per month",
                                               "Monthly; we recommend at least 3 months"
                                           ],
                                           [
-                                              "SEO â€“ Enterprise plan",
+                                              "SEO - Enterprise plan",
                                               "Custom quote",
                                               "Quoted after a free call about your cities, countries and goals"
                                           ],
@@ -668,7 +668,7 @@
                          },
                          {
                              "type":  "h3",
-                             "text":  "Local Plan â€“ ₹15,000 per month"
+                             "text":  "Local Plan - ₹15,000 per month"
                          },
                          {
                              "type":  "p",
@@ -692,7 +692,7 @@
                          },
                          {
                              "type":  "h3",
-                             "text":  "State Plan â€“ ₹25,000 per month (most popular)"
+                             "text":  "State Plan - ₹25,000 per month (most popular)"
                          },
                          {
                              "type":  "p",
@@ -715,7 +715,7 @@
                          },
                          {
                              "type":  "h3",
-                             "text":  "Pan-India Plan â€“ ₹35,000 per month"
+                             "text":  "Pan-India Plan - ₹35,000 per month"
                          },
                          {
                              "type":  "p",
@@ -737,7 +737,7 @@
                          },
                          {
                              "type":  "h3",
-                             "text":  "Enterprise Plan â€“ Custom Quote"
+                             "text":  "Enterprise Plan - Custom Quote"
                          },
                          {
                              "type":  "p",
@@ -1033,7 +1033,7 @@
                          },
                          {
                              "type":  "h3",
-                             "text":  "WordPress Website â€“ From ₹5,999"
+                             "text":  "WordPress Website - From ₹5,999"
                          },
                          {
                              "type":  "p",
@@ -1056,7 +1056,7 @@
                          },
                          {
                              "type":  "h3",
-                             "text":  "Custom-Coded Website â€“ Price Depends on Requirements"
+                             "text":  "Custom-Coded Website - Price Depends on Requirements"
                          },
                          {
                              "type":  "p",
@@ -1152,7 +1152,7 @@
                              "rows":  [
                                           [
                                               "Simple business or professional website",
-                                              "WordPress, 5â€“8 pages, forms, WhatsApp button",
+                                              "WordPress, 5 - 8 pages, forms, WhatsApp button",
                                               "From ₹5,999"
                                           ],
                                           [
@@ -1405,7 +1405,7 @@
                          },
                          {
                              "type":  "h2",
-                             "text":  "Logo Design â€“ From ₹2,000"
+                             "text":  "Logo Design - From ₹2,000"
                          },
                          {
                              "type":  "p",

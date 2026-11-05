@@ -1,4 +1,4 @@
-[
+﻿[
     {
         "slug":  "about-us",
         "file":  "Afwantech_About_Us_SEO_Content.json",
@@ -12,7 +12,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -20,7 +20,7 @@
                                             "chars":  51
                                         },
                      "title_option_2":  {
-                                            "text":  "About Afwan Tech â€“ Digital Marketing \u0026 Software Team",
+                                            "text":  "About Afwan Tech - Digital Marketing \u0026 Software Team",
                                             "chars":  52
                                         },
                      "description_option_1":  {
@@ -38,7 +38,7 @@
                      "lang":  "en-IN",
                      "live_title":  "About Our Agency | AFWAN TECH - Digital Growth \u0026 Web Engineering",
                      "live_description":  "Learn about the AFWAN TECH journey led by Ayaz Khan. 8+ years of engineering high-performance Next.js websites and data-driven SEO for 16,000+ global clients.",
-                     "location_versions":  "NOT recommended â€“ About page (see Part 1-D)",
+                     "location_versions":  "NOT recommended - About page (see Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -50,7 +50,7 @@
                                                   {
                                                       "location":  "India",
                                                       "option":  "Title 2",
-                                                      "title":  "About Afwan Tech â€“ Digital Marketing \u0026 Software Team in India",
+                                                      "title":  "About Afwan Tech - Digital Marketing \u0026 Software Team in India",
                                                       "chars":  61,
                                                       "status":  "Too long"
                                                   },
@@ -64,7 +64,7 @@
                                                   {
                                                       "location":  "Bengaluru",
                                                       "option":  "Title 2",
-                                                      "title":  "About Afwan Tech â€“ Digital Marketing \u0026 Software Team in Bengaluru",
+                                                      "title":  "About Afwan Tech - Digital Marketing \u0026 Software Team in Bengaluru",
                                                       "chars":  65,
                                                       "status":  "Too long"
                                                   }
@@ -999,7 +999,7 @@
                              },
                              {
                                  "type":  "p",
-                                 "text":  "Many people also search for the largest software company in India or the top software companies in India. India\u0027s technology industry is very large: NASSCOM estimated in February 2026 that industry revenue would reach about USD 315 billion in FY26, with direct employment of around 59.5 lakh people. At the top, a handful of listed IT services firms dominate. By reported revenue for FY2024â€“25, Tata Consultancy Services (TCS) was the largest, followed by Infosys, HCLTech and Wipro."
+                                 "text":  "Many people also search for the largest software company in India or the top software companies in India. India\u0027s technology industry is very large: NASSCOM estimated in February 2026 that industry revenue would reach about USD 315 billion in FY26, with direct employment of around 59.5 lakh people. At the top, a handful of listed IT services firms dominate. By reported revenue for FY2024 - 25, Tata Consultancy Services (TCS) was the largest, followed by Infosys, HCLTech and Wipro."
                              },
                              {
                                  "type":  "p",
@@ -1398,7 +1398,7 @@
                              },
                              {
                                  "type":  "p",
-                                 "text":  "By reported revenue for FY2024â€“25, Tata Consultancy Services (TCS) was India\u0027s largest IT services company, followed by Infosys, HCLTech and Wipro."
+                                 "text":  "By reported revenue for FY2024 - 25, Tata Consultancy Services (TCS) was India\u0027s largest IT services company, followed by Infosys, HCLTech and Wipro."
                              },
                              {
                                  "type":  "h3",
@@ -1520,7 +1520,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "NASSCOM â€“ Strategic Review 2026 (industry revenue and employment estimates, February 2026); company-reported revenue figures for FY2024â€“25 (TCS, Infosys, HCLTech, Wipro); Central Consumer Protection Authority â€“ Guidelines for Prevention of Misleading Advertisements and Endorsements, 2022; Bureau of Indian Standards â€“ IS 19000:2022 Online consumer reviews; MeitY â€“ Digital Personal Data Protection Act, 2023."
+                                 "text":  "NASSCOM - Strategic Review 2026 (industry revenue and employment estimates, February 2026); company-reported revenue figures for FY2024 - 25 (TCS, Infosys, HCLTech, Wipro); Central Consumer Protection Authority - Guidelines for Prevention of Misleading Advertisements and Endorsements, 2022; Bureau of Indian Standards - IS 19000:2022 Online consumer reviews; MeitY - Digital Personal Data Protection Act, 2023."
                              }
                          ],
         "faqs":  [
@@ -1550,7 +1550,7 @@
                      },
                      {
                          "q":  "Which is the largest software company in India?",
-                         "a":  "By reported revenue for FY2024â€“25, Tata Consultancy Services (TCS) was India\u0027s largest IT services company, followed by Infosys, HCLTech and Wipro."
+                         "a":  "By reported revenue for FY2024 - 25, Tata Consultancy Services (TCS) was India\u0027s largest IT services company, followed by Infosys, HCLTech and Wipro."
                      },
                      {
                          "q":  "How do I know top 10 agency lists are reliable?",
@@ -1608,7 +1608,7 @@
                                },
                                {
                                    "type":  "p",
-                                   "text":  "India\u0027s technology industry is very large, and its biggest firms are global IT services companies. By reported revenue for FY2024â€“25, Tata Consultancy Services was the largest software company in India, followed by Infosys, HCLTech and Wipro. Lists of the top software companies in India, the top 5 software companies in India, the top 10 software companies in India, the top ten software companies in India or the top most software companies in India usually feature these and similar enterprises. A software companies list that places them beside small agencies compares very different businesses serving very different needs."
+                                   "text":  "India\u0027s technology industry is very large, and its biggest firms are global IT services companies. By reported revenue for FY2024 - 25, Tata Consultancy Services was the largest software company in India, followed by Infosys, HCLTech and Wipro. Lists of the top software companies in India, the top 5 software companies in India, the top 10 software companies in India, the top ten software companies in India or the top most software companies in India usually feature these and similar enterprises. A software companies list that places them beside small agencies compares very different businesses serving very different needs."
                                },
                                {
                                    "type":  "p",
@@ -1649,12 +1649,12 @@
                                },
                                {
                                    "problem":  "Overseas operations claim",
-                                   "evidence":  "\"Opened operations across GCC (Dubai), United Kingdom, and Southeast Asia\" (2020) â€“ contradicts one-office reality.",
+                                   "evidence":  "\"Opened operations across GCC (Dubai), United Kingdom, and Southeast Asia\" (2020) - contradicts one-office reality.",
                                    "severity":  "High"
                                },
                                {
                                    "problem":  "Individual claims on team cards",
-                                   "evidence":  "\"Award-winning designer with 14 industry recognitions\", \"$2M+ monthly ad spendâ€¦ 4x to 6x ROAS\", \"100/100 Core Web Vitals on every release\", \"300%+ organic growth\".",
+                                   "evidence":  "\"Award-winning designer with 14 industry recognitions\", \"$2M+ monthly ad spend... 4x to 6x ROAS\", \"100/100 Core Web Vitals on every release\", \"300%+ organic growth\".",
                                    "severity":  "Critical"
                                },
                                {
@@ -1664,7 +1664,7 @@
                                },
                                {
                                    "problem":  "Keyword set mismatched with About-page intent",
-                                   "evidence":  "All 18 keywords are list/claim searches (\"top 10â€¦\", \"largest software company\"); searchers want lists. Page answers honestly; a blog listicle would be a better owner long-term.",
+                                   "evidence":  "All 18 keywords are list/claim searches (\"top 10...\", \"largest software company\"); searchers want lists. Page answers honestly; a blog listicle would be a better owner long-term.",
                                    "severity":  "High"
                                },
                                {
@@ -1679,11 +1679,11 @@
                                }
                            ],
         "fixes_before_publishing":  [
-                                        "CRITICAL: Replace all five stock-photo team profiles with REAL people (name, role, real photo, LinkedIn) â€“ or remove the section until you can. Remove the same stock photos from home-page testimonials.",
+                                        "CRITICAL: Replace all five stock-photo team profiles with REAL people (name, role, real photo, LinkedIn) - or remove the section until you can. Remove the same stock photos from home-page testimonials.",
                                         "Supply company facts to fill the two NOTE sections: legal entity name, CIN/GSTIN/Udyam, founding year and city, founder name, real milestones. Only verifiable facts go on the page.",
-                                        "Remove 16,000+ clients, 40+ countries, 500+ projects, 98% retention, 50+ specialists, â‚¹50 crore client revenue, \"South Asia\u0027s fastest-growing\", overseas operations and individual team-card claims â€“ unless proven.",
-                                        "Resolve location history (Delhi / New Delhi / Noida / Bengaluru) â€“ the page now says one office in Whitefield, Bengaluru.",
-                                        "Verify TCS/Infosys/HCLTech/Wipro revenue figures against their FY2024â€“25 annual reports before publishing (taken from a secondary source).",
+                                        "Remove 16,000+ clients, 40+ countries, 500+ projects, 98% retention, 50+ specialists, ₹50 crore client revenue, \"South Asia\u0027s fastest-growing\", overseas operations and individual team-card claims - unless proven.",
+                                        "Resolve location history (Delhi / New Delhi / Noida / Bengaluru) - the page now says one office in Whitefield, Bengaluru.",
+                                        "Verify TCS/Infosys/HCLTech/Wipro revenue figures against their FY2024 - 25 annual reports before publishing (taken from a secondary source).",
                                         "Decide on Title 1 (keyword, framed as comparison) or Title 2 (brand-safe). I recommend Title 1 only if you are comfortable with comparison framing.",
                                         "Consider a blog post to own list intent (\"Top Digital Marketing Companies in India: How to Choose\") and link it from here.",
                                         "Add Organization schema sameAs links to real LinkedIn / Google Business Profile / social pages.",
@@ -1836,7 +1836,7 @@
                                                                         "name":  "Which is the largest software company in India?",
                                                                         "acceptedAnswer":  {
                                                                                                "@type":  "Answer",
-                                                                                               "text":  "By reported revenue for FY2024â€“25, Tata Consultancy Services (TCS) was India\u0027s largest IT services company, followed by Infosys, HCLTech and Wipro."
+                                                                                               "text":  "By reported revenue for FY2024 - 25, Tata Consultancy Services (TCS) was India\u0027s largest IT services company, followed by Infosys, HCLTech and Wipro."
                                                                                            }
                                                                     },
                                                                     {
@@ -1929,7 +1929,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -1954,8 +1954,8 @@
                      "robots":  "index, follow, max-image-preview:large",
                      "lang":  "en-IN",
                      "live_title":  "Mobile App Development Services | iOS \u0026 Android Apps | AFWAN TECH",
-                     "live_description":  "Keyword-led sentence about mobile app development services â€“ about 165 characters, cut off in results.",
-                     "location_versions":  "Yes â€“ service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
+                     "live_description":  "Keyword-led sentence about mobile app development services - about 165 characters, cut off in results.",
+                     "location_versions":  "Yes - service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -3697,7 +3697,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "Google Play Console Help â€“ Target API level requirements; Google Play Console Help â€“ App testing requirements for new personal developer accounts; Apple Developer â€“ Upcoming requirements (Xcode 26 / SDK 26 from 28 April 2026); Ministry of Electronics and Information Technology (MeitY) â€“ Digital Personal Data Protection Act, 2023 and Rules, 2025."
+                                 "text":  "Google Play Console Help - Target API level requirements; Google Play Console Help - App testing requirements for new personal developer accounts; Apple Developer - Upcoming requirements (Xcode 26 / SDK 26 from 28 April 2026); Ministry of Electronics and Information Technology (MeitY) - Digital Personal Data Protection Act, 2023 and Rules, 2025."
                              }
                          ],
         "faqs":  [
@@ -3836,12 +3836,12 @@
                                },
                                {
                                    "problem":  "False guarantee",
-                                   "evidence":  "\"100% Store Approval\" â€“ no one can guarantee Apple/Google approval; also conflicts with \"first-pass approval\" wording.",
+                                   "evidence":  "\"100% Store Approval\" - no one can guarantee Apple/Google approval; also conflicts with \"first-pass approval\" wording.",
                                    "severity":  "Critical"
                                },
                                {
                                    "problem":  "Technically inaccurate FAQ answer",
-                                   "evidence":  "Claims React Native and Flutter \"compile directly to native bytecode\" and are \"identical to Swift or Kotlin\" â€“ wrong for both frameworks.",
+                                   "evidence":  "Claims React Native and Flutter \"compile directly to native bytecode\" and are \"identical to Swift or Kotlin\" - wrong for both frameworks.",
                                    "severity":  "High"
                                },
                                {
@@ -3856,7 +3856,7 @@
                                },
                                {
                                    "problem":  "Fixed 8-week roadmap for every app",
-                                   "evidence":  "Phase 1 Weeks 1â€“2 â€¦ Phase 4 Week 8.",
+                                   "evidence":  "Phase 1 Weeks 1 - 2 ... Phase 4 Week 8.",
                                    "severity":  "Medium"
                                },
                                {
@@ -3893,9 +3893,9 @@
                                         "Replace the fixed 8-week roadmap with the indicative stage table.",
                                         "Move the form heading below the first H2 (or make it a non-heading); render all 16 FAQ answers as H3 + P; FAQPage schema word-for-word.",
                                         "Remove Next.js/PHP template text and unrelated services from this page\u0027s form.",
-                                        "Add 2â€“3 real app case studies with store links (with permission) and link to /portfolio.",
+                                        "Add 2 - 3 real app case studies with store links (with permission) and link to /portfolio.",
                                         "Fix sitewide NAP and remove ISO/4.9 badges.",
-                                        "Re-check store requirements (Play target API, Apple Xcode/SDK) before publishing â€“ they change yearly.",
+                                        "Re-check store requirements (Play target API, Apple Xcode/SDK) before publishing - they change yearly.",
                                         "Pricing: no prices here; confirm /pricing app figures are current."
                                     ],
         "schema_jsonld":  {
@@ -4206,7 +4206,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -4231,8 +4231,8 @@
                      "robots":  "index, follow, max-image-preview:large",
                      "lang":  "en-IN",
                      "live_title":  "Custom Web Development Company | Scalable Web Apps | AFWAN TECH",
-                     "live_description":  "Begins \"Bespoke full-stack web applications engineered for performanceâ€¦\" â€“ about 162 characters, no call to action.",
-                     "location_versions":  "Yes â€“ service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
+                     "live_description":  "Begins \"Bespoke full-stack web applications engineered for performance...\" - about 162 characters, no call to action.",
+                     "location_versions":  "Yes - service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -6005,7 +6005,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "OWASP â€“ Top 10:2025; CERT-In â€“ Directions under Section 70B(6) of the IT Act, 2000 (28 April 2022); Ministry of Electronics and Information Technology (MeitY) â€“ Digital Personal Data Protection Rules, 2025; Google Search Central â€“ \"AI features and your website\"."
+                                 "text":  "OWASP - Top 10:2025; CERT-In - Directions under Section 70B(6) of the IT Act, 2000 (28 April 2022); Ministry of Electronics and Information Technology (MeitY) - Digital Personal Data Protection Rules, 2025; Google Search Central - \"AI features and your website\"."
                              }
                          ],
         "faqs":  [
@@ -6132,7 +6132,7 @@
                                },
                                {
                                    "problem":  "Meta description over 155 chars, no CTA",
-                                   "evidence":  "About 162 chars; \"Bespoke full-stackâ€¦\".",
+                                   "evidence":  "About 162 chars; \"Bespoke full-stack...\".",
                                    "severity":  "Medium"
                                },
                                {
@@ -6147,7 +6147,7 @@
                                },
                                {
                                    "problem":  "Form H3 appears before the first H2",
-                                   "evidence":  "\"Request Custom Web Development Proposal\" (H3) sits above the first H2 â€“ heading order breaks.",
+                                   "evidence":  "\"Request Custom Web Development Proposal\" (H3) sits above the first H2 - heading order breaks.",
                                    "severity":  "Medium"
                                },
                                {
@@ -6157,12 +6157,12 @@
                                },
                                {
                                    "problem":  "Unsupported performance claims",
-                                   "evidence":  "\"99.99% Uptime SLA\", \"100k+ Concurrent Users\", \"10x Process Speedup\", \"Sub-50ms\", \"50k requests/min\" â€“ no baseline, test conditions or SLA terms.",
+                                   "evidence":  "\"99.99% Uptime SLA\", \"100k+ Concurrent Users\", \"10x Process Speedup\", \"Sub-50ms\", \"50k requests/min\" - no baseline, test conditions or SLA terms.",
                                    "severity":  "Critical"
                                },
                                {
                                    "problem":  "Fixed six-week roadmap for every project",
-                                   "evidence":  "Sprint 1 Week 1 â€¦ Sprint 4 Week 6 incl. load testing, pen-testing and deployment in one week.",
+                                   "evidence":  "Sprint 1 Week 1 ... Sprint 4 Week 6 incl. load testing, pen-testing and deployment in one week.",
                                    "severity":  "High"
                                },
                                {
@@ -6177,7 +6177,7 @@
                                },
                                {
                                    "problem":  "Template leftovers and duplicate H2",
-                                   "evidence":  "\"EzRank Architecture\" label; H2 \"How We Deliver Predictable Business ROI for â€¦\" copied across service pages; \"Institutional Tech Stack\".",
+                                   "evidence":  "\"EzRank Architecture\" label; H2 \"How We Deliver Predictable Business ROI for ...\" copied across service pages; \"Institutional Tech Stack\".",
                                    "severity":  "Medium"
                                },
                                {
@@ -6206,11 +6206,11 @@
                                         "Replace title, meta description and H1; set page-specific og:title/og:description/og:url and og:image.",
                                         "Remove 99.99% uptime SLA, 100k+ concurrent users, 10x speedup, sub-50ms, 50k requests/min unless you can show test reports and SLA terms.",
                                         "Remove the fixed six-week roadmap; use the indicative stage table.",
-                                        "Remove ISO 9001, 4.9/5, \"100% Privacy\", \"Zero â€¦\" and \"Immutable\" claims; remove \"EzRank Architecture\" label.",
+                                        "Remove ISO 9001, 4.9/5, \"100% Privacy\", \"Zero ...\" and \"Immutable\" claims; remove \"EzRank Architecture\" label.",
                                         "Move the form heading below the first H2 or make it a non-heading element.",
                                         "Render all 16 FAQ answers in server HTML as H3 + P; FAQPage schema word-for-word.",
                                         "Confirm your contract really assigns IP/code ownership to the client (the copy promises it).",
-                                        "Add 2â€“3 real web-app case studies (with permission) and link to /portfolio.",
+                                        "Add 2 - 3 real web-app case studies (with permission) and link to /portfolio.",
                                         "Fix sitewide NAP, typos (\"Sprint 1Week 1\") and the 60-sec vs 15-min mismatch; trim the service dropdown on this page.",
                                         "Pricing policy: no prices here; link /pricing."
                                     ],
@@ -6514,7 +6514,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -6540,7 +6540,7 @@
                      "lang":  "en-IN",
                      "live_title":  "E-Commerce Development Services | Custom \u0026 Headless Stores | AFWAN TECH",
                      "live_description":  "Next-gen e-commerce website development. We build lightning-fast online stores with instant search, seamless 1-click checkouts, multi-currency support, and high ROAS conversion rates.",
-                     "location_versions":  "Yes â€“ service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
+                     "location_versions":  "Yes - service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -8259,7 +8259,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "Shopify Help Center â€“ Transferring development stores to clients; Adobe / Magento â€“ Magento 1 end of life (30 June 2020); Department of Consumer Affairs â€“ Consumer Protection (E-Commerce) Rules, 2020; Reserve Bank of India â€“ card-on-file tokenisation; Google Search Central â€“ \"AI features and your website\"."
+                                 "text":  "Shopify Help Center - Transferring development stores to clients; Adobe / Magento - Magento 1 end of life (30 June 2020); Department of Consumer Affairs - Consumer Protection (E-Commerce) Rules, 2020; Reserve Bank of India - card-on-file tokenisation; Google Search Central - \"AI features and your website\"."
                              }
                          ],
         "faqs":  [
@@ -8406,12 +8406,12 @@
                                },
                                {
                                    "problem":  "Unsupported stats",
-                                   "evidence":  "\"+42% Conversion Lift\", \"\u003c 1.2s Catalog Speed\", \"99.9% Payment Reliability â€“ Zero dropped transactions\", \"recover up to 25% of abandoned carts\", \"~52%\" vs \"75â€“85%\" cart abandonment, \"10k orders/hour\" stress test.",
+                                   "evidence":  "\"+42% Conversion Lift\", \"\u003c 1.2s Catalog Speed\", \"99.9% Payment Reliability - Zero dropped transactions\", \"recover up to 25% of abandoned carts\", \"~52%\" vs \"75 - 85%\" cart abandonment, \"10k orders/hour\" stress test.",
                                    "severity":  "Critical"
                                },
                                {
                                    "problem":  "Unsourced industry statistic",
-                                   "evidence":  "\"every 100 milliseconds of latency â€¦ 7% loss in sales conversions\" â€“ no source given.",
+                                   "evidence":  "\"every 100 milliseconds of latency ... 7% loss in sales conversions\" - no source given.",
                                    "severity":  "Medium"
                                },
                                {
@@ -8421,17 +8421,17 @@
                                },
                                {
                                    "problem":  "Fixed 5-week roadmap for every store",
-                                   "evidence":  "Stage 1 Week 1 â€¦ Stage 4 Week 5.",
+                                   "evidence":  "Stage 1 Week 1 ... Stage 4 Week 5.",
                                    "severity":  "Medium"
                                },
                                {
                                    "problem":  "Service-fit risk: Magento",
-                                   "evidence":  "Live tech stack lists Shopify Storefront API, WooCommerce headless and custom PHP/Node â€“ no Magento, yet 6 Magento keywords are assigned.",
+                                   "evidence":  "Live tech stack lists Shopify Storefront API, WooCommerce headless and custom PHP/Node - no Magento, yet 6 Magento keywords are assigned.",
                                    "severity":  "Critical"
                                },
                                {
                                    "problem":  "Duplicate template H2 and comparison table",
-                                   "evidence":  "\"How We Deliver Predictable Business ROI for â€¦\" and \"AFWAN TECH Standard vs Average Agency\" repeated across service pages; \"EzRank Architecture\".",
+                                   "evidence":  "\"How We Deliver Predictable Business ROI for ...\" and \"AFWAN TECH Standard vs Average Agency\" repeated across service pages; \"EzRank Architecture\".",
                                    "severity":  "Medium"
                                },
                                {
@@ -8454,12 +8454,12 @@
                                         "CONFIRM FIRST: do you build and maintain Magento (2.x / Adobe Commerce) stores and Magento mobile apps? If not, remove the Magento sections and 6 keywords.",
                                         "Confirm whether Afwan Tech is a listed Shopify Partner; if yes, add the Partner Directory link (real proof); if not, never imply it.",
                                         "Replace title, meta description and H1; set page-specific OG tags and og:image.",
-                                        "Remove +42% lift, \u003c1.2s, 99.9% / \"zero dropped transactions\", \"25% cart recovery\", 52% vs 75â€“85% table and 10k orders/hour unless you have client data.",
+                                        "Remove +42% lift, \u003c1.2s, 99.9% / \"zero dropped transactions\", \"25% cart recovery\", 52% vs 75 - 85% table and 10k orders/hour unless you have client data.",
                                         "Remove the \"100 ms = 7% sales\" statistic or cite its original source.",
                                         "Check Apple Pay availability in India before listing it; list only payment methods you have actually integrated.",
                                         "Replace the fixed 5-week roadmap with the indicative stage table.",
                                         "Render all 16 FAQ answers in server HTML (H3 + P); FAQPage schema word-for-word.",
-                                        "Add 2â€“3 real store case studies (with permission) and link to /portfolio.",
+                                        "Add 2 - 3 real store case studies (with permission) and link to /portfolio.",
                                         "Fix sitewide NAP and remove ISO/4.9 badges; remove \"EzRank Architecture\" and the duplicate template sections.",
                                         "Pricing: no prices here; confirm /pricing figures for ecommerce are current."
                                     ],
@@ -8756,7 +8756,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -8780,9 +8780,9 @@
                      "canonical":  "https://www.afwantech.com/services/graphic-design",
                      "robots":  "index, follow, max-image-preview:large",
                      "lang":  "en-IN",
-                     "live_title":  "â€” (new page; no live title). No given title supplied.",
-                     "live_description":  "â€” (new page; no live description). No given description supplied.",
-                     "location_versions":  "Yes â€“ service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
+                     "live_title":  " -  (new page; no live title). No given title supplied.",
+                     "live_description":  " -  (new page; no live description). No given description supplied.",
+                     "location_versions":  "Yes - service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -10406,7 +10406,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "W3C â€“ Web Content Accessibility Guidelines (WCAG) 2.2 (Recommendation, 6 October 2023); Government of India â€“ Copyright Act, 1957 (Section 19, assignment of copyright); Office of the Controller General of Patents, Designs and Trade Marks (IP India) â€“ Trade Marks Registry."
+                                 "text":  "W3C - Web Content Accessibility Guidelines (WCAG) 2.2 (Recommendation, 6 October 2023); Government of India - Copyright Act, 1957 (Section 19, assignment of copyright); Office of the Controller General of Patents, Designs and Trade Marks (IP India) - Trade Marks Registry."
                              }
                          ],
         "faqs":  [
@@ -10525,7 +10525,7 @@
                                },
                                {
                                    "problem":  "Unproven design claims elsewhere on the site",
-                                   "evidence":  "About page: \"Samira Khan â€“ Creative \u0026 Design Lead â€“ Award-winning designer with 14 industry recognitions\" with a stock photo also used for a testimonial. Do not reuse unless real and proven.",
+                                   "evidence":  "About page: \"Samira Khan - Creative \u0026 Design Lead - Award-winning designer with 14 industry recognitions\" with a stock photo also used for a testimonial. Do not reuse unless real and proven.",
                                    "severity":  "Critical"
                                },
                                {
@@ -10551,11 +10551,11 @@
                            ],
         "fixes_before_publishing":  [
                                         "Publish this page at /services/graphic-design, add it to the Services menu, /services hub and footer; then replace every \"link once live (/services/graphic-design)\" note on other pages.",
-                                        "Confirm your contract really assigns copyright in final work in writing, worldwide, without time limit (the page promises this) â€“ ask your lawyer to check the clause.",
+                                        "Confirm your contract really assigns copyright in final work in writing, worldwide, without time limit (the page promises this) - ask your lawyer to check the clause.",
                                         "Remove or prove the About-page \"award-winning designer with 14 industry recognitions\" claim and the reused stock photo.",
                                         "Confirm the services you deliver: UX research and user testing, design systems, packaging, print production files, Indian-script lettering. Remove any you do not.",
                                         "Add a real design portfolio (logos, UI screens, before/after) with client permission.",
-                                        "Run a fresh keyword pull for this page (logo design company, brand identity design, ui ux design company, ui ux agency) â€“ current list is small.",
+                                        "Run a fresh keyword pull for this page (logo design company, brand identity design, ui ux design company, ui ux agency) - current list is small.",
                                         "Render all 16 FAQ answers in server HTML (H3 + P); FAQPage schema word-for-word.",
                                         "Fix sitewide NAP and remove ISO/4.9 badges before launch.",
                                         "Pricing: no prices here; link /pricing."
@@ -10860,11 +10860,11 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
-                                            "text":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company",
+                                            "text":  "Afwan Tech - Software \u0026 Digital Marketing Company",
                                             "chars":  49
                                         },
                      "title_option_2":  {
@@ -10891,7 +10891,7 @@
                                                   {
                                                       "location":  "India",
                                                       "option":  "Title 1",
-                                                      "title":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company in India",
+                                                      "title":  "Afwan Tech - Software \u0026 Digital Marketing Company in India",
                                                       "chars":  58,
                                                       "status":  "OK"
                                                   },
@@ -10905,7 +10905,7 @@
                                                   {
                                                       "location":  "Bengaluru",
                                                       "option":  "Title 1",
-                                                      "title":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company in Bengaluru",
+                                                      "title":  "Afwan Tech - Software \u0026 Digital Marketing Company in Bengaluru",
                                                       "chars":  62,
                                                       "status":  "Too long"
                                                   },
@@ -10919,7 +10919,7 @@
                                                   {
                                                       "location":  "Mumbai",
                                                       "option":  "Title 1",
-                                                      "title":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company in Mumbai",
+                                                      "title":  "Afwan Tech - Software \u0026 Digital Marketing Company in Mumbai",
                                                       "chars":  59,
                                                       "status":  "OK"
                                                   },
@@ -10933,7 +10933,7 @@
                                                   {
                                                       "location":  "Delhi NCR",
                                                       "option":  "Title 1",
-                                                      "title":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company in Delhi NCR",
+                                                      "title":  "Afwan Tech - Software \u0026 Digital Marketing Company in Delhi NCR",
                                                       "chars":  62,
                                                       "status":  "Too long"
                                                   },
@@ -10947,7 +10947,7 @@
                                                   {
                                                       "location":  "Thiruvananthapuram",
                                                       "option":  "Title 1",
-                                                      "title":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company in Thiruvananthapuram",
+                                                      "title":  "Afwan Tech - Software \u0026 Digital Marketing Company in Thiruvananthapuram",
                                                       "chars":  71,
                                                       "status":  "Too long"
                                                   },
@@ -10961,7 +10961,7 @@
                                                   {
                                                       "location":  "Assam \u0026 North East",
                                                       "option":  "Title 1",
-                                                      "title":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company in Assam \u0026 North East",
+                                                      "title":  "Afwan Tech - Software \u0026 Digital Marketing Company in Assam \u0026 North East",
                                                       "chars":  71,
                                                       "status":  "Too long"
                                                   },
@@ -10975,7 +10975,7 @@
                                                   {
                                                       "location":  "Chhatrapati Sambhajinagar",
                                                       "option":  "Title 1",
-                                                      "title":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company in Chhatrapati Sambhajinagar",
+                                                      "title":  "Afwan Tech - Software \u0026 Digital Marketing Company in Chhatrapati Sambhajinagar",
                                                       "chars":  78,
                                                       "status":  "Too long"
                                                   },
@@ -10989,7 +10989,7 @@
                                                   {
                                                       "location":  "Sambhajinagar (short form)",
                                                       "option":  "Title 1",
-                                                      "title":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company in Sambhajinagar",
+                                                      "title":  "Afwan Tech - Software \u0026 Digital Marketing Company in Sambhajinagar",
                                                       "chars":  66,
                                                       "status":  "Too long"
                                                   },
@@ -12551,7 +12551,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "Google Search Central â€“ \"AI features and your website\"; Google Search Central â€“ \"Do you need an SEO?\"; Google Search Central â€“ \"Creating helpful, reliable, people-first content\"; Google Search Central â€“ Spam policies for Google web search; web.dev â€“ Core Web Vitals; Ministry of Electronics and Information Technology (MeitY) â€“ Digital Personal Data Protection Rules, 2025."
+                                 "text":  "Google Search Central - \"AI features and your website\"; Google Search Central - \"Do you need an SEO?\"; Google Search Central - \"Creating helpful, reliable, people-first content\"; Google Search Central - Spam policies for Google web search; web.dev - Core Web Vitals; Ministry of Electronics and Information Technology (MeitY) - Digital Personal Data Protection Rules, 2025."
                              }
                          ],
         "faqs":  [
@@ -12670,7 +12670,7 @@
                                },
                                {
                                    "problem":  "Meta description makes unproven claim and misses main keywords",
-                                   "evidence":  "\"â€¦programmatic local SEO across 500+ citiesâ€¦\" (138 chars). No \"digital marketing company / services\".",
+                                   "evidence":  "\"...programmatic local SEO across 500+ cities...\" (138 chars). No \"digital marketing company / services\".",
                                    "severity":  "High"
                                },
                                {
@@ -12680,7 +12680,7 @@
                                },
                                {
                                    "problem":  "Same OG/Twitter title + description on every page (template bug)",
-                                   "evidence":  "Home, /services, /about-us, /pricing, /portfolio all share \"Next-gen web developmentâ€¦\" OG text; no og:image; twitter:card = summary.",
+                                   "evidence":  "Home, /services, /about-us, /pricing, /portfolio all share \"Next-gen web development...\" OG text; no og:image; twitter:card = summary.",
                                    "severity":  "Medium"
                                },
                                {
@@ -12690,7 +12690,7 @@
                                },
                                {
                                    "problem":  "Heading levels skipped; FAQs not headings",
-                                   "evidence":  "H2 \"India\u0027s Premierâ€¦\" followed directly by H4 items; testimonial names as H4; 4 of 5 FAQ answers not in HTML text (collapsed/JS).",
+                                   "evidence":  "H2 \"India\u0027s Premier...\" followed directly by H4 items; testimonial names as H4; 4 of 5 FAQ answers not in HTML text (collapsed/JS).",
                                    "severity":  "Medium"
                                },
                                {
@@ -12710,7 +12710,7 @@
                                },
                                {
                                    "problem":  "Testimonials and team photos appear to be stock images (reused)",
-                                   "evidence":  "Same Unsplash photo used for testimonial \"Vikram Malhotra\" and team \"Rahul Mehta\"; another shared by \"Aisha Al-Mansoor\" and \"Samira Khan\"; avatars from i.pravatar.cc; client logos (TechCorp, ShopEaseâ€¦) look like placeholders.",
+                                   "evidence":  "Same Unsplash photo used for testimonial \"Vikram Malhotra\" and team \"Rahul Mehta\"; another shared by \"Aisha Al-Mansoor\" and \"Samira Khan\"; avatars from i.pravatar.cc; client logos (TechCorp, ShopEase...) look like placeholders.",
                                    "severity":  "Critical"
                                },
                                {
@@ -12725,12 +12725,12 @@
                                },
                                {
                                    "problem":  "Broken footer link",
-                                   "evidence":  "\"Delhi NCR Digital Agency\" â†’ /location/delhi returns an error; the real page is /location/delhi-ncr.",
+                                   "evidence":  "\"Delhi NCR Digital Agency\"  ->  /location/delhi returns an error; the real page is /location/delhi-ncr.",
                                    "severity":  "High"
                                },
                                {
                                    "problem":  "Admin login linked in public footer",
-                                   "evidence":  "\"Agency Portal Login\" â†’ /admin on every page.",
+                                   "evidence":  "\"Agency Portal Login\"  ->  /admin on every page.",
                                    "severity":  "Medium"
                                },
                                {
@@ -12755,31 +12755,31 @@
                                },
                                {
                                    "problem":  "Site not found in our site: search",
-                                   "evidence":  "A site:afwantech.com search in our tool returned no afwantech.com results â€“ check indexing in Google Search Console.",
+                                   "evidence":  "A site:afwantech.com search in our tool returned no afwantech.com results - check indexing in Google Search Console.",
                                    "severity":  "High"
                                },
                                {
                                    "problem":  "Budget ranges shown in home form",
-                                   "evidence":  "â‚¹15,000 â€“ â‚¹3,00,000+ dropdown. Acceptable only if price display is allowed on home; pricing policy not supplied.",
+                                   "evidence":  "₹15,000 - ₹3,00,000+ dropdown. Acceptable only if price display is allowed on home; pricing policy not supplied.",
                                    "severity":  "Low"
                                }
                            ],
         "fixes_before_publishing":  [
-                                        "Replace Noida address, +91 95601 33711, +1 855 number and contact@afwan.agency everywhere (header, footer, Contact, schema, WhatsApp link wa.me/919560133711) with the Bengaluru NAP, 79798 50684 and contactafwantech@gmail.com â€“ or tell us which is correct. NAP must match the Google Business Profile exactly.",
+                                        "Replace Noida address, +91 95601 33711, +1 855 number and contact@afwan.agency everywhere (header, footer, Contact, schema, WhatsApp link wa.me/919560133711) with the Bengaluru NAP, 79798 50684 and contactafwantech@gmail.com - or tell us which is correct. NAP must match the Google Business Profile exactly.",
                                         "Consider a domain email (e.g. contact@afwantech.com) instead of Gmail for trust; keep one email sitewide.",
-                                        "Remove unproven badges: ISO 9001:2015, 16,000+ clients, 4.9/5 rating, 98.4%/98% success/retention, $50M+ revenue, 285%/320%/310% lift, \"verified\" labels, \"India\u0027s Premier\", \"guaranteed 24-hour\" â€“ unless you can show proof.",
+                                        "Remove unproven badges: ISO 9001:2015, 16,000+ clients, 4.9/5 rating, 98.4%/98% success/retention, $50M+ revenue, 285%/320%/310% lift, \"verified\" labels, \"India\u0027s Premier\", \"guaranteed 24-hour\" - unless you can show proof.",
                                         "Remove the stock-photo testimonials, the \"Trusted by Innovative Leaders\" placeholder logos and the stock-photo team profiles; replace with real, permission-based reviews (e.g. embed Google reviews) and real team photos/names.",
                                         "Fix the years-in-business number: \"8+ years\" vs founded 2016. Supply the true founding year (and CIN/GSTIN/Udyam if available).",
                                         "Set canonical https://www.afwantech.com/ on home; set og:url, og:title, og:description per page (template bug); add og:image 1200Ã—630; twitter:card = summary_large_image.",
-                                        "301 /location/delhi â†’ /location/delhi-ncr and update the footer link. Re-check all 595 /location/ pages for thin/duplicate content (doorway risk); noindex or merge thin ones.",
+                                        "301 /location/delhi  ->  /location/delhi-ncr and update the footer link. Re-check all 595 /location/ pages for thin/duplicate content (doorway risk); noindex or merge thin ones.",
                                         "Remove \"Agency Portal Login\" (/admin) from the public footer; noindex /admin and block it in robots.txt.",
                                         "Make FAQ answers visible in server-rendered HTML (not only after a click/JS), and use H3 for questions.",
                                         "Retitle /market-area and /services so they stop competing with the home page title.",
                                         "Verify the site in Google Search Console and Bing Webmaster Tools; submit the sitemap; check indexing (our site: search found nothing).",
                                         "Confirm whether PPC (/services/ppc-paid-ads) and Graphic Design (/services/graphic-design) pages exist; they are in the keyword map but not in the navigation.",
-                                        "Confirm \"Open 24 hours\" â€“ if the office is not actually staffed 24Ã—7, use real hours in GBP, page and schema.",
-                                        "Pricing policy: home page publishes no prices (pricing page does). Confirm you are happy with the â‚¹ budget ranges in the home form.",
-                                        "Add privacy policy and terms pages (link in footer); form consent text in line with DPDP Act/Rules â€“ reviewed by your legal adviser."
+                                        "Confirm \"Open 24 hours\" - if the office is not actually staffed 24Ã—7, use real hours in GBP, page and schema.",
+                                        "Pricing policy: home page publishes no prices (pricing page does). Confirm you are happy with the ₹ budget ranges in the home form.",
+                                        "Add privacy policy and terms pages (link in footer); form consent text in line with DPDP Act/Rules - reviewed by your legal adviser."
                                     ],
         "schema_jsonld":  {
                               "@context":  "https://schema.org",
@@ -12947,7 +12947,7 @@
                                                  "@type":  "WebPage",
                                                  "@id":  "https://www.afwantech.com/#webpage",
                                                  "url":  "https://www.afwantech.com/",
-                                                 "name":  "Afwan Tech â€“ Software \u0026 Digital Marketing Company",
+                                                 "name":  "Afwan Tech - Software \u0026 Digital Marketing Company",
                                                  "description":  "Digital marketing company and software company in one team: SEO, ads, social media, websites and apps for startups and small business. Get a free audit.",
                                                  "isPartOf":  {
                                                                   "@id":  "https://www.afwantech.com/#website"
@@ -13123,7 +13123,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -13149,7 +13149,7 @@
                      "lang":  "en-IN",
                      "live_title":  "Client Portfolio \u0026 Case Studies | AFWAN TECH",
                      "live_description":  "Examine our proven track record: SaaS platforms, high-velocity e-commerce websites, and compounding organic search growth.",
-                     "location_versions":  "NOT recommended â€“ portfolio hub (see Part 1-D)",
+                     "location_versions":  "NOT recommended - portfolio hub (see Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -14471,7 +14471,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "Central Consumer Protection Authority â€“ Guidelines for Prevention of Misleading Advertisements and Endorsements for Misleading Advertisements, 2022 (notified 9 June 2022); Bureau of Indian Standards â€“ IS 19000:2022, Online consumer reviews (November 2022); MeitY â€“ Digital Personal Data Protection Act, 2023."
+                                 "text":  "Central Consumer Protection Authority - Guidelines for Prevention of Misleading Advertisements and Endorsements for Misleading Advertisements, 2022 (notified 9 June 2022); Bureau of Indian Standards - IS 19000:2022, Online consumer reviews (November 2022); MeitY - Digital Personal Data Protection Act, 2023."
                              }
                          ],
         "faqs":  [
@@ -14581,7 +14581,7 @@
         "problems_found":  [
                                {
                                    "problem":  "Case studies appear unverifiable",
-                                   "evidence":  "4 cards with no client names: \"E-commerce SEO Domination â€“ 340% traffic, â‚¹2.1Cr revenue\", \"SaaS Platform â€“ 99.9% uptime, 18k+ users\", \"Global Luxury Real Estate PPC â€“ 6.2x ROAS, 65% lower CPL\", \"Fintech Mobile Banking App â€“ 4.9 rating, 250k+ downloads\".",
+                                   "evidence":  "4 cards with no client names: \"E-commerce SEO Domination - 340% traffic, ₹2.1Cr revenue\", \"SaaS Platform - 99.9% uptime, 18k+ users\", \"Global Luxury Real Estate PPC - 6.2x ROAS, 65% lower CPL\", \"Fintech Mobile Banking App - 4.9 rating, 250k+ downloads\".",
                                    "severity":  "Critical"
                                },
                                {
@@ -14596,12 +14596,12 @@
                                },
                                {
                                    "problem":  "Unproven headline stats",
-                                   "evidence":  "\"500+ Projects Shipped\", \"+320% Avg Organic Lift in first 120 days\", \"4.9/5 Clutch \u0026 Google â€“ Verified feedback\" (no Clutch/Google profile linked).",
+                                   "evidence":  "\"500+ Projects Shipped\", \"+320% Avg Organic Lift in first 120 days\", \"4.9/5 Clutch \u0026 Google - Verified feedback\" (no Clutch/Google profile linked).",
                                    "severity":  "Critical"
                                },
                                {
                                    "problem":  "Primary keyword missing; title template",
-                                   "evidence":  "\"Client Portfolio \u0026 Case Studies | AFWAN TECH\" (44 chars) â€“ no \"digital marketing portfolio pdf\" or \"digital marketing agency portfolio\".",
+                                   "evidence":  "\"Client Portfolio \u0026 Case Studies | AFWAN TECH\" (44 chars) - no \"digital marketing portfolio pdf\" or \"digital marketing agency portfolio\".",
                                    "severity":  "High"
                                },
                                {
@@ -14631,11 +14631,11 @@
                                }
                            ],
         "fixes_before_publishing":  [
-                                        "CRITICAL: Remove the four current case-study cards and their figures (340%, â‚¹2.1Cr, 99.9% uptime, 18k+ users, 6.2x ROAS, 65% lower CPL, 4.9 rating, 250k+ downloads) unless you can show the owner\u0027s data and written permission.",
-                                        "Supply 3â€“6 REAL projects (even small ones) with: owner name or anonymised description, service, starting point, work done, results with source and dates, screenshots, written permission. I will write them up in the template structure.",
+                                        "CRITICAL: Remove the four current case-study cards and their figures (340%, ₹2.1Cr, 99.9% uptime, 18k+ users, 6.2x ROAS, 65% lower CPL, 4.9 rating, 250k+ downloads) unless you can show the owner\u0027s data and written permission.",
+                                        "Supply 3 - 6 REAL projects (even small ones) with: owner name or anonymised description, service, starting point, work done, results with source and dates, screenshots, written permission. I will write them up in the template structure.",
                                         "Create one URL per case study (/portfolio/[slug]) and point cards there, not to /contact-us.",
                                         "Create the downloadable portfolio PDF from the real case studies; until it exists, use Title 2 (no \"PDF\" in title) and change \"Request the Portfolio PDF\" CTA to \"Request Our Work Samples\".",
-                                        "Remove \"500+ Projects\", \"+320% Avg Organic Lift\" and \"4.9/5 Clutch \u0026 Google â€“ Verified\" unless you link the real Clutch/Google profiles and data.",
+                                        "Remove \"500+ Projects\", \"+320% Avg Organic Lift\" and \"4.9/5 Clutch \u0026 Google - Verified\" unless you link the real Clutch/Google profiles and data.",
                                         "Replace stock photos with real screenshots and photos; blur personal data.",
                                         "Add Review/aggregateRating schema ONLY if real reviews are shown on the page.",
                                         "Render all 16 FAQ answers in server HTML; FAQPage schema word-for-word.",
@@ -14869,7 +14869,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -14893,9 +14893,9 @@
                      "canonical":  "https://www.afwantech.com/services/ppc-paid-ads",
                      "robots":  "index, follow, max-image-preview:large",
                      "lang":  "en-IN",
-                     "live_title":  "â€” (new page; no live title). No given title supplied.",
-                     "live_description":  "â€” (new page; no live description). No given description supplied.",
-                     "location_versions":  "Yes â€“ service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
+                     "live_title":  " -  (new page; no live title). No given title supplied.",
+                     "live_description":  " -  (new page; no live description). No given description supplied.",
+                     "location_versions":  "Yes - service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -16635,7 +16635,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "Google Ads Help â€“ Advertiser verification; Google Ads Help â€“ Financial services verification: relevant regulators and enforcement dates (India, from 24 January 2023); Promotion and Regulation of Online Gaming Act, 2025; Meta Business Help â€“ Special ad categories; MeitY â€“ Digital Personal Data Protection Act, 2023."
+                                 "text":  "Google Ads Help - Advertiser verification; Google Ads Help - Financial services verification: relevant regulators and enforcement dates (India, from 24 January 2023); Promotion and Regulation of Online Gaming Act, 2025; Meta Business Help - Special ad categories; MeitY - Digital Personal Data Protection Act, 2023."
                              }
                          ],
         "faqs":  [
@@ -16759,7 +16759,7 @@
                                },
                                {
                                    "problem":  "Unproven PPC claims elsewhere on the site",
-                                   "evidence":  "About page: \"Arjun Patel â€“ $2M+ monthly ad spendâ€¦ 4x to 6x ROAS\" (stock photo); Portfolio: \"Global Luxury Real Estate PPC â€“ 6.2x ROAS, 65% lower cost per lead\". Do not reuse on this page unless proven.",
+                                   "evidence":  "About page: \"Arjun Patel - $2M+ monthly ad spend... 4x to 6x ROAS\" (stock photo); Portfolio: \"Global Luxury Real Estate PPC - 6.2x ROAS, 65% lower cost per lead\". Do not reuse on this page unless proven.",
                                    "severity":  "Critical"
                                },
                                {
@@ -16769,7 +16769,7 @@
                                },
                                {
                                    "problem":  "Sitewide NAP conflict and badges",
-                                   "evidence":  "Noida/95601 33711/contact@afwan.agency; ISO 9001:2015; 4.9/5 â€“ would appear in this page\u0027s header/footer.",
+                                   "evidence":  "Noida/95601 33711/contact@afwan.agency; ISO 9001:2015; 4.9/5 - would appear in this page\u0027s header/footer.",
                                    "severity":  "Critical"
                                },
                                {
@@ -16781,11 +16781,11 @@
         "fixes_before_publishing":  [
                                         "Publish this page at /services/ppc-paid-ads, add it to the Services menu, the /services hub and the footer; then replace every \"link once live (/services/ppc-paid-ads)\" note on other pages with the real link.",
                                         "Confirm Google Ads / Meta Partner status. If you are a Google Partner or Meta Business Partner, add the official badge with its verification link; if not, never imply it.",
-                                        "Remove or prove the About-page PPC claims ($2M+ monthly spend, 4xâ€“6x ROAS) and the Portfolio \"6.2x ROAS / 65% lower CPL\" case study.",
+                                        "Remove or prove the About-page PPC claims ($2M+ monthly spend, 4x - 6x ROAS) and the Portfolio \"6.2x ROAS / 65% lower CPL\" case study.",
                                         "Confirm platforms you actually manage (Google, Microsoft, Meta, LinkedIn, YouTube) and remove any you do not.",
                                         "Confirm the Online Gaming Act 2025 commencement status with your adviser (the page wording works either way: we do not run such ads).",
                                         "Render all 16 FAQ answers in server HTML (H3 + P); FAQPage schema word-for-word.",
-                                        "Add 2â€“3 real campaign case studies (with permission, screenshots of platform reports) and link to /portfolio.",
+                                        "Add 2 - 3 real campaign case studies (with permission, screenshots of platform reports) and link to /portfolio.",
                                         "Fix sitewide NAP and remove ISO/4.9 badges before launching the new page.",
                                         "Pricing: no prices here; make sure /pricing describes how ad spend is separate from management fees."
                                     ],
@@ -17082,11 +17082,11 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
-                                            "text":  "Organic \u0026 Local SEO Services â€“ SEO Agency",
+                                            "text":  "Organic \u0026 Local SEO Services - SEO Agency",
                                             "chars":  41
                                         },
                      "title_option_2":  {
@@ -17108,12 +17108,12 @@
                      "lang":  "en-IN",
                      "live_title":  "SEO Services Company | Search Engine Optimization \u0026 Programmatic SEO | AFWAN TECH",
                      "live_description":  "Top SEO company delivering Page 1 Google rankings. We combine technical SEO, programmatic location scaling (500+ cities), semantic content, and high-authority link building to drive sustained organic revenue.",
-                     "location_versions":  "Yes â€“ service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
+                     "location_versions":  "Yes - service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in India",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in India",
                                                       "chars":  50,
                                                       "status":  "OK"
                                                   },
@@ -17127,7 +17127,7 @@
                                                   {
                                                       "location":  "Bengaluru",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Bengaluru",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Bengaluru",
                                                       "chars":  54,
                                                       "status":  "OK"
                                                   },
@@ -17141,7 +17141,7 @@
                                                   {
                                                       "location":  "Mumbai",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Mumbai",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Mumbai",
                                                       "chars":  51,
                                                       "status":  "OK"
                                                   },
@@ -17155,7 +17155,7 @@
                                                   {
                                                       "location":  "Delhi NCR",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Delhi NCR",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Delhi NCR",
                                                       "chars":  54,
                                                       "status":  "OK"
                                                   },
@@ -17169,7 +17169,7 @@
                                                   {
                                                       "location":  "Hubballi-Dharwad",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Hubballi-Dharwad",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Hubballi-Dharwad",
                                                       "chars":  61,
                                                       "status":  "Too long"
                                                   },
@@ -17183,7 +17183,7 @@
                                                   {
                                                       "location":  "Bokaro Steel City",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Bokaro Steel City",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Bokaro Steel City",
                                                       "chars":  62,
                                                       "status":  "Too long"
                                                   },
@@ -17197,7 +17197,7 @@
                                                   {
                                                       "location":  "Bokaro (short form)",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Bokaro",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Bokaro",
                                                       "chars":  51,
                                                       "status":  "OK"
                                                   },
@@ -17211,7 +17211,7 @@
                                                   {
                                                       "location":  "Thiruvananthapuram",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Thiruvananthapuram",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Thiruvananthapuram",
                                                       "chars":  63,
                                                       "status":  "Too long"
                                                   },
@@ -17225,7 +17225,7 @@
                                                   {
                                                       "location":  "Trivandrum (short form)",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Trivandrum",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Trivandrum",
                                                       "chars":  55,
                                                       "status":  "OK"
                                                   },
@@ -17239,7 +17239,7 @@
                                                   {
                                                       "location":  "Assam \u0026 North East",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Assam \u0026 North East",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Assam \u0026 North East",
                                                       "chars":  63,
                                                       "status":  "Too long"
                                                   },
@@ -17253,7 +17253,7 @@
                                                   {
                                                       "location":  "North East (short form)",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in North East",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in North East",
                                                       "chars":  55,
                                                       "status":  "OK"
                                                   },
@@ -17267,7 +17267,7 @@
                                                   {
                                                       "location":  "Chhatrapati Sambhajinagar",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Chhatrapati Sambhajinagar",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Chhatrapati Sambhajinagar",
                                                       "chars":  70,
                                                       "status":  "Too long"
                                                   },
@@ -17281,7 +17281,7 @@
                                                   {
                                                       "location":  "Sambhajinagar (short form)",
                                                       "option":  "Title 1",
-                                                      "title":  "Organic \u0026 Local SEO Services â€“ SEO Agency in Sambhajinagar",
+                                                      "title":  "Organic \u0026 Local SEO Services - SEO Agency in Sambhajinagar",
                                                       "chars":  58,
                                                       "status":  "OK"
                                                   },
@@ -18868,7 +18868,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "Google Search Central â€“ \"Do you need an SEO?\" (updated June 2026); Google Search Central â€“ \"AI features and your website\"; Google Search Central â€“ Spam policies for Google web search; Google Business Profile Help â€“ Guidelines for representing your business on Google; Shopify Developer Documentation â€“ Customise robots.txt; web.dev â€“ Core Web Vitals."
+                                 "text":  "Google Search Central - \"Do you need an SEO?\" (updated June 2026); Google Search Central - \"AI features and your website\"; Google Search Central - Spam policies for Google web search; Google Business Profile Help - Guidelines for representing your business on Google; Shopify Developer Documentation - Customise robots.txt; web.dev - Core Web Vitals."
                              }
                          ],
         "faqs":  [
@@ -18991,7 +18991,7 @@
                                },
                                {
                                    "problem":  "Meta description over-claims and is truncated",
-                                   "evidence":  "208 chars; \"Top SEO company delivering Page 1 Google rankings\" â€“ ranking promise.",
+                                   "evidence":  "208 chars; \"Top SEO company delivering Page 1 Google rankings\" - ranking promise.",
                                    "severity":  "Critical"
                                },
                                {
@@ -19011,17 +19011,17 @@
                                },
                                {
                                    "problem":  "Unsupported stats",
-                                   "evidence":  "\"+310% Organic Traffic Lift â€“ average 6-month climb\", \"100% White-Hat â€“ zero algorithmic penalties\".",
+                                   "evidence":  "\"+310% Organic Traffic Lift - average 6-month climb\", \"100% White-Hat - zero algorithmic penalties\".",
                                    "severity":  "High"
                                },
                                {
                                    "problem":  "Doorway / scaled-content risk promoted as a feature",
-                                   "evidence":  "\"Programmatic Local SEO (500+ Cities)â€¦ without duplicate content penalties\"; Month 3 \"Deployment of dynamic city/state landing pages\".",
+                                   "evidence":  "\"Programmatic Local SEO (500+ Cities)... without duplicate content penalties\"; Month 3 \"Deployment of dynamic city/state landing pages\".",
                                    "severity":  "Critical"
                                },
                                {
                                    "problem":  "Fixed month-by-month timeline",
-                                   "evidence":  "Month 1 â€¦ Months 4â€“6 for every client.",
+                                   "evidence":  "Month 1 ... Months 4 - 6 for every client.",
                                    "severity":  "Medium"
                                },
                                {
@@ -19031,12 +19031,12 @@
                                },
                                {
                                    "problem":  "Duplicate template sections",
-                                   "evidence":  "H2 \"How We Deliver Predictable Business ROI for â€¦\" and comparison table shared with other service pages; \"EzRank Architecture\".",
+                                   "evidence":  "H2 \"How We Deliver Predictable Business ROI for ...\" and comparison table shared with other service pages; \"EzRank Architecture\".",
                                    "severity":  "Medium"
                                },
                                {
                                    "problem":  "Tool list may imply partnerships",
-                                   "evidence":  "Ahrefs, SEMrush, BrightLocal, Moz Local listed under \"Institutional Tech Stack\" â€“ fine only if you actually hold these subscriptions.",
+                                   "evidence":  "Ahrefs, SEMrush, BrightLocal, Moz Local listed under \"Institutional Tech Stack\" - fine only if you actually hold these subscriptions.",
                                    "severity":  "Low"
                                },
                                {
@@ -19059,7 +19059,7 @@
                                         "Only list tools (Ahrefs, SEMrush, BrightLocal, Moz Local) you actually subscribe to.",
                                         "Review the site\u0027s own 595 /location/ pages against the same doorway rules this page now promises clients.",
                                         "Create/verify one Google Business Profile for the Whitefield office only; match NAP exactly.",
-                                        "Add 2â€“3 real SEO case studies (with permission, Search Console screenshots) and link to /portfolio.",
+                                        "Add 2 - 3 real SEO case studies (with permission, Search Console screenshots) and link to /portfolio.",
                                         "Fix sitewide NAP, remove ISO/4.9 badges and \"EzRank Architecture\"; remove duplicate template sections.",
                                         "Pricing: no prices here; \"affordable\" keywords belong to /pricing."
                                     ],
@@ -19175,7 +19175,7 @@
                                                  "@type":  "WebPage",
                                                  "@id":  "https://www.afwantech.com/services/seo-services#webpage",
                                                  "url":  "https://www.afwantech.com/services/seo-services",
-                                                 "name":  "Organic \u0026 Local SEO Services â€“ SEO Agency",
+                                                 "name":  "Organic \u0026 Local SEO Services - SEO Agency",
                                                  "description":  "SEO agency for local, organic, Shopify and SaaS SEO: technical fixes, content and genuine links. No ranking guarantees, clear reports. Free audit.",
                                                  "isPartOf":  {
                                                                   "@id":  "https://www.afwantech.com/#website"
@@ -19363,7 +19363,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -19388,8 +19388,8 @@
                      "robots":  "index, follow, max-image-preview:large",
                      "lang":  "en-IN",
                      "live_title":  "Social Media Management Services | Creative Brand Growth | AFWAN TECH",
-                     "live_description":  "Service description about social media management and creative brand growth â€“ about 167 characters, truncated in results.",
-                     "location_versions":  "Yes â€“ service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
+                     "live_description":  "Service description about social media management and creative brand growth - about 167 characters, truncated in results.",
+                     "location_versions":  "Yes - service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -20194,7 +20194,7 @@
                              },
                              {
                                  "type":  "p",
-                                 "text":  "Among social media marketing companies for small business, the important difference is focus. We would rather help a clinic, salon, cafÃ©, showroom or coaching centre win regular bookings from two well-run channels than chase follower counts across five. Where your Google Business Profile, website or WhatsApp follow-up are holding you back, we point that out too, because social attention only pays when the next step works."
+                                 "text":  "Among social media marketing companies for small business, the important difference is focus. We would rather help a clinic, salon, café, showroom or coaching centre win regular bookings from two well-run channels than chase follower counts across five. Where your Google Business Profile, website or WhatsApp follow-up are holding you back, we point that out too, because social attention only pays when the next step works."
                              },
                              {
                                  "type":  "h3",
@@ -20527,11 +20527,11 @@
                              },
                              {
                                  "type":  "h3",
-                                 "text":  "Situation 1: A CafÃ© With Followers but Few Visits"
+                                 "text":  "Situation 1: A Café With Followers but Few Visits"
                              },
                              {
                                  "type":  "p",
-                                 "text":  "A neighbourhood cafÃ© (details changed) has a pretty Instagram feed but quiet weekday afternoons. We would plan reels around weekday offers and new menu items, add location tags and opening hours to every post, reply quickly to messages about table bookings and track redemptions of a social-only offer at the counter."
+                                 "text":  "A neighbourhood café (details changed) has a pretty Instagram feed but quiet weekday afternoons. We would plan reels around weekday offers and new menu items, add location tags and opening hours to every post, reply quickly to messages about table bookings and track redemptions of a social-only offer at the counter."
                              },
                              {
                                  "type":  "h3",
@@ -20850,7 +20850,7 @@
                              },
                              {
                                  "type":  "p",
-                                 "text":  "Yes. We work with clinics, cafÃ©s, salons, showrooms, coaching centres and other local businesses, focusing on a manageable posting rhythm and real enquiries."
+                                 "text":  "Yes. We work with clinics, cafés, salons, showrooms, coaching centres and other local businesses, focusing on a manageable posting rhythm and real enquiries."
                              },
                              {
                                  "type":  "h3",
@@ -21010,7 +21010,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "Department of Consumer Affairs â€“ \"Endorsement Know-hows!\" for celebrities and influencers (January 2023); Advertising Standards Council of India (ASCI) â€“ update on health and finance influencers (17 August 2023); Ministry of Electronics and Information Technology (MeitY) â€“ Digital Personal Data Protection Act, 2023."
+                                 "text":  "Department of Consumer Affairs - \"Endorsement Know-hows!\" for celebrities and influencers (January 2023); Advertising Standards Council of India (ASCI) - update on health and finance influencers (17 August 2023); Ministry of Electronics and Information Technology (MeitY) - Digital Personal Data Protection Act, 2023."
                              }
                          ],
         "faqs":  [
@@ -21040,7 +21040,7 @@
                      },
                      {
                          "q":  "Are you a social media marketing agency for small business?",
-                         "a":  "Yes. We work with clinics, cafÃ©s, salons, showrooms, coaching centres and other local businesses, focusing on a manageable posting rhythm and real enquiries."
+                         "a":  "Yes. We work with clinics, cafés, salons, showrooms, coaching centres and other local businesses, focusing on a manageable posting rhythm and real enquiries."
                      },
                      {
                          "q":  "Do you run paid social media ads?",
@@ -21098,7 +21098,7 @@
                                },
                                {
                                    "type":  "p",
-                                   "text":  "For local shops, clinics, cafÃ©s, salons, showrooms and coaching centres, we work as a social media marketing agency for small business, keeping the posting rhythm manageable and tying content to real bookings and visits. Among social media marketing companies for small business, the difference we aim for is focus on results you can see at the counter or in your inbox, not follower counts."
+                                   "text":  "For local shops, clinics, cafés, salons, showrooms and coaching centres, we work as a social media marketing agency for small business, keeping the posting rhythm manageable and tying content to real bookings and visits. Among social media marketing companies for small business, the difference we aim for is focus on results you can see at the counter or in your inbox, not follower counts."
                                },
                                {
                                    "type":  "p",
@@ -21149,7 +21149,7 @@
                                },
                                {
                                    "problem":  "Unsourced stats",
-                                   "evidence":  "\"10M+ organic views\", \"4.8% engagement â€“ 3x above industry median\", \"30+ assets\", \"24/7 community care\".",
+                                   "evidence":  "\"10M+ organic views\", \"4.8% engagement - 3x above industry median\", \"30+ assets\", \"24/7 community care\".",
                                    "severity":  "High"
                                },
                                {
@@ -21396,7 +21396,7 @@
                                                                         "name":  "Are you a social media marketing agency for small business?",
                                                                         "acceptedAnswer":  {
                                                                                                "@type":  "Answer",
-                                                                                               "text":  "Yes. We work with clinics, cafÃ©s, salons, showrooms, coaching centres and other local businesses, focusing on a manageable posting rhythm and real enquiries."
+                                                                                               "text":  "Yes. We work with clinics, cafés, salons, showrooms, coaching centres and other local businesses, focusing on a manageable posting rhythm and real enquiries."
                                                                                            }
                                                                     },
                                                                     {
@@ -21489,7 +21489,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -21514,8 +21514,8 @@
                      "robots":  "index, follow, max-image-preview:large",
                      "lang":  "en-IN",
                      "live_title":  "Website Development Services | High-Performance Next.js Web Engineering | AFWAN TECH",
-                     "live_description":  "Starts \"Leading Next.js website development companyâ€¦\" and promises guaranteed Core Web Vitals (about 190 characters â€“ truncated in results).",
-                     "location_versions":  "Yes â€“ service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
+                     "live_description":  "Starts \"Leading Next.js website development company...\" and promises guaranteed Core Web Vitals (about 190 characters - truncated in results).",
+                     "location_versions":  "Yes - service page; use Title 1, or Title 2 / short form for long names (Part 1-D)",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -23287,7 +23287,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "Google Search Central â€“ \"AI features and your website\"; Google Search Central â€“ mobile-first indexing announcement (June 2024); web.dev â€“ Core Web Vitals; W3C â€“ Web Content Accessibility Guidelines (WCAG) 2.2; Drupal.org â€“ Drupal 7 roadmap and release schedule; W3Techs â€“ usage statistics of content management systems."
+                                 "text":  "Google Search Central - \"AI features and your website\"; Google Search Central - mobile-first indexing announcement (June 2024); web.dev - Core Web Vitals; W3C - Web Content Accessibility Guidelines (WCAG) 2.2; Drupal.org - Drupal 7 roadmap and release schedule; W3Techs - usage statistics of content management systems."
                              }
                          ],
         "faqs":  [
@@ -23410,7 +23410,7 @@
                                },
                                {
                                    "problem":  "Meta description truncated and over-claims",
-                                   "evidence":  "About 190 chars; \"Leadingâ€¦\" and guaranteed Core Web Vitals.",
+                                   "evidence":  "About 190 chars; \"Leading...\" and guaranteed Core Web Vitals.",
                                    "severity":  "High"
                                },
                                {
@@ -23420,7 +23420,7 @@
                                },
                                {
                                    "problem":  "H1 misses the keyword and targets only \"enterprise\"",
-                                   "evidence":  "\"Enterprise Next.js \u0026 Full-Stack Website Development Services\" â€“ most keyword intent is small/medium business and WordPress.",
+                                   "evidence":  "\"Enterprise Next.js \u0026 Full-Stack Website Development Services\" - most keyword intent is small/medium business and WordPress.",
                                    "severity":  "High"
                                },
                                {
@@ -23430,12 +23430,12 @@
                                },
                                {
                                    "problem":  "Contradictory speed claims",
-                                   "evidence":  "\"Core Web Vitals 100/100 Guaranteed\" (banner) vs \"98+\" (hero) vs \"95â€“100\" (roadmap/table); \"under 0.8s\", \"Zero CLS\".",
+                                   "evidence":  "\"Core Web Vitals 100/100 Guaranteed\" (banner) vs \"98+\" (hero) vs \"95 - 100\" (roadmap/table); \"under 0.8s\", \"Zero CLS\".",
                                    "severity":  "Critical"
                                },
                                {
                                    "problem":  "Unsourced comparison stat",
-                                   "evidence":  "\"3.8x Higher Conversion\" vs WordPress sites; PageSpeed \"30â€“65\" for average agencies.",
+                                   "evidence":  "\"3.8x Higher Conversion\" vs WordPress sites; PageSpeed \"30 - 65\" for average agencies.",
                                    "severity":  "High"
                                },
                                {
@@ -23450,7 +23450,7 @@
                                },
                                {
                                    "problem":  "Fixed timeline promise",
-                                   "evidence":  "Phases Days 1â€“5, 6â€“15, 16â€“22, 23â€“28 (28 days) for every project.",
+                                   "evidence":  "Phases Days 1 - 5, 6 - 15, 16 - 22, 23 - 28 (28 days) for every project.",
                                    "severity":  "Medium"
                                },
                                {
@@ -23460,7 +23460,7 @@
                                },
                                {
                                    "problem":  "Off-topic copied template text",
-                                   "evidence":  "Programmatic SEO / 500+ cities on a development page; H2 \"How We Deliver Predictable Business ROI for â€¦\" repeated on SEO and e-commerce pages (duplicate template).",
+                                   "evidence":  "Programmatic SEO / 500+ cities on a development page; H2 \"How We Deliver Predictable Business ROI for ...\" repeated on SEO and e-commerce pages (duplicate template).",
                                    "severity":  "Medium"
                                },
                                {
@@ -23487,14 +23487,14 @@
         "fixes_before_publishing":  [
                                         "CONFIRM FIRST: does Afwan Tech build and maintain WordPress and Drupal sites, and offer care plans (updates, backups, monitoring)? This copy assumes yes. If not, remove those sections/keywords before publishing.",
                                         "Replace title, meta description and H1 with the recommended ones; set page-specific og:title/og:description/og:url (www + path) and og:image.",
-                                        "Remove \"Core Web Vitals 100/100 Guaranteed\", \"98+\", \"under 0.8s\", \"Zero CLS\", \"3.8x Higher Conversion\" and the PageSpeed 30â€“65 comparison.",
+                                        "Remove \"Core Web Vitals 100/100 Guaranteed\", \"98+\", \"under 0.8s\", \"Zero CLS\", \"3.8x Higher Conversion\" and the PageSpeed 30 - 65 comparison.",
                                         "Remove the fixed 28-day roadmap; use the indicative stage table.",
                                         "Remove ISO 9001, 4.9/5, 500+ websites / 40+ countries, GDPR/HIPAA compliance and \"Zero vulnerabilities\" claims unless you can prove them.",
                                         "Remove the anti-WordPress comparison table (it contradicts the new WordPress offer and keyword plan).",
                                         "Remove programmatic SEO / 500+ cities text from this page; replace the duplicate H2 template used across service pages.",
                                         "Render all 16 FAQ answers in server HTML with H3 questions; FAQPage schema must match word for word.",
                                         "Add real website screenshots/case studies to the page (with client permission) and link to /portfolio.",
-                                        "Fix sitewide NAP (Noida â†’ Bengaluru, phone, email) in header, footer, forms and schema.",
+                                        "Fix sitewide NAP (Noida  ->  Bengaluru, phone, email) in header, footer, forms and schema.",
                                         "Fix typos (\"Phase 01Days\") and the \"60-Sec\" vs \"15 mins\" mismatch.",
                                         "Location versions: add a unique true local block per city or do not publish that city version; fix /location/delhi.",
                                         "Pricing policy: no prices on this page; confirm /pricing figures are current."
@@ -23784,7 +23784,7 @@
         "file":  "Afwantech_CRM_Software_Page_SEO_Content.json",
         "name":  "CRM Software (Service Page)",
         "url":  "https://www.afwantech.com/services/crm-software",
-        "type":  "Service page â€“ NEW (Service schema; location versions possible)",
+        "type":  "Service page - NEW (Service schema; location versions possible)",
         "nap":  {
                     "street":  "ITPL Main Rd, Pattandur Agrahara, Whitefield",
                     "city":  "Bengaluru",
@@ -23792,7 +23792,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -23816,9 +23816,9 @@
                      "canonical":  "https://www.afwantech.com/services/crm-software",
                      "robots":  "index, follow, max-image-preview:large",
                      "lang":  "en-IN",
-                     "live_title":  "â€” (new page; no live title). No given title supplied.",
-                     "live_description":  "â€” (new page; no live description).",
-                     "location_versions":  "Possible (service page) â€“ see Part 1-D; only with a true, unique local block",
+                     "live_title":  " -  (new page; no live title). No given title supplied.",
+                     "live_description":  " -  (new page; no live description).",
+                     "location_versions":  "Possible (service page) - see Part 1-D; only with a true, unique local block",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -24231,13 +24231,13 @@
                                         "Create /services/crm-software, add it to the Services menu, Home services list, /services hub and footer.",
                                         "Move \"crm development company\" from Custom Web Development to this page in the keyword map and Rank Tracker; add one link from CWD.",
                                         "Do not display CRM vendor partner badges unless verifiable; keep the \u0027not affiliated\u0027 wording for Servitium / Butterfly.",
-                                        "Add 1â€“2 real CRM case studies or screenshots (with permission) to Portfolio and link them here.",
+                                        "Add 1 - 2 real CRM case studies or screenshots (with permission) to Portfolio and link them here.",
                                         "Server-render all FAQ answers; add Service + FAQPage schema exactly as in Part 6.",
                                         "Get volume / KD for the 9 keywords from Semrush and add them to the Rank Tracker."
                                     ],
         "problems_found":  [
                                {
-                                   "problem":  "New page â€“ not live",
+                                   "problem":  "New page - not live",
                                    "evidence":  "No /services/crm-software URL in the live navigation; not linked from Home or /services.",
                                    "severity":  "High"
                                },
@@ -24248,12 +24248,12 @@
                                },
                                {
                                    "problem":  "Brand / navigational keywords",
-                                   "evidence":  "\"servitium crm\" (Path Infotech product) and \"butterfly crm\" (likely Butterfly appliance service portal / similar product name) â€“ low buying intent; used only in an honest \u0027not affiliated\u0027 section and FAQ.",
+                                   "evidence":  "\"servitium crm\" (Path Infotech product) and \"butterfly crm\" (likely Butterfly appliance service portal / similar product name) - low buying intent; used only in an honest \u0027not affiliated\u0027 section and FAQ.",
                                    "severity":  "Medium"
                                },
                                {
                                    "problem":  "Claim-type keyword",
-                                   "evidence":  "\"best crm software in india\" â€“ answered honestly (no single best); Afwan Tech never claims to be \u0027the best\u0027.",
+                                   "evidence":  "\"best crm software in india\" - answered honestly (no single best); Afwan Tech never claims to be \u0027the best\u0027.",
                                    "severity":  "Medium"
                                },
                                {
@@ -25809,7 +25809,7 @@
                              },
                              {
                                  "type":  "sources",
-                                 "text":  "Servitium CRM official website (product overview); LeadSquared â€“ best CRM software in India (updated June 2026); Capterra India â€“ CRM software in India; TRAI â€“ Press Release No. 11/2025 on commercial communication rules; MeitY â€“ Digital Personal Data Protection Rules, 2025."
+                                 "text":  "Servitium CRM official website (product overview); LeadSquared - best CRM software in India (updated June 2026); Capterra India - CRM software in India; TRAI - Press Release No. 11/2025 on commercial communication rules; MeitY - Digital Personal Data Protection Rules, 2025."
                              }
                          ],
         "bottom_content":  [
@@ -25864,7 +25864,7 @@
                     "pin":  "560066",
                     "phone":  "+91 79798 50684",
                     "email":  "contactafwantech@gmail.com",
-                    "hours":  "Open 24 hours (as supplied â€“ confirm)"
+                    "hours":  "Open 24 hours (as supplied - confirm)"
                 },
         "meta":  {
                      "title_option_1":  {
@@ -25876,7 +25876,7 @@
                                             "chars":  43
                                         },
                      "description_option_1":  {
-                                                  "text":  "Affordable local SEO services from â‚¹15,000/month, WordPress websites from â‚¹5,999 and logo design from â‚¹2,000. Clear pricing, GST extra, no hidden costs.",
+                                                  "text":  "Affordable local SEO services from ₹15,000/month, WordPress websites from ₹5,999 and logo design from ₹2,000. Clear pricing, GST extra, no hidden costs.",
                                                   "chars":  152
                                               },
                      "description_option_2":  {
@@ -25888,9 +25888,9 @@
                      "canonical":  "https://www.afwantech.com/pricing",
                      "robots":  "index, follow, max-image-preview:large",
                      "lang":  "en-IN",
-                     "live_title":  "Not re-checked â€“ afwantech.com could not be fetched from this workspace on 30 Oct 2026; paste the live title to compare.",
+                     "live_title":  "Not re-checked - afwantech.com could not be fetched from this workspace on 30 Oct 2026; paste the live title to compare.",
                      "live_description":  "Not re-checked (see above).",
-                     "location_versions":  "Not needed â€“ prices are the same across India; one canonical pricing page",
+                     "location_versions":  "Not needed - prices are the same across India; one canonical pricing page",
                      "location_title_check":  [
                                                   {
                                                       "location":  "India",
@@ -25933,7 +25933,7 @@
                                            "Main: Intro",
                                            "Main: SEO Plans and Pricing: Affordable Local SEO Services",
                                            "Main: Affordable SEO Services: What Makes a Plan Good Value",
-                                           "Main: Logo Design â€“ From â‚¹2,000",
+                                           "Main: Logo Design - From ₹2,000",
                                            "Main: Why Choose Afwan Tech\u0027s Affordable Local SEO Services and Websites",
                                            "Main: Frequently Asked Questions About Our Pricing",
                                            "Bottom block"
@@ -26329,7 +26329,7 @@
                                            "First 100 words",
                                            "Main: Intro",
                                            "Main: Pricing at a Glance",
-                                           "Main: Logo Design â€“ From â‚¹2,000",
+                                           "Main: Logo Design - From ₹2,000",
                                            "Main: Why Choose Afwan Tech\u0027s Affordable Local SEO Services and Websites",
                                            "Main: Frequently Asked Questions About Our Pricing",
                                            "Bottom block"
@@ -26372,7 +26372,7 @@
                                },
                                {
                                    "problem":  "Feature promises need real delivery",
-                                   "evidence":  "Live dashboard, live web analytics, WhatsApp/call tap tracking, lead inbox, blog scheduler, admin control centre with bulk title/description import, up to 560 cities / 52 countries â€“ keep only what Afwan Tech can actually provide.",
+                                   "evidence":  "Live dashboard, live web analytics, WhatsApp/call tap tracking, lead inbox, blog scheduler, admin control centre with bulk title/description import, up to 560 cities / 52 countries - keep only what Afwan Tech can actually provide.",
                                    "severity":  "High"
                                },
                                {
@@ -26382,17 +26382,17 @@
                                },
                                {
                                    "problem":  "Result timeline in PDF",
-                                   "evidence":  "PDF says \u0027Most businesses see strong results in three to six months\u0027 â€“ softened to \u0027many businesses start to see movementâ€¦ results depend on competition\u0027 with no promise.",
+                                   "evidence":  "PDF says \u0027Most businesses see strong results in three to six months\u0027 - softened to \u0027many businesses start to see movement... results depend on competition\u0027 with no promise.",
                                    "severity":  "Medium"
                                },
                                {
                                    "problem":  "Inconsistent budget ranges",
-                                   "evidence":  "Budget ranges seen earlier in this project on the site (about â‚¹15,000 to â‚¹3,00,000+) must match this page, or be removed from forms.",
+                                   "evidence":  "Budget ranges seen earlier in this project on the site (about ₹15,000 to ₹3,00,000+) must match this page, or be removed from forms.",
                                    "severity":  "Medium"
                                },
                                {
                                    "problem":  "No prices for other services",
-                                   "evidence":  "E-commerce, apps, PPC, SMM, UI/UX, CRM, maintenance and content are \u0027custom quote\u0027 â€“ no prices were supplied, so none were invented.",
+                                   "evidence":  "E-commerce, apps, PPC, SMM, UI/UX, CRM, maintenance and content are \u0027custom quote\u0027 - no prices were supplied, so none were invented.",
                                    "severity":  "Low"
                                },
                                {
@@ -26404,7 +26404,7 @@
         "faqs":  [
                      {
                          "q":  "How much do your affordable local SEO services cost?",
-                         "a":  "Our affordable local SEO services start at â‚¹15,000 per month for the Local plan, which covers up to 5 cities in one state. The State plan is â‚¹25,000 per month and the Pan-India plan is â‚¹35,000 per month, while Enterprise is quoted separately. All prices exclude GST."
+                         "a":  "Our affordable local SEO services start at ₹15,000 per month for the Local plan, which covers up to 5 cities in one state. The State plan is ₹25,000 per month and the Pan-India plan is ₹35,000 per month, while Enterprise is quoted separately. All prices exclude GST."
                      },
                      {
                          "q":  "Are your prices inclusive of GST?",
@@ -26420,7 +26420,7 @@
                      },
                      {
                          "q":  "What are the website development charges for a WordPress website?",
-                         "a":  "WordPress websites start from â‚¹5,999 for a simple, mobile-friendly business website. The final price depends on pages, design, features and content, and your written quote lists everything included."
+                         "a":  "WordPress websites start from ₹5,999 for a simple, mobile-friendly business website. The final price depends on pages, design, features and content, and your written quote lists everything included."
                      },
                      {
                          "q":  "How much does a custom-coded website cost?",
@@ -26448,7 +26448,7 @@
                      },
                      {
                          "q":  "How much does logo design cost?",
-                         "a":  "Logo design starts from â‚¹2,000 for a simple, original logo with a set number of concepts and revisions. Full brand identity packages are quoted separately."
+                         "a":  "Logo design starts from ₹2,000 for a simple, original logo with a set number of concepts and revisions. Full brand identity packages are quoted separately."
                      },
                      {
                          "q":  "Is ad spend included in your PPC management price?",
@@ -26760,7 +26760,7 @@
                                                  "@id":  "https://www.afwantech.com/pricing#webpage",
                                                  "url":  "https://www.afwantech.com/pricing",
                                                  "name":  "Website Cost \u0026 Affordable Local SEO Services",
-                                                 "description":  "Affordable local SEO services from â‚¹15,000/month, WordPress websites from â‚¹5,999 and logo design from â‚¹2,000. Clear pricing, GST extra, no hidden costs.",
+                                                 "description":  "Affordable local SEO services from ₹15,000/month, WordPress websites from ₹5,999 and logo design from ₹2,000. Clear pricing, GST extra, no hidden costs.",
                                                  "inLanguage":  "en-IN",
                                                  "publisher":  {
                                                                    "@id":  "https://www.afwantech.com/#organization"
@@ -26800,7 +26800,7 @@
                                                                         "name":  "How much do your affordable local SEO services cost?",
                                                                         "acceptedAnswer":  {
                                                                                                "@type":  "Answer",
-                                                                                               "text":  "Our affordable local SEO services start at â‚¹15,000 per month for the Local plan, which covers up to 5 cities in one state. The State plan is â‚¹25,000 per month and the Pan-India plan is â‚¹35,000 per month, while Enterprise is quoted separately. All prices exclude GST."
+                                                                                               "text":  "Our affordable local SEO services start at ₹15,000 per month for the Local plan, which covers up to 5 cities in one state. The State plan is ₹25,000 per month and the Pan-India plan is ₹35,000 per month, while Enterprise is quoted separately. All prices exclude GST."
                                                                                            }
                                                                     },
                                                                     {
@@ -26832,7 +26832,7 @@
                                                                         "name":  "What are the website development charges for a WordPress website?",
                                                                         "acceptedAnswer":  {
                                                                                                "@type":  "Answer",
-                                                                                               "text":  "WordPress websites start from â‚¹5,999 for a simple, mobile-friendly business website. The final price depends on pages, design, features and content, and your written quote lists everything included."
+                                                                                               "text":  "WordPress websites start from ₹5,999 for a simple, mobile-friendly business website. The final price depends on pages, design, features and content, and your written quote lists everything included."
                                                                                            }
                                                                     },
                                                                     {
@@ -26888,7 +26888,7 @@
                                                                         "name":  "How much does logo design cost?",
                                                                         "acceptedAnswer":  {
                                                                                                "@type":  "Answer",
-                                                                                               "text":  "Logo design starts from â‚¹2,000 for a simple, original logo with a set number of concepts and revisions. Full brand identity packages are quoted separately."
+                                                                                               "text":  "Logo design starts from ₹2,000 for a simple, original logo with a set number of concepts and revisions. Full brand identity packages are quoted separately."
                                                                                            }
                                                                     },
                                                                     {
@@ -26938,7 +26938,7 @@
                              },
                              {
                                  "type":  "p",
-                                 "text":  "Afwan Tech publishes its main prices so you can plan before you call. Our affordable local SEO services start at â‚¹15,000 per month, WordPress websites start from â‚¹5,999, and logo design starts from â‚¹2,000. Custom-coded websites, e-commerce stores, mobile apps, CRM software and other projects are priced after we understand your requirements, because their scope varies widely. All prices are in Indian rupees and exclude GST; advertising spend is always separate."
+                                 "text":  "Afwan Tech publishes its main prices so you can plan before you call. Our affordable local SEO services start at ₹15,000 per month, WordPress websites start from ₹5,999, and logo design starts from ₹2,000. Custom-coded websites, e-commerce stores, mobile apps, CRM software and other projects are priced after we understand your requirements, because their scope varies widely. All prices are in Indian rupees and exclude GST; advertising spend is always separate."
                              },
                              {
                                  "type":  "p",
@@ -26947,9 +26947,9 @@
                              {
                                  "type":  "ul",
                                  "items":  [
-                                               "SEO plans: Local â‚¹15,000, State â‚¹25,000 and Pan-India â‚¹35,000 per month; Enterprise quoted",
-                                               "WordPress website development from â‚¹5,999",
-                                               "Logo design from â‚¹2,000",
+                                               "SEO plans: Local ₹15,000, State ₹25,000 and Pan-India ₹35,000 per month; Enterprise quoted",
+                                               "WordPress website development from ₹5,999",
+                                               "Logo design from ₹2,000",
                                                "Custom-coded websites, e-commerce, apps, CRM, ads and social media: quoted after a free requirement review",
                                                "Prices exclude GST; ad spend, domains, hosting and paid plugins are separate unless your quote says otherwise",
                                                "You own your website, content and accounts"
@@ -26976,28 +26976,28 @@
                                             ],
                                  "rows":  [
                                               [
-                                                  "SEO â€“ Local plan",
-                                                  "â‚¹15,000 per month",
+                                                  "SEO - Local plan",
+                                                  "₹15,000 per month",
                                                   "Monthly; we recommend at least 3 months"
                                               ],
                                               [
-                                                  "SEO â€“ State plan",
-                                                  "â‚¹25,000 per month",
+                                                  "SEO - State plan",
+                                                  "₹25,000 per month",
                                                   "Monthly; we recommend at least 3 months"
                                               ],
                                               [
-                                                  "SEO â€“ Pan-India plan",
-                                                  "â‚¹35,000 per month",
+                                                  "SEO - Pan-India plan",
+                                                  "₹35,000 per month",
                                                   "Monthly; we recommend at least 3 months"
                                               ],
                                               [
-                                                  "SEO â€“ Enterprise plan",
+                                                  "SEO - Enterprise plan",
                                                   "Custom quote",
                                                   "Quoted after a free call about your cities, countries and goals"
                                               ],
                                               [
                                                   "WordPress website",
-                                                  "From â‚¹5,999",
+                                                  "From ₹5,999",
                                                   "One-time project price; final total depends on scope"
                                               ],
                                               [
@@ -27017,7 +27017,7 @@
                                               ],
                                               [
                                                   "Logo design",
-                                                  "From â‚¹2,000",
+                                                  "From ₹2,000",
                                                   "One-time; brand identity packages quoted separately"
                                               ],
                                               [
@@ -27051,7 +27051,7 @@
                              },
                              {
                                  "type":  "h3",
-                                 "text":  "Local Plan â€“ â‚¹15,000 per month"
+                                 "text":  "Local Plan - ₹15,000 per month"
                              },
                              {
                                  "type":  "p",
@@ -27075,7 +27075,7 @@
                              },
                              {
                                  "type":  "h3",
-                                 "text":  "State Plan â€“ â‚¹25,000 per month (most popular)"
+                                 "text":  "State Plan - ₹25,000 per month (most popular)"
                              },
                              {
                                  "type":  "p",
@@ -27098,7 +27098,7 @@
                              },
                              {
                                  "type":  "h3",
-                                 "text":  "Pan-India Plan â€“ â‚¹35,000 per month"
+                                 "text":  "Pan-India Plan - ₹35,000 per month"
                              },
                              {
                                  "type":  "p",
@@ -27120,7 +27120,7 @@
                              },
                              {
                                  "type":  "h3",
-                                 "text":  "Enterprise Plan â€“ Custom Quote"
+                                 "text":  "Enterprise Plan - Custom Quote"
                              },
                              {
                                  "type":  "p",
@@ -27165,9 +27165,9 @@
                                  "rows":  [
                                               [
                                                   "Price per month (excl. GST)",
-                                                  "â‚¹15,000",
-                                                  "â‚¹25,000",
-                                                  "â‚¹35,000",
+                                                  "₹15,000",
+                                                  "₹25,000",
+                                                  "₹35,000",
                                                   "Custom quote"
                                               ],
                                               [
@@ -27416,11 +27416,11 @@
                              },
                              {
                                  "type":  "h3",
-                                 "text":  "WordPress Website â€“ From â‚¹5,999"
+                                 "text":  "WordPress Website - From ₹5,999"
                              },
                              {
                                  "type":  "p",
-                                 "text":  "Our WordPress websites start from â‚¹5,999. This starting price suits a simple, professional website for a small business or professional, and covers:"
+                                 "text":  "Our WordPress websites start from ₹5,999. This starting price suits a simple, professional website for a small business or professional, and covers:"
                              },
                              {
                                  "type":  "ul",
@@ -27439,7 +27439,7 @@
                              },
                              {
                                  "type":  "h3",
-                                 "text":  "Custom-Coded Website â€“ Price Depends on Requirements"
+                                 "text":  "Custom-Coded Website - Price Depends on Requirements"
                              },
                              {
                                  "type":  "p",
@@ -27535,8 +27535,8 @@
                                  "rows":  [
                                               [
                                                   "Simple business or professional website",
-                                                  "WordPress, 5â€“8 pages, forms, WhatsApp button",
-                                                  "From â‚¹5,999"
+                                                  "WordPress, 5 - 8 pages, forms, WhatsApp button",
+                                                  "From ₹5,999"
                                               ],
                                               [
                                                   "Larger business website with blog",
@@ -27788,11 +27788,11 @@
                              },
                              {
                                  "type":  "h2",
-                                 "text":  "Logo Design â€“ From â‚¹2,000"
+                                 "text":  "Logo Design - From ₹2,000"
                              },
                              {
                                  "type":  "p",
-                                 "text":  "Our logo design starts from â‚¹2,000. The starting price covers a simple, original logo with a set number of concepts and revisions, delivered in common formats for web and print. Brand identity work, such as colour palettes, typography, business cards, letterheads and social media kits, is quoted separately based on what you need. You receive the final files and own the logo once payment is complete."
+                                 "text":  "Our logo design starts from ₹2,000. The starting price covers a simple, original logo with a set number of concepts and revisions, delivered in common formats for web and print. Brand identity work, such as colour palettes, typography, business cards, letterheads and social media kits, is quoted separately based on what you need. You receive the final files and own the logo once payment is complete."
                              },
                              {
                                  "type":  "p",
@@ -28031,7 +28031,7 @@
                              },
                              {
                                  "type":  "p",
-                                 "text":  "Our affordable local SEO services start at â‚¹15,000 per month for the Local plan, which covers up to 5 cities in one state. The State plan is â‚¹25,000 per month and the Pan-India plan is â‚¹35,000 per month, while Enterprise is quoted separately. All prices exclude GST."
+                                 "text":  "Our affordable local SEO services start at ₹15,000 per month for the Local plan, which covers up to 5 cities in one state. The State plan is ₹25,000 per month and the Pan-India plan is ₹35,000 per month, while Enterprise is quoted separately. All prices exclude GST."
                              },
                              {
                                  "type":  "h3",
@@ -28063,7 +28063,7 @@
                              },
                              {
                                  "type":  "p",
-                                 "text":  "WordPress websites start from â‚¹5,999 for a simple, mobile-friendly business website. The final price depends on pages, design, features and content, and your written quote lists everything included."
+                                 "text":  "WordPress websites start from ₹5,999 for a simple, mobile-friendly business website. The final price depends on pages, design, features and content, and your written quote lists everything included."
                              },
                              {
                                  "type":  "h3",
@@ -28119,7 +28119,7 @@
                              },
                              {
                                  "type":  "p",
-                                 "text":  "Logo design starts from â‚¹2,000 for a simple, original logo with a set number of concepts and revisions. Full brand identity packages are quoted separately."
+                                 "text":  "Logo design starts from ₹2,000 for a simple, original logo with a set number of concepts and revisions. Full brand identity packages are quoted separately."
                              },
                              {
                                  "type":  "h3",
@@ -28161,11 +28161,11 @@
                                },
                                {
                                    "type":  "p",
-                                   "text":  "Afwan Tech offers affordable local SEO services from â‚¹15,000 per month, with State (â‚¹25,000) and Pan-India (â‚¹35,000) plans for wider reach and a custom quote for Enterprise. These are affordable SEO services with published deliverables: keywords tracked, pages optimised, blogs, Google Business Profiles, listings and backlinks are all written down. For owners who need an affordable SEO service for small business growth, the Local plan focuses on nearby customers, reviews and a fast mobile site. We do not sell guaranteed rankings; affordable search engine optimization should still be honest, measurable and owned by you."
+                                   "text":  "Afwan Tech offers affordable local SEO services from ₹15,000 per month, with State (₹25,000) and Pan-India (₹35,000) plans for wider reach and a custom quote for Enterprise. These are affordable SEO services with published deliverables: keywords tracked, pages optimised, blogs, Google Business Profiles, listings and backlinks are all written down. For owners who need an affordable SEO service for small business growth, the Local plan focuses on nearby customers, reviews and a fast mobile site. We do not sell guaranteed rankings; affordable search engine optimization should still be honest, measurable and owned by you."
                                },
                                {
                                    "type":  "p",
-                                   "text":  "Website development charges start from â‚¹5,999 for a WordPress website. A custom-coded build is priced on your requirements. Website development costs depend on pages, design, platform, features, integrations, content and support, so a realistic website cost in India is the one that matches your needs. When you compare website creation charges in India or the website creation cost in India, check whether the domain, hosting, SSL, plugins and maintenance are included. The website design India price rises with custom design work, and the website building cost in India also includes yearly renewals and upkeep."
+                                   "text":  "Website development charges start from ₹5,999 for a WordPress website. A custom-coded build is priced on your requirements. Website development costs depend on pages, design, platform, features, integrations, content and support, so a realistic website cost in India is the one that matches your needs. When you compare website creation charges in India or the website creation cost in India, check whether the domain, hosting, SSL, plugins and maintenance are included. The website design India price rises with custom design work, and the website building cost in India also includes yearly renewals and upkeep."
                                },
                                {
                                    "type":  "p",
@@ -28177,7 +28177,7 @@
                                },
                                {
                                    "type":  "p",
-                                   "text":  "Logo design starts from â‚¹2,000. PPC management, social media management, UI/UX design, custom web applications, CRM software, maintenance and content writing are given a custom quote after a free call. Our SEO plans and all other prices exclude GST, and ad spend is paid directly to the platforms."
+                                   "text":  "Logo design starts from ₹2,000. PPC management, social media management, UI/UX design, custom web applications, CRM software, maintenance and content writing are given a custom quote after a free call. Our SEO plans and all other prices exclude GST, and ad spend is paid directly to the platforms."
                                },
                                {
                                    "type":  "p",
