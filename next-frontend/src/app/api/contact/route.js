@@ -33,7 +33,7 @@ export async function POST(request) {
       created_at: new Date().toISOString()
     };
 
-    // Store in local data file if directory exists
+    // 1. Store in local data file if directory exists
     try {
       const dataDir = path.join(process.cwd(), '..', 'backend-php', 'data');
       if (!fs.existsSync(dataDir)) {
@@ -54,7 +54,7 @@ export async function POST(request) {
       console.warn('Local file write notice:', err.message);
     }
 
-    // Send instant email notification via SMTP
+    // 2. Send instant email notification via SMTP
     let emailStatus = { success: false, skipped: true };
     try {
       const subject = `🔥 New Lead: ${lead.service} - ${lead.name} (${lead.location})`;
@@ -72,6 +72,33 @@ export async function POST(request) {
       }
     } catch (mailErr) {
       console.error('[Contact API Email Error]:', mailErr.message);
+    }
+
+    // 3. Mirror lead asynchronously to Hostinger MySQL CRM database
+    const phpApi = process.env.PHP_API_URL || process.env.NEXT_PUBLIC_PHP_API_URL || 'https://violet-ibis-402728.hostingersite.com/api/backend-php';
+    if (phpApi) {
+      try {
+        fetch(`${phpApi.replace(/\/$/, '')}/contact.php`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            firstName: firstName || name || 'Anonymous',
+            lastName: lastName || '',
+            name: contactName,
+            email,
+            phone: phone || '',
+            interestedIn: lead.service,
+            service: lead.service,
+            budget: lead.budget,
+            message: lead.message,
+            location: lead.location,
+            pageSource: lead.source,
+            skip_email: true
+          })
+        }).catch(e => console.warn('[Hostinger MySQL Sync Notice]:', e.message));
+      } catch (syncErr) {
+        console.warn('[Hostinger MySQL Sync Notice]:', syncErr.message);
+      }
     }
 
     return NextResponse.json({

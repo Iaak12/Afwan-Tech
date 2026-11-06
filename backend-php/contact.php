@@ -152,6 +152,79 @@ if ($isPatchAction) {
     exit();
 }
 
+function sendPhpSmtpEmail($to, $subject, $htmlBody, $config) {
+    $host = 'smtp.gmail.com';
+    $port = 465;
+    $user = 'contactafwantech@gmail.com';
+    $pass = 'pxcwmlebhgttddzk';
+
+    $ctx = stream_context_create([
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        ]
+    ]);
+
+    $socket = @stream_socket_client("ssl://{$host}:{$port}", $errno, $errstr, 12, STREAM_CLIENT_CONNECT, $ctx);
+    if (!$socket) {
+        return false;
+    }
+
+    $read = function() use ($socket) {
+        $data = '';
+        while (!feof($socket)) {
+            $line = fgets($socket, 512);
+            $data .= $line;
+            if (isset($line[3]) && $line[3] === ' ') break;
+        }
+        return $data;
+    };
+
+    $send = function($cmd) use ($socket) {
+        fputs($socket, $cmd . "\r\n");
+    };
+
+    $read();
+    $send("EHLO localhost");
+    $read();
+    $send("AUTH LOGIN");
+    $read();
+    $send(base64_encode($user));
+    $read();
+    $send(base64_encode($pass));
+    $authResp = $read();
+    if (strpos($authResp, '235') === false) {
+        fclose($socket);
+        return false;
+    }
+
+    $send("MAIL FROM:<{$user}>");
+    $read();
+    $send("RCPT TO:<{$to}>");
+    $read();
+    $send("DATA");
+    $read();
+
+    $headers = [
+        "From: \"AFWAN TECH Leads\" <{$user}>",
+        "To: {$to}",
+        "Subject: {$subject}",
+        "Date: " . date('r'),
+        "MIME-Version: 1.0",
+        "Content-Type: text/html; charset=UTF-8",
+        "Content-Transfer-Encoding: 8bit"
+    ];
+
+    $payload = implode("\r\n", $headers) . "\r\n\r\n" . $htmlBody . "\r\n.\r\n";
+    fputs($socket, $payload);
+    $read();
+
+    $send("QUIT");
+    fclose($socket);
+    return true;
+}
+
 // POST: Lead Capture into MySQL
 if ($method === 'POST') {
     $rawInput = file_get_contents('php://input');
@@ -235,34 +308,41 @@ if ($method === 'POST') {
     }
 
     // Send Email Notification
-    $to = $config['admin_email'];
-    $subject = "[New Lead] " . $service . " - " . $name . " (" . $location . ")";
+    $emailDispatched = false;
+    if (empty($data['skip_email'])) {
+        $to = $config['admin_email'];
+        $subject = "[New Lead] " . $service . " - " . $name . " (" . $location . ")";
 
-    $emailBody = "<html><body>";
-    $emailBody .= "<h2>New Consultation Request - " . htmlspecialchars($config['brand_name']) . "</h2>";
-    $emailBody .= "<table cellpadding='8' cellspacing='0' style='border:1px solid #ddd; width:100%; max-width:600px; font-family:sans-serif;'>";
-    $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Full Name:</strong></td><td>" . htmlspecialchars($name) . "</td></tr>";
-    $emailBody .= "<tr><td><strong>Email:</strong></td><td><a href='mailto:" . htmlspecialchars($email) . "'>" . htmlspecialchars($email) . "</a></td></tr>";
-    $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Phone:</strong></td><td>" . htmlspecialchars($phone) . "</td></tr>";
-    $emailBody .= "<tr><td><strong>Service Needed:</strong></td><td>" . htmlspecialchars($service) . "</td></tr>";
-    $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Estimated Budget:</strong></td><td>" . htmlspecialchars($budget) . "</td></tr>";
-    $emailBody .= "<tr><td><strong>Target Location:</strong></td><td>" . htmlspecialchars($location) . "</td></tr>";
-    $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Page Source:</strong></td><td>" . htmlspecialchars($pageSource) . "</td></tr>";
-    $emailBody .= "<tr><td><strong>Message:</strong></td><td>" . nl2br(htmlspecialchars($message)) . "</td></tr>";
-    $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Submitted On:</strong></td><td>" . date('M d, Y h:i A') . "</td></tr>";
-    $emailBody .= "</table></body></html>";
+        $emailBody = "<html><body>";
+        $emailBody .= "<h2>New Consultation Request - " . htmlspecialchars($config['brand_name']) . "</h2>";
+        $emailBody .= "<table cellpadding='8' cellspacing='0' style='border:1px solid #ddd; width:100%; max-width:600px; font-family:sans-serif;'>";
+        $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Full Name:</strong></td><td>" . htmlspecialchars($name) . "</td></tr>";
+        $emailBody .= "<tr><td><strong>Email:</strong></td><td><a href='mailto:" . htmlspecialchars($email) . "'>" . htmlspecialchars($email) . "</a></td></tr>";
+        $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Phone:</strong></td><td>" . htmlspecialchars($phone) . "</td></tr>";
+        $emailBody .= "<tr><td><strong>Service Needed:</strong></td><td>" . htmlspecialchars($service) . "</td></tr>";
+        $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Estimated Budget:</strong></td><td>" . htmlspecialchars($budget) . "</td></tr>";
+        $emailBody .= "<tr><td><strong>Target Location:</strong></td><td>" . htmlspecialchars($location) . "</td></tr>";
+        $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Page Source:</strong></td><td>" . htmlspecialchars($pageSource) . "</td></tr>";
+        $emailBody .= "<tr><td><strong>Message:</strong></td><td>" . nl2br(htmlspecialchars($message)) . "</td></tr>";
+        $emailBody .= "<tr style='background:#f4f4f4;'><td><strong>Submitted On:</strong></td><td>" . date('M d, Y h:i A') . "</td></tr>";
+        $emailBody .= "</table></body></html>";
 
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: " . $config['brand_name'] . " <no-reply@" . ($_SERVER['SERVER_NAME'] ?? 'afwantech.com') . ">\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
+        $headers = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $headers .= "From: " . $config['brand_name'] . " <no-reply@" . ($_SERVER['SERVER_NAME'] ?? 'afwantech.com') . ">\r\n";
+        $headers .= "Reply-To: " . $email . "\r\n";
 
-    @mail($to, $subject, $emailBody, $headers);
+        $emailDispatched = sendPhpSmtpEmail($to, $subject, $emailBody, $config);
+        if (!$emailDispatched) {
+            @mail($to, $subject, $emailBody, $headers);
+        }
+    }
 
     echo json_encode([
         'success' => true,
         'message' => 'Thank you! Your message has been received. Our team will contact you shortly.',
-        'lead_id' => $leadId
+        'lead_id' => $leadId,
+        'email_dispatched' => $emailDispatched
     ]);
     exit();
 }

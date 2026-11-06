@@ -27,12 +27,8 @@ export default function ContactForm({ defaultService = 'Web Development', defaul
     setLoading(true);
     setStatus({ type: '', message: '' });
 
-    // Target either PHP endpoint or local Next.js route
-    const phpApi = process.env.NEXT_PUBLIC_PHP_API_URL;
-    const targetUrl = phpApi ? `${phpApi.replace(/\/$/, '')}/contact.php` : '/api/contact';
-
     try {
-      const res = await fetch(targetUrl, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,9 +64,10 @@ export default function ContactForm({ defaultService = 'Web Development', defaul
         });
       }
     } catch (err) {
-      // If external PHP endpoint had a network issue, attempt fallback to internal Next.js route
+      // Secondary fallback to PHP backend if /api/contact has a network issue
       try {
-        const fallbackRes = await fetch('/api/contact', {
+        const phpApi = process.env.NEXT_PUBLIC_PHP_API_URL || 'https://violet-ibis-402728.hostingersite.com/api/backend-php';
+        const fallbackRes = await fetch(`${phpApi.replace(/\/$/, '')}/contact.php`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
@@ -79,7 +76,7 @@ export default function ContactForm({ defaultService = 'Web Development', defaul
         if (fallbackRes.ok && fallbackData.success) {
           setStatus({
             type: 'success',
-            message: fallbackData.message
+            message: fallbackData.message || 'Consultation request sent successfully! We will contact you soon.'
           });
           setFormData({
             firstName: '', lastName: '', email: '', phone: '',
@@ -93,7 +90,7 @@ export default function ContactForm({ defaultService = 'Web Development', defaul
 
       setStatus({
         type: 'error',
-        message: 'Could not connect to server. Please email contact@afwan.agency directly.'
+        message: 'Could not connect to server. Please email contactafwantech@gmail.com directly.'
       });
     } finally {
       setLoading(false);
