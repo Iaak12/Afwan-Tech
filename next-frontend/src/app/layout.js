@@ -69,7 +69,6 @@ export const metadata = {
     title: "AFWAN TECH | Digital Marketing & Web Engineering Agency",
     description: "Next-gen web development, custom software engineering, and programmatic SEO covering 500+ cities in India & globally.",
     images: ["/afwan.png"],
-  ,
   },
 };
 
