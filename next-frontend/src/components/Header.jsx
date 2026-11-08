@@ -276,43 +276,45 @@ export default function Header() {
               </Link>
 
               {servicesDropdown && (
-                <div className="absolute top-full left-0 w-[680px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 grid grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-200">
-                  {serviceCategories.map((cat, idx) => (
-                    <div key={idx}>
-                      <h4 className="text-[11px] font-black uppercase tracking-wider text-primary mb-3">
-                        {cat.title}
-                      </h4>
-                      <div className="space-y-2">
-                        {cat.items.map((item, i) => {
-                          const targetHref = locationSlug ? `/${locationSlug}/services/${item.slug}` : item.href;
-                          return (
-                            <Link 
-                              key={i} 
-                              href={targetHref}
-                              className="block p-2.5 rounded-xl hover:bg-blue-50/60 transition-colors group"
-                            >
-                              <span className="block font-bold text-gray-900 group-hover:text-primary text-sm transition-colors">
-                                {item.name}
-                                {locationName && (
-                                  <span className="text-primary font-semibold ml-1.5 text-xs inline-block bg-blue-50 px-2 py-0.5 rounded-md border border-blue-100">
-                                    in {locationName}
-                                  </span>
-                                )}
-                              </span>
-                              <span className="block text-xs text-gray-500 line-clamp-1">
-                                {locationName ? `Premium ${item.name} tailored for ${locationName}` : item.desc}
-                              </span>
-                            </Link>
-                          );
-                        })}
+                <div className="absolute top-full -left-4 pt-2 z-50">
+                  <div className="w-[680px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 grid grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-200">
+                    {serviceCategories.map((cat, idx) => (
+                      <div key={idx}>
+                        <h4 className="text-[11px] font-black uppercase tracking-wider text-primary mb-3">
+                          {cat.title}
+                        </h4>
+                        <div className="space-y-2">
+                          {cat.items.map((item, i) => {
+                            const targetHref = locationSlug ? `/${locationSlug}/services/${item.slug}` : item.href;
+                            return (
+                              <Link 
+                                key={i} 
+                                href={targetHref}
+                                className="block p-2.5 rounded-xl hover:bg-blue-50/60 transition-colors group"
+                              >
+                                <span className="block font-bold text-gray-900 group-hover:text-primary text-sm transition-colors">
+                                  {item.name}
+                                  {locationName && (
+                                    <span className="text-primary font-semibold ml-1.5 text-xs inline-block bg-blue-50 px-2 py-0.5 rounded-md border border-blue-100">
+                                      in {locationName}
+                                    </span>
+                                  )}
+                                </span>
+                                <span className="block text-xs text-gray-500 line-clamp-1">
+                                  {locationName ? `Premium ${item.name} tailored for ${locationName}` : item.desc}
+                                </span>
+                              </Link>
+                            );
+                          })}
+                        </div>
                       </div>
+                    ))}
+                    <div className="col-span-2 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                      <span className="text-gray-500">Need a bespoke solution?</span>
+                      <Link href="/services" className="font-bold text-primary hover:underline flex items-center gap-1">
+                        View all services <ArrowRight size={13} />
+                      </Link>
                     </div>
-                  ))}
-                  <div className="col-span-2 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
-                    <span className="text-gray-500">Need a bespoke solution?</span>
-                    <Link href="/services" className="font-bold text-primary hover:underline flex items-center gap-1">
-                      View all services <ArrowRight size={13} />
-                    </Link>
                   </div>
                 </div>
               )}
