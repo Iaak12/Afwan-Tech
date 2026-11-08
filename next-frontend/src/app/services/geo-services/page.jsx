@@ -22,3 +22,4 @@ export const metadata = {
 export default function GeoServicesPage() {
   return <ServicePageTemplate data={serviceData} />;
 }
+
