@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { 
   Globe2, ArrowUpRight, Search, 
   Smartphone, Zap, Layers, Code, ArrowRight,
-  ShoppingCart, TrendingUp, Palette, Sparkles, Check
+  ShoppingCart, TrendingUp, Palette, Sparkles, Check, Users
 } from 'lucide-react';
 
 const servicesList = [
@@ -41,12 +41,36 @@ const servicesList = [
     tags: ['React Native', 'Flutter', 'App Store Ready']
   },
   {
+    title: 'CRM Software & Integration',
+    slug: 'crm-software',
+    desc: 'Custom CRM systems, Zoho/HubSpot implementation, and seamless integrations with WhatsApp, telephony, and business workflows.',
+    icon: Users,
+    tags: ['Custom CRM', 'WhatsApp Automation', 'Zoho & HubSpot'],
+    badge: 'Automation'
+  },
+  {
     title: 'Search Engine Optimization',
     slug: 'seo-services',
     desc: 'Technical SEO, structured JSON-LD entity schema, and programmatic search architecture spanning 595+ commercial cities.',
     icon: Search,
     tags: ['Technical SEO', '595+ City Mesh', 'Entity Schema'],
     badge: '595+ Cities'
+  },
+  {
+    title: 'AEO Services (AI Answers)',
+    slug: 'aeo-services',
+    desc: 'Answer Engine Optimization to get your brand cited in Google AI Overviews, ChatGPT search, and Perplexity answers.',
+    icon: Sparkles,
+    tags: ['Google AI Overviews', 'ChatGPT & Perplexity', 'Answer Schema'],
+    badge: 'AI Search'
+  },
+  {
+    title: 'GEO Services (Generative Search)',
+    slug: 'geo-services',
+    desc: 'Generative Engine Optimization so AI assistants like ChatGPT, Gemini, Copilot, and Perplexity describe and recommend your brand.',
+    icon: Zap,
+    tags: ['Generative Engine', 'Knowledge Graph', 'Brand Mentions'],
+    badge: 'Next-Gen'
   },
   {
     title: 'PPC & Paid Search Advertising',
@@ -100,8 +124,8 @@ export default function MarketingSolutions() {
           </p>
         </motion.div>
 
-        {/* ── 8 SERVICES ANIMATED GRID ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* ── 11 SPECIALIZED DIGITAL SERVICES GRID ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {servicesList.map((s, i) => {
             const SafeIcon = s.icon;
             const formattedNumber = (i + 1).toString().padStart(2, '0');

@@ -23,6 +23,8 @@ const allServicesNav = [
   { slug: 'app-development', title: 'Mobile App Development', icon: Smartphone },
   { slug: 'crm-software', title: 'CRM Software & Integration', icon: Users },
   { slug: 'seo-services', title: 'Search Engine Optimization', icon: Search },
+  { slug: 'aeo-services', title: 'AEO Services (AI Answers)', icon: Sparkles },
+  { slug: 'geo-services', title: 'GEO Services (Generative Search)', icon: Zap },
   { slug: 'ppc-paid-ads', title: 'PPC & Paid Search Advertising', icon: TrendingUp },
   { slug: 'social-media-management', title: 'Social Media Management', icon: Globe },
   { slug: 'graphic-design', title: 'Graphic Design & UI/UX', icon: Palette },

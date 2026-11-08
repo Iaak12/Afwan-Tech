@@ -76,6 +76,24 @@ export const services = [
     features: ['Deep Technical SEO Audits', 'Keyword Cluster Mapping', 'High-Authority Backlink Acquisition', 'Programmatic City & State SEO', 'Schema Markup Integration', 'Google Algorithm Resilience']
   },
   {
+    title: 'Answer Engine Optimization (AEO)',
+    slug: 'aeo-services',
+    category: 'AI & Search Growth',
+    shortDesc: 'AEO services to get your brand cited and recommended in Google AI Overviews, ChatGPT search, and Perplexity.',
+    icon: 'Sparkles',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=800',
+    features: ['Google AI Overviews Citations', 'ChatGPT & Perplexity Visibility', 'Answer-Ready Content Architecture', 'Entity Schema & Brand Facts', 'Conversational Search Optimization', 'AI Share of Voice Tracking']
+  },
+  {
+    title: 'Generative Engine Optimization (GEO)',
+    slug: 'geo-services',
+    category: 'AI & Search Growth',
+    shortDesc: 'Generative engine optimization ensuring ChatGPT, Gemini, Perplexity, and Copilot accurately describe and recommend your business.',
+    icon: 'Zap',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800',
+    features: ['Generative Engine Prompt Audits', 'Knowledge Graph Alignment', 'AI Assistant Citation Tracking', 'Digital PR & Brand Authority', 'Multimodal Search Preparedness', 'Monthly AI Mention Monitoring']
+  },
+  {
     title: 'Social Media Management',
     slug: 'social-media-management',
     category: 'Marketing & Growth',

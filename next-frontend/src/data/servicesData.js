@@ -79,6 +79,16 @@ export const servicesData = {
     desc: "Build a lasting, powerful brand legacy with strategic positioning, identity, and consistent narrative.",
     points: ["Brand Identity", "Positioning Strategy", "Brand Voice", "Brand Audit", "Market Research", "Brand Guidelines"]
   },
+  "aeo-services": {
+    title: "AEO Services",
+    desc: "Answer Engine Optimization to get your brand cited in Google AI Overviews, ChatGPT search and Perplexity.",
+    points: ["AI Overviews Citation", "ChatGPT and Perplexity", "Answer Content Schema", "Entity Graph Authority", "AI Visibility Audits", "Mention Tracking"]
+  },
+  "geo-services": {
+    title: "GEO Services",
+    desc: "Generative Engine Optimization so AI assistants like ChatGPT, Gemini, Copilot and Perplexity recommend your brand.",
+    points: ["Prompt Audits", "Brand Knowledge Facts", "Digital PR and Citations", "AI Assistant Monitoring", "Knowledge Graph Sync", "Share of Voice Reports"]
+  }
 };
 
 export const megaMenuData = [
@@ -99,6 +109,8 @@ export const megaMenuData = [
     links: [
       { name: "Best SEO Company", slug: "best-seo-company" },
       { name: "SEO Services", slug: "seo-services" },
+      { name: "AEO Services (AI Answers)", slug: "aeo-services" },
+      { name: "GEO Services (Generative Search)", slug: "geo-services" },
       { name: "Local SEO", slug: "local-seo" },
       { name: "Ecommerce SEO", slug: "ecommerce-seo" },
       { name: "Amazon SEO", slug: "amazon-seo" },

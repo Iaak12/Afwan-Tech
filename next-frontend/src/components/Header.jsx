@@ -112,9 +112,11 @@ export default function Header() {
       ]
     },
     {
-      title: 'Organic & Paid Growth',
+      title: 'Organic & AI Search Growth',
       items: [
         { name: 'SEO Services', slug: 'seo-services', href: '/services/seo-services', desc: 'Page 1 organic rankings & authority' },
+        { name: 'AEO Services', slug: 'aeo-services', href: '/services/aeo-services', desc: 'AI Overviews, ChatGPT & Perplexity citations' },
+        { name: 'GEO Services', slug: 'geo-services', href: '/services/geo-services', desc: 'Generative Engine Optimization for AI Search' },
         { name: 'Performance Marketing', slug: 'ppc-paid-ads', href: '/services/ppc-paid-ads', desc: 'Google & Meta high-ROAS ads' },
         { name: 'Social Media Growth', slug: 'social-media-management', href: '/services/social-media-management', desc: 'Community & creative advocacy' },
         { name: 'Branding & UI/UX', slug: 'graphic-design', href: '/services/graphic-design', desc: 'Distinctive brand design systems' }
@@ -260,18 +262,21 @@ export default function Header() {
               Home
             </Link>
 
-            {/* Services Dropdown (Location-Aware) */}
+            {/* Services Dropdown (Hover opens, Click visits /services) */}
             <div 
               className="relative"
               onMouseEnter={() => setServicesDropdown(true)}
               onMouseLeave={() => setServicesDropdown(false)}
             >
-              <button className="flex items-center gap-1 hover:text-primary transition-colors py-2 cursor-pointer">
+              <Link 
+                href="/services"
+                className={`flex items-center gap-1 hover:text-primary transition-colors py-2 cursor-pointer ${pathname.startsWith('/services') ? 'text-primary' : ''}`}
+              >
                 Services {locationName ? <span className="text-primary font-bold">in {locationName}</span> : ''} <ChevronDown size={15} className={`transition-transform duration-200 ${servicesDropdown ? 'rotate-180 text-primary' : ''}`} />
-              </button>
+              </Link>
 
               {servicesDropdown && (
-                <div className="absolute top-full left-0 w-[620px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 grid grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute top-full left-0 w-[680px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 grid grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-200">
                   {serviceCategories.map((cat, idx) => (
                     <div key={idx}>
                       <h4 className="text-[11px] font-black uppercase tracking-wider text-primary mb-3">
@@ -363,14 +368,15 @@ export default function Header() {
             )}
             <Link href="/" className="block py-2 font-bold text-gray-800 hover:text-primary">Home</Link>
             <div className="py-2 border-y border-gray-100">
-              <span className="block text-xs font-black uppercase text-gray-400 mb-2">
-                Services {locationName ? `in ${locationName}` : ''}
-              </span>
-              <div className="grid grid-cols-1 gap-2 pl-2">
-                {services.slice(0, 8).map((s, idx) => {
+              <Link href="/services" className="flex items-center justify-between text-xs font-black uppercase text-gray-700 hover:text-primary mb-2">
+                <span>Services {locationName ? `in ${locationName}` : ''}</span>
+                <span className="text-[10px] text-primary font-bold">View all &rarr;</span>
+              </Link>
+              <div className="grid grid-cols-1 gap-2 pl-2 max-h-64 overflow-y-auto pr-1">
+                {services.map((s, idx) => {
                   const targetHref = locationSlug ? `/${locationSlug}/services/${s.slug}` : `/services/${s.slug}`;
                   return (
-                    <Link key={idx} href={targetHref} className="text-sm font-semibold text-gray-700 hover:text-primary flex items-center justify-between">
+                    <Link key={idx} href={targetHref} className="text-sm font-semibold text-gray-700 hover:text-primary flex items-center justify-between py-0.5">
                       <span>{s.title}</span>
                       {locationName && (
                         <span className="text-xs text-primary font-bold">in {locationName}</span>

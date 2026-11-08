@@ -128,7 +128,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-black text-sm uppercase tracking-wider mb-5">Core Services</h4>
             <ul className="space-y-3 text-sm">
-              {services.slice(0, 6).map((service, idx) => (
+              {services.slice(0, 8).map((service, idx) => (
                 <li key={idx}>
                   <Link href={`/services/${service.slug}`} className="hover:text-primary transition-colors">
                     {service.title}

@@ -208,8 +208,11 @@ export default function CompactHeroForm({
                 <option value="Website Development">Website Development</option>
                 <option value="Custom Web Development">Custom Coded Web App</option>
                 <option value="E-commerce Development">E-commerce Store</option>
-                <option value="SEO Services">Search Engine Optimization</option>
                 <option value="Mobile App Development">Mobile App (iOS/Android)</option>
+                <option value="CRM Software">CRM Software & Integration</option>
+                <option value="SEO Services">Search Engine Optimization</option>
+                <option value="AEO Services">AEO (AI Answers & Overviews)</option>
+                <option value="GEO Services">GEO (Generative Search Optimization)</option>
                 <option value="PPC & Paid Ads">Performance Paid Ads</option>
                 <option value="Social Media Management">Social Media Strategy</option>
                 <option value="Graphic Design">Branding & UI/UX Design</option>
