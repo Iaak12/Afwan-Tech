@@ -268,7 +268,7 @@ export default async function BlogPostPage({ params, searchParams }) {
                 <div className="relative h-64 sm:h-96 w-full rounded-3xl overflow-hidden mt-6 shadow-md border border-gray-100">
                   <Image
                     src={blog.coverImage}
-                    alt={blog.title}
+                    alt={blog.coverImageAlt || blog.title}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 800px"

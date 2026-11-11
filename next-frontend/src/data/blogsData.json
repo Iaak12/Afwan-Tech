@@ -18,7 +18,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 1,
-    "scheduledDate": "2026-10-26",
+    "scheduledDate": "2026-10-29",
     "isPublished": true,
     "faqs": [
       {
@@ -1400,7 +1400,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "AI for Web Development in 2026: What Really Changes - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_2",
@@ -1421,7 +1423,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 2,
-    "scheduledDate": "2026-11-02",
+    "scheduledDate": "2026-11-05",
     "isPublished": true,
     "faqs": [
       {
@@ -2894,7 +2896,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "AI Tools for Web Development: 2026 Guide by Category - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_3",
@@ -2915,7 +2919,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 3,
-    "scheduledDate": "2026-11-09",
+    "scheduledDate": "2026-11-12",
     "isPublished": false,
     "faqs": [
       {
@@ -4255,7 +4259,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Ecommerce App Builder Options: Build a Shopping App (2026) - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_4",
@@ -4276,7 +4282,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 4,
-    "scheduledDate": "2026-11-16",
+    "scheduledDate": "2026-11-19",
     "isPublished": false,
     "faqs": [
       {
@@ -5626,7 +5632,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Ecommerce App Maker Guide: Turn Your Store Into an App - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_5",
@@ -5647,7 +5655,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 5,
-    "scheduledDate": "2026-11-23",
+    "scheduledDate": "2026-11-26",
     "isPublished": false,
     "faqs": [
       {
@@ -7010,7 +7018,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Best Ecommerce Website Builder in India: 2026 Guide - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_6",
@@ -7031,7 +7041,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 6,
-    "scheduledDate": "2026-11-30",
+    "scheduledDate": "2026-12-03",
     "isPublished": false,
     "faqs": [
       {
@@ -8432,7 +8442,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Enterprise App Development: A Practical 2026 Guide - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_7",
@@ -8453,7 +8465,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 7,
-    "scheduledDate": "2026-12-07",
+    "scheduledDate": "2026-12-10",
     "isPublished": false,
     "faqs": [
       {
@@ -9790,7 +9802,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Flask vs Django in 2026: Which Python Framework to Choose? - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_8",
@@ -9811,7 +9825,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 8,
-    "scheduledDate": "2026-12-14",
+    "scheduledDate": "2026-12-17",
     "isPublished": false,
     "faqs": [
       {
@@ -11191,7 +11205,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Headless Ecommerce Explained: Benefits, Costs and SEO - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_9",
@@ -11212,7 +11228,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 9,
-    "scheduledDate": "2026-12-21",
+    "scheduledDate": "2026-12-24",
     "isPublished": false,
     "faqs": [
       {
@@ -12508,7 +12524,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Magento vs Shopify in 2026: Which Platform Should You Pick? - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_10",
@@ -12529,7 +12547,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 10,
-    "scheduledDate": "2026-12-28",
+    "scheduledDate": "2026-12-31",
     "isPublished": false,
     "faqs": [
       {
@@ -13951,7 +13969,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Python Web Development Framework Guide: 18 Options - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_11",
@@ -13972,7 +13992,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 11,
-    "scheduledDate": "2027-01-04",
+    "scheduledDate": "2027-01-07",
     "isPublished": false,
     "faqs": [
       {
@@ -15299,7 +15319,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Search Engine Optimization Startup Guide: SEO for Founders - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_12",
@@ -15320,7 +15342,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 12,
-    "scheduledDate": "2027-01-11",
+    "scheduledDate": "2027-01-14",
     "isPublished": false,
     "faqs": [
       {
@@ -16612,7 +16634,9 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "SEO Search Engine Marketing: How SEO and PPC Work Together - Afwan Tech Web & Software Engineering Guide"
   },
   {
     "id": "blog_13",
@@ -16633,7 +16657,7 @@
       "avatar": "/afwan.png"
     },
     "weekNumber": 13,
-    "scheduledDate": "2027-01-18",
+    "scheduledDate": "2027-01-21",
     "isPublished": false,
     "faqs": [
       {
@@ -17922,6 +17946,8 @@
           ]
         }
       ]
-    }
+    },
+    "coverImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
+    "coverImageAlt": "Shopify vs WordPress in 2026: Which Is Better for You? - Afwan Tech Web & Software Engineering Guide"
   }
 ]

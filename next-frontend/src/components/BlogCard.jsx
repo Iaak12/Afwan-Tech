@@ -21,7 +21,7 @@ export default function BlogCard({ blog, index = 0 }) {
       <Link href={`/blog/${blog.slug}`} className="relative h-52 sm:h-56 w-full overflow-hidden block bg-slate-100">
         <Image
           src={blog.coverImage || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800'}
-          alt={blog.title}
+          alt={blog.coverImageAlt || blog.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
