@@ -21,8 +21,8 @@ function getDripConfigFallback($file) {
     }
     return [
         'enabled' => 1,
-        'pages_per_week' => 5,
-        'start_date' => '2026-11-01',
+        'pages_per_week' => 363,
+        'start_date' => '2026-11-14',
         'manual_urls_unlocked' => 0,
         'manual_batches_unlocked' => 0,
         'updated_at' => date('Y-m-d H:i:s')

@@ -42,23 +42,25 @@ export async function fetchDripStatus() {
   }
 
   // 3. Fallback defaults if APIs are temporarily down
+  // Paced release: 35 Tier-1 hubs in Week 1, then +33 locations (~360 URLs) every week
+  // Spreads all 595 locations (6,500+ URLs) smoothly across 4 months (18 weeks)
   const totalLocations = 595;
-  const pagesPerWeek = 5;
-  const startDate = '2026-11-01';
+  const locationsPerWeek = 33;
+  const startDate = '2026-11-14';
   const startMs = new Date(startDate).getTime();
   const weeksElapsed = Math.max(0, Math.floor((Date.now() - startMs) / (7 * 86400 * 1000)));
-  const unlocked = Math.min(totalLocations, 35 + (weeksElapsed * pagesPerWeek));
+  const unlocked = Math.min(totalLocations, 35 + (weeksElapsed * locationsPerWeek));
 
   return {
     enabled: true,
-    pagesPerWeek,
+    pagesPerWeek: locationsPerWeek * 11,
     startDate,
     totalLocations,
     unlockedCount: unlocked,
     queuedCount: Math.max(0, totalLocations - unlocked),
     manualUrlsUnlocked: 0,
     manualBatchesUnlocked: 0,
-    nextBatchDate: new Date(Date.now() + 7 * 86400 * 1000).toISOString().split('T')[0]
+    nextBatchDate: new Date(startMs + (weeksElapsed + 1) * 7 * 86400 * 1000).toISOString().split('T')[0]
   };
 }
 

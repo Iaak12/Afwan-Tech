@@ -16,8 +16,9 @@ function getFallbackConfig() {
 
   return {
     enabled: true,
-    pages_per_week: 75,
-    start_date: '2026-07-01',
+    locations_per_week: 33,
+    pages_per_week: 363,
+    start_date: '2026-11-14',
     manual_urls_unlocked: 0,
     manual_batches_unlocked: 0,
     updated_at: new Date().toISOString()
@@ -39,24 +40,24 @@ function saveFallbackConfig(config) {
 
 function computeDripMath(config) {
   const totalLocations = 595;
-  const servicesPerLocation = 8;
-  const otherPages = 22; // 8 core services + 8 static + 6 blogs
-  const totalCityServiceUrls = totalLocations * servicesPerLocation; // 4,760
-  const totalUrls = totalLocations + totalCityServiceUrls + otherPages; // 5,377
+  const servicesPerLocation = 11;
+  const otherPages = 34; // Core services + static + blogs
+  const totalCityServiceUrls = totalLocations * servicesPerLocation; // 6,545
+  const totalUrls = totalLocations + totalCityServiceUrls + otherPages; // 7,174
 
-  const startMs = new Date(config.start_date || '2026-07-01').getTime();
+  const startMs = new Date(config.start_date || '2026-11-14').getTime();
   const weeksElapsed = Math.max(0, Math.floor((Date.now() - startMs) / (7 * 86400 * 1000)));
   const manualBatches = Number(config.manual_batches_unlocked || 0);
   const manualBonus = Number(config.manual_urls_unlocked || 0);
-  const pagesPerWeek = Number(config.pages_per_week || 75);
-  const activeBatches = 1 + weeksElapsed + manualBatches;
+  const locationsPerWeek = Number(config.locations_per_week || 33);
 
   const isEnabled = Boolean(config.enabled ?? true);
   let unlocked = totalLocations;
   let queued = 0;
 
   if (isEnabled) {
-    unlocked = Math.min(totalLocations, activeBatches * pagesPerWeek + manualBonus);
+    // 35 initial Tier-1 hubs + 33 locations per week unlocks all 595 in 17 weeks (~4 months)
+    unlocked = Math.min(totalLocations, 35 + ((weeksElapsed + manualBatches) * locationsPerWeek) + manualBonus);
     queued = Math.max(0, totalLocations - unlocked);
   }
 
@@ -69,8 +70,9 @@ function computeDripMath(config) {
 
   return {
     enabled: isEnabled,
-    pagesPerWeek,
-    startDate: config.start_date || '2026-07-01',
+    locationsPerWeek,
+    pagesPerWeek: locationsPerWeek * servicesPerLocation,
+    startDate: config.start_date || '2026-11-14',
     totalLocations,
     servicesPerLocation,
     totalCityServiceUrls,
