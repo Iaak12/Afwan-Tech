@@ -29,6 +29,11 @@ export default function robots() {
           '/backend-php/',
         ],
       },
+      {
+        userAgent: ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended'],
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
+        disallow: ['/admin/', '/api/', '/backend-php/'],
+      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
   };

@@ -58,7 +58,7 @@ export const metadata = {
   openGraph: {
     title: "AFWAN TECH | Digital Marketing & Web Engineering Agency",
     description: "Next-gen web development, custom software engineering, and programmatic SEO covering 500+ cities in India & globally.",
-    url: "https://afwantech.com",
+    url: "https://www.afwantech.com",
     siteName: "Afwan Tech",
     locale: "en_US",
     type: "website",
@@ -72,6 +72,60 @@ export const metadata = {
   },
 };
 
+const rootSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.afwantech.com/#organization',
+      name: 'AFWAN TECH',
+      url: 'https://www.afwantech.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.afwantech.com/afwan.png',
+        caption: 'AFWAN TECH Logo'
+      },
+      image: 'https://www.afwantech.com/afwan.png',
+      description: 'AFWAN TECH is a digital marketing, Next.js web engineering and search visibility agency headquartered in Bengaluru, India.',
+      founder: {
+        '@type': 'Person',
+        name: 'Ayaz Khan',
+        jobTitle: 'Founder & Technical Director'
+      },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'ITPL Main Rd, Pattandur Agrahara, Whitefield',
+        addressLocality: 'Bengaluru',
+        addressRegion: 'Karnataka',
+        postalCode: '560066',
+        addressCountry: 'IN'
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+91 7979850684',
+        contactType: 'customer support',
+        email: 'contactafwantech@gmail.com',
+        availableLanguage: ['en', 'hi']
+      },
+      sameAs: [
+        'https://www.linkedin.com/company/afwan-tech',
+        'https://youtube.com/@afwantechservices',
+        'https://www.instagram.com/afwan.tech',
+        'https://www.facebook.com/share/r/16Vp15WPEqC/'
+      ]
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.afwantech.com/#website',
+      url: 'https://www.afwantech.com',
+      name: 'AFWAN TECH',
+      publisher: {
+        '@id': 'https://www.afwantech.com/#organization'
+      }
+    }
+  ]
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full scroll-smooth">
@@ -79,6 +133,10 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/afwan.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rootSchema) }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-white text-[#0f172a] antialiased selection:bg-primary selection:text-white">
         {/* Google Analytics 4 (gtag.js) */}

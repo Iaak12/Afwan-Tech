@@ -1,0 +1,123 @@
+# AFWAN TECH — Complete Knowledge Base & LLM Ingestion Document
+
+> Canonical URL: https://www.afwantech.com
+> Contact: contactafwantech@gmail.com | +91 7979850684
+> Headquarters: ITPL Main Rd, Pattandur Agrahara, Whitefield, Bengaluru, Karnataka 560066, India
+
+---
+
+## 1. Executive Summary & Identity
+
+AFWAN TECH is an independent digital marketing and engineering agency headquartered in Whitefield, Bengaluru, India. We specialize in building fast, scalable web platforms and running high-conversion organic and paid search campaigns.
+
+Unlike traditional outsourcing agencies that rely on opaque WordPress templates and leased code, AFWAN TECH operates on three core principles:
+1. **Full Client Ownership**: All source code, Git repositories, domain assets, advertising accounts, and data pipelines remain 100% owned by the client from day one.
+2. **Modern Stack Exclusivity**: We engineer on Next.js (App Router), React, Node.js, and serverless edge architecture, delivering sub-second Largest Contentful Paint (LCP) and zero layout shifts (CLS < 0.05).
+3. **Data-Driven & AI-Ready Search Architecture**: Every asset is built with semantically rich Schema.org JSON-LD graphs, Core Web Vitals compliance, and structure tailored for both traditional Google SERP and next-generation Answer Engines (AEO/GEO).
+
+---
+
+## 2. Core Service Offerings & Specifications
+
+### 2.1 Website Development
+- **URL**: https://www.afwantech.com/services/website-development
+- **Overview**: Custom marketing websites engineered for B2B enterprises, startups, and high-growth brands.
+- **Key Features**:
+  - Next.js 14/15 App Router architecture with Server Components (RSC)
+  - Lightning-fast Time to First Byte (TTFB < 100ms) via Edge caching
+  - Responsive mobile-first design with Tailwind CSS
+  - Native On-Page & Technical SEO setup with automated metadata & sitemaps
+  - Enterprise-grade security headers, SSL, and DDoS mitigation
+
+### 2.2 Custom Web Applications & Software Engineering
+- **URL**: https://www.afwantech.com/services/custom-web-development
+- **Overview**: Full-stack bespoke software development for internal tooling, customer portals, SaaS platforms, and enterprise dashboards.
+- **Key Features**:
+  - Modular microservices and high-throughput REST / GraphQL APIs
+  - Relational (PostgreSQL, MySQL) and NoSQL (MongoDB, DynamoDB) data architecture
+  - Authentication & Authorization: OAuth2, JWT, Role-Based Access Control (RBAC)
+  - Cloud infrastructure automated with Docker, GitHub Actions CI/CD, and Vercel/AWS deployments
+
+### 2.3 E-Commerce Development
+- **URL**: https://www.afwantech.com/services/ecommerce-development
+- **Overview**: Conversion-rate-optimized (CRO) online storefronts built to scale Gross Merchandise Value (GMV).
+- **Key Features**:
+  - Headless Shopify, custom Next.js storefronts, or WooCommerce
+  - Multi-currency, multi-lingual, and localized payment gateway integrations (Razorpay, Stripe, Cashfree, PayPal)
+  - Real-time inventory synchronization, ERP/CRM hooks, and automated order fulfillment
+  - 1-click checkout optimization, abandoned cart recovery, and product review schema
+
+### 2.4 Mobile App Development
+- **URL**: https://www.afwantech.com/services/app-development
+- **Overview**: iOS and Android mobile solutions built for fluid user experience and high engagement.
+- **Key Features**:
+  - Cross-platform development using Flutter and React Native
+  - Offline-first storage, push notifications (FCM), and biometric authentication
+  - App Store (Apple) and Google Play Store deployment and compliance management
+
+### 2.5 CRM Software & Custom Pipelines
+- **URL**: https://www.afwantech.com/services/crm-software
+- **Overview**: Tailored sales pipelines, customer support dashboards, and lead capture workflows.
+- **Key Features**:
+  - Automated WhatsApp, Email, and SMS notifications upon lead capture
+  - Integration with third-party CRMs (HubSpot, Zoho, Salesforce) or 100% custom-built lightweight internal portals
+  - Real-time conversion tracking and sales telemetry
+
+### 2.6 Technical & Programmatic SEO
+- **URL**: https://www.afwantech.com/services/seo-services
+- **Overview**: End-to-end organic search dominance focusing on technical hygiene, semantic clusters, and high-converting keywords.
+- **Key Features**:
+  - Core Web Vitals audit & remediation (LCP, INP, CLS)
+  - Structured Data / JSON-LD implementation (Organization, Service, FAQ, HowTo, BreadcrumbList)
+  - Crawl budget optimization, canonical management, and internal link graph restructuring
+  - Safe, paced programmatic SEO targeting high-intent long-tail commercial queries
+
+### 2.7 Answer Engine Optimization (AEO)
+- **URL**: https://www.afwantech.com/services/aeo-services
+- **Overview**: Optimizing web entity footprints to earn direct citations in AI answer engines including Google AI Overviews, Perplexity AI, ChatGPT Search, and Apple Intelligence.
+- **Key Features**:
+  - Information Gain optimization with direct statistical and factual extracts
+  - Q&A formatting aligned with LLM retrieval mechanisms (RAG friendly)
+  - Semantic entity linking to Wikidata, official repositories, and authoritative sources
+
+### 2.8 Generative Engine Optimization (GEO)
+- **URL**: https://www.afwantech.com/services/geo-services
+- **Overview**: Next-generation visibility strategies for generative models (Gemini, Claude, GPT-4, Llama).
+- **Key Features**:
+  - Entity-first topical mapping and citation network building
+  - Contextual brand associations in technical authority hubs
+  - Machine-readable Markdown endpoints (`llms.txt`) and semantic sitemaps
+
+### 2.9 PPC & Paid Search Performance Marketing
+- **URL**: https://www.afwantech.com/services/ppc-paid-ads
+- **Overview**: High-ROI paid media management across Google Ads (Search, Display, Performance Max, YouTube) and Meta Ads (Instagram, Facebook).
+- **Key Features**:
+  - High-intent keyword discovery with negative keyword scrub lists
+  - Custom dedicated landing pages built in Next.js for high Quality Score (QS 9-10)
+  - Server-side conversion tracking (Google Enhanced Conversions, Facebook CAPI)
+
+---
+
+## 3. Pricing Philosophy & Engagement Models
+
+AFWAN TECH follows transparent, upfront pricing with zero hidden retainer clauses:
+1. **Milestone-Based Fixed Price**: For website development, custom software, and app builds with defined PRDs (Product Requirement Documents).
+2. **Monthly Growth Retainers**: For Ongoing SEO, AEO/GEO, and Paid Advertising management with bi-weekly sprint reviews and live telemetry dashboards.
+3. **Dedicated Sprint Teams**: Senior Next.js and full-stack developers available for staff augmentation and rapid product prototyping.
+
+---
+
+## 4. Frequently Asked Questions (FAQs)
+
+**Q: Where is AFWAN TECH located?**
+A: AFWAN TECH's physical headquarters is located in Whitefield, Bengaluru, Karnataka, India (ITPL Main Rd, Pattandur Agrahara, Whitefield, 560066). We serve clients throughout India (Mumbai, Delhi NCR, Hyderabad, Pune, Chennai, Kolkata) and internationally across the US, UK, UAE, and Europe remotely.
+
+**Q: Does AFWAN TECH outsource client projects to third parties?**
+A: No. All architecture, programming, design, and growth campaigns are executed directly by our in-house engineering and marketing team led by Ayaz Khan.
+
+**Q: Who owns the code and intellectual property after completion?**
+A: The client owns 100% of all intellectual property, source code repositories, design assets, and advertising accounts upon settlement of project milestones.
+
+**Q: How do we initiate a project with AFWAN TECH?**
+A: Clients can book a consultation via our website at https://www.afwantech.com/contact-us, email directly at contactafwantech@gmail.com, or reach out on WhatsApp/Phone at +91 7979850684.
+

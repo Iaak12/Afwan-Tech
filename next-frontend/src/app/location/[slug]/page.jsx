@@ -16,7 +16,7 @@ import {
   getNearbyLocations 
 } from '@/data/locationsData';
 import { getLocationIntelligence } from '@/data/locationIntelligence';
-import { services } from '@/data/siteData';
+import { services, siteSettings } from '@/data/siteData';
 import { fetchDripStatus, isLocationUnlocked } from '@/lib/dripConfig';
 
 // Dynamic SEO Metadata for each of the 500+ locations
@@ -114,29 +114,43 @@ export default async function LocationPage({ params }) {
     }
   ];
 
-  // Schema.org Structured Data
+  // Schema.org Structured Data (Compliant Service Area Business)
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'LocalBusiness',
-        name: `AFWAN TECH - Web Development & SEO in ${location.name}`,
+        '@type': 'ProfessionalService',
+        name: `AFWAN TECH - Web Development & Digital Growth Agency (${location.name})`,
         image: 'https://www.afwantech.com/afwan.png',
-        '@id': `https://www.afwantech.com/location/${location.slug}`,
+        '@id': `https://www.afwantech.com/location/${location.slug}#service`,
         url: `https://www.afwantech.com/location/${location.slug}`,
-        telephone: '+919560133711',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: location.name,
-          addressRegion: location.state,
-          addressCountry: location.country === 'Global' ? 'US' : 'IN'
+        telephone: siteSettings.contactPhone,
+        email: siteSettings.contactEmail,
+        priceRange: '₹₹ - ₹₹₹',
+        parentOrganization: {
+          '@type': 'Organization',
+          name: 'AFWAN TECH',
+          url: 'https://www.afwantech.com',
+          telephone: siteSettings.contactPhone,
+          email: siteSettings.contactEmail,
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: siteSettings.address,
+            addressLocality: 'Bengaluru',
+            addressRegion: 'Karnataka',
+            postalCode: '560066',
+            addressCountry: 'IN'
+          }
         },
-        priceRange: '₹₹₹',
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          reviewCount: location.reviewsCount || 148
-        }
+        areaServed: {
+          '@type': location.type === 'state' ? 'State' : 'City',
+          name: location.name,
+          containedInPlace: {
+            '@type': 'AdministrativeArea',
+            name: location.state || 'India'
+          }
+        },
+        description: `Boutique Next.js web development and data-driven SEO engineering serving businesses in ${location.name}, ${location.state}.`
       },
       {
         '@type': 'FAQPage',

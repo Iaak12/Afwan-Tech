@@ -154,9 +154,7 @@ for (const stateName of Object.keys(statesWithCities)) {
     citiesCount: citiesInState.length,
     cities: citiesInState.map(c => slugify(c)),
     avgGrowth: "320% ROI",
-    businessesScaled: "1,200+",
-    rating: "4.9/5",
-    reviewsCount: 384
+    businessesScaled: "100+"
   });
 
   // 2. Add Each City
@@ -172,9 +170,7 @@ for (const stateName of Object.keys(statesWithCities)) {
       metaDescription: `Looking for top-tier Web Development, Custom Software & SEO in ${city}? We engineer high-converting digital solutions and rank brands on Google page 1.`,
       h1: `Web Development & Digital Growth Agency in ${city}`,
       avgGrowth: "285% Organic Growth",
-      businessesScaled: "85+",
-      rating: "4.9/5",
-      reviewsCount: 120 + Math.floor(Math.random() * 80),
+      businessesScaled: "25+",
       parentSlug: stateSlug
     });
   }

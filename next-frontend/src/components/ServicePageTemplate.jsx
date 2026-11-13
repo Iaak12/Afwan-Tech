@@ -70,7 +70,17 @@ export default function ServicePageTemplate({ data, location }) {
           }
         },
         "serviceType": data.title,
-        "areaServed": "Global"
+        "areaServed": location ? {
+          "@type": location.type === 'state' ? 'State' : 'City',
+          "name": location.name,
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": location.state || 'India'
+          }
+        } : {
+          "@type": "Country",
+          "name": "India"
+        }
       },
       {
         "@type": "FAQPage",

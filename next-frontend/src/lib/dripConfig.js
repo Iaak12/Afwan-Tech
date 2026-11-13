@@ -43,11 +43,11 @@ export async function fetchDripStatus() {
 
   // 3. Fallback defaults if APIs are temporarily down
   const totalLocations = 595;
-  const pagesPerWeek = 75;
-  const startDate = '2026-07-01';
+  const pagesPerWeek = 5;
+  const startDate = '2026-11-01';
   const startMs = new Date(startDate).getTime();
   const weeksElapsed = Math.max(0, Math.floor((Date.now() - startMs) / (7 * 86400 * 1000)));
-  const unlocked = Math.min(totalLocations, (1 + weeksElapsed) * pagesPerWeek);
+  const unlocked = Math.min(totalLocations, 35 + (weeksElapsed * pagesPerWeek));
 
   return {
     enabled: true,
@@ -62,35 +62,60 @@ export async function fetchDripStatus() {
   };
 }
 
+export const PRIORITY_TECH_HUBS = [
+  'bengaluru', 'mumbai', 'delhi-ncr', 'new-delhi', 'noida', 'gurugram',
+  'hyderabad', 'pune', 'chennai', 'kolkata', 'ahmedabad', 'jaipur',
+  'chandigarh', 'indore', 'kochi', 'lucknow', 'navi-mumbai', 'thane',
+  'karnataka', 'maharashtra', 'tamil-nadu', 'gujarat', 'telangana',
+  'west-bengal', 'rajasthan', 'kerala', 'uttar-pradesh', 'delhi'
+];
+
 /**
  * Splits any item list (cities, services, or URLs) into active cohort (unlocked) and queued cohort.
+ * Prioritizes high-intent commercial tech hubs to prevent index bloat and doorway penalties.
  */
-export function calculateActiveCohort(totalItems = [], unlockedCount = 200, enabled = true) {
+export function calculateActiveCohort(totalItems = [], unlockedCount = 35, enabled = true) {
   if (!enabled || unlockedCount >= totalItems.length) {
     return { unlocked: totalItems, queued: [] };
   }
+
+  // Sort priority tech hubs to the front
+  const prioritySet = new Set(PRIORITY_TECH_HUBS);
+  const prioritized = [];
+  const regular = [];
+
+  for (const item of totalItems) {
+    const slug = typeof item === 'string' ? item.toLowerCase().trim() : (item.slug || '').toLowerCase().trim();
+    if (prioritySet.has(slug)) {
+      prioritized.push(item);
+    } else {
+      regular.push(item);
+    }
+  }
+
+  const combined = [...prioritized, ...regular];
   return {
-    unlocked: totalItems.slice(0, unlockedCount),
-    queued: totalItems.slice(unlockedCount),
+    unlocked: combined.slice(0, unlockedCount),
+    queued: combined.slice(unlockedCount),
   };
 }
 
 /**
  * Checks whether a specific location slug is currently unlocked in the active cohort.
  */
-export function isLocationUnlocked(slug, allLocations = [], unlockedCount = 200, enabled = true) {
+export function isLocationUnlocked(slug, allLocations = [], unlockedCount = 35, enabled = true) {
   if (!enabled) return true;
   if (!slug) return true;
   const target = slug.toLowerCase().trim();
-  const index = allLocations.findIndex(l => {
-    const s = typeof l === 'string' ? l : l.slug;
-    return s && s.toLowerCase() === target;
-  });
 
-  if (index === -1) {
-    // If not found in primary list, don't accidentally block
+  // Tier 1 tech hubs and primary states are always unlocked
+  if (PRIORITY_TECH_HUBS.includes(target)) {
     return true;
   }
 
-  return index < unlockedCount;
+  const { unlocked } = calculateActiveCohort(allLocations, unlockedCount, enabled);
+  return unlocked.some(l => {
+    const s = typeof l === 'string' ? l : l.slug;
+    return s && s.toLowerCase() === target;
+  });
 }
