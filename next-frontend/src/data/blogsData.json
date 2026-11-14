@@ -1401,7 +1401,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/ai-for-web-development.png",
     "coverImageAlt": "AI for Web Development in 2026: What Really Changes - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -2897,7 +2897,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/ai-tools-for-web-development.png",
     "coverImageAlt": "AI Tools for Web Development: 2026 Guide by Category - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -4260,7 +4260,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/ecommerce-app-builder.png",
     "coverImageAlt": "Ecommerce App Builder Options: Build a Shopping App (2026) - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -5633,7 +5633,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/ecommerce-app-maker.png",
     "coverImageAlt": "Ecommerce App Maker Guide: Turn Your Store Into an App - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -7019,7 +7019,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/ecommerce-website-builder.png",
     "coverImageAlt": "Best Ecommerce Website Builder in India: 2026 Guide - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -8443,7 +8443,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/enterprise-app.png",
     "coverImageAlt": "Enterprise App Development: A Practical 2026 Guide - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -9803,7 +9803,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/flask-vs-django.png",
     "coverImageAlt": "Flask vs Django in 2026: Which Python Framework to Choose? - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -11206,7 +11206,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/headless-ecommerce.png",
     "coverImageAlt": "Headless Ecommerce Explained: Benefits, Costs and SEO - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -12525,7 +12525,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/magento-vs-shopify.png",
     "coverImageAlt": "Magento vs Shopify in 2026: Which Platform Should You Pick? - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -13970,7 +13970,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/python-web-development-framework.png",
     "coverImageAlt": "Python Web Development Framework Guide: 18 Options - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -15320,7 +15320,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/search-engine-optimization-startup.png",
     "coverImageAlt": "Search Engine Optimization Startup Guide: SEO for Founders - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -16635,7 +16635,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/seo-search-engine-marketing.png",
     "coverImageAlt": "SEO Search Engine Marketing: How SEO and PPC Work Together - Afwan Tech Web & Software Engineering Guide"
   },
   {
@@ -17947,7 +17947,7 @@
         }
       ]
     },
-    "coverImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "/blog-images/shopify-vs-wordpress.png",
     "coverImageAlt": "Shopify vs WordPress in 2026: Which Is Better for You? - Afwan Tech Web & Software Engineering Guide"
   }
 ]

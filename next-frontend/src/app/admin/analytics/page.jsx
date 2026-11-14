@@ -13,12 +13,28 @@ export default function AdminAnalyticsDeepDive() {
 
   const fetchStats = async () => {
     try {
+      // 1. Fetch from Next.js internal API
+      const res = await fetch('/api/stats', { cache: 'no-store' });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && json.data) {
+          setData(json.data);
+          return;
+        }
+      }
+
+      // 2. Fallback to PHP backend if configured
       const phpApi = process.env.NEXT_PUBLIC_PHP_API_URL;
-      const targetUrl = phpApi ? `${phpApi.replace(/\/$/, '')}/stats.php` : '/api/stats';
-      const res = await fetch(targetUrl);
-      const json = await res.json();
-      if (json.success) {
-        setData(json.data);
+      if (phpApi) {
+        const targetUrl = `${phpApi.replace(/\/$/, '')}/stats.php`;
+        const res2 = await fetch(targetUrl, { cache: 'no-store' });
+        if (res2.ok) {
+          const json2 = await res2.json();
+          if (json2.success && json2.data) {
+            setData(json2.data);
+            return;
+          }
+        }
       }
     } catch (e) {
       console.error(e);

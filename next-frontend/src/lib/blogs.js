@@ -8,19 +8,19 @@ const categoryImages = {
 };
 
 const blogSpecificImages = {
-  'ai-for-web-development': 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800',
-  'ai-tools-for-web-development': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
-  'ecommerce-app-builder': 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&q=80&w=800',
-  'ecommerce-app-maker': 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800',
-  'ecommerce-website-builder': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-  'enterprise-app': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800',
-  'flask-vs-django': 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800',
-  'headless-ecommerce': 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800',
-  'magento-vs-shopify': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800',
-  'python-web-development-framework': 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800',
-  'search-engine-optimization-startup': 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800',
-  'seo-search-engine-marketing': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-  'shopify-vs-wordpress': 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800',
+  'ai-for-web-development': '/blog-images/ai-for-web-development.png',
+  'ai-tools-for-web-development': '/blog-images/ai-tools-for-web-development.png',
+  'ecommerce-app-builder': '/blog-images/ecommerce-app-builder.png',
+  'ecommerce-app-maker': '/blog-images/ecommerce-app-maker.png',
+  'ecommerce-website-builder': '/blog-images/ecommerce-website-builder.png',
+  'enterprise-app': '/blog-images/enterprise-app.png',
+  'flask-vs-django': '/blog-images/flask-vs-django.png',
+  'headless-ecommerce': '/blog-images/headless-ecommerce.png',
+  'magento-vs-shopify': '/blog-images/magento-vs-shopify.png',
+  'python-web-development-framework': '/blog-images/python-web-development-framework.png',
+  'search-engine-optimization-startup': '/blog-images/search-engine-optimization-startup.png',
+  'seo-search-engine-marketing': '/blog-images/seo-search-engine-marketing.png',
+  'shopify-vs-wordpress': '/blog-images/shopify-vs-wordpress.png',
 };
 
 /**

@@ -24,7 +24,12 @@ const nextConfig = {
       },
       // 2. Bot / Hacker probe protection (saves crawl budget)
       {
-        source: '/:path*.php',
+        source: '/wp-login.php',
+        destination: '/404',
+        permanent: false,
+      },
+      {
+        source: '/xmlrpc.php',
         destination: '/404',
         permanent: false,
       },

@@ -1,0 +1,1252 @@
+[
+  {
+    "id": "tap_1794670054_0002",
+    "type": "whatsapp",
+    "path": "/",
+    "location": "Lucknow, Uttar Pradesh",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-14T20:57:34.000Z",
+    "timestamp": 1794670054000
+  },
+  {
+    "id": "tap_1794629837_0001",
+    "type": "whatsapp",
+    "path": "/pricing",
+    "location": "Pune, Maharashtra",
+    "device": "mobile",
+    "referrer": "Instagram",
+    "created_at": "2026-11-14T09:47:17.000Z",
+    "timestamp": 1794629837000
+  },
+  {
+    "id": "tap_1794584444_0005",
+    "type": "whatsapp",
+    "path": "/services/seo-services",
+    "location": "Kolkata, West Bengal",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-13T21:10:44.000Z",
+    "timestamp": 1794584444000
+  },
+  {
+    "id": "tap_1794570974_0004",
+    "type": "whatsapp",
+    "path": "/market-area",
+    "location": "Kolkata, West Bengal",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-13T17:26:14.000Z",
+    "timestamp": 1794570974000
+  },
+  {
+    "id": "tap_1794558965_0006",
+    "type": "whatsapp",
+    "path": "/blog/ai-for-web-development",
+    "location": "Kochi, Kerala",
+    "device": "mobile",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-13T14:06:05.000Z",
+    "timestamp": 1794558965000
+  },
+  {
+    "id": "tap_1794553358_0003",
+    "type": "whatsapp",
+    "path": "/pricing",
+    "location": "Noida, Uttar Pradesh",
+    "device": "tablet",
+    "referrer": "Instagram",
+    "created_at": "2026-11-13T12:32:38.000Z",
+    "timestamp": 1794553358000
+  },
+  {
+    "id": "tap_1794497566_0007",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Hyderabad, Telangana",
+    "device": "desktop",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-12T21:02:46.000Z",
+    "timestamp": 1794497566000
+  },
+  {
+    "id": "tap_1794484133_0008",
+    "type": "whatsapp",
+    "path": "/location/pune",
+    "location": "Kochi, Kerala",
+    "device": "mobile",
+    "referrer": "Instagram",
+    "created_at": "2026-11-12T17:18:53.000Z",
+    "timestamp": 1794484133000
+  },
+  {
+    "id": "tap_1794467537_0011",
+    "type": "whatsapp",
+    "path": "/location/pune",
+    "location": "New Delhi, Delhi",
+    "device": "tablet",
+    "referrer": "Direct",
+    "created_at": "2026-11-12T12:42:17.000Z",
+    "timestamp": 1794467537000
+  },
+  {
+    "id": "tap_1794459257_0010",
+    "type": "whatsapp",
+    "path": "/services/seo-services",
+    "location": "Kochi, Kerala",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-12T10:24:17.000Z",
+    "timestamp": 1794459257000
+  },
+  {
+    "id": "tap_1794457962_0009",
+    "type": "whatsapp",
+    "path": "/services/website-development",
+    "location": "Ahmedabad, Gujarat",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-12T10:02:42.000Z",
+    "timestamp": 1794457962000
+  },
+  {
+    "id": "tap_1794409534_0016",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Lucknow, Uttar Pradesh",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-11-11T20:35:34.000Z",
+    "timestamp": 1794409534000
+  },
+  {
+    "id": "tap_1794408310_0012",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Kolkata, West Bengal",
+    "device": "tablet",
+    "referrer": "Instagram",
+    "created_at": "2026-11-11T20:15:10.000Z",
+    "timestamp": 1794408310000
+  },
+  {
+    "id": "tap_1794397483_0013",
+    "type": "whatsapp",
+    "path": "/services/app-development",
+    "location": "Mumbai, Maharashtra",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-11T17:14:43.000Z",
+    "timestamp": 1794397483000
+  },
+  {
+    "id": "tap_1794392818_0015",
+    "type": "whatsapp",
+    "path": "/services/ecommerce-development",
+    "location": "Pune, Maharashtra",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-11T15:56:58.000Z",
+    "timestamp": 1794392818000
+  },
+  {
+    "id": "tap_1794387317_0014",
+    "type": "whatsapp",
+    "path": "/services/app-development",
+    "location": "Jaipur, Rajasthan",
+    "device": "tablet",
+    "referrer": "Direct",
+    "created_at": "2026-11-11T14:25:17.000Z",
+    "timestamp": 1794387317000
+  },
+  {
+    "id": "tap_1794386648_0017",
+    "type": "whatsapp",
+    "path": "/market-area",
+    "location": "New Delhi, Delhi",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-11T14:14:08.000Z",
+    "timestamp": 1794386648000
+  },
+  {
+    "id": "tap_1794371980_0018",
+    "type": "whatsapp",
+    "path": "/location/pune",
+    "location": "Lucknow, Uttar Pradesh",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-11T10:09:40.000Z",
+    "timestamp": 1794371980000
+  },
+  {
+    "id": "tap_1794320794_0020",
+    "type": "call",
+    "path": "/services/website-development",
+    "location": "Jaipur, Rajasthan",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-10T19:56:34.000Z",
+    "timestamp": 1794320794000
+  },
+  {
+    "id": "tap_1794315573_0019",
+    "type": "whatsapp",
+    "path": "/contact-us",
+    "location": "Bengaluru, Karnataka",
+    "device": "tablet",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-10T18:29:33.000Z",
+    "timestamp": 1794315573000
+  },
+  {
+    "id": "tap_1794290689_0023",
+    "type": "call",
+    "path": "/location/pune",
+    "location": "Bengaluru, Karnataka",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-10T11:34:49.000Z",
+    "timestamp": 1794290689000
+  },
+  {
+    "id": "tap_1794290340_0021",
+    "type": "call",
+    "path": "/location/hyderabad",
+    "location": "Kolkata, West Bengal",
+    "device": "mobile",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-10T11:29:00.000Z",
+    "timestamp": 1794290340000
+  },
+  {
+    "id": "tap_1794288340_0022",
+    "type": "whatsapp",
+    "path": "/services/seo-services",
+    "location": "Noida, Uttar Pradesh",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-10T10:55:40.000Z",
+    "timestamp": 1794288340000
+  },
+  {
+    "id": "tap_1794281879_0024",
+    "type": "whatsapp",
+    "path": "/services/app-development",
+    "location": "Ahmedabad, Gujarat",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-10T09:07:59.000Z",
+    "timestamp": 1794281879000
+  },
+  {
+    "id": "tap_1794233483_0028",
+    "type": "whatsapp",
+    "path": "/services/website-development",
+    "location": "Indore, Madhya Pradesh",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-09T19:41:23.000Z",
+    "timestamp": 1794233483000
+  },
+  {
+    "id": "tap_1794229033_0027",
+    "type": "call",
+    "path": "/pricing",
+    "location": "Noida, Uttar Pradesh",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-09T18:27:13.000Z",
+    "timestamp": 1794229033000
+  },
+  {
+    "id": "tap_1794213272_0031",
+    "type": "whatsapp",
+    "path": "/services/app-development",
+    "location": "Surat, Gujarat",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-11-09T14:04:32.000Z",
+    "timestamp": 1794213272000
+  },
+  {
+    "id": "tap_1794202722_0026",
+    "type": "whatsapp",
+    "path": "/services/ecommerce-development",
+    "location": "Gurgaon, Haryana",
+    "device": "desktop",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-09T11:08:42.000Z",
+    "timestamp": 1794202722000
+  },
+  {
+    "id": "tap_1794201340_0030",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "New Delhi, Delhi",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-09T10:45:40.000Z",
+    "timestamp": 1794201340000
+  },
+  {
+    "id": "tap_1794199861_0029",
+    "type": "whatsapp",
+    "path": "/location/pune",
+    "location": "Chennai, Tamil Nadu",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-09T10:21:01.000Z",
+    "timestamp": 1794199861000
+  },
+  {
+    "id": "tap_1794198946_0025",
+    "type": "whatsapp",
+    "path": "/market-area",
+    "location": "New Delhi, Delhi",
+    "device": "desktop",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-09T10:05:46.000Z",
+    "timestamp": 1794198946000
+  },
+  {
+    "id": "tap_1794139088_0035",
+    "type": "whatsapp",
+    "path": "/location/delhi",
+    "location": "Kolkata, West Bengal",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-08T17:28:08.000Z",
+    "timestamp": 1794139088000
+  },
+  {
+    "id": "tap_1794131547_0033",
+    "type": "whatsapp",
+    "path": "/contact-us",
+    "location": "Mumbai, Maharashtra",
+    "device": "tablet",
+    "referrer": "Instagram",
+    "created_at": "2026-11-08T15:22:27.000Z",
+    "timestamp": 1794131547000
+  },
+  {
+    "id": "tap_1794122430_0032",
+    "type": "call",
+    "path": "/services/website-development",
+    "location": "Noida, Uttar Pradesh",
+    "device": "mobile",
+    "referrer": "Instagram",
+    "created_at": "2026-11-08T12:50:30.000Z",
+    "timestamp": 1794122430000
+  },
+  {
+    "id": "tap_1794113931_0036",
+    "type": "call",
+    "path": "/",
+    "location": "Hyderabad, Telangana",
+    "device": "tablet",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-08T10:28:51.000Z",
+    "timestamp": 1794113931000
+  },
+  {
+    "id": "tap_1794112405_0034",
+    "type": "call",
+    "path": "/services/app-development",
+    "location": "Hyderabad, Telangana",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-08T10:03:25.000Z",
+    "timestamp": 1794112405000
+  },
+  {
+    "id": "tap_1794036325_0038",
+    "type": "call",
+    "path": "/location/mumbai",
+    "location": "Gurgaon, Haryana",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-07T12:55:25.000Z",
+    "timestamp": 1794036325000
+  },
+  {
+    "id": "tap_1794029388_0037",
+    "type": "call",
+    "path": "/location/mumbai",
+    "location": "Gurgaon, Haryana",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-11-07T10:59:48.000Z",
+    "timestamp": 1794029388000
+  },
+  {
+    "id": "tap_1793982029_0039",
+    "type": "whatsapp",
+    "path": "/services/seo-services",
+    "location": "Surat, Gujarat",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-06T21:50:29.000Z",
+    "timestamp": 1793982029000
+  },
+  {
+    "id": "tap_1793948858_0043",
+    "type": "whatsapp",
+    "path": "/location/mumbai",
+    "location": "New Delhi, Delhi",
+    "device": "tablet",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-06T12:37:38.000Z",
+    "timestamp": 1793948858000
+  },
+  {
+    "id": "tap_1793946817_0040",
+    "type": "call",
+    "path": "/pricing",
+    "location": "Mumbai, Maharashtra",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-06T12:03:37.000Z",
+    "timestamp": 1793946817000
+  },
+  {
+    "id": "tap_1793943278_0042",
+    "type": "whatsapp",
+    "path": "/location/mumbai",
+    "location": "Chennai, Tamil Nadu",
+    "device": "mobile",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-06T11:04:38.000Z",
+    "timestamp": 1793943278000
+  },
+  {
+    "id": "tap_1793938050_0041",
+    "type": "whatsapp",
+    "path": "/",
+    "location": "Gurgaon, Haryana",
+    "device": "desktop",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-06T09:37:30.000Z",
+    "timestamp": 1793938050000
+  },
+  {
+    "id": "tap_1793879459_0044",
+    "type": "whatsapp",
+    "path": "/services/app-development",
+    "location": "Jaipur, Rajasthan",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-05T17:20:59.000Z",
+    "timestamp": 1793879459000
+  },
+  {
+    "id": "tap_1793876976_0046",
+    "type": "call",
+    "path": "/location/hyderabad",
+    "location": "New Delhi, Delhi",
+    "device": "mobile",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-05T16:39:36.000Z",
+    "timestamp": 1793876976000
+  },
+  {
+    "id": "tap_1793864428_0048",
+    "type": "call",
+    "path": "/location/pune",
+    "location": "Ahmedabad, Gujarat",
+    "device": "tablet",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-05T13:10:28.000Z",
+    "timestamp": 1793864428000
+  },
+  {
+    "id": "tap_1793864339_0047",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "New Delhi, Delhi",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-05T13:08:59.000Z",
+    "timestamp": 1793864339000
+  },
+  {
+    "id": "tap_1793859161_0045",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Jaipur, Rajasthan",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-05T11:42:41.000Z",
+    "timestamp": 1793859161000
+  },
+  {
+    "id": "tap_1793856366_0050",
+    "type": "call",
+    "path": "/services/ecommerce-development",
+    "location": "Pune, Maharashtra",
+    "device": "mobile",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-05T10:56:06.000Z",
+    "timestamp": 1793856366000
+  },
+  {
+    "id": "tap_1793851972_0049",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Hyderabad, Telangana",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-05T09:42:52.000Z",
+    "timestamp": 1793851972000
+  },
+  {
+    "id": "tap_1793806720_0053",
+    "type": "call",
+    "path": "/pricing",
+    "location": "Gurgaon, Haryana",
+    "device": "desktop",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-04T21:08:40.000Z",
+    "timestamp": 1793806720000
+  },
+  {
+    "id": "tap_1793804255_0054",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "New Delhi, Delhi",
+    "device": "tablet",
+    "referrer": "Direct",
+    "created_at": "2026-11-04T20:27:35.000Z",
+    "timestamp": 1793804255000
+  },
+  {
+    "id": "tap_1793803873_0051",
+    "type": "whatsapp",
+    "path": "/location/hyderabad",
+    "location": "Kolkata, West Bengal",
+    "device": "desktop",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-04T20:21:13.000Z",
+    "timestamp": 1793803873000
+  },
+  {
+    "id": "tap_1793763340_0052",
+    "type": "whatsapp",
+    "path": "/",
+    "location": "Kolkata, West Bengal",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-04T09:05:40.000Z",
+    "timestamp": 1793763340000
+  },
+  {
+    "id": "tap_1793719275_0060",
+    "type": "whatsapp",
+    "path": "/location/mumbai",
+    "location": "Hyderabad, Telangana",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-03T20:51:15.000Z",
+    "timestamp": 1793719275000
+  },
+  {
+    "id": "tap_1793713542_0057",
+    "type": "whatsapp",
+    "path": "/location/pune",
+    "location": "Lucknow, Uttar Pradesh",
+    "device": "tablet",
+    "referrer": "Direct",
+    "created_at": "2026-11-03T19:15:42.000Z",
+    "timestamp": 1793713542000
+  },
+  {
+    "id": "tap_1793702652_0061",
+    "type": "call",
+    "path": "/location/bengaluru",
+    "location": "Indore, Madhya Pradesh",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-03T16:14:12.000Z",
+    "timestamp": 1793702652000
+  },
+  {
+    "id": "tap_1793692437_0056",
+    "type": "call",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Mumbai, Maharashtra",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-03T13:23:57.000Z",
+    "timestamp": 1793692437000
+  },
+  {
+    "id": "tap_1793690710_0058",
+    "type": "call",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Gurgaon, Haryana",
+    "device": "desktop",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-03T12:55:10.000Z",
+    "timestamp": 1793690710000
+  },
+  {
+    "id": "tap_1793686679_0059",
+    "type": "whatsapp",
+    "path": "/market-area",
+    "location": "Lucknow, Uttar Pradesh",
+    "device": "tablet",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-03T11:47:59.000Z",
+    "timestamp": 1793686679000
+  },
+  {
+    "id": "tap_1793679803_0055",
+    "type": "whatsapp",
+    "path": "/location/mumbai",
+    "location": "Pune, Maharashtra",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-03T09:53:23.000Z",
+    "timestamp": 1793679803000
+  },
+  {
+    "id": "tap_1793609858_0065",
+    "type": "call",
+    "path": "/location/mumbai",
+    "location": "Hyderabad, Telangana",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-11-02T14:27:38.000Z",
+    "timestamp": 1793609858000
+  },
+  {
+    "id": "tap_1793605961_0063",
+    "type": "whatsapp",
+    "path": "/",
+    "location": "Jaipur, Rajasthan",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-02T13:22:41.000Z",
+    "timestamp": 1793605961000
+  },
+  {
+    "id": "tap_1793601102_0062",
+    "type": "whatsapp",
+    "path": "/services/ecommerce-development",
+    "location": "Jaipur, Rajasthan",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-02T12:01:42.000Z",
+    "timestamp": 1793601102000
+  },
+  {
+    "id": "tap_1793599636_0064",
+    "type": "whatsapp",
+    "path": "/location/bengaluru",
+    "location": "Lucknow, Uttar Pradesh",
+    "device": "tablet",
+    "referrer": "WhatsApp",
+    "created_at": "2026-11-02T11:37:16.000Z",
+    "timestamp": 1793599636000
+  },
+  {
+    "id": "tap_1793543301_0067",
+    "type": "whatsapp",
+    "path": "/pricing",
+    "location": "Hyderabad, Telangana",
+    "device": "mobile",
+    "referrer": "LinkedIn",
+    "created_at": "2026-11-01T19:58:21.000Z",
+    "timestamp": 1793543301000
+  },
+  {
+    "id": "tap_1793527944_0069",
+    "type": "whatsapp",
+    "path": "/location/pune",
+    "location": "Gurgaon, Haryana",
+    "device": "desktop",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-01T15:42:24.000Z",
+    "timestamp": 1793527944000
+  },
+  {
+    "id": "tap_1793520746_0068",
+    "type": "whatsapp",
+    "path": "/location/hyderabad",
+    "location": "Ahmedabad, Gujarat",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-11-01T13:42:26.000Z",
+    "timestamp": 1793520746000
+  },
+  {
+    "id": "tap_1793506527_0066",
+    "type": "whatsapp",
+    "path": "/location/bengaluru",
+    "location": "Noida, Uttar Pradesh",
+    "device": "desktop",
+    "referrer": "Google Organic",
+    "created_at": "2026-11-01T09:45:27.000Z",
+    "timestamp": 1793506527000
+  },
+  {
+    "id": "tap_1793463430_0072",
+    "type": "whatsapp",
+    "path": "/location/hyderabad",
+    "location": "Ahmedabad, Gujarat",
+    "device": "tablet",
+    "referrer": "Instagram",
+    "created_at": "2026-10-31T21:47:10.000Z",
+    "timestamp": 1793463430000
+  },
+  {
+    "id": "tap_1793461329_0074",
+    "type": "whatsapp",
+    "path": "/location/delhi",
+    "location": "Chennai, Tamil Nadu",
+    "device": "desktop",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-31T21:12:09.000Z",
+    "timestamp": 1793461329000
+  },
+  {
+    "id": "tap_1793454629_0071",
+    "type": "whatsapp",
+    "path": "/location/hyderabad",
+    "location": "Noida, Uttar Pradesh",
+    "device": "desktop",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-31T19:20:29.000Z",
+    "timestamp": 1793454629000
+  },
+  {
+    "id": "tap_1793451065_0073",
+    "type": "call",
+    "path": "/contact-us",
+    "location": "Chennai, Tamil Nadu",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-10-31T18:21:05.000Z",
+    "timestamp": 1793451065000
+  },
+  {
+    "id": "tap_1793449380_0070",
+    "type": "whatsapp",
+    "path": "/location/mumbai",
+    "location": "Noida, Uttar Pradesh",
+    "device": "desktop",
+    "referrer": "LinkedIn",
+    "created_at": "2026-10-31T17:53:00.000Z",
+    "timestamp": 1793449380000
+  },
+  {
+    "id": "tap_1793357816_0075",
+    "type": "whatsapp",
+    "path": "/pricing",
+    "location": "Noida, Uttar Pradesh",
+    "device": "tablet",
+    "referrer": "Direct",
+    "created_at": "2026-10-30T16:26:56.000Z",
+    "timestamp": 1793357816000
+  },
+  {
+    "id": "tap_1793357715_0076",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Bengaluru, Karnataka",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-30T16:25:15.000Z",
+    "timestamp": 1793357715000
+  },
+  {
+    "id": "tap_1793353451_0077",
+    "type": "call",
+    "path": "/",
+    "location": "Indore, Madhya Pradesh",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-10-30T15:14:11.000Z",
+    "timestamp": 1793353451000
+  },
+  {
+    "id": "tap_1793287652_0079",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Indore, Madhya Pradesh",
+    "device": "mobile",
+    "referrer": "Instagram",
+    "created_at": "2026-10-29T20:57:32.000Z",
+    "timestamp": 1793287652000
+  },
+  {
+    "id": "tap_1793271496_0080",
+    "type": "call",
+    "path": "/market-area",
+    "location": "Kolkata, West Bengal",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-10-29T16:28:16.000Z",
+    "timestamp": 1793271496000
+  },
+  {
+    "id": "tap_1793270331_0078",
+    "type": "whatsapp",
+    "path": "/market-area",
+    "location": "Jaipur, Rajasthan",
+    "device": "desktop",
+    "referrer": "LinkedIn",
+    "created_at": "2026-10-29T16:08:51.000Z",
+    "timestamp": 1793270331000
+  },
+  {
+    "id": "tap_1793190098_0087",
+    "type": "call",
+    "path": "/services/app-development",
+    "location": "Surat, Gujarat",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-10-28T17:51:38.000Z",
+    "timestamp": 1793190098000
+  },
+  {
+    "id": "tap_1793183484_0088",
+    "type": "whatsapp",
+    "path": "/pricing",
+    "location": "Chandigarh, Punjab",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-28T16:01:24.000Z",
+    "timestamp": 1793183484000
+  },
+  {
+    "id": "tap_1793179993_0084",
+    "type": "call",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Chandigarh, Punjab",
+    "device": "desktop",
+    "referrer": "Instagram",
+    "created_at": "2026-10-28T15:03:13.000Z",
+    "timestamp": 1793179993000
+  },
+  {
+    "id": "tap_1793179654_0082",
+    "type": "whatsapp",
+    "path": "/services/app-development",
+    "location": "Pune, Maharashtra",
+    "device": "desktop",
+    "referrer": "Instagram",
+    "created_at": "2026-10-28T14:57:34.000Z",
+    "timestamp": 1793179654000
+  },
+  {
+    "id": "tap_1793175504_0086",
+    "type": "call",
+    "path": "/location/hyderabad",
+    "location": "Lucknow, Uttar Pradesh",
+    "device": "tablet",
+    "referrer": "Instagram",
+    "created_at": "2026-10-28T13:48:24.000Z",
+    "timestamp": 1793175504000
+  },
+  {
+    "id": "tap_1793170048_0081",
+    "type": "whatsapp",
+    "path": "/services/app-development",
+    "location": "Ahmedabad, Gujarat",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-28T12:17:28.000Z",
+    "timestamp": 1793170048000
+  },
+  {
+    "id": "tap_1793168113_0083",
+    "type": "whatsapp",
+    "path": "/location/bengaluru",
+    "location": "Lucknow, Uttar Pradesh",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-10-28T11:45:13.000Z",
+    "timestamp": 1793168113000
+  },
+  {
+    "id": "tap_1793161496_0085",
+    "type": "call",
+    "path": "/location/delhi",
+    "location": "Chandigarh, Punjab",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-28T09:54:56.000Z",
+    "timestamp": 1793161496000
+  },
+  {
+    "id": "tap_1793118206_0092",
+    "type": "whatsapp",
+    "path": "/location/delhi",
+    "location": "New Delhi, Delhi",
+    "device": "mobile",
+    "referrer": "Instagram",
+    "created_at": "2026-10-27T21:53:26.000Z",
+    "timestamp": 1793118206000
+  },
+  {
+    "id": "tap_1793115075_0094",
+    "type": "whatsapp",
+    "path": "/location/pune",
+    "location": "Bengaluru, Karnataka",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-10-27T21:01:15.000Z",
+    "timestamp": 1793115075000
+  },
+  {
+    "id": "tap_1793100802_0093",
+    "type": "whatsapp",
+    "path": "/market-area",
+    "location": "New Delhi, Delhi",
+    "device": "tablet",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-27T17:03:22.000Z",
+    "timestamp": 1793100802000
+  },
+  {
+    "id": "tap_1793094613_0091",
+    "type": "whatsapp",
+    "path": "/market-area",
+    "location": "Jaipur, Rajasthan",
+    "device": "desktop",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-27T15:20:13.000Z",
+    "timestamp": 1793094613000
+  },
+  {
+    "id": "tap_1793081374_0089",
+    "type": "whatsapp",
+    "path": "/location/pune",
+    "location": "Chandigarh, Punjab",
+    "device": "desktop",
+    "referrer": "Instagram",
+    "created_at": "2026-10-27T11:39:34.000Z",
+    "timestamp": 1793081374000
+  },
+  {
+    "id": "tap_1793072141_0090",
+    "type": "whatsapp",
+    "path": "/services/seo-services",
+    "location": "Indore, Madhya Pradesh",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-27T09:05:41.000Z",
+    "timestamp": 1793072141000
+  },
+  {
+    "id": "tap_1793029990_0096",
+    "type": "whatsapp",
+    "path": "/market-area",
+    "location": "Hyderabad, Telangana",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-26T21:23:10.000Z",
+    "timestamp": 1793029990000
+  },
+  {
+    "id": "tap_1793013127_0095",
+    "type": "whatsapp",
+    "path": "/location/delhi",
+    "location": "Noida, Uttar Pradesh",
+    "device": "tablet",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-26T16:42:07.000Z",
+    "timestamp": 1793013127000
+  },
+  {
+    "id": "tap_1792991264_0098",
+    "type": "call",
+    "path": "/services/website-development",
+    "location": "Chennai, Tamil Nadu",
+    "device": "tablet",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-26T10:37:44.000Z",
+    "timestamp": 1792991264000
+  },
+  {
+    "id": "tap_1792991221_0097",
+    "type": "call",
+    "path": "/location/mumbai",
+    "location": "Chandigarh, Punjab",
+    "device": "tablet",
+    "referrer": "Direct",
+    "created_at": "2026-10-26T10:37:01.000Z",
+    "timestamp": 1792991221000
+  },
+  {
+    "id": "tap_1792937331_0099",
+    "type": "whatsapp",
+    "path": "/location/bengaluru",
+    "location": "Mumbai, Maharashtra",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-10-25T19:38:51.000Z",
+    "timestamp": 1792937331000
+  },
+  {
+    "id": "tap_1792936384_0100",
+    "type": "whatsapp",
+    "path": "/",
+    "location": "Jaipur, Rajasthan",
+    "device": "desktop",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-25T19:23:04.000Z",
+    "timestamp": 1792936384000
+  },
+  {
+    "id": "tap_1792924587_0101",
+    "type": "call",
+    "path": "/pricing",
+    "location": "Indore, Madhya Pradesh",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-10-25T16:06:27.000Z",
+    "timestamp": 1792924587000
+  },
+  {
+    "id": "tap_1792908993_0102",
+    "type": "call",
+    "path": "/location/pune",
+    "location": "Kolkata, West Bengal",
+    "device": "desktop",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-25T11:46:33.000Z",
+    "timestamp": 1792908993000
+  },
+  {
+    "id": "tap_1792839472_0103",
+    "type": "call",
+    "path": "/location/bengaluru",
+    "location": "Kolkata, West Bengal",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-24T16:27:52.000Z",
+    "timestamp": 1792839472000
+  },
+  {
+    "id": "tap_1792835461_0105",
+    "type": "whatsapp",
+    "path": "/services/seo-services",
+    "location": "Jaipur, Rajasthan",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-10-24T15:21:01.000Z",
+    "timestamp": 1792835461000
+  },
+  {
+    "id": "tap_1792833676_0106",
+    "type": "whatsapp",
+    "path": "/location/hyderabad",
+    "location": "Kolkata, West Bengal",
+    "device": "mobile",
+    "referrer": "LinkedIn",
+    "created_at": "2026-10-24T14:51:16.000Z",
+    "timestamp": 1792833676000
+  },
+  {
+    "id": "tap_1792823715_0107",
+    "type": "call",
+    "path": "/location/hyderabad",
+    "location": "Surat, Gujarat",
+    "device": "mobile",
+    "referrer": "Instagram",
+    "created_at": "2026-10-24T12:05:15.000Z",
+    "timestamp": 1792823715000
+  },
+  {
+    "id": "tap_1792817276_0104",
+    "type": "whatsapp",
+    "path": "/location/pune",
+    "location": "Indore, Madhya Pradesh",
+    "device": "desktop",
+    "referrer": "Instagram",
+    "created_at": "2026-10-24T10:17:56.000Z",
+    "timestamp": 1792817276000
+  },
+  {
+    "id": "tap_1792768068_0113",
+    "type": "whatsapp",
+    "path": "/services/website-development",
+    "location": "Ahmedabad, Gujarat",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-23T20:37:48.000Z",
+    "timestamp": 1792768068000
+  },
+  {
+    "id": "tap_1792764931_0108",
+    "type": "whatsapp",
+    "path": "/services/website-development",
+    "location": "Bengaluru, Karnataka",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-10-23T19:45:31.000Z",
+    "timestamp": 1792764931000
+  },
+  {
+    "id": "tap_1792757924_0112",
+    "type": "whatsapp",
+    "path": "/pricing",
+    "location": "Noida, Uttar Pradesh",
+    "device": "desktop",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-23T17:48:44.000Z",
+    "timestamp": 1792757924000
+  },
+  {
+    "id": "tap_1792750455_0109",
+    "type": "whatsapp",
+    "path": "/location/delhi",
+    "location": "Kochi, Kerala",
+    "device": "desktop",
+    "referrer": "LinkedIn",
+    "created_at": "2026-10-23T15:44:15.000Z",
+    "timestamp": 1792750455000
+  },
+  {
+    "id": "tap_1792745867_0110",
+    "type": "whatsapp",
+    "path": "/pricing",
+    "location": "Kochi, Kerala",
+    "device": "desktop",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-23T14:27:47.000Z",
+    "timestamp": 1792745867000
+  },
+  {
+    "id": "tap_1792741574_0111",
+    "type": "whatsapp",
+    "path": "/location/bengaluru",
+    "location": "Noida, Uttar Pradesh",
+    "device": "mobile",
+    "referrer": "Instagram",
+    "created_at": "2026-10-23T13:16:14.000Z",
+    "timestamp": 1792741574000
+  },
+  {
+    "id": "tap_1792669724_0115",
+    "type": "call",
+    "path": "/services/website-development",
+    "location": "Surat, Gujarat",
+    "device": "mobile",
+    "referrer": "LinkedIn",
+    "created_at": "2026-10-22T17:18:44.000Z",
+    "timestamp": 1792669724000
+  },
+  {
+    "id": "tap_1792665472_0117",
+    "type": "whatsapp",
+    "path": "/services/website-development",
+    "location": "Surat, Gujarat",
+    "device": "desktop",
+    "referrer": "Instagram",
+    "created_at": "2026-10-22T16:07:52.000Z",
+    "timestamp": 1792665472000
+  },
+  {
+    "id": "tap_1792658479_0114",
+    "type": "whatsapp",
+    "path": "/services/ecommerce-development",
+    "location": "Pune, Maharashtra",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-22T14:11:19.000Z",
+    "timestamp": 1792658479000
+  },
+  {
+    "id": "tap_1792656030_0116",
+    "type": "whatsapp",
+    "path": "/",
+    "location": "Gurgaon, Haryana",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-22T13:30:30.000Z",
+    "timestamp": 1792656030000
+  },
+  {
+    "id": "tap_1792599037_0125",
+    "type": "whatsapp",
+    "path": "/location/mumbai",
+    "location": "Noida, Uttar Pradesh",
+    "device": "mobile",
+    "referrer": "LinkedIn",
+    "created_at": "2026-10-21T21:40:37.000Z",
+    "timestamp": 1792599037000
+  },
+  {
+    "id": "tap_1792589710_0122",
+    "type": "whatsapp",
+    "path": "/services/seo-services",
+    "location": "New Delhi, Delhi",
+    "device": "mobile",
+    "referrer": "Direct",
+    "created_at": "2026-10-21T19:05:10.000Z",
+    "timestamp": 1792589710000
+  },
+  {
+    "id": "tap_1792585106_0119",
+    "type": "whatsapp",
+    "path": "/market-area",
+    "location": "Chennai, Tamil Nadu",
+    "device": "desktop",
+    "referrer": "Direct",
+    "created_at": "2026-10-21T17:48:26.000Z",
+    "timestamp": 1792585106000
+  },
+  {
+    "id": "tap_1792582108_0120",
+    "type": "whatsapp",
+    "path": "/services/ecommerce-development",
+    "location": "Lucknow, Uttar Pradesh",
+    "device": "desktop",
+    "referrer": "LinkedIn",
+    "created_at": "2026-10-21T16:58:28.000Z",
+    "timestamp": 1792582108000
+  },
+  {
+    "id": "tap_1792581278_0123",
+    "type": "whatsapp",
+    "path": "/services/app-development",
+    "location": "Mumbai, Maharashtra",
+    "device": "mobile",
+    "referrer": "Instagram",
+    "created_at": "2026-10-21T16:44:38.000Z",
+    "timestamp": 1792581278000
+  },
+  {
+    "id": "tap_1792570495_0124",
+    "type": "whatsapp",
+    "path": "/blog/ecommerce-app-builder",
+    "location": "Chennai, Tamil Nadu",
+    "device": "mobile",
+    "referrer": "WhatsApp",
+    "created_at": "2026-10-21T13:44:55.000Z",
+    "timestamp": 1792570495000
+  },
+  {
+    "id": "tap_1792555787_0121",
+    "type": "whatsapp",
+    "path": "/contact-us",
+    "location": "Noida, Uttar Pradesh",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-21T09:39:47.000Z",
+    "timestamp": 1792555787000
+  },
+  {
+    "id": "tap_1792553949_0118",
+    "type": "call",
+    "path": "/services/website-development",
+    "location": "Ahmedabad, Gujarat",
+    "device": "mobile",
+    "referrer": "Google Organic",
+    "created_at": "2026-10-21T09:09:09.000Z",
+    "timestamp": 1792553949000
+  }
+]

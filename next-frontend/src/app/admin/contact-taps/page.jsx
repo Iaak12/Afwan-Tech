@@ -19,12 +19,28 @@ export default function AdminContactTapsPage() {
   const fetchTaps = async () => {
     setLoading(true);
     try {
+      // 1. Fetch from Next.js internal API route (persistent telemetry)
+      const res = await fetch('/api/track-tap', { cache: 'no-store' });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && json.data && Array.isArray(json.data.contact_taps) && json.data.contact_taps.length > 0) {
+          setTaps(json.data.contact_taps);
+          return;
+        }
+      }
+
+      // 2. Fallback to PHP backend if available
       const phpApi = process.env.NEXT_PUBLIC_PHP_API_URL;
-      const targetUrl = phpApi ? `${phpApi.replace(/\/$/, '')}/stats.php` : '/api/track-tap';
-      const res = await fetch(targetUrl);
-      const json = await res.json();
-      if (json.success && json.data) {
-        setTaps(json.data.contact_taps || json.data.recent || []);
+      if (phpApi) {
+        const targetUrl = `${phpApi.replace(/\/$/, '')}/stats.php`;
+        const res2 = await fetch(targetUrl, { cache: 'no-store' });
+        if (res2.ok) {
+          const json2 = await res2.json();
+          if (json2.success && json2.data) {
+            setTaps(json2.data.contact_taps || json2.data.recent || []);
+            return;
+          }
+        }
       }
     } catch (e) {
       console.error('Error fetching taps:', e);

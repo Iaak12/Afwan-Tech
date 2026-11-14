@@ -16,4 +16,8 @@ build/
 # Backend local runtime storage
 backend-php/data/*
 !backend-php/data/all_locations.json
-next-frontend/data/
+!backend-php/data/contact_taps.json
+!backend-php/data/summary.json
+next-frontend/data/*
+!next-frontend/data/contact_taps.json
+!next-frontend/data/summary.json
