@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { getPhpApiUrl } from '@/lib/apiConfig';
 
 function getStorageLocations() {
   return [
@@ -64,6 +65,27 @@ export async function POST(request) {
     taps.unshift(tapRecord);
     saveTaps(taps);
 
+    // 2. Mirror asynchronously to Hostinger MySQL
+    const phpApi = getPhpApiUrl();
+    if (phpApi) {
+      try {
+        fetch(`${phpApi}/track_tap.php`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+          },
+          body: JSON.stringify({
+            type,
+            path: clientPath,
+            location,
+            screenWidth,
+            referrer: data.referrer || 'Direct'
+          })
+        }).catch(() => {});
+      } catch (_) {}
+    }
+
     return NextResponse.json({ success: true, recorded: tapRecord });
   } catch (err) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
@@ -72,6 +94,40 @@ export async function POST(request) {
 
 export async function GET() {
   try {
+    // 1. Primary: Fetch live taps from Hostinger MySQL via stats.php
+    const phpApi = getPhpApiUrl();
+    if (phpApi) {
+      try {
+        const liveRes = await fetch(`${phpApi}/stats.php`, {
+          cache: 'no-store',
+          headers: {
+            'Accept': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+          }
+        });
+        if (liveRes.ok) {
+          const liveJson = await liveRes.json();
+          if (liveJson.success && liveJson.data && Array.isArray(liveJson.data.contact_taps) && liveJson.data.contact_taps.length > 0) {
+            const mysqlTaps = liveJson.data.contact_taps;
+            return NextResponse.json({
+              success: true,
+              data: {
+                total: liveJson.data.overview?.total_taps || mysqlTaps.length,
+                whatsapp_taps: liveJson.data.overview?.whatsapp_taps || mysqlTaps.filter(t => t.type === 'whatsapp').length,
+                call_taps: liveJson.data.overview?.call_taps || mysqlTaps.filter(t => t.type === 'call').length,
+                recent: mysqlTaps.slice(0, 200),
+                contact_taps: mysqlTaps,
+                source: 'mysql'
+              }
+            });
+          }
+        }
+      } catch (e) {
+        // Fallback below
+      }
+    }
+
+    // 2. Fallback: Local file
     const taps = loadTaps();
     const totalWhatsApp = taps.filter(t => t.type === 'whatsapp').length;
     const totalCalls = taps.filter(t => t.type === 'call').length;
@@ -83,7 +139,8 @@ export async function GET() {
         whatsapp_taps: totalWhatsApp,
         call_taps: totalCalls,
         recent: taps.slice(0, 200),
-        contact_taps: taps
+        contact_taps: taps,
+        source: 'local'
       }
     });
   } catch (err) {
